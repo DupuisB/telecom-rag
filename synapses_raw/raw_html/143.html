@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <meta name="description" content="SynapseS">
+        <meta name="author" content="">
+        <script type="text/javascript">
+            var es6 = true;
+            try { eval("var foo = (x)=>x+1"); }
+            catch (e) { es6 = false; }
+
+            if (!es6) {
+                var script = document.createElement('script');
+                script.src = "/assets/app_polyfills.js";
+                script.setAttribute("type", "text/javascript");
+                document.head.appendChild(script);
+            }
+        </script>
+        <title>SynapseS</title><link href="&#x2F;assets&#x2F;vendor&#x2F;fontawesome&#x2F;css&#x2F;fontawesome.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;vendor&#x2F;bootstrap&#x2F;css&#x2F;bootstrap.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;app_base.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_calendrier_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_i18n_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_navigation_menu_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_push-area_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;typeahead.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;less&#x2F;sidebarfacets.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_catalogue_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;subheader.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;app_base_print.css" media="print" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;favicon.png" rel="icon" sizes="16x16" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;favicon.ico" rel="icon" type="image&#x2F;x-icon&#x20;">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;apple-touch-icon.png" rel="apple-touch-icon" sizes="76x76" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;apple-touch-icon-iphone.png" rel="apple-touch-icon" sizes="76x76" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;apple-touch-icon-iphone-retina.png" rel="apple-touch-icon" sizes="120x120" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;apple-touch-icon-ipad.png" rel="apple-touch-icon" sizes="76x76" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;apple-touch-icon-ipad-retina.png" rel="apple-touch-icon" sizes="152x152" type="image&#x2F;png"><script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;app_base_vendor.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;vendor&#x2F;jquery-migrate&#x2F;jquery-migrate.min.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;app_base.js"></script>    </head>
+
+    <body>
+        <div class="container header">
+            <!-- topbar -->
+            <div class="header-topbar">
+                <div class="logo-container">
+    <a href="/" title="Accueil">
+        <img alt="logo" src="/assets/bootstrap/3.3.5/images/logo_telecomparistech_sm.png" />
+    </a>
+</div>
+
+                <div class="banner-controls-container">
+                    <div class="top-banner-controls-container">
+                        <nav>
+                            <ul id="header-navigation-menu" class=""></ul>                        </nav>
+                    </div>
+
+                    <div class="bottom-banner-controls-container">
+                        <div class="language-switch-container">
+                            <ul id="language-switch">
+	<li class="dropdown">
+    	        <a class="dropdown-toggle" data-toggle="dropdown" href="#"> <span
+			class="lang-label" data-language="fr_FR">FR</span>
+            <span class="flag-icon flag-icon-fr"> </span>
+            <i class="fa fa-caret-down dropdown-toggle"></i>
+	</a>
+                <ul class="dropdown-menu">
+                                                            <li><a href="#" class="select-language"
+				data-language="en_US">
+                        <span class="flag-icon flag-icon-gb"> </span>
+                        English                    </a></li>
+                        </ul>
+	</li>
+</ul>
+<script>
+    var language = $(".lang-label").data("language");
+    i18next.use(i18nextXHRBackend).init({
+        ns: [language],
+        defaultNS: language,
+        nsSeparator: false,
+        keySeparator: false,
+        backend: {
+            loadPath: '/assets/i18n/' + language + '.json',
+        },
+        debug: false
+    });
+</script>
+<link href="&#x2F;assets&#x2F;vendor&#x2F;fontawesome&#x2F;css&#x2F;fontawesome.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;vendor&#x2F;bootstrap&#x2F;css&#x2F;bootstrap.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;app_base.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_calendrier_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_i18n_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_navigation_menu_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_push-area_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;typeahead.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;less&#x2F;sidebarfacets.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_catalogue_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;subheader.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;app_base_print.css" media="print" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;favicon.png" rel="icon" sizes="16x16" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;favicon.ico" rel="icon" type="image&#x2F;x-icon&#x20;">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;apple-touch-icon.png" rel="apple-touch-icon" sizes="76x76" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;apple-touch-icon-iphone.png" rel="apple-touch-icon" sizes="76x76" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;apple-touch-icon-iphone-retina.png" rel="apple-touch-icon" sizes="120x120" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;apple-touch-icon-ipad.png" rel="apple-touch-icon" sizes="76x76" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;apple-touch-icon-ipad-retina.png" rel="apple-touch-icon" sizes="152x152" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;vendor&#x2F;flag-icon-css&#x2F;css&#x2F;flag-icon.min.css" rel="stylesheet" type="text&#x2F;css">                        </div>
+                    </div>
+
+                    <!-- logout on small screens -->
+                    <ul id="connection-form-container" class="nav navbar-nav">
+                        <li id="dropdown-authentication-menu" class="dropdown dropdown-authentication-menu">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+        <i class="fa fa-user fa-lg hidden-sm hidden-md hidden-lg"></i>
+        <span class="hidden-xs">Connexion</span>
+        <i class="fa fa-caret-down"></i>
+    </a>
+    <ul id="dropdown-authentication-menu-content" class="dropdown-menu">
+        <li>
+            <div class="row">
+                <div class="col-md-12">
+                    <header>Utiliser mon compte école</header>
+                                        <a href="/login?type=Shib">
+                        <button class="btn btn-success btn-block">
+                            Je me connecte                        </button>
+                    </a>
+                                        <hr>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <header>Utiliser un compte provisoire</header>
+                </div>
+                <form id="login-form">
+                    <div class="col-md-12 form">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="identifier-area"
+                                   data-minlength="5" pattern="^[a-zA-Z0-9._\-@]+$"
+                                   placeholder="Nom d'utilisateur"
+                                   required="required">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" id="credential-area"
+                                   placeholder="Mot de passe"
+                                   required="required">
+                        </div>
+                        <div class="form-group">
+                            <button id="btn-login-provisoire" type="submit" class="btn btn-default btn-block">Valider</button>
+                        </div>
+                        <div class="alert alert-danger hidden" role="alert"
+                             id="login-error-message-container">
+                            <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+                            <span class="sr-only">Error:</span> <span id="login-error-message"></span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </li>
+    </ul>
+</li>
+                    </ul>
+
+                    <div class="header-content-responsive hidden-sm hidden-md hidden-lg">
+                        <div class="collapsed-button-container">
+                            <button type="button" class="navbar-toggle pull-right"
+                                    data-toggle="collapse" data-target="#main-navigation-menu"
+                                    aria-expanded="false" aria-controls="navbar">
+                                <i class="fa fa-bars fa-lg"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- banner with navigation -->
+            <div class="banner">
+                <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="logo-container">
+    <a href="/" title="Accueil">
+        <img alt="logo" src="/assets/bootstrap/3.3.5/images/logo_telecomparistech_lg.png" />
+    </a>
+</div>
+
+                            <div class="navbar-collapse collapse" id="main-navigation-menu">
+                                <div class="col-md-9 col-sm-12">
+                                    <ul class="nav navbar-nav">
+                                        <li class=""><a href="/" >Accueil</a></li><li class="dropdown"><a href="/catalogue" class="dropdown-toggle" data-toggle="dropdown">Les formations<i class="fa fa-caret-down"></i></a><ul  class="dropdown-menu"><li class="dropdown-submenu"><a href="/catalogue/2024-2025" ><b>Catalogue 2024 - 2025</b></a><ul  class="dropdown-menu"><li class="dropdown-submenu"><a href="/catalogue/2024-2025/type/Ing%25C3%25A9nieur" >Ingénieur</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2024-2025/diplome/4/ING-diplome-d-ingenieur" >ING&nbsp;-&nbsp;Diplôme d'ingénieur</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2024-2025/type/Master" >Master</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2024-2025/diplome/2490/M1DATAAI-master-m1-data-and-artificial-intelligence" >M1DATAAI&nbsp;-&nbsp;Master M1 - Data and Artificial Intelligence</a></li><li class=""><a href="/catalogue/2024-2025/diplome/2489/M1IGD-master-m1-interaction-graphic-design" >M1IGD&nbsp;-&nbsp;Master M1 - Interaction, Graphic & Design</a></li><li class=""><a href="/catalogue/2024-2025/diplome/2064/M1REDESI-master-m1-recherche-en-design" >M1REDESI&nbsp;-&nbsp;Master M1 - recherche en Design</a></li><li class=""><a href="/catalogue/2024-2025/diplome/2083/M2DATAAI-master-m2-data-artificial-intelligence" >M2DATAAI&nbsp;-&nbsp;Master M2 - Data & Artificial Intelligence</a></li><li class=""><a href="/catalogue/2024-2025/diplome/1327/M2ICS-master-m2-integration-circuits-and-systems" >M2ICS&nbsp;-&nbsp;Master M2 - Integration, Circuits and Systems</a></li><li class=""><a href="/catalogue/2024-2025/diplome/26/M2IGD-master-m2-interaction-graphic-design" >M2IGD&nbsp;-&nbsp;Master M2 - Interaction, Graphic & Design</a></li><li class=""><a href="/catalogue/2024-2025/diplome/42/M2IREN-master-m2-industries-de-reseau-et-economie-numerique" >M2IREN&nbsp;-&nbsp;Master M2 - Industries de Réseau et Economie Numérique</a></li><li class=""><a href="/catalogue/2024-2025/diplome/2065/M2MICAS-master-m2-information-processing-machine-learning-communications-and-security" >M2MICAS&nbsp;-&nbsp;Master M2- Information processing: machine learning, communications and security</a></li><li class=""><a href="/catalogue/2024-2025/diplome/38/M2MVA-master-m2-mathematiques-vision-apprentissage" >M2MVA&nbsp;-&nbsp;Master M2 - Mathématiques, Vision, Apprentissage</a></li><li class=""><a href="/catalogue/2024-2025/diplome/2491/M2RECHDESI-master-m2-recherche-en-design" >M2RECHDESI&nbsp;-&nbsp;Master M2 - Recherche en Design</a></li><li class=""><a href="/catalogue/2024-2025/diplome/1857/M2SETI-master-m2-systemes-embarques-et-traitement-de-l-information" >M2SETI&nbsp;-&nbsp;Master M2 - Systèmes embarqués et traitement de l'information</a></li><li class=""><a href="/catalogue/2024-2025/diplome/2492/PHDCOMPSC-phd-track-computer-science" >PHDCOMPSC&nbsp;-&nbsp;PhD Track - Computer Science</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2024-2025/type/Mast%25C3%25A8re+sp%25C3%25A9cialis%25C3%25A9" >Mastère spécialisé</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2024-2025/diplome/61/ADE-architecte-digital-d-entreprise" >ADE&nbsp;-&nbsp;Architecte Digital d'Entreprise</a></li><li class=""><a href="/catalogue/2024-2025/diplome/60/ARC-architecte-reseaux-et-cybersecurite" >ARC&nbsp;-&nbsp;Architecte Réseaux et Cybersécurité</a></li><li class=""><a href="/catalogue/2024-2025/diplome/62/BGD-big-data-gestion-et-analyse-des-donnees-massives" >BGD&nbsp;-&nbsp;Big Data : gestion et analyse des données massives</a></li><li class=""><a href="/catalogue/2024-2025/diplome/78/CYBER2-cybersecurite-et-cyberdefense" >CYBER2&nbsp;-&nbsp;Cybersécurité et Cyberdéfense</a></li><li class=""><a href="/catalogue/2024-2025/diplome/65/ECRSI-expert-cybersecurite-des-reseaux-et-des-systemes-d-information" >ECRSI&nbsp;-&nbsp;Expert cybersécurité des réseaux et des systèmes d'information</a></li><li class=""><a href="/catalogue/2024-2025/diplome/1996/IA-ia-intelligence-artificielle" >IA&nbsp;-&nbsp;IA : Intelligence Artificielle</a></li><li class=""><a href="/catalogue/2024-2025/diplome/1846/SMOB-smart-mobility-transformation-numerique-des-systemes-de-mobilite" >SMOB&nbsp;-&nbsp;Smart Mobility - Transformation Numérique des Systèmes de Mobilité</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2024-2025/type/Programme+d%2527%25C3%25A9change" >Programme d'échange</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2024-2025/diplome/1/PEI-echange-international-non-diplomant" >PEI&nbsp;-&nbsp;Echange international non diplomant</a></li></ul></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2023-2024" >Catalogue 2023 - 2024</a><ul  class="dropdown-menu"><li class="dropdown-submenu"><a href="/catalogue/2023-2024/type/Certificat+d%2527Etudes+Sp%25C3%25A9cialis%25C3%25A9es" >Certificat d'Etudes Spécialisées</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2023-2024/diplome/2179/CESCDRS-ces-cybersecurite-des-donnees-reseaux-et-systemes" >CESCDRS&nbsp;-&nbsp;CES Cybersécurité des données, réseaux et systèmes</a></li><li class=""><a href="/catalogue/2023-2024/diplome/2276/CESCDRS-INTRA-ces-cybersecurite-des-donnees-reseaux-et-systemes-intra" >CESCDRS-INTRA&nbsp;-&nbsp;CES Cybersécurité des données, réseaux et systèmes-INTRA</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2023-2024/type/Ing%25C3%25A9nieur" >Ingénieur</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2023-2024/diplome/4/ING-diplome-d-ingenieur" >ING&nbsp;-&nbsp;Diplôme d'ingénieur</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2023-2024/type/Master" >Master</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2023-2024/diplome/2083/DATA-AI-data-artificial-intelligence" >DATA AI&nbsp;-&nbsp;Data & Artificial Intelligence</a></li><li class=""><a href="/catalogue/2023-2024/diplome/2064/DESIGN-master-recherche-en-design" >DESIGN&nbsp;-&nbsp;Master recherche en Design</a></li><li class=""><a href="/catalogue/2023-2024/diplome/1327/ICS-integration-circuits-systems" >ICS&nbsp;-&nbsp;Integration Circuits Systems</a></li><li class=""><a href="/catalogue/2023-2024/diplome/26/IGD-interaction-graphic-design" >IGD&nbsp;-&nbsp;Interaction, Graphic & Design</a></li><li class=""><a href="/catalogue/2023-2024/diplome/42/IREN-industries-de-reseau-et-economie-numerique-iren" >IREN&nbsp;-&nbsp;Industries de réseau et economie numérique (IREN)</a></li><li class=""><a href="/catalogue/2023-2024/diplome/2065/MICAS-information-processing-machine-learning-communications-and-security" >MICAS&nbsp;-&nbsp;Information processing: machine learning, communications and security</a></li><li class=""><a href="/catalogue/2023-2024/diplome/38/MVA-mathematiques-vision-apprentissage" >MVA&nbsp;-&nbsp;Mathématiques, Vision, Apprentissage</a></li><li class=""><a href="/catalogue/2023-2024/diplome/1857/SETI-systemes-embarques-et-traitement-de-l-information" >SETI&nbsp;-&nbsp;Systèmes embarqués et traitement de l'information</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2023-2024/type/Master+T%25C3%25A9l%25C3%25A9com+SudParis" >Master Télécom SudParis</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2023-2024/diplome/2067/CSN-informatique-pour-les-reseaux" >CSN&nbsp;-&nbsp;Informatique pour les Réseaux</a></li><li class=""><a href="/catalogue/2023-2024/diplome/2072/CYBER-M1-cybersecurity-m1" >Cyber M1&nbsp;-&nbsp;Cybersecurity M1</a></li><li class=""><a href="/catalogue/2023-2024/diplome/2073/CYBER-M2-cybersecurity-m2" >Cyber M2&nbsp;-&nbsp;Cybersecurity M2</a></li><li class=""><a href="/catalogue/2023-2024/diplome/2291/EECIP-electrical-engineering-for-communication-information-processing" >EECIP&nbsp;-&nbsp;Electrical Engineering for Communication Information Processing</a></li><li class=""><a href="/catalogue/2023-2024/diplome/40/MN-multimedia-networking-m2" >MN&nbsp;-&nbsp;Multimedia Networking M2</a></li><li class=""><a href="/catalogue/2023-2024/diplome/2076/PDS-M1-systemes-distribues-et-paralleles-m1" >PDS M1&nbsp;-&nbsp;Systèmes distribués et parallèles M1</a></li><li class=""><a href="/catalogue/2023-2024/diplome/2077/PDS-M2-systemes-distribues-et-paralleles-m2" >PDS M2&nbsp;-&nbsp;Systèmes distribués et parallèles M2</a></li><li class=""><a href="/catalogue/2023-2024/diplome/2069/TRIED-M2-traitement-de-l-information-exploitation-des-donnees-master-2" >TRIED M2&nbsp;-&nbsp;Traitement de l'Information & Exploitation des Données Master 2</a></li><li class=""><a href="/catalogue/2023-2024/diplome/2070/VAR-virtual-augmented-reality-m2" >VAR&nbsp;-&nbsp;Virtual & Augmented Reality M2</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2023-2024/type/Mast%25C3%25A8re+sp%25C3%25A9cialis%25C3%25A9" >Mastère spécialisé</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2023-2024/diplome/61/ADE-architecte-digital-d-entreprise" >ADE&nbsp;-&nbsp;Architecte Digital d'Entreprise</a></li><li class=""><a href="/catalogue/2023-2024/diplome/60/ARC-architecte-reseaux-et-cybersecurite" >ARC&nbsp;-&nbsp;Architecte Réseaux et Cybersécurité</a></li><li class=""><a href="/catalogue/2023-2024/diplome/62/BGD-big-data-gestion-et-analyse-des-donnees-massives" >BGD&nbsp;-&nbsp;Big Data : gestion et analyse des données massives</a></li><li class=""><a href="/catalogue/2023-2024/diplome/65/CARC-conception-architecture-de-reseaux-et-cybersecurite" >CARC&nbsp;-&nbsp;Conception, Architecture de Réseaux et Cybersécurité</a></li><li class=""><a href="/catalogue/2023-2024/diplome/64/CPD-concepteur-de-projet-digital" >CPD&nbsp;-&nbsp;Concepteur de Projet Digital</a></li><li class=""><a href="/catalogue/2023-2024/diplome/78/CYBER2-cybersecurite-et-cyberdefense" >CYBER2&nbsp;-&nbsp;Cybersécurité et Cyberdéfense</a></li><li class=""><a href="/catalogue/2023-2024/diplome/1996/IA-ia-intelligence-artificielle" >IA&nbsp;-&nbsp;IA : Intelligence Artificielle</a></li><li class=""><a href="/catalogue/2023-2024/diplome/72/MSIR-management-des-systemes-d-information-en-reseaux" >MSIR&nbsp;-&nbsp;Management des systèmes d'information en réseaux</a></li><li class=""><a href="/catalogue/2023-2024/diplome/1846/SMOB-smart-mobility-transformation-numerique-des-systemes-de-mobilite" >SMOB&nbsp;-&nbsp;Smart Mobility - Transformation Numérique des Systèmes de Mobilité</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2023-2024/type/Programme+d%2527%25C3%25A9change" >Programme d'échange</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2023-2024/diplome/1/PEI-echange-international-non-diplomant" >PEI&nbsp;-&nbsp;Echange international non diplomant</a></li></ul></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2022-2023" >Catalogue 2022 - 2023</a><ul  class="dropdown-menu"><li class="dropdown-submenu"><a href="/catalogue/2022-2023/type/Ing%25C3%25A9nieur" >Ingénieur</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2022-2023/diplome/4/ING-diplome-d-ingenieur" >ING&nbsp;-&nbsp;Diplôme d'ingénieur</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2022-2023/type/Master" >Master</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2022-2023/diplome/2083/DATA-AI-data-artificial-intelligence" >DATA AI&nbsp;-&nbsp;Data & Artificial Intelligence</a></li><li class=""><a href="/catalogue/2022-2023/diplome/2064/DESIGN-master-recherche-en-design" >DESIGN&nbsp;-&nbsp;Master recherche en Design</a></li><li class=""><a href="/catalogue/2022-2023/diplome/1327/ICS-integration-circuits-systems" >ICS&nbsp;-&nbsp;Integration Circuits Systems</a></li><li class=""><a href="/catalogue/2022-2023/diplome/26/IGD-interaction-graphic-design" >IGD&nbsp;-&nbsp;Interaction, Graphic & Design</a></li><li class=""><a href="/catalogue/2022-2023/diplome/42/IREN-industries-de-reseau-et-economie-numerique-iren" >IREN&nbsp;-&nbsp;Industries de réseau et economie numérique (IREN)</a></li><li class=""><a href="/catalogue/2022-2023/diplome/2065/MICAS-information-processing-machine-learning-communications-and-security" >MICAS&nbsp;-&nbsp;Information processing: machine learning, communications and security</a></li><li class=""><a href="/catalogue/2022-2023/diplome/38/MVA-mathematiques-vision-apprentissage" >MVA&nbsp;-&nbsp;Mathématiques, Vision, Apprentissage</a></li><li class=""><a href="/catalogue/2022-2023/diplome/1857/SETI-systemes-embarques-et-traitement-de-l-information" >SETI&nbsp;-&nbsp;Systèmes embarqués et traitement de l'information</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2022-2023/type/Master+T%25C3%25A9l%25C3%25A9com+SudParis" >Master Télécom SudParis</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2022-2023/diplome/2073/CYBER-M2-cybersecurity-m2" >Cyber M2&nbsp;-&nbsp;Cybersecurity M2</a></li><li class=""><a href="/catalogue/2022-2023/diplome/40/MN-multimedia-networking-m2" >MN&nbsp;-&nbsp;Multimedia Networking M2</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2022-2023/type/Mast%25C3%25A8re+sp%25C3%25A9cialis%25C3%25A9" >Mastère spécialisé</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2022-2023/diplome/61/ADE-architecte-digital-d-entreprise" >ADE&nbsp;-&nbsp;Architecte Digital d'Entreprise</a></li><li class=""><a href="/catalogue/2022-2023/diplome/60/ARC-architecte-reseaux-et-cybersecurite" >ARC&nbsp;-&nbsp;Architecte Réseaux et Cybersécurité</a></li><li class=""><a href="/catalogue/2022-2023/diplome/62/BGD-big-data-gestion-et-analyse-des-donnees-massives" >BGD&nbsp;-&nbsp;Big Data : gestion et analyse des données massives</a></li><li class=""><a href="/catalogue/2022-2023/diplome/65/CARC-conception-et-architecture-de-reseaux-et-cybersecurite" >CARC&nbsp;-&nbsp;Conception et Architecture de Réseaux et Cybersécurité</a></li><li class=""><a href="/catalogue/2022-2023/diplome/64/CPD-concepteur-de-projet-digital" >CPD&nbsp;-&nbsp;Concepteur de Projet Digital</a></li><li class=""><a href="/catalogue/2022-2023/diplome/78/CYBER2-cybersecurite-et-cyberdefense" >CYBER2&nbsp;-&nbsp;Cybersécurité et Cyberdéfense</a></li><li class=""><a href="/catalogue/2022-2023/diplome/1996/IA-ia-intelligence-artificielle" >IA&nbsp;-&nbsp;IA : Intelligence Artificielle</a></li><li class=""><a href="/catalogue/2022-2023/diplome/72/MSIR-management-des-systemes-d-information-en-reseaux" >MSIR&nbsp;-&nbsp;Management des systèmes d'information en réseaux</a></li><li class=""><a href="/catalogue/2022-2023/diplome/1846/SMOB-smart-mobility-transformation-numerique-des-systemes-de-mobilite" >SMOB&nbsp;-&nbsp;Smart Mobility - Transformation Numérique des Systèmes de Mobilité</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2022-2023/type/Programme+d%2527%25C3%25A9change" >Programme d'échange</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2022-2023/diplome/1/PEI-echange-international-non-diplomant" >PEI&nbsp;-&nbsp;Echange international non diplomant</a></li></ul></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2021-2022" >Catalogue 2021 - 2022</a><ul  class="dropdown-menu"><li class="dropdown-submenu"><a href="/catalogue/2021-2022/type/Master" >Master</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2021-2022/diplome/2064/DESIGN-master-recherche-en-design" >DESIGN&nbsp;-&nbsp;Master recherche en Design</a></li></ul></li></ul></li></ul></li>                                    </ul>
+                                </div>
+                            </div> <!-- navbar-collapse -->
+
+                        </div> <!-- row -->
+                    </div> <!-- container-fluid -->
+                </nav> <!--/.nav-collapse -->
+            </div>
+            <!-- Version SynapseS  -->
+            <div id="app-version-label">v2.11.0 (5705)</div>
+            <div id="breadcrumbs">
+                <ul>
+            <li class="item root-item">
+            <span>Accueil</span>
+        </li>
+    </ul>
+            </div>
+        </div>
+
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                                        <div id="content-wrapper" class="col-md-12">
+                        <div id="flash-messages" class="flash-messages" class="row">
+</div>
+<script type="text/javascript">
+    setTimeout(function() {
+        $('.flash-messages').find('ul').fadeOut(3000, function() {
+            $('.flash-messages').find('ul').remove();
+        });
+    }, 9000);
+</script>                        <nav class="navbar navbar-default search-control-container no-print" role="navigation">
+    <div class="navbar-header">
+        <div class="sidebar-control-button-container">
+            <button class="navbar-toggle pull-left" data-toggle="offcanvas" data-target=".sidebar-nav" type="button">
+                <span class="fa fa fa-indent"></span>
+            </button>
+        </div>
+
+        <span class="search-control-label navbar-brand">
+            Rechercher dans l'offre de formation   :        </span>
+
+        <form class="navbar-form" role="search">
+            <div class="form-group">
+                <div class="input-group">
+                    <input class="form-control" type="text" id="catalogue-main-search-field">
+                    <a href="#" class="input-group-addon" id="catalogue-main-search-field-enter-button">
+                        <i class="fa fa-search fa-fw"></i>
+                    </a>
+                    <a href="#" class="input-group-addon" id="catalogue-main-search-field-clear-button">
+                        <i class="fa fa-times fa-fw"></i>
+                    </a>
+                </div>
+            </div>
+        </form>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="row row-offcanvas row-offcanvas-left">
+        <!-- //TODO passer dans un helper de vue -->
+        <div class="col-xs-6 col-sm-4 sidebar-offcanvas no-print" id="facets-navigation-container" role="navigation">
+            <h3 class="highlight">Affiner votre recherche</h3>
+            <ul id="selected-facets-container" role="tablist" aria-multiselectable="true"></ul>
+            <div class="panel-group" id="facets-lists-container" aria-multiselectable="true"></div>
+        </div>
+
+        <!-- main area -->
+
+        <div class="col-xs-12 col-sm-8 search-result-container">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="search-result-count-container col-xs-3 col-sm-4">
+    <span id="search-result-count"></span> résultat(s)</div>
+<div class="col-xs-9 col-sm-8 pagination-or-spellcheck-container">
+    <div id="spellcheck-container">Vous avez voulu dire :        <div id="spellcheck-list"></div>
+    </div>
+    <nav id="search-result-pagination">
+	<ul class="pagination">
+		<li class="pagination-previous-page"><a href="#" aria-label="Previous">
+				<span aria-hidden="true">&laquo;</span>
+		</a></li>
+		<li class="pagination-page-number"><a href="#">1</a></li>
+		<li class="pagination-next-page"><a href="#" aria-label="Next"> <span
+				aria-hidden="true">&raquo;</span>
+		</a></li>
+	</ul>
+</nav></div>
+                </div>
+            </div>
+            <div class="preloader-container" id="preloader">
+	<img alt="Veuillez patienter"
+		src="/assets/bootstrap/3.3.5/images/preloader.png" />
+</div>            <section id="diplome-container" class="row">
+                <h2 class="titre-diplome-container">Diplômes</h2>
+                <div></div>
+            </section>
+
+            <section id="parcours-container" class="row">
+                <h2 class="titre-parcours-container">Parcours</h2>
+                <div></div>
+            </section>
+
+            <section id="ue-container" class="row">
+                <h2 class="titre-ue-container">Unités d'enseignement</h2>
+                <div></div>
+            </section>
+
+        </div>
+
+        <!-- /.col-xs-12 main -->
+    </div>
+    <!--/.row-->
+</div>
+<!--/.container-->
+<input type="hidden" id='catalogue-annee' value="2024">
+    <input type="hidden" id='catalogue-type-diplome' value="Master&#34;">
+<input type="hidden" id='catalogue-lang' value="fr">
+<input type="hidden" id='catalogue-rows-per-page' value="20">
+    <input type="hidden" id='catalogue-nb-pages-pagination-xs' value="4">
+    <input type="hidden" id='catalogue-nb-pages-pagination-sm' value="7">
+    <input type="hidden" id='catalogue-nb-pages-pagination-md' value="10">
+    <input type="hidden" id='catalogue-nb-pages-pagination-lg' value="12">
+
+<script type="text/javascript">
+    $(function () {
+        // transform search form + pagination into fixed subheader
+        $('#page-wrapper').addClass('fixed-subheader');
+    });
+</script>                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--/.container-fluid -->
+                <div id="footer">
+            <div class="row">
+                <div class="col-md-11">
+                    <div class="row">
+    <div class="col-md-4 col-sm-12">
+        <div class="row">
+            <div class="col-md-12">
+<h1>Plan du site</h1><ul><li>Accueil</li><li>Les formations</li></ul>            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+    <ul><li><a href="#" onclick="Application.Modal.showModalAjax('modal-footer-contenu', 'Mentions légales', '/contenu/MENT_LEG', true)">Mentions légales</a></li>            </div>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-12">
+    </div>
+    <div class="col-md-4 col-sm-12">
+    </div>
+</div>
+                    <div class="modal" id="modal-footer-contenu" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg modal-full-width" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="row">
+                    <div class="col-md-11">
+                        <h4 class="modal-title" id="modal-title"></h4>
+                    </div>
+                    <div class="col-md-1 pull-right">
+                        <button type="button" class="close-modal" data-dismiss="modal" aria-label="Close">
+                            <i class="fa fa-times"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-body"></div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+                </div>
+            </div>
+        </div>
+        
+        <script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;bootstrap_3_3_5_i18n_js.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;bootstrap_3_3_5_push_area_js.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;bootstrap_3_3_5_sidebar_js.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;bootstrap_3_3_5_sidebarfacets_js.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;bootstrap_3_3_5_pagination_js.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;bootstrap_3_3_5_catalogue_js.js"></script>        <div class="device-xs visible-xs"></div>
+        <div class="device-sm visible-sm"></div>
+        <div class="device-md visible-md"></div>
+        <div class="device-lg visible-lg"></div>
+
+    </body>
+</html>

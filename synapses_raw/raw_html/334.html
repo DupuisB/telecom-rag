@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <meta name="description" content="SynapseS">
+        <meta name="author" content="">
+        <script type="text/javascript">
+            var es6 = true;
+            try { eval("var foo = (x)=>x+1"); }
+            catch (e) { es6 = false; }
+
+            if (!es6) {
+                var script = document.createElement('script');
+                script.src = "/assets/app_polyfills.js";
+                script.setAttribute("type", "text/javascript");
+                document.head.appendChild(script);
+            }
+        </script>
+        <title>UE LDE_5P003_TP | Catalogue 2024-2025 | SynapseS</title><link href="&#x2F;assets&#x2F;vendor&#x2F;fontawesome&#x2F;css&#x2F;fontawesome.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;vendor&#x2F;bootstrap&#x2F;css&#x2F;bootstrap.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;app_base.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_calendrier_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_i18n_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_navigation_menu_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_push-area_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;vendor&#x2F;bootstraptree&#x2F;bootstrap-tree.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_annuaire_modal_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_catalogue_ue_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;app_base_print.css" media="print" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;favicon.png" rel="icon" sizes="16x16" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;favicon.ico" rel="icon" type="image&#x2F;x-icon&#x20;">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;apple-touch-icon.png" rel="apple-touch-icon" sizes="76x76" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;apple-touch-icon-iphone.png" rel="apple-touch-icon" sizes="76x76" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;apple-touch-icon-iphone-retina.png" rel="apple-touch-icon" sizes="120x120" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;apple-touch-icon-ipad.png" rel="apple-touch-icon" sizes="76x76" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;apple-touch-icon-ipad-retina.png" rel="apple-touch-icon" sizes="152x152" type="image&#x2F;png"><script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;app_base_vendor.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;vendor&#x2F;jquery-migrate&#x2F;jquery-migrate.min.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;app_base.js"></script>    </head>
+
+    <body>
+        <div class="container header">
+            <!-- topbar -->
+            <div class="header-topbar">
+                <div class="logo-container">
+    <a href="/" title="Accueil">
+        <img alt="logo" src="/assets/bootstrap/3.3.5/images/logo_telecomparistech_sm.png" />
+    </a>
+</div>
+
+                <div class="banner-controls-container">
+                    <div class="top-banner-controls-container">
+                        <nav>
+                            <ul id="header-navigation-menu" class=""></ul>                        </nav>
+                    </div>
+
+                    <div class="bottom-banner-controls-container">
+                        <div class="language-switch-container">
+                            <ul id="language-switch">
+	<li class="dropdown">
+    	        <a class="dropdown-toggle" data-toggle="dropdown" href="#"> <span
+			class="lang-label" data-language="fr_FR">FR</span>
+            <span class="flag-icon flag-icon-fr"> </span>
+            <i class="fa fa-caret-down dropdown-toggle"></i>
+	</a>
+                <ul class="dropdown-menu">
+                                                            <li><a href="#" class="select-language"
+				data-language="en_US">
+                        <span class="flag-icon flag-icon-gb"> </span>
+                        English                    </a></li>
+                        </ul>
+	</li>
+</ul>
+<script>
+    var language = $(".lang-label").data("language");
+    i18next.use(i18nextXHRBackend).init({
+        ns: [language],
+        defaultNS: language,
+        nsSeparator: false,
+        keySeparator: false,
+        backend: {
+            loadPath: '/assets/i18n/' + language + '.json',
+        },
+        debug: false
+    });
+</script>
+<link href="&#x2F;assets&#x2F;vendor&#x2F;fontawesome&#x2F;css&#x2F;fontawesome.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;vendor&#x2F;bootstrap&#x2F;css&#x2F;bootstrap.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;app_base.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_calendrier_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_i18n_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_navigation_menu_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_push-area_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;vendor&#x2F;bootstraptree&#x2F;bootstrap-tree.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_annuaire_modal_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_catalogue_ue_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;app_base_print.css" media="print" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;favicon.png" rel="icon" sizes="16x16" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;favicon.ico" rel="icon" type="image&#x2F;x-icon&#x20;">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;apple-touch-icon.png" rel="apple-touch-icon" sizes="76x76" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;apple-touch-icon-iphone.png" rel="apple-touch-icon" sizes="76x76" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;apple-touch-icon-iphone-retina.png" rel="apple-touch-icon" sizes="120x120" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;apple-touch-icon-ipad.png" rel="apple-touch-icon" sizes="76x76" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;apple-touch-icon-ipad-retina.png" rel="apple-touch-icon" sizes="152x152" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;vendor&#x2F;flag-icon-css&#x2F;css&#x2F;flag-icon.min.css" rel="stylesheet" type="text&#x2F;css">                        </div>
+                    </div>
+
+                    <!-- logout on small screens -->
+                    <ul id="connection-form-container" class="nav navbar-nav">
+                        <li id="dropdown-authentication-menu" class="dropdown dropdown-authentication-menu">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+        <i class="fa fa-user fa-lg hidden-sm hidden-md hidden-lg"></i>
+        <span class="hidden-xs">Connexion</span>
+        <i class="fa fa-caret-down"></i>
+    </a>
+    <ul id="dropdown-authentication-menu-content" class="dropdown-menu">
+        <li>
+            <div class="row">
+                <div class="col-md-12">
+                    <header>Utiliser mon compte école</header>
+                                        <a href="/login?type=Shib">
+                        <button class="btn btn-success btn-block">
+                            Je me connecte                        </button>
+                    </a>
+                                        <hr>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <header>Utiliser un compte provisoire</header>
+                </div>
+                <form id="login-form">
+                    <div class="col-md-12 form">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="identifier-area"
+                                   data-minlength="5" pattern="^[a-zA-Z0-9._\-@]+$"
+                                   placeholder="Nom d'utilisateur"
+                                   required="required">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" id="credential-area"
+                                   placeholder="Mot de passe"
+                                   required="required">
+                        </div>
+                        <div class="form-group">
+                            <button id="btn-login-provisoire" type="submit" class="btn btn-default btn-block">Valider</button>
+                        </div>
+                        <div class="alert alert-danger hidden" role="alert"
+                             id="login-error-message-container">
+                            <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+                            <span class="sr-only">Error:</span> <span id="login-error-message"></span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </li>
+    </ul>
+</li>
+                    </ul>
+
+                    <div class="header-content-responsive hidden-sm hidden-md hidden-lg">
+                        <div class="collapsed-button-container">
+                            <button type="button" class="navbar-toggle pull-right"
+                                    data-toggle="collapse" data-target="#main-navigation-menu"
+                                    aria-expanded="false" aria-controls="navbar">
+                                <i class="fa fa-bars fa-lg"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- banner with navigation -->
+            <div class="banner">
+                <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="logo-container">
+    <a href="/" title="Accueil">
+        <img alt="logo" src="/assets/bootstrap/3.3.5/images/logo_telecomparistech_lg.png" />
+    </a>
+</div>
+
+                            <div class="navbar-collapse collapse" id="main-navigation-menu">
+                                <div class="col-md-9 col-sm-12">
+                                    <ul class="nav navbar-nav">
+                                        <li class=""><a href="/" >Accueil</a></li><li class="dropdown"><a href="/catalogue" class="dropdown-toggle" data-toggle="dropdown">Les formations<i class="fa fa-caret-down"></i></a><ul  class="dropdown-menu"><li class="dropdown-submenu"><a href="/catalogue/2024-2025" ><b>Catalogue 2024 - 2025</b></a><ul  class="dropdown-menu"><li class="dropdown-submenu"><a href="/catalogue/2024-2025/type/Ing%25C3%25A9nieur" >Ingénieur</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2024-2025/diplome/4/ING-diplome-d-ingenieur" >ING&nbsp;-&nbsp;Diplôme d'ingénieur</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2024-2025/type/Master" >Master</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2024-2025/diplome/2490/M1DATAAI-master-m1-data-and-artificial-intelligence" >M1DATAAI&nbsp;-&nbsp;Master M1 - Data and Artificial Intelligence</a></li><li class=""><a href="/catalogue/2024-2025/diplome/2489/M1IGD-master-m1-interaction-graphic-design" >M1IGD&nbsp;-&nbsp;Master M1 - Interaction, Graphic & Design</a></li><li class=""><a href="/catalogue/2024-2025/diplome/2064/M1REDESI-master-m1-recherche-en-design" >M1REDESI&nbsp;-&nbsp;Master M1 - recherche en Design</a></li><li class=""><a href="/catalogue/2024-2025/diplome/2083/M2DATAAI-master-m2-data-artificial-intelligence" >M2DATAAI&nbsp;-&nbsp;Master M2 - Data & Artificial Intelligence</a></li><li class=""><a href="/catalogue/2024-2025/diplome/1327/M2ICS-master-m2-integration-circuits-and-systems" >M2ICS&nbsp;-&nbsp;Master M2 - Integration, Circuits and Systems</a></li><li class=""><a href="/catalogue/2024-2025/diplome/26/M2IGD-master-m2-interaction-graphic-design" >M2IGD&nbsp;-&nbsp;Master M2 - Interaction, Graphic & Design</a></li><li class=""><a href="/catalogue/2024-2025/diplome/42/M2IREN-master-m2-industries-de-reseau-et-economie-numerique" >M2IREN&nbsp;-&nbsp;Master M2 - Industries de Réseau et Economie Numérique</a></li><li class=""><a href="/catalogue/2024-2025/diplome/2065/M2MICAS-master-m2-information-processing-machine-learning-communications-and-security" >M2MICAS&nbsp;-&nbsp;Master M2- Information processing: machine learning, communications and security</a></li><li class=""><a href="/catalogue/2024-2025/diplome/38/M2MVA-master-m2-mathematiques-vision-apprentissage" >M2MVA&nbsp;-&nbsp;Master M2 - Mathématiques, Vision, Apprentissage</a></li><li class=""><a href="/catalogue/2024-2025/diplome/2491/M2RECHDESI-master-m2-recherche-en-design" >M2RECHDESI&nbsp;-&nbsp;Master M2 - Recherche en Design</a></li><li class=""><a href="/catalogue/2024-2025/diplome/1857/M2SETI-master-m2-systemes-embarques-et-traitement-de-l-information" >M2SETI&nbsp;-&nbsp;Master M2 - Systèmes embarqués et traitement de l'information</a></li><li class=""><a href="/catalogue/2024-2025/diplome/2492/PHDCOMPSC-phd-track-computer-science" >PHDCOMPSC&nbsp;-&nbsp;PhD Track - Computer Science</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2024-2025/type/Mast%25C3%25A8re+sp%25C3%25A9cialis%25C3%25A9" >Mastère spécialisé</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2024-2025/diplome/61/ADE-architecte-digital-d-entreprise" >ADE&nbsp;-&nbsp;Architecte Digital d'Entreprise</a></li><li class=""><a href="/catalogue/2024-2025/diplome/60/ARC-architecte-reseaux-et-cybersecurite" >ARC&nbsp;-&nbsp;Architecte Réseaux et Cybersécurité</a></li><li class=""><a href="/catalogue/2024-2025/diplome/62/BGD-big-data-gestion-et-analyse-des-donnees-massives" >BGD&nbsp;-&nbsp;Big Data : gestion et analyse des données massives</a></li><li class=""><a href="/catalogue/2024-2025/diplome/78/CYBER2-cybersecurite-et-cyberdefense" >CYBER2&nbsp;-&nbsp;Cybersécurité et Cyberdéfense</a></li><li class=""><a href="/catalogue/2024-2025/diplome/65/ECRSI-expert-cybersecurite-des-reseaux-et-des-systemes-d-information" >ECRSI&nbsp;-&nbsp;Expert cybersécurité des réseaux et des systèmes d'information</a></li><li class=""><a href="/catalogue/2024-2025/diplome/1996/IA-ia-intelligence-artificielle" >IA&nbsp;-&nbsp;IA : Intelligence Artificielle</a></li><li class=""><a href="/catalogue/2024-2025/diplome/1846/SMOB-smart-mobility-transformation-numerique-des-systemes-de-mobilite" >SMOB&nbsp;-&nbsp;Smart Mobility - Transformation Numérique des Systèmes de Mobilité</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2024-2025/type/Programme+d%2527%25C3%25A9change" >Programme d'échange</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2024-2025/diplome/1/PEI-echange-international-non-diplomant" >PEI&nbsp;-&nbsp;Echange international non diplomant</a></li></ul></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2023-2024" >Catalogue 2023 - 2024</a><ul  class="dropdown-menu"><li class="dropdown-submenu"><a href="/catalogue/2023-2024/type/Certificat+d%2527Etudes+Sp%25C3%25A9cialis%25C3%25A9es" >Certificat d'Etudes Spécialisées</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2023-2024/diplome/2179/CESCDRS-ces-cybersecurite-des-donnees-reseaux-et-systemes" >CESCDRS&nbsp;-&nbsp;CES Cybersécurité des données, réseaux et systèmes</a></li><li class=""><a href="/catalogue/2023-2024/diplome/2276/CESCDRS-INTRA-ces-cybersecurite-des-donnees-reseaux-et-systemes-intra" >CESCDRS-INTRA&nbsp;-&nbsp;CES Cybersécurité des données, réseaux et systèmes-INTRA</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2023-2024/type/Ing%25C3%25A9nieur" >Ingénieur</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2023-2024/diplome/4/ING-diplome-d-ingenieur" >ING&nbsp;-&nbsp;Diplôme d'ingénieur</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2023-2024/type/Master" >Master</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2023-2024/diplome/2083/DATA-AI-data-artificial-intelligence" >DATA AI&nbsp;-&nbsp;Data & Artificial Intelligence</a></li><li class=""><a href="/catalogue/2023-2024/diplome/2064/DESIGN-master-recherche-en-design" >DESIGN&nbsp;-&nbsp;Master recherche en Design</a></li><li class=""><a href="/catalogue/2023-2024/diplome/1327/ICS-integration-circuits-systems" >ICS&nbsp;-&nbsp;Integration Circuits Systems</a></li><li class=""><a href="/catalogue/2023-2024/diplome/26/IGD-interaction-graphic-design" >IGD&nbsp;-&nbsp;Interaction, Graphic & Design</a></li><li class=""><a href="/catalogue/2023-2024/diplome/42/IREN-industries-de-reseau-et-economie-numerique-iren" >IREN&nbsp;-&nbsp;Industries de réseau et economie numérique (IREN)</a></li><li class=""><a href="/catalogue/2023-2024/diplome/2065/MICAS-information-processing-machine-learning-communications-and-security" >MICAS&nbsp;-&nbsp;Information processing: machine learning, communications and security</a></li><li class=""><a href="/catalogue/2023-2024/diplome/38/MVA-mathematiques-vision-apprentissage" >MVA&nbsp;-&nbsp;Mathématiques, Vision, Apprentissage</a></li><li class=""><a href="/catalogue/2023-2024/diplome/1857/SETI-systemes-embarques-et-traitement-de-l-information" >SETI&nbsp;-&nbsp;Systèmes embarqués et traitement de l'information</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2023-2024/type/Master+T%25C3%25A9l%25C3%25A9com+SudParis" >Master Télécom SudParis</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2023-2024/diplome/2067/CSN-informatique-pour-les-reseaux" >CSN&nbsp;-&nbsp;Informatique pour les Réseaux</a></li><li class=""><a href="/catalogue/2023-2024/diplome/2072/CYBER-M1-cybersecurity-m1" >Cyber M1&nbsp;-&nbsp;Cybersecurity M1</a></li><li class=""><a href="/catalogue/2023-2024/diplome/2073/CYBER-M2-cybersecurity-m2" >Cyber M2&nbsp;-&nbsp;Cybersecurity M2</a></li><li class=""><a href="/catalogue/2023-2024/diplome/2291/EECIP-electrical-engineering-for-communication-information-processing" >EECIP&nbsp;-&nbsp;Electrical Engineering for Communication Information Processing</a></li><li class=""><a href="/catalogue/2023-2024/diplome/40/MN-multimedia-networking-m2" >MN&nbsp;-&nbsp;Multimedia Networking M2</a></li><li class=""><a href="/catalogue/2023-2024/diplome/2076/PDS-M1-systemes-distribues-et-paralleles-m1" >PDS M1&nbsp;-&nbsp;Systèmes distribués et parallèles M1</a></li><li class=""><a href="/catalogue/2023-2024/diplome/2077/PDS-M2-systemes-distribues-et-paralleles-m2" >PDS M2&nbsp;-&nbsp;Systèmes distribués et parallèles M2</a></li><li class=""><a href="/catalogue/2023-2024/diplome/2069/TRIED-M2-traitement-de-l-information-exploitation-des-donnees-master-2" >TRIED M2&nbsp;-&nbsp;Traitement de l'Information & Exploitation des Données Master 2</a></li><li class=""><a href="/catalogue/2023-2024/diplome/2070/VAR-virtual-augmented-reality-m2" >VAR&nbsp;-&nbsp;Virtual & Augmented Reality M2</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2023-2024/type/Mast%25C3%25A8re+sp%25C3%25A9cialis%25C3%25A9" >Mastère spécialisé</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2023-2024/diplome/61/ADE-architecte-digital-d-entreprise" >ADE&nbsp;-&nbsp;Architecte Digital d'Entreprise</a></li><li class=""><a href="/catalogue/2023-2024/diplome/60/ARC-architecte-reseaux-et-cybersecurite" >ARC&nbsp;-&nbsp;Architecte Réseaux et Cybersécurité</a></li><li class=""><a href="/catalogue/2023-2024/diplome/62/BGD-big-data-gestion-et-analyse-des-donnees-massives" >BGD&nbsp;-&nbsp;Big Data : gestion et analyse des données massives</a></li><li class=""><a href="/catalogue/2023-2024/diplome/65/CARC-conception-architecture-de-reseaux-et-cybersecurite" >CARC&nbsp;-&nbsp;Conception, Architecture de Réseaux et Cybersécurité</a></li><li class=""><a href="/catalogue/2023-2024/diplome/64/CPD-concepteur-de-projet-digital" >CPD&nbsp;-&nbsp;Concepteur de Projet Digital</a></li><li class=""><a href="/catalogue/2023-2024/diplome/78/CYBER2-cybersecurite-et-cyberdefense" >CYBER2&nbsp;-&nbsp;Cybersécurité et Cyberdéfense</a></li><li class=""><a href="/catalogue/2023-2024/diplome/1996/IA-ia-intelligence-artificielle" >IA&nbsp;-&nbsp;IA : Intelligence Artificielle</a></li><li class=""><a href="/catalogue/2023-2024/diplome/72/MSIR-management-des-systemes-d-information-en-reseaux" >MSIR&nbsp;-&nbsp;Management des systèmes d'information en réseaux</a></li><li class=""><a href="/catalogue/2023-2024/diplome/1846/SMOB-smart-mobility-transformation-numerique-des-systemes-de-mobilite" >SMOB&nbsp;-&nbsp;Smart Mobility - Transformation Numérique des Systèmes de Mobilité</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2023-2024/type/Programme+d%2527%25C3%25A9change" >Programme d'échange</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2023-2024/diplome/1/PEI-echange-international-non-diplomant" >PEI&nbsp;-&nbsp;Echange international non diplomant</a></li></ul></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2022-2023" >Catalogue 2022 - 2023</a><ul  class="dropdown-menu"><li class="dropdown-submenu"><a href="/catalogue/2022-2023/type/Ing%25C3%25A9nieur" >Ingénieur</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2022-2023/diplome/4/ING-diplome-d-ingenieur" >ING&nbsp;-&nbsp;Diplôme d'ingénieur</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2022-2023/type/Master" >Master</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2022-2023/diplome/2083/DATA-AI-data-artificial-intelligence" >DATA AI&nbsp;-&nbsp;Data & Artificial Intelligence</a></li><li class=""><a href="/catalogue/2022-2023/diplome/2064/DESIGN-master-recherche-en-design" >DESIGN&nbsp;-&nbsp;Master recherche en Design</a></li><li class=""><a href="/catalogue/2022-2023/diplome/1327/ICS-integration-circuits-systems" >ICS&nbsp;-&nbsp;Integration Circuits Systems</a></li><li class=""><a href="/catalogue/2022-2023/diplome/26/IGD-interaction-graphic-design" >IGD&nbsp;-&nbsp;Interaction, Graphic & Design</a></li><li class=""><a href="/catalogue/2022-2023/diplome/42/IREN-industries-de-reseau-et-economie-numerique-iren" >IREN&nbsp;-&nbsp;Industries de réseau et economie numérique (IREN)</a></li><li class=""><a href="/catalogue/2022-2023/diplome/2065/MICAS-information-processing-machine-learning-communications-and-security" >MICAS&nbsp;-&nbsp;Information processing: machine learning, communications and security</a></li><li class=""><a href="/catalogue/2022-2023/diplome/38/MVA-mathematiques-vision-apprentissage" >MVA&nbsp;-&nbsp;Mathématiques, Vision, Apprentissage</a></li><li class=""><a href="/catalogue/2022-2023/diplome/1857/SETI-systemes-embarques-et-traitement-de-l-information" >SETI&nbsp;-&nbsp;Systèmes embarqués et traitement de l'information</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2022-2023/type/Master+T%25C3%25A9l%25C3%25A9com+SudParis" >Master Télécom SudParis</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2022-2023/diplome/2073/CYBER-M2-cybersecurity-m2" >Cyber M2&nbsp;-&nbsp;Cybersecurity M2</a></li><li class=""><a href="/catalogue/2022-2023/diplome/40/MN-multimedia-networking-m2" >MN&nbsp;-&nbsp;Multimedia Networking M2</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2022-2023/type/Mast%25C3%25A8re+sp%25C3%25A9cialis%25C3%25A9" >Mastère spécialisé</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2022-2023/diplome/61/ADE-architecte-digital-d-entreprise" >ADE&nbsp;-&nbsp;Architecte Digital d'Entreprise</a></li><li class=""><a href="/catalogue/2022-2023/diplome/60/ARC-architecte-reseaux-et-cybersecurite" >ARC&nbsp;-&nbsp;Architecte Réseaux et Cybersécurité</a></li><li class=""><a href="/catalogue/2022-2023/diplome/62/BGD-big-data-gestion-et-analyse-des-donnees-massives" >BGD&nbsp;-&nbsp;Big Data : gestion et analyse des données massives</a></li><li class=""><a href="/catalogue/2022-2023/diplome/65/CARC-conception-et-architecture-de-reseaux-et-cybersecurite" >CARC&nbsp;-&nbsp;Conception et Architecture de Réseaux et Cybersécurité</a></li><li class=""><a href="/catalogue/2022-2023/diplome/64/CPD-concepteur-de-projet-digital" >CPD&nbsp;-&nbsp;Concepteur de Projet Digital</a></li><li class=""><a href="/catalogue/2022-2023/diplome/78/CYBER2-cybersecurite-et-cyberdefense" >CYBER2&nbsp;-&nbsp;Cybersécurité et Cyberdéfense</a></li><li class=""><a href="/catalogue/2022-2023/diplome/1996/IA-ia-intelligence-artificielle" >IA&nbsp;-&nbsp;IA : Intelligence Artificielle</a></li><li class=""><a href="/catalogue/2022-2023/diplome/72/MSIR-management-des-systemes-d-information-en-reseaux" >MSIR&nbsp;-&nbsp;Management des systèmes d'information en réseaux</a></li><li class=""><a href="/catalogue/2022-2023/diplome/1846/SMOB-smart-mobility-transformation-numerique-des-systemes-de-mobilite" >SMOB&nbsp;-&nbsp;Smart Mobility - Transformation Numérique des Systèmes de Mobilité</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2022-2023/type/Programme+d%2527%25C3%25A9change" >Programme d'échange</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2022-2023/diplome/1/PEI-echange-international-non-diplomant" >PEI&nbsp;-&nbsp;Echange international non diplomant</a></li></ul></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2021-2022" >Catalogue 2021 - 2022</a><ul  class="dropdown-menu"><li class="dropdown-submenu"><a href="/catalogue/2021-2022/type/Master" >Master</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2021-2022/diplome/2064/DESIGN-master-recherche-en-design" >DESIGN&nbsp;-&nbsp;Master recherche en Design</a></li></ul></li></ul></li></ul></li>                                    </ul>
+                                </div>
+                            </div> <!-- navbar-collapse -->
+
+                        </div> <!-- row -->
+                    </div> <!-- container-fluid -->
+                </nav> <!--/.nav-collapse -->
+            </div>
+            <!-- Version SynapseS  -->
+            <div id="app-version-label">v2.11.0 (5705)</div>
+            <div id="breadcrumbs">
+                <ul>
+            <li class="item root-item">
+            <span>Accueil</span>
+        </li>
+    </ul>
+            </div>
+        </div>
+
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                                        <div id="content-wrapper" class="col-md-12">
+                        <div id="flash-messages" class="flash-messages" class="row">
+</div>
+<script type="text/javascript">
+    setTimeout(function() {
+        $('.flash-messages').find('ul').fadeOut(3000, function() {
+            $('.flash-messages').find('ul').remove();
+        });
+    }, 9000);
+</script>                        <header>
+    <h1>
+        <a href="/catalogue/2024-2025">
+            <i class="fa fa-level-up btn"></i>
+        </a>
+        <span class="type-objet-fiche">Langues et Culture</span>&nbsp;-&nbsp;<span class="code">LDE_5P003_TP&nbsp;: </span><span class="titre">Projet Allemand</span>    </h1>
+
+    <h2 class="subtitle">Domaine&nbsp;&gt;&nbsp;Langues et Cultures, Allemand.</h2>
+</header>
+<script type = 'text/javascript'>
+    $(function() {
+        var nbItems = $('#breadcrumbs ul li').length;
+        var firstItem, secondItem;
+        if (nbItems == 1) {
+            firstItem = '<li class="item level-1"><span><a href="/catalogue"><span>'+$('.navbar-nav [href="/catalogue"]').text()+'</span></a></li>';
+            secondItem = '<li class="item level-2"><span>'+ $('h1 .type-objet-fiche').html() +'</span></li>';
+            var currentItem = '<li class="item current-item"><span>'+ $('h1 .code').text() + ' ' + $('h1 .titre').text() +'</span></li>';
+            $('#breadcrumbs ul').html(firstItem + secondItem + currentItem);
+        }
+                firstItem = '<span><a href="'+'/catalogue/2024-2025'+'">'+'Catalogue 2024-2025'+'</span></a>';
+        $('#breadcrumbs ul li.level-1').html(firstItem);
+        $('.fa-level-up').parent('a').attr('href', '/catalogue/2024-2025');
+                $('#breadcrumbs ul li.level-2').remove();
+            });
+</script>
+<main id="main-content-fiche-ue">
+    <section class="first-paragraph">
+<h2 class="titre_paragraphe">Descriptif</h2>
+
+<p>La capacit&eacute; &agrave; communiquer, intervenir et interagir de mani&egrave;re pr&eacute;cise, adapt&eacute;e et pertinente en contexte international est un &eacute;l&eacute;ment essentiel dans la formation des ing&eacute;nieur.e.s de demain. Cet UE a pour objectif de perfectionner les comp&eacute;tences lexicales et syntaxiques pour am&eacute;liorer l'aisance dans l'expression orale et &eacute;crite afin de gagner en fluidit&eacute; et en pr&eacute;cision. Un travail approfondi sur les structures complexes et les expressions synonymes enrichies sera propos&eacute;.</p>
+<p>R&eacute;alisation de projets en allemand &agrave; partir d&rsquo;un niveau A2 acquis en individuel.le ou &agrave; deux avec une dur&eacute;e de 45-60min. Ce cours est propos&eacute; aux &eacute;l&egrave;ves qui ne peuvent pas int&eacute;grer un cours d&rsquo;une TH fixe et a lieu toutes les 3 ou 4 semaines (rendez-vous &agrave; fixer avec l&rsquo;enseignant.e en d&eacute;but de chaque semestre en fonction des disponibilit&eacute;s).</p>
+<p>Il s&rsquo;ag&icirc;t de rencontres r&eacute;guli&egrave;res pour un &eacute;change oral avec l'enseignant.e et selon les objectifs individuels fix&eacute;s. Les notes et plans, r&eacute;sum&eacute;s, commentaires, analyses etc. se pr&eacute;parent &agrave; l&rsquo;&eacute;crit avant le cours et font partie de la note globale de fin de semestre. L&rsquo;&eacute;l&egrave;ve choisit son sujet / ses sujets en partant d&rsquo;un centre d&rsquo;int&eacute;r&ecirc;t, l'enseignant.e l&rsquo;aide et le guide, peut fournir des id&eacute;es et des documents. Les &eacute;l&egrave;ves d&eacute;velopperont les sujets de fa&ccedil;on approfondie afin de d&eacute;velopper leurs connaissances diverses des pays germanophones et de leurs relations avec d&rsquo;autres pays. La discussion peut se baser sur un th&egrave;me qui &eacute;volue au cours du semestre ou sur des th&egrave;mes qui varient &agrave; chaque rencontre ou apr&egrave;s deux ou trois pr&eacute;sentations.</p>
+<p>Explication et choix pratique (horaire, m&eacute;thode, besoin etc.) lors de la premi&egrave;re s&eacute;ance. Pr&eacute;paration du sujet choisi avec l&rsquo;aide de l&rsquo;enseignant.e, l&rsquo;&eacute;l&egrave;ve contacte l&rsquo;enseignant.e en cas de besoin. Echange, libre discussion et conseils &eacute;crits fournis &agrave; chaque rencontre. L&rsquo;enseignant.e attire l&rsquo;attention sur des &eacute;v&eacute;nements d&rsquo;actualit&eacute; et indique des possibilit&eacute;s pour am&eacute;liorer certaines comp&eacute;tences. Ce cours est en grande partie bas&eacute; sur l&rsquo;apprentissage en autonomie.</p></section>
+<section class="paragraph">
+<h2 class="titre_paragraphe">Objectifs pédagogiques</h2>
+
+<p>Parvenir &agrave; une gestion de plus en plus autonome d&rsquo;un projet choisi en am&eacute;liorant les comp&eacute;tences linguistiques &agrave; l&rsquo;oral et &agrave; l&rsquo;&eacute;crit. Enrichir des connaissances des pays germanophones et d&rsquo;autres th&egrave;mes.</p>
+<p>&Agrave; l'issue du Projet allemand B1/C1, l'&eacute;l&egrave;ve sera capable de&nbsp;</p>
+<ul>
+<li>Mobiliser ses connaissances des r&egrave;gles de la communication verbale et non-verbale dans la langue cible (niveau CECRL)</li>
+<li>Identifier et mobiliser les rep&egrave;res socio-culturels en respectant la diversit&eacute; du groupe et les enjeux du projet</li>
+<li>Interagir dans les situations interculturelles: en s&rsquo;adaptant et en respectant les comportements, les perceptions et les valeurs des membres d&rsquo;une &eacute;quipe internationale</li>
+<li>Agir comme m&eacute;diateur entre les parties prenantes ayant des langues et cultures diff&eacute;rentes</li>
+<li>Evaluer les situations de communication &eacute;crite et orale afin de mobiliser les outils linguistiques et socio-culturels appropri&eacute;s</li>
+</ul>
+<p><strong>Objectifs linguistiques&nbsp;: </strong>Perfectionner les comp&eacute;tences lexicales et syntaxiques pour am&eacute;liorer l'aisance dans l'expression orale et &eacute;crite afin de gagner en fluidit&eacute; et en pr&eacute;cision ; travail approfondi sur les structures complexes et les expressions synonymes enrichies (connecteurs de sens, particules pour nuancer etc.) ; acqu&eacute;rir un niveau de langue qui vise &agrave; atteindre le niveau B1, B2 ou C1 :</p>
+<ul>
+<li>Niveau B1 du CERCL : <em>Utilisateur ind&eacute;pendant -</em> <em>Peut comprendre les points essentiels quand un langage clair et standard est utilis&eacute; et s'il s'agit de choses famili&egrave;res dans le travail, &agrave; l'&eacute;cole, dans les loisirs, etc. Peut se d&eacute;brouiller dans la plupart des situations rencontr&eacute;es en voyage dans une r&eacute;gion o&ugrave; la langue cible est parl&eacute;e. Peut produire un discours simple et coh&eacute;rent sur des sujets familiers et dans ses domaines d'int&eacute;r&ecirc;t. Peut raconter un &eacute;v&eacute;nement, une exp&eacute;rience ou un r&ecirc;ve, d&eacute;crire un espoir ou un but et exposer bri&egrave;vement des raisons ou explications pour un projet ou une id&eacute;e.</em></li>
+<li>Niveau B2 du CECRL : <em>Utilisateur ind&eacute;pendant - Peut comprendre le contenu essentiel de sujets concrets ou abstraits dans un texte complexe, y compris une discussion technique dans sa sp&eacute;cialit&eacute;. Peut communiquer avec un degr&eacute; de spontan&eacute;it&eacute; et d'aisance tel qu'une conversation avec un locuteur natif ne comportant de tension ni pour l'un ni pour l'autre. Peut s'exprimer de fa&ccedil;on claire et d&eacute;taill&eacute;e sur une grande gamme de sujets, &eacute;mettre un avis sur un sujet d&rsquo;actualit&eacute; et exposer les avantages et les inconv&eacute;nients de diff&eacute;rentes possibilit&eacute;s.</em></li>
+<li>Niveau C1 du CECRL : <em>Utilisateur exp&eacute;riment&eacute;&nbsp;- </em><em>Peut comprendre une grande gamme de textes longs et exigeants, ainsi que saisir des significations implicites. Peut s'exprimer spontan&eacute;ment et couramment sans trop apparemment devoir chercher ses mots. Peut utiliser la langue de fa&ccedil;on efficace et souple dans sa vie sociale, professionnelle ou acad&eacute;mique. Peut s'exprimer sur des sujets complexes de fa&ccedil;on claire et bien structur&eacute;e et manifester son contr&ocirc;le des outils d'organisation, d'articulation et de coh&eacute;sion du discours.</em></li>
+</ul></section>
+<ul role="tablist" class="nav nav-tabs">
+    
+        <li role="presentation" class="active">
+		<a aria-expanded="true"
+		aria-controls="informations" data-toggle="tab" role="tab"
+		id="informations-tab" href="#informations">Informations générales</a>
+	</li>
+    
+        <li role="presentation" class="">
+		<a aria-expanded="false"
+		aria-controls="prerequis" data-toggle="tab" role="tab"
+		id="prerequis-tab" href="#prerequis">Pré-requis</a>
+	</li>
+    
+        <li role="presentation" class="">
+		<a aria-expanded="false"
+		aria-controls="acquisition" data-toggle="tab" role="tab"
+		id="acquisition-tab" href="#acquisition">Acquisition de l'UE</a>
+	</li>
+    
+        <li role="presentation" class="">
+		<a aria-expanded="false"
+		aria-controls="descriptif" data-toggle="tab" role="tab"
+		id="descriptif-tab" href="#descriptif">Descriptif & programme</a>
+	</li>
+    </ul>
+
+<div class="tab-content" id="tab-content">
+            <div aria-labelledby="informations-tab" id="informations" class="tab-pane fade active in" role="tabpanel">
+        <p class="tab-paragraph-title"></p><span class="temps-travail">
+    5 heures en présentiel</span>
+<p class="tab-paragraph-title"></p><span class="temps-travail">
+    45 heures de travail personnel estimé pour l’étudiant.</span>
+<p></p><h3 class="tab-paragraph-title" style="display: inline;" >effectifs minimal / maximal: </h3><span class="ue-effectifs">
+    1<span>/</span>9</span>
+<h3 class="tab-paragraph-title">Diplôme(s) concerné(s)</h3><ul class="link-list tab-link-list">
+    <li><a href="/catalogue/2024-2025/diplome/2063/PEF-programme-de-mobilite-des-etablissements-francais-partenaires" class="fiche">Programme de mobilité des établissements français partenaires</a></li><li><a href="/catalogue/2024-2025/diplome/1/PEI-echange-international-non-diplomant" class="fiche">Echange international non diplomant</a></li><li><a href="/catalogue/2024-2025/diplome/4/ING-diplome-d-ingenieur" class="fiche">Diplôme d'ingénieur</a></li></ul>
+        </div>
+                <div aria-labelledby="prerequis-tab" id="prerequis" class="tab-pane fade in" role="tabpanel">
+        <h3 class="tab-paragraph-title">Niveaux en cours d'acquisition</h3><ul class="item-list tab-item-list">
+    <li>
+        <span class="libelle">Niveau d'Allemand&nbsp;:</span>
+        <span class="valeur">B2.1</span>
+      </li><li>
+        <span class="libelle">Niveau d'Allemand&nbsp;:</span>
+        <span class="valeur">B2.2</span>
+      </li><li>
+        <span class="libelle">Niveau d'Allemand&nbsp;:</span>
+        <span class="valeur">B2</span>
+      </li><li>
+        <span class="libelle">Niveau d'Allemand&nbsp;:</span>
+        <span class="valeur">C1.1</span>
+      </li><li>
+        <span class="libelle">Niveau d'Allemand&nbsp;:</span>
+        <span class="valeur">C1.2</span>
+      </li><li>
+        <span class="libelle">Niveau d'Allemand&nbsp;:</span>
+        <span class="valeur">C1</span>
+      </li><li>
+        <span class="libelle">Niveau d'Allemand&nbsp;:</span>
+        <span class="valeur">C2.1</span>
+      </li><li>
+        <span class="libelle">Niveau d'Allemand&nbsp;:</span>
+        <span class="valeur">C2.2</span>
+      </li><li>
+        <span class="libelle">Niveau d'Allemand&nbsp;:</span>
+        <span class="valeur">C2</span>
+      </li></ul>
+<div class="prerequis">
+
+            <section class="fieldset prerequis" id="PEF" style="display:block">
+            <h2>Pour les étudiants du diplôme <span id="selected_diplome_title">Programme de mobilité des établissements français partenaires</span></h2>
+                    <p class="description tab-paragraph-text">Niveau A2 acquis, ce cours s'adresse uniquement aux &eacute;l&egrave;ves en 3A</p>
+                        </section>
+                <section class="fieldset prerequis" id="PEI" style="display:block">
+            <h2>Pour les étudiants du diplôme <span id="selected_diplome_title">Echange international non diplomant</span></h2>
+                    <p class="description tab-paragraph-text">Niveau A2 acquis, ce cours s'adresse uniquement aux &eacute;l&egrave;ves en 3A</p>
+                        </section>
+                <section class="fieldset prerequis" id="ING" style="display:block">
+            <h2>Pour les étudiants du diplôme <span id="selected_diplome_title">Diplôme d'ingénieur</span></h2>
+                    <p class="description tab-paragraph-text">Niveau A2 acquis, ce cours s'adresse uniquement aux &eacute;l&egrave;ves en 3A</p>
+                        </section>
+        
+</div>
+        </div>
+                <div aria-labelledby="acquisition-tab" id="acquisition" class="tab-pane fade in" role="tabpanel">
+        <h3 class="tab-paragraph-title">Format des notes</h3>Numérique sur 20<p class="tab-paragraph-title"></p>Littérale/grade européen <div class="acquisition">
+
+    
+        <section class="fieldset acquisition" id="PEI" style="display:block">
+            <h2>Pour les étudiants du diplôme <span id="selected_diplome_title">Echange international non diplomant</span></h2>
+                            <h3 class="tab-paragraph-title">Vos modalités d'acquisition : </h3>
+              <p class="tab-paragraph-text"><p>Contr&ocirc;le continue : Pr&eacute;sence assidue et active au cours, un travail r&eacute;gulier de r&eacute;vision et de pr&eacute;paration de cours &agrave; l&rsquo;oral comme &agrave; l&rsquo;&eacute;crit (devoirs &agrave; rendre) pendant toute l&rsquo;ann&eacute;e, interventions sous forme d&rsquo;expos&eacute; (seul(e) ou &agrave; deux).&nbsp;</p>
+<p>Devoirs &agrave; rendre par semestre:&nbsp;&nbsp;</p>
+<ul>
+<li>soit&nbsp;<u>3 devoirs de 10 pages</u>(document word ou open office, interligne 2,0)</li>
+<li>soit&nbsp;<u>4 devoirs de 7,5 pages</u>&nbsp;(document word ou open office, interligne 2,0)</li>
+</ul>
+<p>Notation : 50% participation en cours et expos&eacute;s oraux. 50% devoirs &agrave; rendre. Note finale sur 20. Note minimum pour valider l&rsquo;UE : 10/20.</p>
+<p><strong>Crit&egrave;res de notation :</strong> &eacute;volutives en fonction des projets, la r&eacute;gularit&eacute; des rencontres, la pr&eacute;paration en amont de devoirs &eacute;crits (les faits, les documents exploit&eacute;s, les moyens linguistiques, leurs utilisation), l&rsquo;implication g&eacute;n&eacute;rale. Si vous vous engagez &agrave; la pr&eacute;paration d&rsquo;un projet, les m&ecirc;mes r&egrave;gles comme pour les autres cours sont en vigueur.</p>
+<p><strong>Pour les cours de langues l'assiduit&eacute; globale sup&eacute;rieure &agrave; 90% est requise.</strong></p>
+<p><strong>Les premiers 10 % sont consid&eacute;r&eacute;s comme des absences justifi&eacute;es.</strong></p>
+<p>Ensuite,&nbsp;<strong>toutes</strong>&nbsp;les absences, quelle qu'en soit la raison (&eacute;v&eacute;nements organis&eacute;s &agrave; l'&eacute;cole ou au nom de l'&eacute;cole, r&eacute;unions ou entretiens professionnels, &eacute;v&eacute;nements sportifs, maladie de courte dur&eacute;e, obligations familiales, f&ecirc;tes religieuses), sont consid&eacute;r&eacute;es comme des absences&nbsp;<strong>non excus&eacute;es.</strong></p>
+<p>-10% d&rsquo;absences tol&eacute;r&eacute; = 1TH (1TH= 1h30)</p>
+<p>- Possibilit&eacute; de pr&eacute;-rattrapage de maximum 20% d&rsquo;absences (toutes absences confondues) = 2TH (1TH= 1h30)</p>
+<p>- Plus de 30% d&rsquo;absences =&gt; cours non valid&eacute;</p>              </p>            L'UE est acquise si Note finale >= 10<ul><li>Crédits ECTS acquis : 2 ECTS<li>Crédit de Langue acquis : 2</ul>
+                                <p class="tab-paragraph-title">La note obtenue rentre dans le calcul de votre GPA.</p>
+                           </section>
+    
+        <section class="fieldset acquisition" id="PEF" style="display:block">
+            <h2>Pour les étudiants du diplôme <span id="selected_diplome_title">Programme de mobilité des établissements français partenaires</span></h2>
+                            <h3 class="tab-paragraph-title">Vos modalités d'acquisition : </h3>
+              <p class="tab-paragraph-text"><p>Contr&ocirc;le continue : Pr&eacute;sence assidue et active au cours, un travail r&eacute;gulier de r&eacute;vision et de pr&eacute;paration de cours &agrave; l&rsquo;oral comme &agrave; l&rsquo;&eacute;crit (devoirs &agrave; rendre) pendant toute l&rsquo;ann&eacute;e, interventions sous forme d&rsquo;expos&eacute; (seul(e) ou &agrave; deux).&nbsp;</p>
+<p>Devoirs &agrave; rendre par semestre:&nbsp;&nbsp;</p>
+<ul>
+<li>soit&nbsp;<u>3 devoirs de 10 pages</u>(document word ou open office, interligne 2,0)</li>
+<li>soit&nbsp;<u>4 devoirs de 7,5 pages</u>&nbsp;(document word ou open office, interligne 2,0)</li>
+</ul>
+<p>Notation : 50% participation en cours et expos&eacute;s oraux. 50% devoirs &agrave; rendre. Note finale sur 20. Note minimum pour valider l&rsquo;UE : 10/20.</p>
+<p><strong>Crit&egrave;res de notation :</strong> &eacute;volutives en fonction des projets, la r&eacute;gularit&eacute; des rencontres, la pr&eacute;paration en amont de devoirs &eacute;crits (les faits, les documents exploit&eacute;s, les moyens linguistiques, leurs utilisation), l&rsquo;implication g&eacute;n&eacute;rale. Si vous vous engagez &agrave; la pr&eacute;paration d&rsquo;un projet, les m&ecirc;mes r&egrave;gles comme pour les autres cours sont en vigueur.</p>              </p>            L'UE est acquise si Note finale >= 10<ul><li>Crédits ECTS acquis : 2 ECTS<li>Crédit de Langue acquis : 2</ul>
+                                <p class="tab-paragraph-title">La note obtenue rentre dans le calcul de votre GPA.</p>
+                           </section>
+    
+        <section class="fieldset acquisition" id="ING" style="display:block">
+            <h2>Pour les étudiants du diplôme <span id="selected_diplome_title">Diplôme d'ingénieur</span></h2>
+                            <h3 class="tab-paragraph-title">Vos modalités d'acquisition : </h3>
+              <p class="tab-paragraph-text"><p>Contr&ocirc;le continue : Pr&eacute;sence assidue et active au cours, un travail r&eacute;gulier de r&eacute;vision et de pr&eacute;paration de cours &agrave; l&rsquo;oral comme &agrave; l&rsquo;&eacute;crit (devoirs &agrave; rendre) pendant toute l&rsquo;ann&eacute;e, interventions sous forme d&rsquo;expos&eacute; (seul(e) ou &agrave; deux).&nbsp;</p>
+<p>Devoirs &agrave; rendre par semestre:&nbsp;&nbsp;</p>
+<ul>
+<li>soit&nbsp;<u>3 devoirs de 10 pages</u>(document word ou open office, interligne 2,0)</li>
+<li>soit&nbsp;<u>4 devoirs de 7,5 pages</u>&nbsp;(document word ou open office, interligne 2,0)</li>
+</ul>
+<p>Notation : 50% participation en cours et expos&eacute;s oraux. 50% devoirs &agrave; rendre. Note finale sur 20. Note minimum pour valider l&rsquo;UE : 10/20.</p>
+<p><strong>Crit&egrave;res de notation :</strong> &eacute;volutives en fonction des projets, la r&eacute;gularit&eacute; des rencontres, la pr&eacute;paration en amont de devoirs &eacute;crits (les faits, les documents exploit&eacute;s, les moyens linguistiques, leurs utilisation), l&rsquo;implication g&eacute;n&eacute;rale. Si vous vous engagez &agrave; la pr&eacute;paration d&rsquo;un projet, les m&ecirc;mes r&egrave;gles comme pour les autres cours sont en vigueur.</p>              </p>            L'UE est acquise si Note finale >= 10<ul><li>Crédits ECTS acquis : 2 ECTS<li>Crédit de Langue acquis : 2</ul>
+                                <p class="tab-paragraph-title">La note obtenue rentre dans le calcul de votre GPA.</p>
+                           </section>
+    
+</div>
+        </div>
+                <div aria-labelledby="descriptif-tab" id="descriptif" class="tab-pane fade in" role="tabpanel">
+        <h3 class="tab-paragraph-title">Programme détaillé</h3><p>Rencontre en fonction du rendez-vous fix&eacute;. Application des conseils p&eacute;dagogiques, linguistiques et de m&eacute;thode pour r&eacute;aliser une production et un &eacute;change en allemand adapt&eacute;e &agrave; la th&eacute;matique. Exemples :</p>
+<ul>
+<li>Traiter un ou des &eacute;v&eacute;nement(s) d&rsquo;actualit&eacute; sur une ou plusieurs s&eacute;ance(s) &agrave; l&rsquo;aide d&rsquo;articles, de reportages, de statistiques, d&rsquo;avis compar&eacute;s etc. pour exposer oralement ou &agrave; l&rsquo;&eacute;crit les faits et son propre point de vue.</li>
+<li>Description et analyse d&rsquo;une &oelig;uvre culturelle (texte d&rsquo;auteur, tableau, film, exposition etc.) pour la situer dans son contexte historique, social, politique</li>
+<li>R&eacute;daction de textes en plusieurs &eacute;tapes (exp&eacute;rience personnelle, fiction). A chaque rencontre, un corrig&eacute; individuel guid&eacute; par l&rsquo;enseignant.e et appliqu&eacute; par l&rsquo;&eacute;l&egrave;ve lui-m&ecirc;me, discussion.</li>
+<li>En bin&ocirc;mes ou petits groupes&nbsp;: pr&eacute;paration des expressions n&eacute;cessaires et des structures pour mener une discussion pour et contre</li>
+<li>D&eacute;veloppement d&rsquo;une pr&eacute;sentation sur un centre d&rsquo;int&eacute;r&ecirc;t (sport, sciences, &eacute;conomique, politique, philosophie, musique etc.) pour la faire &eacute;voluer au cours des s&eacute;ances et enrichir ses connaissances et s&rsquo;ouvrir vers de nouvelles id&eacute;es et opinions</li>
+<li>Pr&eacute;paration aux examens de l&rsquo;Institut Goethe</li>
+</ul><h3 class="tab-paragraph-title">Mots clés</h3>Projet allemand civilisations actualités pays germanophones<h3 class="tab-paragraph-title">Méthodes pédagogiques</h3>Travail individuel ou en binôme, classe inversée. Utilisation de supports variés (articles de presse et d’autres sortes de textes, reportages, documents sonores, films) et apports de la part des élèves (actualité, controverses, reportages etc.).         </div>
+        </div>
+</main><div class="sidebar" id="sidebar-fiche-ue">
+    <div id='icon'>
+<!--        <a href="#" title="--><!--">-->
+<!--            <i class="fa btn fa-share-square-o"></i>-->
+<!--        </a>-->
+            </div>
+    <aside class="encadre" >
+<!-- ajout d'un ID CSS pour distinguer l'encadré Programmation de la fiche UE -->
+<h1 classe="titre-encadre">responsables</h1>
+            <div>
+                <div class="annuaire-modal-aware">                        <div class="annuaire-modal-photo">
+                                                            <i class="fa fa-user"></i>
+                            <span>Verena GALGANEK</span>                        </div>
+                                    </div>
+            </div>
+        
+</aside>
+<aside class="encadre" >
+<!-- ajout d'un ID CSS pour distinguer l'encadré Programmation de la fiche UE -->
+<h1 classe="titre-encadre">coordinateurs des études</h1>
+            <div>
+                <div class="annuaire-modal-aware">                        <div class="annuaire-modal-photo">
+                                                            <i class="fa fa-user"></i>
+                            <span>Estelle HENRI</span>                        </div>
+                                    </div>
+            </div>
+        
+</aside>
+<aside class="encadre" >
+<!-- ajout d'un ID CSS pour distinguer l'encadré Programmation de la fiche UE -->
+<h1 classe="titre-encadre">Equipe d'ingénierie pédagogique</h1>
+
+</aside>
+<aside class="encadre" >
+<!-- ajout d'un ID CSS pour distinguer l'encadré Programmation de la fiche UE -->
+<h1 classe="titre-encadre">programmation</h1>
+            <section class="titrage-occurrence">
+
+                <h2>Projet Allemand-3A-S1 - <span class="creneaux">LC-Mercredi 17h</span></h2>
+
+                                    <p class="subtitle">2024-2025 -1er semestre (du 11/09/24 au 12/02/25)</p>
+                            </section>
+                            <section class="responsable-occurrence">
+                    <!-- Responsable de l'Occurrence -->
+
+                    <h3>Responsable :</h3>
+                    <p>Verena GALGANEK</p>                </section>
+                            <section class="langues-occurrence">
+
+                    <!--  Langues de l'Occurrence -->
+                    <h3>Langues :</h3>
+                                        <p> Français, Allemand</p>
+                </section>
+
+                            <section class="effectifs-occurrence">
+
+                    <!--  Effectifs min/max de l'Occurrence -->
+                    <h3>Effectifs min./max. :</h3>
+                    <p>5 / 9</p>
+                </section>
+                                
+</aside>
+</div>
+<!-- Modal -->
+<div class="container">
+    <div class="modal annuaire-modal-aware" data-backdrop="true" id="annuaire-modal" tabindex="-1" role="dialog" aria-labelledby="Détails de la personne sélectionnée">
+        <div class="modal-dialog  modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close-modal" data-dismiss="modal" aria-label="Close">
+                        <i class="fa fa-times"></i>
+                    </button>
+                    <h3 class="modal-title"></h3>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="photo-column annuaire-modal-photo">
+                                <img data-default-src="/assets/bootstrap/3.3.5/images/annuaire/unknown.gif" src="" alt="" class="img-responsive" />
+                            </div>
+                            <div class="data-column">
+                                <div class="detail-line">
+                                    <div class="row">
+                                        <div class="list-group-item-heading">E-mail</div>
+                                        <div class="list-group-item-text" data-field="emailetb"></div>
+                                    </div>
+                                </div>
+
+                                <div class="detail-line">
+                                    <div class="row">
+
+                                        <div class="list-group-item-heading">Catégorie</div>
+                                        <div class="list-group-item-text" data-field="idcategory"
+                                             data-secundary-field='libelle'></div>
+                                    </div>
+
+                                </div>
+                                <div class="detail-line">
+                                    <div class="row">
+
+                                        <div class="list-group-item-heading">Site(s)</div>
+                                        <div class="list-group-item-text" data-field="idlocalisation"
+                                             data-secundary-field='intitule'></div>
+                                    </div>
+
+                                </div>
+                                <div class="detail-line">
+                                    <div class="row">
+
+                                        <div class="list-group-item-heading">Téléphone</div>
+                                        <div class="list-group-item-text" data-field="telephone1"></div>
+                                    </div>
+
+                                </div>
+                                <div class="detail-line">
+                                    <div class="row">
+
+                                        <div class="list-group-item-heading">Téléphone</div>
+                                        <div class="list-group-item-text" data-field="idlocalisation"
+                                             data-secundary-field='telephone'></div>
+                                    </div>
+
+                                </div>
+                                <div class="detail-line">
+                                    <div class="row">
+
+                                        <div class="list-group-item-heading">Entité de rattachement :</div>
+                                        <div class="list-group-item-text" data-field="idpersentite"
+                                             data-secundary-field='nom'></div>
+                                    </div>
+
+                                </div>
+                                <div class="detail-line">
+                                    <div class="row">
+
+                                        <div class="list-group-item-heading">Libelle diplôme :</div>
+                                        <div class="list-group-item-text" data-field="diplome"
+                                             data-secundary-field='libelle'></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="list-group-item-secundary-heading">Niveau :</div>
+                                        <div class="list-group-item-text" data-field="diplome"
+                                             data-secundary-field='niveau'></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="list-group-item-secundary-heading">Site :</div>
+                                        <div class="list-group-item-text" data-field="diplome"
+                                             data-secundary-field='site'></div>
+                                    </div>
+
+                                </div>
+                                <div class="detail-line">
+                                    <div class="row">
+
+                                        <div class="list-group-item-heading">Fonction :</div>
+                                        <div class="list-group-item-text" data-field="fonctions"
+                                             data-secundary-field='entite'></div>
+                                    </div>
+
+                                </div>
+                                <div class="detail-line">
+                                    <div class="row">
+
+                                        <div class="list-group-item-heading">Programme d'échange :</div>
+                                        <div class="list-group-item-text" data-field="progechange"
+                                             data-secundary-field='libelle'></div>
+                                    </div>
+
+                                </div>
+                                <div class="detail-line">
+                                    <div class="row">
+                                        <div class="list-group-item-heading">Régime d'inscription :</div>
+                                        <div class="list-group-item-text"
+                                             data-field="regimeinscription" data-secundary-field='libelle'></div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="preloader-container" id="preloader">
+	<img alt="Veuillez patienter"
+		src="/assets/bootstrap/3.3.5/images/preloader.png" />
+</div>                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--/.container-fluid -->
+                <div id="footer">
+            <div class="row">
+                <div class="col-md-11">
+                    <div class="row">
+    <div class="col-md-4 col-sm-12">
+        <div class="row">
+            <div class="col-md-12">
+<h1>Plan du site</h1><ul><li>Accueil</li><li>Les formations</li></ul>            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+    <ul><li><a href="#" onclick="Application.Modal.showModalAjax('modal-footer-contenu', 'Mentions légales', '/contenu/MENT_LEG', true)">Mentions légales</a></li>            </div>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-12">
+    </div>
+    <div class="col-md-4 col-sm-12">
+    </div>
+</div>
+                    <div class="modal" id="modal-footer-contenu" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg modal-full-width" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="row">
+                    <div class="col-md-11">
+                        <h4 class="modal-title" id="modal-title"></h4>
+                    </div>
+                    <div class="col-md-1 pull-right">
+                        <button type="button" class="close-modal" data-dismiss="modal" aria-label="Close">
+                            <i class="fa fa-times"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-body"></div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+                </div>
+            </div>
+        </div>
+        
+        <script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;bootstrap_3_3_5_i18n_js.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;bootstrap_3_3_5_push_area_js.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;vendor_bootstraptree_js.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;bootstrap_3_3_5_annuaire_modal_js.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;bootstrap_3_3_5_catalogue_fiche_element_formation_js.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;bootstrap_3_3_5_catalogue_fiche_ue_js.js"></script>        <div class="device-xs visible-xs"></div>
+        <div class="device-sm visible-sm"></div>
+        <div class="device-md visible-md"></div>
+        <div class="device-lg visible-lg"></div>
+
+    </body>
+</html>

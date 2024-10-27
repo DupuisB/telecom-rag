@@ -1,0 +1,1923 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <meta name="description" content="SynapseS">
+        <meta name="author" content="">
+        <script type="text/javascript">
+            var es6 = true;
+            try { eval("var foo = (x)=>x+1"); }
+            catch (e) { es6 = false; }
+
+            if (!es6) {
+                var script = document.createElement('script');
+                script.src = "/assets/app_polyfills.js";
+                script.setAttribute("type", "text/javascript");
+                document.head.appendChild(script);
+            }
+        </script>
+        <title>SynapseS</title><link href="&#x2F;assets&#x2F;vendor&#x2F;fontawesome&#x2F;css&#x2F;fontawesome.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;vendor&#x2F;bootstrap&#x2F;css&#x2F;bootstrap.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;app_base.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_calendrier_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_i18n_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_navigation_menu_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_push-area_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;vendor&#x2F;bootstraptree&#x2F;bootstrap-tree.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_annuaire_modal_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_catalogue_parcours_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;app_base_print.css" media="print" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;favicon.png" rel="icon" sizes="16x16" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;favicon.ico" rel="icon" type="image&#x2F;x-icon&#x20;">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;apple-touch-icon.png" rel="apple-touch-icon" sizes="76x76" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;apple-touch-icon-iphone.png" rel="apple-touch-icon" sizes="76x76" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;apple-touch-icon-iphone-retina.png" rel="apple-touch-icon" sizes="120x120" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;apple-touch-icon-ipad.png" rel="apple-touch-icon" sizes="76x76" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;apple-touch-icon-ipad-retina.png" rel="apple-touch-icon" sizes="152x152" type="image&#x2F;png"><script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;app_base_vendor.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;vendor&#x2F;jquery-migrate&#x2F;jquery-migrate.min.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;app_base.js"></script>    </head>
+
+    <body>
+        <div class="container header">
+            <!-- topbar -->
+            <div class="header-topbar">
+                <div class="logo-container">
+    <a href="/" title="Accueil">
+        <img alt="logo" src="/assets/bootstrap/3.3.5/images/logo_telecomparistech_sm.png" />
+    </a>
+</div>
+
+                <div class="banner-controls-container">
+                    <div class="top-banner-controls-container">
+                        <nav>
+                            <ul id="header-navigation-menu" class=""></ul>                        </nav>
+                    </div>
+
+                    <div class="bottom-banner-controls-container">
+                        <div class="language-switch-container">
+                            <ul id="language-switch">
+	<li class="dropdown">
+    	        <a class="dropdown-toggle" data-toggle="dropdown" href="#"> <span
+			class="lang-label" data-language="fr_FR">FR</span>
+            <span class="flag-icon flag-icon-fr"> </span>
+            <i class="fa fa-caret-down dropdown-toggle"></i>
+	</a>
+                <ul class="dropdown-menu">
+                                                            <li><a href="#" class="select-language"
+				data-language="en_US">
+                        <span class="flag-icon flag-icon-gb"> </span>
+                        English                    </a></li>
+                        </ul>
+	</li>
+</ul>
+<script>
+    var language = $(".lang-label").data("language");
+    i18next.use(i18nextXHRBackend).init({
+        ns: [language],
+        defaultNS: language,
+        nsSeparator: false,
+        keySeparator: false,
+        backend: {
+            loadPath: '/assets/i18n/' + language + '.json',
+        },
+        debug: false
+    });
+</script>
+<link href="&#x2F;assets&#x2F;vendor&#x2F;fontawesome&#x2F;css&#x2F;fontawesome.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;vendor&#x2F;bootstrap&#x2F;css&#x2F;bootstrap.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;app_base.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_calendrier_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_i18n_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_navigation_menu_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_push-area_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;vendor&#x2F;bootstraptree&#x2F;bootstrap-tree.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_annuaire_modal_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_catalogue_parcours_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;app_base_print.css" media="print" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;favicon.png" rel="icon" sizes="16x16" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;favicon.ico" rel="icon" type="image&#x2F;x-icon&#x20;">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;apple-touch-icon.png" rel="apple-touch-icon" sizes="76x76" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;apple-touch-icon-iphone.png" rel="apple-touch-icon" sizes="76x76" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;apple-touch-icon-iphone-retina.png" rel="apple-touch-icon" sizes="120x120" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;apple-touch-icon-ipad.png" rel="apple-touch-icon" sizes="76x76" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;apple-touch-icon-ipad-retina.png" rel="apple-touch-icon" sizes="152x152" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;vendor&#x2F;flag-icon-css&#x2F;css&#x2F;flag-icon.min.css" rel="stylesheet" type="text&#x2F;css">                        </div>
+                    </div>
+
+                    <!-- logout on small screens -->
+                    <ul id="connection-form-container" class="nav navbar-nav">
+                        <li id="dropdown-authentication-menu" class="dropdown dropdown-authentication-menu">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+        <i class="fa fa-user fa-lg hidden-sm hidden-md hidden-lg"></i>
+        <span class="hidden-xs">Connexion</span>
+        <i class="fa fa-caret-down"></i>
+    </a>
+    <ul id="dropdown-authentication-menu-content" class="dropdown-menu">
+        <li>
+            <div class="row">
+                <div class="col-md-12">
+                    <header>Utiliser mon compte école</header>
+                                        <a href="/login?type=Shib">
+                        <button class="btn btn-success btn-block">
+                            Je me connecte                        </button>
+                    </a>
+                                        <hr>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <header>Utiliser un compte provisoire</header>
+                </div>
+                <form id="login-form">
+                    <div class="col-md-12 form">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="identifier-area"
+                                   data-minlength="5" pattern="^[a-zA-Z0-9._\-@]+$"
+                                   placeholder="Nom d'utilisateur"
+                                   required="required">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" id="credential-area"
+                                   placeholder="Mot de passe"
+                                   required="required">
+                        </div>
+                        <div class="form-group">
+                            <button id="btn-login-provisoire" type="submit" class="btn btn-default btn-block">Valider</button>
+                        </div>
+                        <div class="alert alert-danger hidden" role="alert"
+                             id="login-error-message-container">
+                            <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+                            <span class="sr-only">Error:</span> <span id="login-error-message"></span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </li>
+    </ul>
+</li>
+                    </ul>
+
+                    <div class="header-content-responsive hidden-sm hidden-md hidden-lg">
+                        <div class="collapsed-button-container">
+                            <button type="button" class="navbar-toggle pull-right"
+                                    data-toggle="collapse" data-target="#main-navigation-menu"
+                                    aria-expanded="false" aria-controls="navbar">
+                                <i class="fa fa-bars fa-lg"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- banner with navigation -->
+            <div class="banner">
+                <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="logo-container">
+    <a href="/" title="Accueil">
+        <img alt="logo" src="/assets/bootstrap/3.3.5/images/logo_telecomparistech_lg.png" />
+    </a>
+</div>
+
+                            <div class="navbar-collapse collapse" id="main-navigation-menu">
+                                <div class="col-md-9 col-sm-12">
+                                    <ul class="nav navbar-nav">
+                                        <li class=""><a href="/" >Accueil</a></li><li class="dropdown"><a href="/catalogue" class="dropdown-toggle" data-toggle="dropdown">Les formations<i class="fa fa-caret-down"></i></a><ul  class="dropdown-menu"><li class="dropdown-submenu"><a href="/catalogue/2024-2025" ><b>Catalogue 2024 - 2025</b></a><ul  class="dropdown-menu"><li class="dropdown-submenu"><a href="/catalogue/2024-2025/type/Ing%25C3%25A9nieur" >Ingénieur</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2024-2025/diplome/4/ING-diplome-d-ingenieur" >ING&nbsp;-&nbsp;Diplôme d'ingénieur</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2024-2025/type/Master" >Master</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2024-2025/diplome/2490/M1DATAAI-master-m1-data-and-artificial-intelligence" >M1DATAAI&nbsp;-&nbsp;Master M1 - Data and Artificial Intelligence</a></li><li class=""><a href="/catalogue/2024-2025/diplome/2489/M1IGD-master-m1-interaction-graphic-design" >M1IGD&nbsp;-&nbsp;Master M1 - Interaction, Graphic & Design</a></li><li class=""><a href="/catalogue/2024-2025/diplome/2064/M1REDESI-master-m1-recherche-en-design" >M1REDESI&nbsp;-&nbsp;Master M1 - recherche en Design</a></li><li class=""><a href="/catalogue/2024-2025/diplome/2083/M2DATAAI-master-m2-data-artificial-intelligence" >M2DATAAI&nbsp;-&nbsp;Master M2 - Data & Artificial Intelligence</a></li><li class=""><a href="/catalogue/2024-2025/diplome/1327/M2ICS-master-m2-integration-circuits-and-systems" >M2ICS&nbsp;-&nbsp;Master M2 - Integration, Circuits and Systems</a></li><li class=""><a href="/catalogue/2024-2025/diplome/26/M2IGD-master-m2-interaction-graphic-design" >M2IGD&nbsp;-&nbsp;Master M2 - Interaction, Graphic & Design</a></li><li class=""><a href="/catalogue/2024-2025/diplome/42/M2IREN-master-m2-industries-de-reseau-et-economie-numerique" >M2IREN&nbsp;-&nbsp;Master M2 - Industries de Réseau et Economie Numérique</a></li><li class=""><a href="/catalogue/2024-2025/diplome/2065/M2MICAS-master-m2-information-processing-machine-learning-communications-and-security" >M2MICAS&nbsp;-&nbsp;Master M2- Information processing: machine learning, communications and security</a></li><li class=""><a href="/catalogue/2024-2025/diplome/38/M2MVA-master-m2-mathematiques-vision-apprentissage" >M2MVA&nbsp;-&nbsp;Master M2 - Mathématiques, Vision, Apprentissage</a></li><li class=""><a href="/catalogue/2024-2025/diplome/2491/M2RECHDESI-master-m2-recherche-en-design" >M2RECHDESI&nbsp;-&nbsp;Master M2 - Recherche en Design</a></li><li class=""><a href="/catalogue/2024-2025/diplome/1857/M2SETI-master-m2-systemes-embarques-et-traitement-de-l-information" >M2SETI&nbsp;-&nbsp;Master M2 - Systèmes embarqués et traitement de l'information</a></li><li class=""><a href="/catalogue/2024-2025/diplome/2492/PHDCOMPSC-phd-track-computer-science" >PHDCOMPSC&nbsp;-&nbsp;PhD Track - Computer Science</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2024-2025/type/Mast%25C3%25A8re+sp%25C3%25A9cialis%25C3%25A9" >Mastère spécialisé</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2024-2025/diplome/61/ADE-architecte-digital-d-entreprise" >ADE&nbsp;-&nbsp;Architecte Digital d'Entreprise</a></li><li class=""><a href="/catalogue/2024-2025/diplome/60/ARC-architecte-reseaux-et-cybersecurite" >ARC&nbsp;-&nbsp;Architecte Réseaux et Cybersécurité</a></li><li class=""><a href="/catalogue/2024-2025/diplome/62/BGD-big-data-gestion-et-analyse-des-donnees-massives" >BGD&nbsp;-&nbsp;Big Data : gestion et analyse des données massives</a></li><li class=""><a href="/catalogue/2024-2025/diplome/78/CYBER2-cybersecurite-et-cyberdefense" >CYBER2&nbsp;-&nbsp;Cybersécurité et Cyberdéfense</a></li><li class=""><a href="/catalogue/2024-2025/diplome/65/ECRSI-expert-cybersecurite-des-reseaux-et-des-systemes-d-information" >ECRSI&nbsp;-&nbsp;Expert cybersécurité des réseaux et des systèmes d'information</a></li><li class=""><a href="/catalogue/2024-2025/diplome/1996/IA-ia-intelligence-artificielle" >IA&nbsp;-&nbsp;IA : Intelligence Artificielle</a></li><li class=""><a href="/catalogue/2024-2025/diplome/1846/SMOB-smart-mobility-transformation-numerique-des-systemes-de-mobilite" >SMOB&nbsp;-&nbsp;Smart Mobility - Transformation Numérique des Systèmes de Mobilité</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2024-2025/type/Programme+d%2527%25C3%25A9change" >Programme d'échange</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2024-2025/diplome/1/PEI-echange-international-non-diplomant" >PEI&nbsp;-&nbsp;Echange international non diplomant</a></li></ul></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2023-2024" >Catalogue 2023 - 2024</a><ul  class="dropdown-menu"><li class="dropdown-submenu"><a href="/catalogue/2023-2024/type/Certificat+d%2527Etudes+Sp%25C3%25A9cialis%25C3%25A9es" >Certificat d'Etudes Spécialisées</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2023-2024/diplome/2179/CESCDRS-ces-cybersecurite-des-donnees-reseaux-et-systemes" >CESCDRS&nbsp;-&nbsp;CES Cybersécurité des données, réseaux et systèmes</a></li><li class=""><a href="/catalogue/2023-2024/diplome/2276/CESCDRS-INTRA-ces-cybersecurite-des-donnees-reseaux-et-systemes-intra" >CESCDRS-INTRA&nbsp;-&nbsp;CES Cybersécurité des données, réseaux et systèmes-INTRA</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2023-2024/type/Ing%25C3%25A9nieur" >Ingénieur</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2023-2024/diplome/4/ING-diplome-d-ingenieur" >ING&nbsp;-&nbsp;Diplôme d'ingénieur</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2023-2024/type/Master" >Master</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2023-2024/diplome/2083/DATA-AI-data-artificial-intelligence" >DATA AI&nbsp;-&nbsp;Data & Artificial Intelligence</a></li><li class=""><a href="/catalogue/2023-2024/diplome/2064/DESIGN-master-recherche-en-design" >DESIGN&nbsp;-&nbsp;Master recherche en Design</a></li><li class=""><a href="/catalogue/2023-2024/diplome/1327/ICS-integration-circuits-systems" >ICS&nbsp;-&nbsp;Integration Circuits Systems</a></li><li class=""><a href="/catalogue/2023-2024/diplome/26/IGD-interaction-graphic-design" >IGD&nbsp;-&nbsp;Interaction, Graphic & Design</a></li><li class=""><a href="/catalogue/2023-2024/diplome/42/IREN-industries-de-reseau-et-economie-numerique-iren" >IREN&nbsp;-&nbsp;Industries de réseau et economie numérique (IREN)</a></li><li class=""><a href="/catalogue/2023-2024/diplome/2065/MICAS-information-processing-machine-learning-communications-and-security" >MICAS&nbsp;-&nbsp;Information processing: machine learning, communications and security</a></li><li class=""><a href="/catalogue/2023-2024/diplome/38/MVA-mathematiques-vision-apprentissage" >MVA&nbsp;-&nbsp;Mathématiques, Vision, Apprentissage</a></li><li class=""><a href="/catalogue/2023-2024/diplome/1857/SETI-systemes-embarques-et-traitement-de-l-information" >SETI&nbsp;-&nbsp;Systèmes embarqués et traitement de l'information</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2023-2024/type/Master+T%25C3%25A9l%25C3%25A9com+SudParis" >Master Télécom SudParis</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2023-2024/diplome/2067/CSN-informatique-pour-les-reseaux" >CSN&nbsp;-&nbsp;Informatique pour les Réseaux</a></li><li class=""><a href="/catalogue/2023-2024/diplome/2072/CYBER-M1-cybersecurity-m1" >Cyber M1&nbsp;-&nbsp;Cybersecurity M1</a></li><li class=""><a href="/catalogue/2023-2024/diplome/2073/CYBER-M2-cybersecurity-m2" >Cyber M2&nbsp;-&nbsp;Cybersecurity M2</a></li><li class=""><a href="/catalogue/2023-2024/diplome/2291/EECIP-electrical-engineering-for-communication-information-processing" >EECIP&nbsp;-&nbsp;Electrical Engineering for Communication Information Processing</a></li><li class=""><a href="/catalogue/2023-2024/diplome/40/MN-multimedia-networking-m2" >MN&nbsp;-&nbsp;Multimedia Networking M2</a></li><li class=""><a href="/catalogue/2023-2024/diplome/2076/PDS-M1-systemes-distribues-et-paralleles-m1" >PDS M1&nbsp;-&nbsp;Systèmes distribués et parallèles M1</a></li><li class=""><a href="/catalogue/2023-2024/diplome/2077/PDS-M2-systemes-distribues-et-paralleles-m2" >PDS M2&nbsp;-&nbsp;Systèmes distribués et parallèles M2</a></li><li class=""><a href="/catalogue/2023-2024/diplome/2069/TRIED-M2-traitement-de-l-information-exploitation-des-donnees-master-2" >TRIED M2&nbsp;-&nbsp;Traitement de l'Information & Exploitation des Données Master 2</a></li><li class=""><a href="/catalogue/2023-2024/diplome/2070/VAR-virtual-augmented-reality-m2" >VAR&nbsp;-&nbsp;Virtual & Augmented Reality M2</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2023-2024/type/Mast%25C3%25A8re+sp%25C3%25A9cialis%25C3%25A9" >Mastère spécialisé</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2023-2024/diplome/61/ADE-architecte-digital-d-entreprise" >ADE&nbsp;-&nbsp;Architecte Digital d'Entreprise</a></li><li class=""><a href="/catalogue/2023-2024/diplome/60/ARC-architecte-reseaux-et-cybersecurite" >ARC&nbsp;-&nbsp;Architecte Réseaux et Cybersécurité</a></li><li class=""><a href="/catalogue/2023-2024/diplome/62/BGD-big-data-gestion-et-analyse-des-donnees-massives" >BGD&nbsp;-&nbsp;Big Data : gestion et analyse des données massives</a></li><li class=""><a href="/catalogue/2023-2024/diplome/65/CARC-conception-architecture-de-reseaux-et-cybersecurite" >CARC&nbsp;-&nbsp;Conception, Architecture de Réseaux et Cybersécurité</a></li><li class=""><a href="/catalogue/2023-2024/diplome/64/CPD-concepteur-de-projet-digital" >CPD&nbsp;-&nbsp;Concepteur de Projet Digital</a></li><li class=""><a href="/catalogue/2023-2024/diplome/78/CYBER2-cybersecurite-et-cyberdefense" >CYBER2&nbsp;-&nbsp;Cybersécurité et Cyberdéfense</a></li><li class=""><a href="/catalogue/2023-2024/diplome/1996/IA-ia-intelligence-artificielle" >IA&nbsp;-&nbsp;IA : Intelligence Artificielle</a></li><li class=""><a href="/catalogue/2023-2024/diplome/72/MSIR-management-des-systemes-d-information-en-reseaux" >MSIR&nbsp;-&nbsp;Management des systèmes d'information en réseaux</a></li><li class=""><a href="/catalogue/2023-2024/diplome/1846/SMOB-smart-mobility-transformation-numerique-des-systemes-de-mobilite" >SMOB&nbsp;-&nbsp;Smart Mobility - Transformation Numérique des Systèmes de Mobilité</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2023-2024/type/Programme+d%2527%25C3%25A9change" >Programme d'échange</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2023-2024/diplome/1/PEI-echange-international-non-diplomant" >PEI&nbsp;-&nbsp;Echange international non diplomant</a></li></ul></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2022-2023" >Catalogue 2022 - 2023</a><ul  class="dropdown-menu"><li class="dropdown-submenu"><a href="/catalogue/2022-2023/type/Ing%25C3%25A9nieur" >Ingénieur</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2022-2023/diplome/4/ING-diplome-d-ingenieur" >ING&nbsp;-&nbsp;Diplôme d'ingénieur</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2022-2023/type/Master" >Master</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2022-2023/diplome/2083/DATA-AI-data-artificial-intelligence" >DATA AI&nbsp;-&nbsp;Data & Artificial Intelligence</a></li><li class=""><a href="/catalogue/2022-2023/diplome/2064/DESIGN-master-recherche-en-design" >DESIGN&nbsp;-&nbsp;Master recherche en Design</a></li><li class=""><a href="/catalogue/2022-2023/diplome/1327/ICS-integration-circuits-systems" >ICS&nbsp;-&nbsp;Integration Circuits Systems</a></li><li class=""><a href="/catalogue/2022-2023/diplome/26/IGD-interaction-graphic-design" >IGD&nbsp;-&nbsp;Interaction, Graphic & Design</a></li><li class=""><a href="/catalogue/2022-2023/diplome/42/IREN-industries-de-reseau-et-economie-numerique-iren" >IREN&nbsp;-&nbsp;Industries de réseau et economie numérique (IREN)</a></li><li class=""><a href="/catalogue/2022-2023/diplome/2065/MICAS-information-processing-machine-learning-communications-and-security" >MICAS&nbsp;-&nbsp;Information processing: machine learning, communications and security</a></li><li class=""><a href="/catalogue/2022-2023/diplome/38/MVA-mathematiques-vision-apprentissage" >MVA&nbsp;-&nbsp;Mathématiques, Vision, Apprentissage</a></li><li class=""><a href="/catalogue/2022-2023/diplome/1857/SETI-systemes-embarques-et-traitement-de-l-information" >SETI&nbsp;-&nbsp;Systèmes embarqués et traitement de l'information</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2022-2023/type/Master+T%25C3%25A9l%25C3%25A9com+SudParis" >Master Télécom SudParis</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2022-2023/diplome/2073/CYBER-M2-cybersecurity-m2" >Cyber M2&nbsp;-&nbsp;Cybersecurity M2</a></li><li class=""><a href="/catalogue/2022-2023/diplome/40/MN-multimedia-networking-m2" >MN&nbsp;-&nbsp;Multimedia Networking M2</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2022-2023/type/Mast%25C3%25A8re+sp%25C3%25A9cialis%25C3%25A9" >Mastère spécialisé</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2022-2023/diplome/61/ADE-architecte-digital-d-entreprise" >ADE&nbsp;-&nbsp;Architecte Digital d'Entreprise</a></li><li class=""><a href="/catalogue/2022-2023/diplome/60/ARC-architecte-reseaux-et-cybersecurite" >ARC&nbsp;-&nbsp;Architecte Réseaux et Cybersécurité</a></li><li class=""><a href="/catalogue/2022-2023/diplome/62/BGD-big-data-gestion-et-analyse-des-donnees-massives" >BGD&nbsp;-&nbsp;Big Data : gestion et analyse des données massives</a></li><li class=""><a href="/catalogue/2022-2023/diplome/65/CARC-conception-et-architecture-de-reseaux-et-cybersecurite" >CARC&nbsp;-&nbsp;Conception et Architecture de Réseaux et Cybersécurité</a></li><li class=""><a href="/catalogue/2022-2023/diplome/64/CPD-concepteur-de-projet-digital" >CPD&nbsp;-&nbsp;Concepteur de Projet Digital</a></li><li class=""><a href="/catalogue/2022-2023/diplome/78/CYBER2-cybersecurite-et-cyberdefense" >CYBER2&nbsp;-&nbsp;Cybersécurité et Cyberdéfense</a></li><li class=""><a href="/catalogue/2022-2023/diplome/1996/IA-ia-intelligence-artificielle" >IA&nbsp;-&nbsp;IA : Intelligence Artificielle</a></li><li class=""><a href="/catalogue/2022-2023/diplome/72/MSIR-management-des-systemes-d-information-en-reseaux" >MSIR&nbsp;-&nbsp;Management des systèmes d'information en réseaux</a></li><li class=""><a href="/catalogue/2022-2023/diplome/1846/SMOB-smart-mobility-transformation-numerique-des-systemes-de-mobilite" >SMOB&nbsp;-&nbsp;Smart Mobility - Transformation Numérique des Systèmes de Mobilité</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2022-2023/type/Programme+d%2527%25C3%25A9change" >Programme d'échange</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2022-2023/diplome/1/PEI-echange-international-non-diplomant" >PEI&nbsp;-&nbsp;Echange international non diplomant</a></li></ul></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2021-2022" >Catalogue 2021 - 2022</a><ul  class="dropdown-menu"><li class="dropdown-submenu"><a href="/catalogue/2021-2022/type/Master" >Master</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2021-2022/diplome/2064/DESIGN-master-recherche-en-design" >DESIGN&nbsp;-&nbsp;Master recherche en Design</a></li></ul></li></ul></li></ul></li>                                    </ul>
+                                </div>
+                            </div> <!-- navbar-collapse -->
+
+                        </div> <!-- row -->
+                    </div> <!-- container-fluid -->
+                </nav> <!--/.nav-collapse -->
+            </div>
+            <!-- Version SynapseS  -->
+            <div id="app-version-label">v2.11.0 (5705)</div>
+            <div id="breadcrumbs">
+                <ul>
+            <li class="item root-item">
+            <span>Accueil</span>
+        </li>
+    </ul>
+            </div>
+        </div>
+
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                                        <div id="content-wrapper" class="col-md-12">
+                        <div id="flash-messages" class="flash-messages" class="row">
+</div>
+<script type="text/javascript">
+    setTimeout(function() {
+        $('.flash-messages').find('ul').fadeOut(3000, function() {
+            $('.flash-messages').find('ul').remove();
+        });
+    }, 9000);
+</script>                        <link href="&#x2F;assets&#x2F;vendor&#x2F;fontawesome&#x2F;css&#x2F;fontawesome.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;vendor&#x2F;bootstrap&#x2F;css&#x2F;bootstrap.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;app_base.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_calendrier_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_i18n_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_navigation_menu_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_push-area_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;vendor&#x2F;bootstraptree&#x2F;bootstrap-tree.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_annuaire_modal_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_catalogue_parcours_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;vendor&#x2F;select2&#x2F;dist&#x2F;css&#x2F;select2.min.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;vendor&#x2F;datatables&#x2F;media&#x2F;css&#x2F;dataTables.bootstrap.min.css" media="screen" rel="stylesheet" type="text&#x2F;css"><script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;vendor&#x2F;select2&#x2F;dist&#x2F;js&#x2F;select2.min.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;vendor&#x2F;datatables&#x2F;media&#x2F;js&#x2F;jquery.dataTables.min.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;vendor&#x2F;datatables&#x2F;media&#x2F;js&#x2F;dataTables.bootstrap.min.js"></script><script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;bootstrap_3_3_5_i18n_js.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;bootstrap_3_3_5_push_area_js.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;vendor_bootstraptree_js.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;bootstrap_3_3_5_annuaire_modal_js.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;bootstrap_3_3_5_catalogue_fiche_element_formation_js.js"></script><header>
+    <h1>
+        <a href="/catalogue/2024-2025">
+            <i class="fa fa-level-up btn"></i>
+        </a>
+        <span class="type-objet-fiche">Formation transverse</span>&nbsp;-&nbsp;<span class="code">2A-3A&nbsp;: </span><span class="titre">Enseignements électifs complémentaires de 2eA et 3eA (Athens, créneau D, Formation Humaine)</span>    </h1>
+
+    <h2 class="subtitle">Domaine&nbsp;&gt;&nbsp;Sciences économiques et sociales, Mathématiques, Informatique, Image-Données-Signal, Formation Humaine.</h2>
+</header>
+<script type = 'text/javascript'>
+    $(function() {
+        var nbItems = $('#breadcrumbs ul li').length;
+        var firstItem, secondItem;
+        if (nbItems == 1) {
+            firstItem = '<li class="item level-1"><span><a href="/catalogue"><span>'+$('.navbar-nav [href="/catalogue"]').text()+'</span></a></li>';
+            secondItem = '<li class="item level-2"><span>'+ $('h1 .type-objet-fiche').html() +'</span></li>';
+            var currentItem = '<li class="item current-item"><span>'+ $('h1 .code').text() + ' ' + $('h1 .titre').text() +'</span></li>';
+            $('#breadcrumbs ul').html(firstItem + secondItem + currentItem);
+        }
+                firstItem = '<span><a href="'+'/catalogue/2024-2025'+'">'+'Catalogue 2024-2025'+'</span></a>';
+        $('#breadcrumbs ul li.level-1').html(firstItem);
+        $('.fa-level-up').parent('a').attr('href', '/catalogue/2024-2025');
+                $('#breadcrumbs ul li.level-2').remove();
+            });
+</script>
+<main id="main-content-fiche-parcours">
+    <section class="first-paragraph">
+<h2 class="titre_paragraphe">Descriptif</h2>
+
+<p>Les &eacute;l&egrave;ves choisissent en 2eA leurs domaines scientifiques : &nbsp;des enseignements de fili&egrave;re, et en 3eA des enseignements d'option. <br /><br />A ces cours s'ajoutent des cours transversaux &nbsp;qui sont communs aux 2e et 3eA :&nbsp;<br />1. Les cours du r&eacute;seau Athens, programm&eacute;s une semaine par an en novembre (cr&eacute;dits scientifiques et techniques, comme les cours de fili&egrave;re et d'option)<br />2. Les cours de Formation Humaine, programm&eacute;s sur des jours group&eacute;s (3 fois par an) (pour les 2A/3A) (cr&eacute;dits de Formation Humaine)<br />3. Les cours du cr&eacute;neau des UE partag&eacute;es, programm&eacute;s les Mardis par p&eacute;riode (<a href="https://partage.imt.fr/index.php/s/tpQfKJKSjfNtpa7" target="_blank" rel="noopener">cr&eacute;dits des UE partag&eacute;es</a>)<br />4. Le cours de Langues (cr&eacute;dits de Langues).&nbsp;<br /><br />Les &eacute;l&egrave;ves ont des obligations de cr&eacute;dits dans chacune de ces cat&eacute;gories.</p></section>
+<ul role="tablist" class="nav nav-tabs">
+    
+        <li role="presentation" class="active">
+		<a aria-expanded="true"
+		aria-controls="informations" data-toggle="tab" role="tab"
+		id="informations-tab" href="#informations">Informations générales</a>
+	</li>
+    </ul>
+
+<div class="tab-content" id="tab-content">
+            <div aria-labelledby="informations-tab" id="informations" class="tab-pane fade active in" role="tabpanel">
+        <h3 class="tab-paragraph-title">Diplômes concernés</h3><ul class="link-list tab-link-list">
+    <li><a href="/catalogue/2024-2025/diplome/4/ING-diplome-d-ingenieur" class="fiche">Diplôme d'ingénieur</a></li></ul>
+        </div>
+        </div>
+<section class="bloc">
+  <h2 class="title-bloc-parcours">
+    Composition du parcours</h2><div class="tree well">
+    <ul role="tree" class="tree-indent">
+        <li class="parent_li" role="treeitem"><i class="fa fa-caret-square-o-right"></i> <span class="code-parcours label label-parcours" title="ATHENS">ATHENS</span> <a href="/catalogue/2024-2025/parcours/1432/ATHENS-semaine-athens?from=P5015">Semaine Athens</a><ul class="list-codes-ues tree-indent" role="group"><li role="treeitem"><span class="ue label label-ue">MOB_0AT01_TP</span> <a href="/catalogue/2024-2025/ue/749/MOB-0AT01-TP-image-processing-telecom-paris-palaiseau?from=P5015">Image Processing (Télécom Paris - Palaiseau)</a></li><li role="treeitem"><span class="ue label label-ue">MOB_0AT44_TP</span> <a href="/catalogue/2024-2025/ue/1095/MOB-0AT44-TP-mediating-international-and-scientific-communication?from=P5015">Mediating International and Scientific Communication</a></li><li role="treeitem"><span class="ue label label-ue">MOB_0AT09_TP</span> <a href="/catalogue/2024-2025/ue/455/MOB-0AT09-TP-social-emergence-in-complex-systems-telecom-paris-palaiseau?from=P5015">Social Emergence in Complex Systems  (Télécom Paris - Palaiseau)</a></li><li role="treeitem"><span class="ue label label-ue">MOB_0AT20_TP</span> <a href="/catalogue/2024-2025/ue/1371/MOB-0AT20-TP-from-cloud-datacenters-to-mobile-edge-computing-mec-architectures-innovative-services-and-open-challenges-telecom-paris-palaiseau?from=P5015">From cloud datacenters to mobile edge computing (MEC): architectures, innovative services, and open challenges  (Télécom Paris - Palaiseau)</a></li><li role="treeitem"><span class="ue label label-ue">MOB_0AT33_TP</span> <a href="/catalogue/2024-2025/ue/1933/MOB-0AT33-TP-information-extraction-telecom-paris?from=P5015">Information Extraction (Télécom Paris)</a></li><li role="treeitem"><span class="ue label label-ue">MOB_0AT30_MP</span> <a href="/catalogue/2024-2025/ue/12454/MOB-0AT30-MP-extreme-value-statistics-mines-paristech?from=P5015">Extreme Value Statistics (Mines ParisTech)</a></li><li role="treeitem"><span class="ue label label-ue">MOB_0AT40_TP</span> <a href="/catalogue/2024-2025/ue/12355/MOB-0AT40-TP-practice-in-deep-learning-telecom-paris-palaiseau?from=P5015">Practice in deep learning (Télécom Paris - Palaiseau)</a></li><li role="treeitem"><span class="ue label label-ue">MOB_0AT41_TP</span> <a href="/catalogue/2024-2025/ue/12356/MOB-0AT41-TP-user-experience-design-sprint-telecom-paris-palaiseau?from=P5015">User Experience Design sprint (Télécom Paris - Palaiseau)</a></li><li role="treeitem"><span class="ue label label-ue">MOB_0AT34_EU</span> <a href="/catalogue/2024-2025/ue/11188/MOB-0AT34-EU-modernity-and-critic-modernity-and-warm-modernitty-architectural-concept-and-landcape-icon?from=P5015">Modernity and critic modernity and warm modernitty. Architectural Concept and landcape icon</a></li><li role="treeitem"><span class="ue label label-ue">MOB_0AT34_MP</span> <a href="/catalogue/2024-2025/ue/15295/MOB-0AT34-MP-modelisation-prospective-et-politique-de-lutte-contre-le-changement-climatique?from=P5015">Modélisation prospective et politique de lutte contre le changement climatique</a></li><li role="treeitem"><span class="ue label label-ue">MOB_0AT02_AP</span> <a href="/catalogue/2024-2025/ue/15296/MOB-0AT02-AP-bioraffinerie-nouvelles-strategies-d-utilisation-du-vegetal?from=P5015">Bioraffinerie : nouvelles stratégies d'utilisation du végétal</a></li><li role="treeitem"><span class="ue label label-ue">MOB_0AT18_EU</span> <a href="/catalogue/2024-2025/ue/17391/MOB-0AT18-EU-prague-urban-palimpsest?from=P5015">Prague Urban Palimpsest</a></li><li role="treeitem"><span class="ue label label-ue">MOB_0AT35_MP</span> <a href="/catalogue/2024-2025/ue/17399/MOB-0AT35-MP-complex-analysis-and-applications?from=P5015">Complex analysis and applications</a></li><li role="treeitem"><span class="ue label label-ue">MOB_0AT30_EU</span> <a href="/catalogue/2024-2025/ue/19714/MOB-0AT30-EU-small-scale-modeling-techniques-for-materials?from=P5015">Small Scale Modeling Techniques for Materials</a></li><li role="treeitem"><span class="ue label label-ue">MOB_0AT79_EU</span> <a href="/catalogue/2024-2025/ue/19726/MOB-0AT79-EU-madrid-1972-2022-architecture-and-urbanscape-an-analytic-approach-upm?from=P5015">Madrid 1972-2022 Architecture and urbanscape: an analytic approach (UPM)</a></li><li role="treeitem"><span class="ue label label-ue">MOB_0AT28_EU</span> <a href="/catalogue/2024-2025/ue/19713/MOB-0AT28-EU-management-of-technology?from=P5015">Management of Technology</a></li><li role="treeitem"><span class="ue label label-ue">MOB_0AT43_EU</span> <a href="/catalogue/2024-2025/ue/19716/MOB-0AT43-EU-finite-element-modeling-of-vibrating-elastic-structures-delft?from=P5015">Finite Element Modeling of Vibrating Elastic Structures (DELFT)</a></li><li role="treeitem"><span class="ue label label-ue">MOB_0AT41_EU</span> <a href="/catalogue/2024-2025/ue/19797/MOB-0AT41-EU-rigidity-in-softness-aggregated-reinforced-knitted-architecture-arka?from=P5015">Rigidity in Softness: Aggregated Reinforced Knitted Architecture (ARKA)</a></li><li role="treeitem"><span class="ue label label-ue">MOB_0AT40_EU</span> <a href="/catalogue/2024-2025/ue/19804/MOB-0AT40-EU-global-warming-and-ecological-milan-politecnico-di-milano?from=P5015">Global warming and Ecological Milan! (Politecnico di Milano)</a></li><li role="treeitem"><span class="ue label label-ue">MOB_0AT54_EU</span> <a href="/catalogue/2024-2025/ue/19718/MOB-0AT54-EU-flow-simulation-in-turbomachinery-tuw?from=P5015">Flow Simulation in Turbomachinery (TUW)</a></li><li role="treeitem"><span class="ue label label-ue">MOB_0AT57_EU</span> <a href="/catalogue/2024-2025/ue/19719/MOB-0AT57-EU-energy-scenario-and-climate-protection-upb?from=P5015">Energy scenario and Climate Protection (UPB)</a></li><li role="treeitem"><span class="ue label label-ue">MOB_0AT72_EU</span> <a href="/catalogue/2024-2025/ue/19720/MOB-0AT72-EU-5th-centenary-of-the-first-circumnavigation-of-the-world-upm?from=P5015">5th centenary of the first circumnavigation of the World (UPM)</a></li><li role="treeitem"><span class="ue label label-ue">MOB_0AT73_EU</span> <a href="/catalogue/2024-2025/ue/19721/MOB-0AT73-EU-spanish-contemporary-social-and-political-issues-through-its-constitution-upm?from=P5015">Spanish Contemporary Social and Political Issues through its Constitution (UPM)</a></li><li role="treeitem"><span class="ue label label-ue">MOB_0AT74_EU</span> <a href="/catalogue/2024-2025/ue/19722/MOB-0AT74-EU-the-hidden-house-upm?from=P5015">The Hidden House (UPM)</a></li><li role="treeitem"><span class="ue label label-ue">MOB_0AT75_EU</span> <a href="/catalogue/2024-2025/ue/19723/MOB-0AT75-EU-use-of-video-tools-for-tehs-analysis-of-human-movement-and-sport-techniques-upm?from=P5015">Use of video tools for tehs analysis of human movement and sport techniques (UPM)</a></li><li role="treeitem"><span class="ue label label-ue">MOB_0AT77_EU</span> <a href="/catalogue/2024-2025/ue/19724/MOB-0AT77-EU-lasers-from-quantum-foundations-to-engineering-applications-upm?from=P5015">Lasers: from quantum foundations to engineering applications (UPM)</a></li><li role="treeitem"><span class="ue label label-ue">MOB_0AT78_EU</span> <a href="/catalogue/2024-2025/ue/19725/MOB-0AT78-EU-sensors-trees-and-plants-against-air-water-and-soil-pollution-in-big-cities-upm?from=P5015">Sensors, trees and plants against air, water and soil pollution in big cities (UPM)</a></li><li role="treeitem"><span class="ue label label-ue">MOB_0AT80_EU</span> <a href="/catalogue/2024-2025/ue/19728/MOB-0AT80-EU-introduction-to-cfd-with-openfoam-upm?from=P5015">Introduction to CFD with OpenFOAM (UPM)</a></li><li role="treeitem"><span class="ue label label-ue">MOB_0AT81_EU</span> <a href="/catalogue/2024-2025/ue/19727/MOB-0AT81-EU-introduction-to-tech-diplomacy-the-new-geopolitics-of-technology-upm?from=P5015">Introduction to tech diplomacy: the new geopolitics of technology (UPM)</a></li><li role="treeitem"><span class="ue label label-ue">MOB_0AT40_PP</span> <a href="/catalogue/2024-2025/ue/22278/MOB-0AT40-PP-conceiving-eco-districts-ecole-des-ponts-paristech?from=P5015">Conceiving eco-districts (Ecole des Ponts ParisTech)</a></li><li role="treeitem"><span class="ue label label-ue">MOB_0AT42_PP</span> <a href="/catalogue/2024-2025/ue/22279/MOB-0AT42-PP-planning-the-european-electricity-system-a-serious-game-ecole-des-ponts-paristech?from=P5015">Planning the European electricity system: a serious game (Ecole des Ponts ParisTech)</a></li><li role="treeitem"><span class="ue label label-ue">MOB_0AT37_MP</span> <a href="/catalogue/2024-2025/ue/22280/MOB-0AT37-MP-introduction-to-power-system-analysis?from=P5015">Introduction to power system analysis</a></li><li role="treeitem"><span class="ue label label-ue">MOB_0AT23_EU</span> <a href="/catalogue/2024-2025/ue/22281/MOB-0AT23-EU-beyond-the-present-designing-the-future-of-educational-spaces-ist-lisbonne?from=P5015">Beyond the Present: Designing the Future of Educational Spaces (IST Lisbonne)</a></li><li role="treeitem"><span class="ue label label-ue">MOB_0AT24_EU</span> <a href="/catalogue/2024-2025/ue/22282/MOB-0AT24-EU-healthy-futures-ist-lisbonne?from=P5015">Healthy Futures (IST Lisbonne)</a></li><li role="treeitem"><span class="ue label label-ue">MOB_0AT29_EU</span> <a href="/catalogue/2024-2025/ue/22283/MOB-0AT29-EU-bridge?from=P5015">Bridge</a></li><li role="treeitem"><span class="ue label label-ue">MOB_0AT42_EU</span> <a href="/catalogue/2024-2025/ue/22284/MOB-0AT42-EU-create-your-own-avatar-politecnico-milan?from=P5015">Create your own Avatar  (Politecnico, Milan)</a></li><li role="treeitem"><span class="ue label label-ue">MOB_0AT83_EU</span> <a href="/catalogue/2024-2025/ue/22285/MOB-0AT83-EU-citizenship-laboratory-based-on-mathematics-and-sdg-universidad-politecnica-de-madrid?from=P5015">Citizenship laboratory based on mathematics and SDG (Universidad Politecnica de Madrid)</a></li><li role="treeitem"><span class="ue label label-ue">MOB_0AT82_EU</span> <a href="/catalogue/2024-2025/ue/22286/MOB-0AT82-EU-big-data-and-geo-data-science-python-programming-for-geospatial-processing-analysis-and-query-universidad-politecnica-de-madrid?from=P5015">Big Data and Geo-Data Science: Python Programming for Geospatial Processing, Analysis, and Query (Universidad Politecnica de Madrid)</a></li><li role="treeitem"><span class="ue label label-ue">MOB_0AT76_EU</span> <a href="/catalogue/2024-2025/ue/22287/MOB-0AT76-EU-practical-geology-universidad-politecnica-de-madrid?from=P5015">Practical Geology  (Universidad Politecnica de Madrid)</a></li><li role="treeitem"><span class="ue label label-ue">MOB_0AT71_EU</span> <a href="/catalogue/2024-2025/ue/22288/MOB-0AT71-EU-basic-knowledge-in-construction-and-facilities-in-spain-universidad-politecnica-de-madrid?from=P5015">Basic knowledge in construction and facilities in Spain (Universidad Politecnica de Madrid)</a></li><li role="treeitem"><span class="ue label label-ue">MOB_0AT31_EU</span> <a href="/catalogue/2024-2025/ue/22289/MOB-0AT31-EU-sports-building-and-city-aerodynamics-kul-leuven-belgique?from=P5015">Sports, Building and City Aerodynamics (KUL Leuven, Belgique)</a></li><li role="treeitem"><span class="ue label label-ue">MOB_0AT45_EU</span> <a href="/catalogue/2024-2025/ue/19717/MOB-0AT45-EU-biomechanics-for-impact-and-crash-safety-tum-munnick?from=P5015">Biomechanics for Impact and Crash Safety (TUM, Munnick)</a></li><li role="treeitem"><span class="ue label label-ue">MOB_0AT46_EU</span> <a href="/catalogue/2024-2025/ue/22291/MOB-0AT46-EU-introduction-to-structural-health-monitoring-shm-tum-munnick?from=P5015">Introduction to structural health monitoring (SHM)  (TUM, Munnick)</a></li></ul></li><li class="parent_li" role="treeitem"><i class="fa fa-caret-square-o-right"></i> <span class="code-parcours label label-parcours" title="CrD">CrD</span> <a href="/catalogue/2024-2025/parcours/1543/CRD-ue-partagees-du-creneau-d?from=P5015">UE partagées du créneau D</a><ul class="tree-indent" role="group"><li role="treeitem"><i class="fa fa-caret-square-o-right"></i>&nbsp;<span class="code-parcours label label-parcours" title="HC">HC</span> <a href="/catalogue/2024-2025/parcours/1545/HC-humanites-contemporaines?from=P5015" style="text-decoration: none;color: inherit;">Humanités contemporaines</a><ul class="list-codes-ues tree-indent" role="group"><li role="treeitem"><span class="ue label label-ue">CCH_0EL51_TP</span> <a href="/catalogue/2024-2025/ue/1056/CCH-0EL51-TP-les-mysteres-de-la-musique-classique?from=P5015">Les mystères de la musique classique</a></li><li role="treeitem"><span class="ue label label-ue">CCH_0EL53_TP</span> <a href="/catalogue/2024-2025/ue/1058/CCH-0EL53-TP-la-philosophie-des-sciences-aujourd-hui?from=P5015">La philosophie des sciences aujourd'hui</a></li><li role="treeitem"><span class="ue label label-ue">CCH_0EL58_TP</span> <a href="/catalogue/2024-2025/ue/1280/CCH-0EL58-TP-comprendre-l-architecture-aujourd-hui?from=P5015">Comprendre l'architecture aujourd'hui</a></li><li role="treeitem"><span class="ue label label-ue">CCH_0EL63_TP</span> <a href="/catalogue/2024-2025/ue/13632/CCH-0EL63-TP-humanities?from=P5015">Humanities</a></li><li role="treeitem"><span class="ue label label-ue">CCH_0EL64_TP</span> <a href="/catalogue/2024-2025/ue/17136/CCH-0EL64-TP-hommes-technologies-societes-approches-anthropologiques-et-visuelles?from=P5015">Hommes, technologies, sociétés : approches anthropologiques et visuelles</a></li><li role="treeitem"><span class="ue label label-ue">CCH_0EL61_TP</span> <a href="/catalogue/2024-2025/ue/13631/CCH-0EL61-TP-histoire-de-l-invention-en-musique?from=P5015">Histoire de l'invention en musique</a></li><li role="treeitem"><span class="ue label label-ue">CCH_0EL57_TP</span> <a href="/catalogue/2024-2025/ue/1064/CCH-0EL57-TP-introduction-a-la-psychanalyse?from=P5015">Introduction à la psychanalyse</a></li><li role="treeitem"><span class="ue label label-ue">CCH_0EL50_TP</span> <a href="/catalogue/2024-2025/ue/1055/CCH-0EL50-TP-questions-de-philosophie?from=P5015">Questions de philosophie</a></li><li role="treeitem"><span class="ue label label-ue">CCH_0EL52_TP</span> <a href="/catalogue/2024-2025/ue/1057/CCH-0EL52-TP-le-corps-politique-citoyennete-techniques-du-corps-et-biopolitique?from=P5015">Le corps politique : Citoyenneté, techniques du corps et biopolitique</a></li><li role="treeitem"><span class="ue label label-ue">CCH_0EL56_TP</span> <a href="/catalogue/2024-2025/ue/24916/CCH-0EL56-TP-regarder-le-monde-en-geographe-dynamiques-representations-et-echelles?from=P5015">Regarder le monde en géographe. Dynamiques, représentations et échelles</a></li><li role="treeitem"><span class="ue label label-ue">CCH_0EL59_TP</span> <a href="/catalogue/2024-2025/ue/13628/CCH-0EL59-TP-design-et-information-une-histoire-de-liaisons?from=P5015">Design et information : une histoire de liaisons</a></li><li role="treeitem"><span class="ue label label-ue">CCH_0EL65_TP</span> <a href="/catalogue/2024-2025/ue/24944/CCH-0EL65-TP-la-revanche-de-l-analogique-quand-le-numerique-a-besoin-du-physique?from=P5015">La revanche de l’analogique. Quand le numérique a besoin du physique</a></li><li role="treeitem"><span class="ue label label-ue">CCH_0EL66_TP</span> <a href="/catalogue/2024-2025/ue/24943/CCH-0EL66-TP-antropology-and-ontology?from=P5015">Antropology and Ontology</a></li><li role="treeitem"><span class="ue label label-ue">CCH_0EL67_TP</span> <a href="/catalogue/2024-2025/ue/2366/CCH-0EL67-TP-projet-tandem-langues-et-cultures?from=P5015">Projet Tandem Langues et Cultures</a></li></ul></li><li role="treeitem"><i class="fa fa-caret-square-o-right"></i>&nbsp;<span class="code-parcours label label-parcours" title="CrD-SD">CrD-SD</span> <a href="/catalogue/2024-2025/parcours/2332/CRD-SD-specialite-science-de-donnees-creneau-d?from=P5015" style="text-decoration: none;color: inherit;">Spécialité Science de données (créneau D)</a><ul class="list-codes-ues tree-indent" role="group"><li role="treeitem"><span class="ue label label-ue">APM_0EL02_TP</span> <a href="/catalogue/2024-2025/ue/2134/APM-0EL02-TP-statistiques?from=P5015">Statistiques</a></li><li role="treeitem"><span class="ue label label-ue">APM_0EL06_TP</span> <a href="/catalogue/2024-2025/ue/2135/APM-0EL06-TP-bases-de-l-apprentissage-approche-algorithmique?from=P5015">Bases de l'apprentissage : approche algorithmique</a></li><li role="treeitem"><span class="ue label label-ue">FMA_0EL01_TP</span> <a href="/catalogue/2024-2025/ue/1009/FMA-0EL01-TP-optimisation-et-analyse-numerique?from=P5015">Optimisation et analyse numérique</a></li><li role="treeitem"><span class="ue label label-ue">CSC_0EL13_TP</span> <a href="/catalogue/2024-2025/ue/12217/CSC-0EL13-TP-databases-creneau-d?from=P5015">Databases  (créneau D)</a></li><li role="treeitem"><span class="ue label label-ue">APM_0EL04_TP</span> <a href="/catalogue/2024-2025/ue/12260/APM-0EL04-TP-machine-learning?from=P5015">Machine Learning</a></li></ul></li><li role="treeitem"><span class="ue label label-ue">CSC_0EL11_TP</span> <a href="/catalogue/2024-2025/ue/2125/CSC-0EL11-TP-paradigmes-de-programmation-theorie-et-pratique?from=P5015">Paradigmes de programmation, théorie et pratique</a></li><li role="treeitem"><span class="ue label label-ue">APM_0EL02_TP</span> <a href="/catalogue/2024-2025/ue/2134/APM-0EL02-TP-statistiques?from=P5015">Statistiques</a></li><li role="treeitem"><span class="ue label label-ue">FMA_0EL01_TP</span> <a href="/catalogue/2024-2025/ue/1009/FMA-0EL01-TP-optimisation-et-analyse-numerique?from=P5015">Optimisation et analyse numérique</a></li><li role="treeitem"><span class="ue label label-ue">FMA_0EL08_TP</span> <a href="/catalogue/2024-2025/ue/19490/FMA-0EL08-TP-statistiques-alt?from=P5015">Statistiques (ALT)</a></li><li role="treeitem"><span class="ue label label-ue">APM_0EL05_TP</span> <a href="/catalogue/2024-2025/ue/17414/APM-0EL05-TP-bases-de-l-apprentissage-theorie-et-algorithmes?from=P5015">Bases de l'apprentissage : théorie et algorithmes</a></li><li role="treeitem"><span class="ue label label-ue">CSC_0EL12_TP</span> <a href="/catalogue/2024-2025/ue/2128/CSC-0EL12-TP-preparation-aux-concours-de-programmation-programming-contest-training?from=P5015">Préparation aux concours de programmation/ Programming contest training</a></li><li role="treeitem"><span class="ue label label-ue">CSC_0EL10_TP</span> <a href="/catalogue/2024-2025/ue/2133/CSC-0EL10-TP-web-development-developpement-web?from=P5015">Web Development/Développement WEB</a></li><li role="treeitem"><span class="ue label label-ue">IME_0EL15_TP</span> <a href="/catalogue/2024-2025/ue/11083/IME-0EL15-TP-innovation-technologique?from=P5015">Innovation technologique</a></li><li role="treeitem"><span class="ue label label-ue">APM_0EL03_TP</span> <a href="/catalogue/2024-2025/ue/11081/APM-0EL03-TP-files-d-attente?from=P5015">Files d'attente</a></li><li role="treeitem"><span class="ue label label-ue">CSC_0EL13_TP</span> <a href="/catalogue/2024-2025/ue/12217/CSC-0EL13-TP-databases-creneau-d?from=P5015">Databases  (créneau D)</a></li><li role="treeitem"><span class="ue label label-ue">APM_0EL04_TP</span> <a href="/catalogue/2024-2025/ue/12260/APM-0EL04-TP-machine-learning?from=P5015">Machine Learning</a></li><li role="treeitem"><span class="ue label label-ue">APM_0EL06_TP</span> <a href="/catalogue/2024-2025/ue/2135/APM-0EL06-TP-bases-de-l-apprentissage-approche-algorithmique?from=P5015">Bases de l'apprentissage : approche algorithmique</a></li><li role="treeitem"><span class="ue label label-ue">APM_0EL07_TP</span> <a href="/catalogue/2024-2025/ue/2153/APM-0EL07-TP-logic-knowledge-representation-and-probabilities?from=P5015">Logic, Knowledge Representation and Probabilities</a></li><li role="treeitem"><span class="ue label label-ue">PHY_0EL14_TP</span> <a href="/catalogue/2024-2025/ue/22182/PHY-0EL14-TP-technologies-quantiques?from=P5015">Technologies quantiques</a></li><li role="treeitem"><span class="ue label label-ue">ECO_0EL30_TP</span> <a href="/catalogue/2024-2025/ue/2610/ECO-0EL30-TP-economie-du-numerique?from=P5015">Economie du numérique</a></li><li role="treeitem"><span class="ue label label-ue">ECO_0EL31_TP</span> <a href="/catalogue/2024-2025/ue/2067/ECO-0EL31-TP-finance-d-entreprise?from=P5015">Finance d’entreprise</a></li><li role="treeitem"><span class="ue label label-ue">HSS_0EL32_TP</span> <a href="/catalogue/2024-2025/ue/2188/HSS-0EL32-TP-internet-and-society?from=P5015">Internet and society</a></li><li role="treeitem"><span class="ue label label-ue">HSS_0EL33_TP</span> <a href="/catalogue/2024-2025/ue/2190/HSS-0EL33-TP-cinema-societe-et-management?from=P5015">Cinéma, société et management</a></li><li role="treeitem"><span class="ue label label-ue">HSS_0EL34_TP</span> <a href="/catalogue/2024-2025/ue/2191/HSS-0EL34-TP-sociologie-du-numerique-contemporain?from=P5015">Sociologie du numérique contemporain</a></li><li role="treeitem"><span class="ue label label-ue">HSS_0EL37_TP</span> <a href="/catalogue/2024-2025/ue/2613/HSS-0EL37-TP-innovation-responsable-green-it-ecoconception-et-autres-applications?from=P5015">Innovation responsable : Green IT, écoconception et autres applications</a></li><li role="treeitem"><span class="ue label label-ue">HSS_0EL39_TP</span> <a href="/catalogue/2024-2025/ue/11070/HSS-0EL39-TP-interactions-sociales-technologies-et-visualisations?from=P5015">Interactions sociales, Technologies et Visualisations</a></li><li role="treeitem"><span class="ue label label-ue">ECO_0EL40_TP</span> <a href="/catalogue/2024-2025/ue/13572/ECO-0EL40-TP-business-economics-for-strategy-and-innovation?from=P5015">Business Economics for Strategy and Innovation</a></li><li role="treeitem"><span class="ue label label-ue">HSS_0EL41_TP</span> <a href="/catalogue/2024-2025/ue/13604/HSS-0EL41-TP-making-physical-representation-of-data?from=P5015">Making Physical Representation of Data</a></li><li role="treeitem"><span class="ue label label-ue">HSS_0EL42_TP</span> <a href="/catalogue/2024-2025/ue/2605/HSS-0EL42-TP-quant-ux-quantitative-analysis-of-user-experience-data?from=P5015">Quant UX - Quantitative analysis of User Experience Data</a></li><li role="treeitem"><span class="ue label label-ue">HSS_0EL43_TP</span> <a href="/catalogue/2024-2025/ue/24892/HSS-0EL43-TP-numerique-et-politiques-publiques?from=P5015">Numérique et politiques publiques</a></li><li role="treeitem"><span class="ue label label-ue">HSS_0EL44_TP</span> <a href="/catalogue/2024-2025/ue/24915/HSS-0EL44-TP-computational-social-sciences?from=P5015">Computational social sciences</a></li><li role="treeitem"><span class="ue label label-ue">HSS_0EL22_TP</span> <a href="/catalogue/2024-2025/ue/24947/HSS-0EL22-TP-droit-et-regulation-du-numerique?from=P5015">Droit et régulation du numérique</a></li><li role="treeitem"><span class="ue label label-ue">HSS_0EL21_TP</span> <a href="/catalogue/2024-2025/ue/22375/HSS-0EL21-TP-intellectual-property-for-digital-engineers?from=P5015">Intellectual property for digital engineers</a></li><li role="treeitem"><span class="ue label label-ue">CCH_0EL73_TP</span> <a href="/catalogue/2024-2025/ue/17238/CCH-0EL73-TP-un-numerique-responsable-pour-innover?from=P5015">Un numérique responsable pour innover</a></li><li role="treeitem"><span class="ue label label-ue">CCH_0EL74_TP</span> <a href="/catalogue/2024-2025/ue/17239/CCH-0EL74-TP-comment-construire-un-numerique-responsable-et-inclusif?from=P5015">Comment construire un numérique responsable et inclusif ?</a></li></ul></li><li class="parent_li" role="treeitem"><i class="fa fa-caret-square-o-right"></i> <span class="code-parcours label label-parcours" title="FH2A">FH2A</span> <a href="/catalogue/2024-2025/parcours/1424/FH2A-formation-humaine-de-2e-et-3e-annee?from=P5015">Formation Humaine de 2e et 3e année</a><ul class="list-codes-ues tree-indent" role="group"><li role="treeitem"><span class="ue label label-ue">PDV_00015_TP</span> <a href="/catalogue/2024-2025/ue/2240/PDV-00015-TP-creation-radio?from=P5015">Création radio</a></li><li role="treeitem"><span class="ue label label-ue">PDV_00004_TP</span> <a href="/catalogue/2024-2025/ue/19497/PDV-00004-TP-projet-etudiant-impact-societal-et-egalite-des-chances?from=P5015">Projet étudiant : Impact sociétal et égalité des chances</a></li><li role="treeitem"><span class="ue label label-ue">PDV_00011_TP</span> <a href="/catalogue/2024-2025/ue/685/PDV-00011-TP-theatre-d-improvisation?from=P5015">Théâtre d'Improvisation</a></li><li role="treeitem"><span class="ue label label-ue">PDV_00013_TP</span> <a href="/catalogue/2024-2025/ue/898/PDV-00013-TP-english-theatre?from=P5015">English Theatre</a></li><li role="treeitem"><span class="ue label label-ue">PDV_00014_TP</span> <a href="/catalogue/2024-2025/ue/684/PDV-00014-TP-theatre-francais?from=P5015">Théâtre Français</a></li><li role="treeitem"><span class="ue label label-ue">PDV_00001_TP</span> <a href="/catalogue/2024-2025/ue/17433/PDV-00001-TP-fh-fles-theatre?from=P5015">FH/FLES-Théâtre</a></li><li role="treeitem"><span class="ue label label-ue">PDV_00017_TP</span> <a href="/catalogue/2024-2025/ue/2670/PDV-00017-TP-impact-societal-et-egalite-des-chances-agir-pour-le-monde-de-demain?from=P5015">Impact sociétal et égalité des chances : agir pour le monde de demain</a></li><li role="treeitem"><span class="ue label label-ue">PDV_00007_TP</span> <a href="/catalogue/2024-2025/ue/12381/PDV-00007-TP-mieux-se-connaitre-pour-devenir-acteur-de-son-avenir?from=P5015">Mieux se connaître pour devenir acteur de son avenir</a></li><li role="treeitem"><span class="ue label label-ue">PDV_00018_TP</span> <a href="/catalogue/2024-2025/ue/1066/PDV-00018-TP-atelier-d-ecriture-creative-pour-non-francophones?from=P5015">Atelier d'écriture créative pour non francophones</a></li><li role="treeitem"><span class="ue label label-ue">PDV_00020_TP</span> <a href="/catalogue/2024-2025/ue/1094/PDV-00020-TP-travailler-en-equipe-dans-une-association?from=P5015">Travailler en équipe dans une association</a></li><li role="treeitem"><span class="ue label label-ue">PDV_00022_TP</span> <a href="/catalogue/2024-2025/ue/17154/PDV-00022-TP-art-oratoire-et-leadership-par-le-corps?from=P5015">Art Oratoire et leadership par le corps</a></li><li role="treeitem"><span class="ue label label-ue">PDV_00023_TP</span> <a href="/catalogue/2024-2025/ue/1070/PDV-00023-TP-communication-pour-non-francophones?from=P5015">Communication pour non francophones</a></li><li role="treeitem"><span class="ue label label-ue">PDV_00025_TP</span> <a href="/catalogue/2024-2025/ue/1072/PDV-00025-TP-mener-une-discussion-orientee-vers-l-accord?from=P5015">Mener une discussion orientée vers l'accord</a></li><li role="treeitem"><span class="ue label label-ue">PDV_00027_TP</span> <a href="/catalogue/2024-2025/ue/17152/PDV-00027-TP-art-oratoire-techniques-et-outils?from=P5015">Art Oratoire: techniques et outils</a></li><li role="treeitem"><span class="ue label label-ue">PDV_00028_TP</span> <a href="/catalogue/2024-2025/ue/1077/PDV-00028-TP-manager-et-travailler-en-equipe?from=P5015">Manager et travailler en équipe</a></li><li role="treeitem"><span class="ue label label-ue">PDV_00029_TP</span> <a href="/catalogue/2024-2025/ue/1080/PDV-00029-TP-conduire-une-negociation?from=P5015">Conduire une négociation</a></li><li role="treeitem"><span class="ue label label-ue">PDV_00030_TP</span> <a href="/catalogue/2024-2025/ue/1738/PDV-00030-TP-savoir-valoriser-son-profil-international-pour-non-francophones?from=P5015">Savoir valoriser son profil international pour non-francophones</a></li><li role="treeitem"><span class="ue label label-ue">PDV_00061_TP</span> <a href="/catalogue/2024-2025/ue/24956/PDV-00061-TP-engager-son-corps-et-trouver-sa-voix?from=P5015">Engager son corps et trouver sa voix</a></li><li role="treeitem"><span class="ue label label-ue">PDV_00031_TP</span> <a href="/catalogue/2024-2025/ue/13610/PDV-00031-TP-atelier-de-creation-video?from=P5015">Atelier de création vidéo</a></li><li role="treeitem"><span class="ue label label-ue">PDV_00033_TP</span> <a href="/catalogue/2024-2025/ue/13613/PDV-00033-TP-c-est-vraiment-toi-qui-decide?from=P5015">« C’est (vraiment) toi qui décide ?»</a></li><li role="treeitem"><span class="ue label label-ue">PDV_00037_TP</span> <a href="/catalogue/2024-2025/ue/11120/PDV-00037-TP-solidarite-numerique?from=P5015">Solidarité numérique</a></li><li role="treeitem"><span class="ue label label-ue">PDV_00043_TP</span> <a href="/catalogue/2024-2025/ue/2834/PDV-00043-TP-prise-de-parole-en-public?from=P5015">Prise de parole en public</a></li><li role="treeitem"><span class="ue label label-ue">PDV_00046_TP</span> <a href="/catalogue/2024-2025/ue/11122/PDV-00046-TP-competences-humaines-et-leadership?from=P5015">Compétences humaines et leadership</a></li><li role="treeitem"><span class="ue label label-ue">PDV_00047_TP</span> <a href="/catalogue/2024-2025/ue/13720/PDV-00047-TP-cultiver-son-intelligence-relationnelle?from=P5015">Cultiver son intelligence relationnelle</a></li><li role="treeitem"><span class="ue label label-ue">PDV_00049_TP</span> <a href="/catalogue/2024-2025/ue/14972/PDV-00049-TP-a-la-decouverte-de-mes-super-pouvoirs?from=P5015">A la découverte de mes super pouvoirs</a></li><li role="treeitem"><span class="ue label label-ue">PDV_00050_TP</span> <a href="/catalogue/2024-2025/ue/14977/PDV-00050-TP-life-design-creez-votre-metier-creez-le-monde?from=P5015">Life Design: Créez votre métier, créez le monde !</a></li><li role="treeitem"><span class="ue label label-ue">PDV_00052_TP</span> <a href="/catalogue/2024-2025/ue/15085/PDV-00052-TP-tournoi-debating-fda?from=P5015">Tournoi Debating FDA</a></li><li role="treeitem"><span class="ue label label-ue">PDV_00053_TP</span> <a href="/catalogue/2024-2025/ue/15364/PDV-00053-TP-dialogue-des-diversites?from=P5015">Dialogue des diversités</a></li><li role="treeitem"><span class="ue label label-ue">PDV_00054_TP</span> <a href="/catalogue/2024-2025/ue/17333/PDV-00054-TP-tandem-franco-allemand?from=P5015">Tandem Franco-Allemand</a></li><li role="treeitem"><span class="ue label label-ue">PDV_00055_TP</span> <a href="/catalogue/2024-2025/ue/19456/PDV-00055-TP-initiation-a-la-litterature-de-science-fiction-et-atelier-d-ecriture-creative-sur-le-theme-du-futur?from=P5015">Initiation à la littérature de science fiction et atelier d'écriture créative sur le thème du futur</a></li><li role="treeitem"><span class="ue label label-ue">PDV_00056_TP</span> <a href="/catalogue/2024-2025/ue/22156/PDV-00056-TP-atelier-speed-strat?from=P5015">Atelier speed strat</a></li><li role="treeitem"><span class="ue label label-ue">PDV_00058_TP</span> <a href="/catalogue/2024-2025/ue/22158/PDV-00058-TP-intelligence-relationnnelle-pour-la-transition-ecologique?from=P5015">Intelligence relationnnelle pour la transition écologique</a></li><li role="treeitem"><span class="ue label label-ue">PDV_00059_TP</span> <a href="/catalogue/2024-2025/ue/22159/PDV-00059-TP-paroles-en-public-et-litterature?from=P5015">Paroles en public et littérature</a></li><li role="treeitem"><span class="ue label label-ue">PDV_00060_TP</span> <a href="/catalogue/2024-2025/ue/22187/PDV-00060-TP-design-thinking-methodologie-d-innovation?from=P5015">Design Thinking : méthodologie d’innovation</a></li><li role="treeitem"><span class="ue label label-ue">PDV_00042_TP</span> <a href="/catalogue/2024-2025/ue/2737/PDV-00042-TP-leadership-et-cooperation-la-carte-de-l-equilibre?from=P5015">Leadership et coopération: la carte de l'équilibre</a></li></ul></li>    </ul>
+</div>
+  </section>
+</main><div class="sidebar" id="sidebar-fiche-parcours">
+    <div id='icon'>
+<!--        <a href="#" title="--><!--">-->
+<!--            <i class="fa btn fa-share-square-o"></i>-->
+<!--        </a>-->
+            </div>
+    <aside class="encadre" >
+<!-- ajout d'un ID CSS pour distinguer l'encadré Programmation de la fiche UE -->
+<h1 classe="titre-encadre">responsables</h1>
+
+</aside>
+<aside class="encadre" >
+<!-- ajout d'un ID CSS pour distinguer l'encadré Programmation de la fiche UE -->
+<h1 classe="titre-encadre">coordinateurs des études</h1>
+
+</aside>
+<aside class="encadre" >
+<!-- ajout d'un ID CSS pour distinguer l'encadré Programmation de la fiche UE -->
+<h1 classe="titre-encadre">Equipe d'ingénierie pédagogique</h1>
+
+</aside>
+</div>
+<section class="bloc">
+  <h2 class="title-bloc-ue">
+    Unités d'enseignement</h2>
+<div class="table-responsive" id="tableau-responsive">
+        <button class="btn table-filter-toggle">
+            <i class="fa fa-filter fa-lg"></i>
+            Filtres        </button>
+    <table class="table table-striped table-ues" id="tableau-unitesenseignementfiche">
+        <thead>
+        <tr>
+            <th>UE</th>
+            <th>Type d'enseignement</th>
+            <th>Domaines</th>
+            <th>Catégorie d'UE</th>
+                    <th>Volume horaire</th>
+            <th>Responsables</th>
+                    <th>Site pédagogique</th>
+        </tr>
+        </thead>
+        <tbody>         
+        <tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">APM_0EL02_TP</span> <a href="/catalogue/2024-2025/ue/2134/APM-0EL02-TP-statistiques?from=P5015" title="Statistiques">Statistiques</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines">Mathématiques</td>
+        <td class="categories">UE partagée du créneau D.</td>
+            <td class="heures">24</td>
+        <td class="responsables">Philippe CIBLAT</td>
+            <td class="link">
+                            <a href="https://ecampus.paris-saclay.fr/course/view.php?id=33526" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">APM_0EL03_TP</span> <a href="/catalogue/2024-2025/ue/11081/APM-0EL03-TP-files-d-attente?from=P5015" title="Files d'attente">Files d'attente</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines">Mathématiques</td>
+        <td class="categories">UE partagée du créneau D.</td>
+            <td class="heures">24</td>
+        <td class="responsables">Laurent DECREUSEFOND,<br />Anais VERGNE</td>
+            <td class="link">
+                            <a href="https://ecampus.paris-saclay.fr/course/view.php?id=9193" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">APM_0EL04_TP</span> <a href="/catalogue/2024-2025/ue/12260/APM-0EL04-TP-machine-learning?from=P5015" title="Machine Learning">Machine Learning</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines">Mathématiques</td>
+        <td class="categories">UE partagée du créneau D.</td>
+            <td class="heures">24</td>
+        <td class="responsables">Matthieu LABEAU</td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">APM_0EL05_TP</span> <a href="/catalogue/2024-2025/ue/17414/APM-0EL05-TP-bases-de-l-apprentissage-theorie-et-algorithmes?from=P5015" title="Bases de l'apprentissage : théorie et algorithmes">Bases de l'apprentissage : th&eacute;orie et algorithmes</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines">Image-Données-Signal, Informatique, Mathématiques</td>
+        <td class="categories">UE partagée du créneau D.</td>
+            <td class="heures">24</td>
+        <td class="responsables">Aslan TCHAMKERTEN</td>
+            <td class="link">
+                            <a href="https://www.tchamkerten.com/micas911-si221" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">APM_0EL06_TP</span> <a href="/catalogue/2024-2025/ue/2135/APM-0EL06-TP-bases-de-l-apprentissage-approche-algorithmique?from=P5015" title="Bases de l'apprentissage : approche algorithmique">Bases de l'apprentissage : approche algorithmique</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines">Image-Données-Signal</td>
+        <td class="categories">UE partagée du créneau D.</td>
+            <td class="heures">24</td>
+        <td class="responsables">Matthieu LABEAU,<br />Laurence LIKFORMAN-SULEM</td>
+            <td class="link">
+                            <a href="https://ecampus.paris-saclay.fr/course/view.php?id=20764" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">APM_0EL07_TP</span> <a href="/catalogue/2024-2025/ue/2153/APM-0EL07-TP-logic-knowledge-representation-and-probabilities?from=P5015" title="Logic, Knowledge Representation and Probabilities">Logic, Knowledge Representation and Probabilities</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines">Informatique</td>
+        <td class="categories">UE du créneau C, SD Gestion de données.</td>
+            <td class="heures">24</td>
+        <td class="responsables">Nils HOLZENBERGER</td>
+            <td class="link">
+                            <a href="https://ailab.r2.enst.fr/LKR" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">CCH_0EL50_TP</span> <a href="/catalogue/2024-2025/ue/1055/CCH-0EL50-TP-questions-de-philosophie?from=P5015" title="Questions de philosophie">Questions de philosophie</a></td>
+        <td class="type_enseignement">Humanités Contemporaines</td>
+        <td class="domaines">Humanités Contemporaines</td>
+        <td class="categories">UE partagée du créneau D.</td>
+            <td class="heures">15</td>
+        <td class="responsables">Isabelle GARRON</td>
+            <td class="link">
+                            <a href="https://ecampus.paris-saclay.fr/enrol/index.php?id=15374" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">CCH_0EL51_TP</span> <a href="/catalogue/2024-2025/ue/1056/CCH-0EL51-TP-les-mysteres-de-la-musique-classique?from=P5015" title="Les mystères de la musique classique">Les myst&egrave;res de la musique classique</a></td>
+        <td class="type_enseignement">Humanités Contemporaines</td>
+        <td class="domaines">Humanités Contemporaines</td>
+        <td class="categories">UE partagée du créneau D.</td>
+            <td class="heures">15</td>
+        <td class="responsables">Isabelle GARRON</td>
+            <td class="link">
+                            <a href="https://ecampus.paris-saclay.fr/enrol/index.php?id=15375" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">CCH_0EL52_TP</span> <a href="/catalogue/2024-2025/ue/1057/CCH-0EL52-TP-le-corps-politique-citoyennete-techniques-du-corps-et-biopolitique?from=P5015" title="Le corps politique : Citoyenneté, techniques du corps et biopolitique">Le corps politique : Citoyennet&eacute;, techniques du corps et ...</a></td>
+        <td class="type_enseignement">Humanités Contemporaines</td>
+        <td class="domaines">Humanités Contemporaines</td>
+        <td class="categories">UE partagée du créneau D.</td>
+            <td class="heures">15</td>
+        <td class="responsables">Isabelle GARRON</td>
+            <td class="link">
+                            <a href="https://ecampus.paris-saclay.fr/enrol/index.php?id=15376" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">CCH_0EL53_TP</span> <a href="/catalogue/2024-2025/ue/1058/CCH-0EL53-TP-la-philosophie-des-sciences-aujourd-hui?from=P5015" title="La philosophie des sciences aujourd'hui">La philosophie des sciences aujourd'hui</a></td>
+        <td class="type_enseignement">Humanités Contemporaines</td>
+        <td class="domaines">Humanités Contemporaines</td>
+        <td class="categories">UE partagée du créneau D.</td>
+            <td class="heures">15</td>
+        <td class="responsables">Isabelle GARRON</td>
+            <td class="link">
+                            <a href="https://ecampus.paris-saclay.fr/enrol/index.php?id=15377" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">CCH_0EL56_TP</span> <a href="/catalogue/2024-2025/ue/24916/CCH-0EL56-TP-regarder-le-monde-en-geographe-dynamiques-representations-et-echelles?from=P5015" title="Regarder le monde en géographe. Dynamiques, représentations et échelles">Regarder le monde en g&eacute;ographe. Dynamiques, repr&eacute;sentatio...</a></td>
+        <td class="type_enseignement">Humanités Contemporaines</td>
+        <td class="domaines">Humanités Contemporaines</td>
+        <td class="categories">UE partagée du créneau D.</td>
+            <td class="heures">15</td>
+        <td class="responsables">Isabelle GARRON</td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">CCH_0EL57_TP</span> <a href="/catalogue/2024-2025/ue/1064/CCH-0EL57-TP-introduction-a-la-psychanalyse?from=P5015" title="Introduction à la psychanalyse">Introduction &agrave; la psychanalyse</a></td>
+        <td class="type_enseignement">Humanités Contemporaines</td>
+        <td class="domaines">Humanités Contemporaines</td>
+        <td class="categories">UE partagée du créneau D.</td>
+            <td class="heures">15</td>
+        <td class="responsables">Isabelle GARRON</td>
+            <td class="link">
+                            <a href="https://ecampus.paris-saclay.fr/enrol/index.php?id=15378" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">CCH_0EL58_TP</span> <a href="/catalogue/2024-2025/ue/1280/CCH-0EL58-TP-comprendre-l-architecture-aujourd-hui?from=P5015" title="Comprendre l'architecture aujourd'hui">Comprendre l'architecture aujourd'hui</a></td>
+        <td class="type_enseignement">Humanités Contemporaines</td>
+        <td class="domaines">Humanités Contemporaines</td>
+        <td class="categories">UE partagée du créneau D.</td>
+            <td class="heures">15</td>
+        <td class="responsables">Isabelle GARRON</td>
+            <td class="link">
+                            <a href="https://ecampus.paris-saclay.fr/enrol/index.php?id=15379" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">CCH_0EL59_TP</span> <a href="/catalogue/2024-2025/ue/13628/CCH-0EL59-TP-design-et-information-une-histoire-de-liaisons?from=P5015" title="Design et information : une histoire de liaisons">Design et information : une histoire de liaisons</a></td>
+        <td class="type_enseignement">Humanités Contemporaines</td>
+        <td class="domaines">Humanités Contemporaines</td>
+        <td class="categories">UE partagée du créneau D.</td>
+            <td class="heures">15</td>
+        <td class="responsables">Isabelle GARRON</td>
+            <td class="link">
+                            <a href="https://ecampus.paris-saclay.fr/enrol/index.php?id=15380" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">CCH_0EL61_TP</span> <a href="/catalogue/2024-2025/ue/13631/CCH-0EL61-TP-histoire-de-l-invention-en-musique?from=P5015" title="Histoire de l'invention en musique">Histoire de l'invention en musique</a></td>
+        <td class="type_enseignement">Humanités Contemporaines</td>
+        <td class="domaines">Humanités Contemporaines</td>
+        <td class="categories">UE partagée du créneau D.</td>
+            <td class="heures">15</td>
+        <td class="responsables">Isabelle GARRON</td>
+            <td class="link">
+                            <a href="https://ecampus.paris-saclay.fr/enrol/index.php?id=15383" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">CCH_0EL63_TP</span> <a href="/catalogue/2024-2025/ue/13632/CCH-0EL63-TP-humanities?from=P5015" title="Humanities">Humanities</a></td>
+        <td class="type_enseignement">Humanités Contemporaines</td>
+        <td class="domaines">Humanités Contemporaines</td>
+        <td class="categories">UE partagée du créneau D.</td>
+            <td class="heures">15</td>
+        <td class="responsables">Isabelle GARRON</td>
+            <td class="link">
+                            <a href="https://ecampus.paris-saclay.fr/course/view.php?id=15385" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">CCH_0EL64_TP</span> <a href="/catalogue/2024-2025/ue/17136/CCH-0EL64-TP-hommes-technologies-societes-approches-anthropologiques-et-visuelles?from=P5015" title="Hommes, technologies, sociétés : approches anthropologiques et visuelles">Hommes, technologies, soci&eacute;t&eacute;s : approches anthropologiqu...</a></td>
+        <td class="type_enseignement">Humanités Contemporaines</td>
+        <td class="domaines">Humanités Contemporaines</td>
+        <td class="categories">UE partagée du créneau D.</td>
+            <td class="heures">15</td>
+        <td class="responsables">Isabelle GARRON</td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">CCH_0EL65_TP</span> <a href="/catalogue/2024-2025/ue/24944/CCH-0EL65-TP-la-revanche-de-l-analogique-quand-le-numerique-a-besoin-du-physique?from=P5015" title="La revanche de l’analogique. Quand le numérique a besoin du physique">La revanche de l&rsquo;analogique. Quand le num&eacute;rique a besoin ...</a></td>
+        <td class="type_enseignement">Humanités Contemporaines</td>
+        <td class="domaines">Humanités Contemporaines</td>
+        <td class="categories">UE partagée du créneau D.</td>
+            <td class="heures">15</td>
+        <td class="responsables">Isabelle GARRON</td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">CCH_0EL66_TP</span> <a href="/catalogue/2024-2025/ue/24943/CCH-0EL66-TP-antropology-and-ontology?from=P5015" title="Antropology and Ontology">Antropology and Ontology</a></td>
+        <td class="type_enseignement">Humanités Contemporaines</td>
+        <td class="domaines">Humanités Contemporaines</td>
+        <td class="categories">UE partagée du créneau D.</td>
+            <td class="heures">15</td>
+        <td class="responsables">Isabelle GARRON</td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">CCH_0EL67_TP</span> <a href="/catalogue/2024-2025/ue/2366/CCH-0EL67-TP-projet-tandem-langues-et-cultures?from=P5015" title="Projet Tandem Langues et Cultures">Projet Tandem Langues et Cultures</a></td>
+        <td class="type_enseignement">Humanités Contemporaines</td>
+        <td class="domaines">Espagnol, Anglais, Allemand, Russe, Arabe, Chinois, Japonais, Italien, Portugais, Français Langue Etrangère et/ou Seconde, Humanités Contemporaines, Langues et Cultures</td>
+        <td class="categories">UE partagée du créneau D.</td>
+            <td class="heures">15</td>
+        <td class="responsables">Cécile BROSSAUD,<br />Isabelle GARRON</td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">CCH_0EL73_TP</span> <a href="/catalogue/2024-2025/ue/17238/CCH-0EL73-TP-un-numerique-responsable-pour-innover?from=P5015" title="Un numérique responsable pour innover">Un num&eacute;rique responsable pour innover</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines">Transition sociale et écologique</td>
+        <td class="categories">UE partagée du créneau D.</td>
+            <td class="heures">24</td>
+        <td class="responsables">Philippe CIBLAT,<br />Anne-Laure Lecointre</td>
+            <td class="link">
+                            <a href="https://ecampus.paris-saclay.fr/course/view.php?id=68684" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">CCH_0EL74_TP</span> <a href="/catalogue/2024-2025/ue/17239/CCH-0EL74-TP-comment-construire-un-numerique-responsable-et-inclusif?from=P5015" title="Comment construire un numérique responsable et inclusif ?">Comment construire un num&eacute;rique responsable et inclusif ?</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines">Transition sociale et écologique</td>
+        <td class="categories">UE partagée du créneau D.</td>
+            <td class="heures"></td>
+        <td class="responsables">Dana DIMINESCU,<br />Christelle THOMAS</td>
+            <td class="link">
+                            <a href="https://ecampus.paris-saclay.fr/course/view.php?id=60081" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">CSC_0EL10_TP</span> <a href="/catalogue/2024-2025/ue/2133/CSC-0EL10-TP-web-development-developpement-web?from=P5015" title="Web Development/Développement WEB">Web Development/D&eacute;veloppement WEB</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines">Informatique</td>
+        <td class="categories">UE partagée du créneau D.</td>
+            <td class="heures">24</td>
+        <td class="responsables">Théo ZIMMERMANN</td>
+            <td class="link">
+                            <a href="https://perso.telecom-paristech.fr/dufourd/cours/inf203/" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">CSC_0EL11_TP</span> <a href="/catalogue/2024-2025/ue/2125/CSC-0EL11-TP-paradigmes-de-programmation-theorie-et-pratique?from=P5015" title="Paradigmes de programmation, théorie et pratique">Paradigmes de programmation, th&eacute;orie et pratique</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines">Informatique</td>
+        <td class="categories">UE partagée du créneau D.</td>
+            <td class="heures">24</td>
+        <td class="responsables">Eric LECOLINET</td>
+            <td class="link">
+                            <a href="http://www.telecom-paristech.fr/~elc/inf224" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">CSC_0EL12_TP</span> <a href="/catalogue/2024-2025/ue/2128/CSC-0EL12-TP-preparation-aux-concours-de-programmation-programming-contest-training?from=P5015" title="Préparation aux concours de programmation/ Programming contest training">Pr&eacute;paration aux concours de programmation/ Programming co...</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines">Informatique</td>
+        <td class="categories">UE partagée du créneau D.</td>
+            <td class="heures">24</td>
+        <td class="responsables">Louis JACHIET</td>
+            <td class="link">
+                            <a href="https://moodle.r2.enst.fr/moodle/course/view.php?id=153" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">CSC_0EL13_TP</span> <a href="/catalogue/2024-2025/ue/12217/CSC-0EL13-TP-databases-creneau-d?from=P5015" title="Databases  (créneau D)">Databases  (cr&eacute;neau D)</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines">Mathématiques</td>
+        <td class="categories">UE partagée du créneau D.</td>
+            <td class="heures">24</td>
+        <td class="responsables">Louis JACHIET</td>
+            <td class="link">
+                            <a href="https://a3nm.net/work/teaching/#y2022-sd202crd" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">ECO_0EL30_TP</span> <a href="/catalogue/2024-2025/ue/2610/ECO-0EL30-TP-economie-du-numerique?from=P5015" title="Economie du numérique">Economie du num&eacute;rique</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines">Sciences économiques et sociales</td>
+        <td class="categories">UE partagée du créneau D, SES-A (Economie, Gestion).</td>
+            <td class="heures">24</td>
+        <td class="responsables">Patrick WAELBROECK</td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">ECO_0EL31_TP</span> <a href="/catalogue/2024-2025/ue/2067/ECO-0EL31-TP-finance-d-entreprise?from=P5015" title="Finance d’entreprise">Finance d&rsquo;entreprise</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines">Sciences économiques et sociales</td>
+        <td class="categories">SES-A (Economie, Gestion), UE partagée du créneau D.</td>
+            <td class="heures">24</td>
+        <td class="responsables">David MASSE</td>
+            <td class="link">
+                            <a href="https://ecampus.paris-saclay.fr/course/view.php?id=22240" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">ECO_0EL40_TP</span> <a href="/catalogue/2024-2025/ue/13572/ECO-0EL40-TP-business-economics-for-strategy-and-innovation?from=P5015" title="Business Economics for Strategy and Innovation">Business Economics for Strategy and Innovation</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines">Sciences économiques et sociales</td>
+        <td class="categories">SES-A (Economie, Gestion), UE partagée du créneau D.</td>
+            <td class="heures">24</td>
+        <td class="responsables">Myriam DAVIDOVICI-NORA</td>
+            <td class="link">
+                            <a href="https://ecampus.paris-saclay.fr/course/view.php?id=20122" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">FMA_0EL01_TP</span> <a href="/catalogue/2024-2025/ue/1009/FMA-0EL01-TP-optimisation-et-analyse-numerique?from=P5015" title="Optimisation et analyse numérique">Optimisation et analyse num&eacute;rique</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines">Informatique</td>
+        <td class="categories">UE partagée du créneau D.</td>
+            <td class="heures">24</td>
+        <td class="responsables">Olivier HUDRY</td>
+            <td class="link">
+                            <a href="https://ecampus.paris-saclay.fr/course/view.php?id=20912" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">FMA_0EL08_TP</span> <a href="/catalogue/2024-2025/ue/19490/FMA-0EL08-TP-statistiques-alt?from=P5015" title="Statistiques (ALT)">Statistiques (ALT)</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines">Mathématiques</td>
+        <td class="categories">UE partagée du créneau D.</td>
+            <td class="heures">24</td>
+        <td class="responsables">Pascal Bianchi,<br />Philippe CIBLAT</td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">HSS_0EL21_TP</span> <a href="/catalogue/2024-2025/ue/22375/HSS-0EL21-TP-intellectual-property-for-digital-engineers?from=P5015" title="Intellectual property for digital engineers">Intellectual property for digital engineers</a></td>
+        <td class="type_enseignement">Droit</td>
+        <td class="domaines">Sciences économiques et sociales</td>
+        <td class="categories">UE partagée du créneau D.</td>
+            <td class="heures">24</td>
+        <td class="responsables">Thomas Le Goff</td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">HSS_0EL22_TP</span> <a href="/catalogue/2024-2025/ue/24947/HSS-0EL22-TP-droit-et-regulation-du-numerique?from=P5015" title="Droit et régulation du numérique">Droit et r&eacute;gulation du num&eacute;rique</a></td>
+        <td class="type_enseignement">Droit</td>
+        <td class="domaines">Sciences économiques et sociales</td>
+        <td class="categories">UE partagée du créneau D.</td>
+            <td class="heures">24</td>
+        <td class="responsables">Thomas Le Goff</td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">HSS_0EL32_TP</span> <a href="/catalogue/2024-2025/ue/2188/HSS-0EL32-TP-internet-and-society?from=P5015" title="Internet and society">Internet and society</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines">Sciences économiques et sociales</td>
+        <td class="categories">UE partagée du créneau D, SES-B (Infocom, Design, Socio).</td>
+            <td class="heures">24</td>
+        <td class="responsables">Antonio CASILLI</td>
+            <td class="link">
+                            <a href="https://ecampus.paris-saclay.fr/course/view.php?id=20915" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">HSS_0EL33_TP</span> <a href="/catalogue/2024-2025/ue/2190/HSS-0EL33-TP-cinema-societe-et-management?from=P5015" title="Cinéma, société et management">Cin&eacute;ma, soci&eacute;t&eacute; et management</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines">Sciences économiques et sociales</td>
+        <td class="categories">UE partagée du créneau D, SES-B (Infocom, Design, Socio).</td>
+            <td class="heures">24</td>
+        <td class="responsables">Olivier FOURNOUT</td>
+            <td class="link">
+                            <a href="https://ecampus.paris-saclay.fr/course/view.php?id=22239" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">HSS_0EL34_TP</span> <a href="/catalogue/2024-2025/ue/2191/HSS-0EL34-TP-sociologie-du-numerique-contemporain?from=P5015" title="Sociologie du numérique contemporain">Sociologie du num&eacute;rique contemporain</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines">Sciences économiques et sociales</td>
+        <td class="categories">SES-B (Infocom, Design, Socio), UE partagée du créneau D.</td>
+            <td class="heures">24</td>
+        <td class="responsables">Jean-Samuel BEUSCART</td>
+            <td class="link">
+                            <a href="https://ecampus.paris-saclay.fr/course/view.php?id=8652" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">HSS_0EL37_TP</span> <a href="/catalogue/2024-2025/ue/2613/HSS-0EL37-TP-innovation-responsable-green-it-ecoconception-et-autres-applications?from=P5015" title="Innovation responsable : Green IT, écoconception et autres applications">Innovation responsable : Green IT, &eacute;coconception et autre...</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines">Sciences économiques et sociales</td>
+        <td class="categories">SES-B (Infocom, Design, Socio), UE partagée du créneau D.</td>
+            <td class="heures">24</td>
+        <td class="responsables">Laura DRAETTA,<br />Caroline RIZZA</td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">HSS_0EL39_TP</span> <a href="/catalogue/2024-2025/ue/11070/HSS-0EL39-TP-interactions-sociales-technologies-et-visualisations?from=P5015" title="Interactions sociales, Technologies et Visualisations">Interactions sociales, Technologies et Visualisations</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines">Sciences économiques et sociales</td>
+        <td class="categories">SES-B (Infocom, Design, Socio), UE partagée du créneau D.</td>
+            <td class="heures">24</td>
+        <td class="responsables">Julien MOREL,<br />Nicolas ROLLET</td>
+            <td class="link">
+                            <a href="https://ecampus.paris-saclay.fr/course/view.php?id=22241" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">HSS_0EL41_TP</span> <a href="/catalogue/2024-2025/ue/13604/HSS-0EL41-TP-making-physical-representation-of-data?from=P5015" title="Making Physical Representation of Data">Making Physical Representation of Data</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines">Sciences économiques et sociales</td>
+        <td class="categories">SES-B (Infocom, Design, Socio), UE partagée du créneau D.</td>
+            <td class="heures">24</td>
+        <td class="responsables">Samuel HURON</td>
+            <td class="link">
+                            <a href="https://ecampus.paris-saclay.fr/course/view.php?id=36400" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">HSS_0EL42_TP</span> <a href="/catalogue/2024-2025/ue/2605/HSS-0EL42-TP-quant-ux-quantitative-analysis-of-user-experience-data?from=P5015" title="Quant UX - Quantitative analysis of User Experience Data">Quant UX - Quantitative analysis of User Experience Data</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines">Sciences économiques et sociales</td>
+        <td class="categories">SES-B (Infocom, Design, Socio), UE partagée du créneau D.</td>
+            <td class="heures">24</td>
+        <td class="responsables">Panayotis MAVROS,<br />Stéphane SAFIN</td>
+            <td class="link">
+                            <a href="https://ecampus.paris-saclay.fr/course/view.php?id=8348" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">HSS_0EL43_TP</span> <a href="/catalogue/2024-2025/ue/24892/HSS-0EL43-TP-numerique-et-politiques-publiques?from=P5015" title="Numérique et politiques publiques">Num&eacute;rique et politiques publiques</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines">Sciences économiques et sociales</td>
+        <td class="categories">UE partagée du créneau D.</td>
+            <td class="heures">24</td>
+        <td class="responsables">Winston MAXWELL</td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">HSS_0EL44_TP</span> <a href="/catalogue/2024-2025/ue/24915/HSS-0EL44-TP-computational-social-sciences?from=P5015" title="Computational social sciences">Computational social sciences</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines">Sciences économiques et sociales</td>
+        <td class="categories">SES-B (Infocom, Design, Socio), UE partagée du créneau D.</td>
+            <td class="heures">24</td>
+        <td class="responsables">Tiphaine VIARD</td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">IME_0EL15_TP</span> <a href="/catalogue/2024-2025/ue/11083/IME-0EL15-TP-innovation-technologique?from=P5015" title="Innovation technologique">Innovation technologique</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines"></td>
+        <td class="categories">UE partagée du créneau D.</td>
+            <td class="heures">24</td>
+        <td class="responsables">Ghaya REKAYA</td>
+            <td class="link">
+                            <a href="https://ecampus.paris-saclay.fr/course/view.php?id=20588" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">MOB_0AT01_TP</span> <a href="/catalogue/2024-2025/ue/749/MOB-0AT01-TP-image-processing-telecom-paris-palaiseau?from=P5015" title="Image Processing (Télécom Paris - Palaiseau)">Image Processing (T&eacute;l&eacute;com Paris - Palaiseau)</a></td>
+        <td class="type_enseignement">Enseignement ATHENS</td>
+        <td class="domaines">Image-Données-Signal</td>
+        <td class="categories">Athens Télécom Paris.</td>
+            <td class="heures">30</td>
+        <td class="responsables">Arthur LECLAIRE</td>
+            <td class="link">
+                            <a href="https://ecampus.paris-saclay.fr/course/view.php?id=38865" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">MOB_0AT02_AP</span> <a href="/catalogue/2024-2025/ue/15296/MOB-0AT02-AP-bioraffinerie-nouvelles-strategies-d-utilisation-du-vegetal?from=P5015" title="Bioraffinerie : nouvelles stratégies d'utilisation du végétal">Bioraffinerie : nouvelles strat&eacute;gies d'utilisation du v&eacute;g...</a></td>
+        <td class="type_enseignement">Enseignement ATHENS</td>
+        <td class="domaines"></td>
+        <td class="categories">Athens France.</td>
+            <td class="heures"></td>
+        <td class="responsables">Sigolène MORIN</td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">MOB_0AT09_TP</span> <a href="/catalogue/2024-2025/ue/455/MOB-0AT09-TP-social-emergence-in-complex-systems-telecom-paris-palaiseau?from=P5015" title="Social Emergence in Complex Systems  (Télécom Paris - Palaiseau)">Social Emergence in Complex Systems  (T&eacute;l&eacute;com Paris - Pal...</a></td>
+        <td class="type_enseignement">Enseignement ATHENS</td>
+        <td class="domaines">Informatique</td>
+        <td class="categories">Athens Télécom Paris.</td>
+            <td class="heures">30</td>
+        <td class="responsables">Jean-Louis DESSALLES,<br />Ada DIACONESCU</td>
+            <td class="link">
+                            <a href="http://teaching.dessalles.fr/SECS" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">MOB_0AT18_EU</span> <a href="/catalogue/2024-2025/ue/17391/MOB-0AT18-EU-prague-urban-palimpsest?from=P5015" title="Prague Urban Palimpsest">Prague Urban Palimpsest</a></td>
+        <td class="type_enseignement">Enseignement ATHENS</td>
+        <td class="domaines"></td>
+        <td class="categories">Athens Etranger.</td>
+            <td class="heures"></td>
+        <td class="responsables"></td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">MOB_0AT20_TP</span> <a href="/catalogue/2024-2025/ue/1371/MOB-0AT20-TP-from-cloud-datacenters-to-mobile-edge-computing-mec-architectures-innovative-services-and-open-challenges-telecom-paris-palaiseau?from=P5015" title="From cloud datacenters to mobile edge computing (MEC): architectures, innovative services, and open challenges  (Télécom Paris - Palaiseau)">From cloud datacenters to mobile edge computing (MEC): ar...</a></td>
+        <td class="type_enseignement">Enseignement ATHENS</td>
+        <td class="domaines">Réseaux</td>
+        <td class="categories">Athens France.</td>
+            <td class="heures">30</td>
+        <td class="responsables">Maurice GAGNAIRE</td>
+            <td class="link">
+                            <a href="https://ecampus.paris-saclay.fr/course/view.php?id=38867" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">MOB_0AT23_EU</span> <a href="/catalogue/2024-2025/ue/22281/MOB-0AT23-EU-beyond-the-present-designing-the-future-of-educational-spaces-ist-lisbonne?from=P5015" title="Beyond the Present: Designing the Future of Educational Spaces (IST Lisbonne)">Beyond the Present: Designing the Future of Educational S...</a></td>
+        <td class="type_enseignement">Enseignement ATHENS</td>
+        <td class="domaines"></td>
+        <td class="categories">Athens Etranger.</td>
+            <td class="heures"></td>
+        <td class="responsables">Sigolène MORIN</td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">MOB_0AT24_EU</span> <a href="/catalogue/2024-2025/ue/22282/MOB-0AT24-EU-healthy-futures-ist-lisbonne?from=P5015" title="Healthy Futures (IST Lisbonne)">Healthy Futures (IST Lisbonne)</a></td>
+        <td class="type_enseignement">Enseignement ATHENS</td>
+        <td class="domaines"></td>
+        <td class="categories">Athens Etranger.</td>
+            <td class="heures"></td>
+        <td class="responsables"></td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">MOB_0AT28_EU</span> <a href="/catalogue/2024-2025/ue/19713/MOB-0AT28-EU-management-of-technology?from=P5015" title="Management of Technology">Management of Technology</a></td>
+        <td class="type_enseignement">Enseignement ATHENS</td>
+        <td class="domaines"></td>
+        <td class="categories">Athens Etranger.</td>
+            <td class="heures"></td>
+        <td class="responsables">Sigolène MORIN</td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">MOB_0AT29_EU</span> <a href="/catalogue/2024-2025/ue/22283/MOB-0AT29-EU-bridge?from=P5015" title="Bridge">Bridge</a></td>
+        <td class="type_enseignement">Enseignement ATHENS</td>
+        <td class="domaines"></td>
+        <td class="categories">Athens Etranger.</td>
+            <td class="heures"></td>
+        <td class="responsables">Sigolène MORIN</td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">MOB_0AT30_EU</span> <a href="/catalogue/2024-2025/ue/19714/MOB-0AT30-EU-small-scale-modeling-techniques-for-materials?from=P5015" title="Small Scale Modeling Techniques for Materials">Small Scale Modeling Techniques for Materials</a></td>
+        <td class="type_enseignement">Enseignement ATHENS</td>
+        <td class="domaines"></td>
+        <td class="categories">Athens Etranger.</td>
+            <td class="heures"></td>
+        <td class="responsables">Sigolène MORIN</td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">MOB_0AT30_MP</span> <a href="/catalogue/2024-2025/ue/12454/MOB-0AT30-MP-extreme-value-statistics-mines-paristech?from=P5015" title="Extreme Value Statistics (Mines ParisTech)">Extreme Value Statistics (Mines ParisTech)</a></td>
+        <td class="type_enseignement">Enseignement ATHENS</td>
+        <td class="domaines"></td>
+        <td class="categories">Athens France.</td>
+            <td class="heures"></td>
+        <td class="responsables">Sigolène MORIN</td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">MOB_0AT31_EU</span> <a href="/catalogue/2024-2025/ue/22289/MOB-0AT31-EU-sports-building-and-city-aerodynamics-kul-leuven-belgique?from=P5015" title="Sports, Building and City Aerodynamics (KUL Leuven, Belgique)">Sports, Building and City Aerodynamics (KUL Leuven, Belgi...</a></td>
+        <td class="type_enseignement">Enseignement ATHENS</td>
+        <td class="domaines"></td>
+        <td class="categories">Athens Etranger.</td>
+            <td class="heures"></td>
+        <td class="responsables">Sigolène MORIN</td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">MOB_0AT33_TP</span> <a href="/catalogue/2024-2025/ue/1933/MOB-0AT33-TP-information-extraction-telecom-paris?from=P5015" title="Information Extraction (Télécom Paris)">Information Extraction (T&eacute;l&eacute;com Paris)</a></td>
+        <td class="type_enseignement">Enseignement ATHENS</td>
+        <td class="domaines">Informatique</td>
+        <td class="categories">Athens Télécom Paris.</td>
+            <td class="heures">30</td>
+        <td class="responsables">Fabian SUCHANEK</td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">MOB_0AT34_EU</span> <a href="/catalogue/2024-2025/ue/11188/MOB-0AT34-EU-modernity-and-critic-modernity-and-warm-modernitty-architectural-concept-and-landcape-icon?from=P5015" title="Modernity and critic modernity and warm modernitty. Architectural Concept and landcape icon">Modernity and critic modernity and warm modernitty. Archi...</a></td>
+        <td class="type_enseignement">Enseignement ATHENS</td>
+        <td class="domaines"></td>
+        <td class="categories">Athens Etranger.</td>
+            <td class="heures"></td>
+        <td class="responsables">Sigolène MORIN</td>
+            <td class="link">
+                            <a href="https://www.athensprogramme.com" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">MOB_0AT34_MP</span> <a href="/catalogue/2024-2025/ue/15295/MOB-0AT34-MP-modelisation-prospective-et-politique-de-lutte-contre-le-changement-climatique?from=P5015" title="Modélisation prospective et politique de lutte contre le changement climatique">Mod&eacute;lisation prospective et politique de lutte contre le ...</a></td>
+        <td class="type_enseignement">Enseignement ATHENS</td>
+        <td class="domaines"></td>
+        <td class="categories">Athens France.</td>
+            <td class="heures"></td>
+        <td class="responsables">Sigolène MORIN</td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">MOB_0AT35_MP</span> <a href="/catalogue/2024-2025/ue/17399/MOB-0AT35-MP-complex-analysis-and-applications?from=P5015" title="Complex analysis and applications">Complex analysis and applications</a></td>
+        <td class="type_enseignement">Enseignement ATHENS</td>
+        <td class="domaines"></td>
+        <td class="categories"></td>
+            <td class="heures"></td>
+        <td class="responsables">Sigolène MORIN</td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">MOB_0AT37_MP</span> <a href="/catalogue/2024-2025/ue/22280/MOB-0AT37-MP-introduction-to-power-system-analysis?from=P5015" title="Introduction to power system analysis">Introduction to power system analysis</a></td>
+        <td class="type_enseignement">Enseignement ATHENS</td>
+        <td class="domaines"></td>
+        <td class="categories">Athens France.</td>
+            <td class="heures"></td>
+        <td class="responsables"></td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">MOB_0AT40_EU</span> <a href="/catalogue/2024-2025/ue/19804/MOB-0AT40-EU-global-warming-and-ecological-milan-politecnico-di-milano?from=P5015" title="Global warming and Ecological Milan! (Politecnico di Milano)">Global warming and Ecological Milan! (Politecnico di Milano)</a></td>
+        <td class="type_enseignement">Enseignement ATHENS</td>
+        <td class="domaines"></td>
+        <td class="categories">Athens Etranger.</td>
+            <td class="heures"></td>
+        <td class="responsables"></td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">MOB_0AT40_PP</span> <a href="/catalogue/2024-2025/ue/22278/MOB-0AT40-PP-conceiving-eco-districts-ecole-des-ponts-paristech?from=P5015" title="Conceiving eco-districts (Ecole des Ponts ParisTech)">Conceiving eco-districts (Ecole des Ponts ParisTech)</a></td>
+        <td class="type_enseignement">Enseignement ATHENS</td>
+        <td class="domaines"></td>
+        <td class="categories">Athens France.</td>
+            <td class="heures"></td>
+        <td class="responsables">Sylvia ALVES DE SOUSA</td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">MOB_0AT40_TP</span> <a href="/catalogue/2024-2025/ue/12355/MOB-0AT40-TP-practice-in-deep-learning-telecom-paris-palaiseau?from=P5015" title="Practice in deep learning (Télécom Paris - Palaiseau)">Practice in deep learning (T&eacute;l&eacute;com Paris - Palaiseau)</a></td>
+        <td class="type_enseignement">Enseignement ATHENS</td>
+        <td class="domaines">Informatique</td>
+        <td class="categories">Athens Télécom Paris.</td>
+            <td class="heures"></td>
+        <td class="responsables">Enzo TARTAGLIONE</td>
+            <td class="link">
+                            <a href="https://ecampus.paris-saclay.fr/course/view.php?id=38637" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">MOB_0AT41_EU</span> <a href="/catalogue/2024-2025/ue/19797/MOB-0AT41-EU-rigidity-in-softness-aggregated-reinforced-knitted-architecture-arka?from=P5015" title="Rigidity in Softness: Aggregated Reinforced Knitted Architecture (ARKA)">Rigidity in Softness: Aggregated Reinforced Knitted Archi...</a></td>
+        <td class="type_enseignement">Enseignement ATHENS</td>
+        <td class="domaines"></td>
+        <td class="categories">Athens Etranger.</td>
+            <td class="heures"></td>
+        <td class="responsables"></td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">MOB_0AT41_TP</span> <a href="/catalogue/2024-2025/ue/12356/MOB-0AT41-TP-user-experience-design-sprint-telecom-paris-palaiseau?from=P5015" title="User Experience Design sprint (Télécom Paris - Palaiseau)">User Experience Design sprint (T&eacute;l&eacute;com Paris - Palaiseau)</a></td>
+        <td class="type_enseignement">Enseignement ATHENS</td>
+        <td class="domaines">Sciences économiques et sociales</td>
+        <td class="categories">Athens Télécom Paris.</td>
+            <td class="heures"></td>
+        <td class="responsables">Samuel HURON</td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">MOB_0AT42_EU</span> <a href="/catalogue/2024-2025/ue/22284/MOB-0AT42-EU-create-your-own-avatar-politecnico-milan?from=P5015" title="Create your own Avatar  (Politecnico, Milan)">Create your own Avatar  (Politecnico, Milan)</a></td>
+        <td class="type_enseignement">Enseignement ATHENS</td>
+        <td class="domaines"></td>
+        <td class="categories">Athens Etranger.</td>
+            <td class="heures"></td>
+        <td class="responsables">Sigolène MORIN</td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">MOB_0AT42_PP</span> <a href="/catalogue/2024-2025/ue/22279/MOB-0AT42-PP-planning-the-european-electricity-system-a-serious-game-ecole-des-ponts-paristech?from=P5015" title="Planning the European electricity system: a serious game (Ecole des Ponts ParisTech)">Planning the European electricity system: a serious game ...</a></td>
+        <td class="type_enseignement">Enseignement ATHENS</td>
+        <td class="domaines"></td>
+        <td class="categories">Athens France.</td>
+            <td class="heures"></td>
+        <td class="responsables">Sigolène MORIN</td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">MOB_0AT43_EU</span> <a href="/catalogue/2024-2025/ue/19716/MOB-0AT43-EU-finite-element-modeling-of-vibrating-elastic-structures-delft?from=P5015" title="Finite Element Modeling of Vibrating Elastic Structures (DELFT)">Finite Element Modeling of Vibrating Elastic Structures (...</a></td>
+        <td class="type_enseignement">Enseignement ATHENS</td>
+        <td class="domaines"></td>
+        <td class="categories">Athens Etranger.</td>
+            <td class="heures"></td>
+        <td class="responsables">Sigolène MORIN</td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">MOB_0AT44_TP</span> <a href="/catalogue/2024-2025/ue/1095/MOB-0AT44-TP-mediating-international-and-scientific-communication?from=P5015" title="Mediating International and Scientific Communication">Mediating International and Scientific Communication</a></td>
+        <td class="type_enseignement">Enseignement ATHENS</td>
+        <td class="domaines">Sciences économiques et sociales</td>
+        <td class="categories">Athens Télécom Paris.</td>
+            <td class="heures">30</td>
+        <td class="responsables">Bethany CAGNOL</td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">MOB_0AT45_EU</span> <a href="/catalogue/2024-2025/ue/19717/MOB-0AT45-EU-biomechanics-for-impact-and-crash-safety-tum-munnick?from=P5015" title="Biomechanics for Impact and Crash Safety (TUM, Munnick)">Biomechanics for Impact and Crash Safety (TUM, Munnick)</a></td>
+        <td class="type_enseignement">Enseignement ATHENS</td>
+        <td class="domaines"></td>
+        <td class="categories">Athens Etranger.</td>
+            <td class="heures"></td>
+        <td class="responsables">Sigolène MORIN</td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">MOB_0AT46_EU</span> <a href="/catalogue/2024-2025/ue/22291/MOB-0AT46-EU-introduction-to-structural-health-monitoring-shm-tum-munnick?from=P5015" title="Introduction to structural health monitoring (SHM)  (TUM, Munnick)">Introduction to structural health monitoring (SHM)  (TUM,...</a></td>
+        <td class="type_enseignement">Enseignement ATHENS</td>
+        <td class="domaines"></td>
+        <td class="categories">Athens Etranger.</td>
+            <td class="heures"></td>
+        <td class="responsables">Sigolène MORIN</td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">MOB_0AT54_EU</span> <a href="/catalogue/2024-2025/ue/19718/MOB-0AT54-EU-flow-simulation-in-turbomachinery-tuw?from=P5015" title="Flow Simulation in Turbomachinery (TUW)">Flow Simulation in Turbomachinery (TUW)</a></td>
+        <td class="type_enseignement">Enseignement ATHENS</td>
+        <td class="domaines"></td>
+        <td class="categories">Athens Etranger.</td>
+            <td class="heures"></td>
+        <td class="responsables">Sigolène MORIN</td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">MOB_0AT57_EU</span> <a href="/catalogue/2024-2025/ue/19719/MOB-0AT57-EU-energy-scenario-and-climate-protection-upb?from=P5015" title="Energy scenario and Climate Protection (UPB)">Energy scenario and Climate Protection (UPB)</a></td>
+        <td class="type_enseignement">Enseignement ATHENS</td>
+        <td class="domaines"></td>
+        <td class="categories">Athens Etranger.</td>
+            <td class="heures"></td>
+        <td class="responsables">Sigolène MORIN</td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">MOB_0AT71_EU</span> <a href="/catalogue/2024-2025/ue/22288/MOB-0AT71-EU-basic-knowledge-in-construction-and-facilities-in-spain-universidad-politecnica-de-madrid?from=P5015" title="Basic knowledge in construction and facilities in Spain (Universidad Politecnica de Madrid)">Basic knowledge in construction and facilities in Spain (...</a></td>
+        <td class="type_enseignement">Enseignement ATHENS</td>
+        <td class="domaines"></td>
+        <td class="categories">Athens Etranger.</td>
+            <td class="heures"></td>
+        <td class="responsables">Sigolène MORIN</td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">MOB_0AT72_EU</span> <a href="/catalogue/2024-2025/ue/19720/MOB-0AT72-EU-5th-centenary-of-the-first-circumnavigation-of-the-world-upm?from=P5015" title="5th centenary of the first circumnavigation of the World (UPM)">5th centenary of the first circumnavigation of the World ...</a></td>
+        <td class="type_enseignement">Enseignement ATHENS</td>
+        <td class="domaines"></td>
+        <td class="categories">Athens Etranger.</td>
+            <td class="heures"></td>
+        <td class="responsables">Sigolène MORIN</td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">MOB_0AT73_EU</span> <a href="/catalogue/2024-2025/ue/19721/MOB-0AT73-EU-spanish-contemporary-social-and-political-issues-through-its-constitution-upm?from=P5015" title="Spanish Contemporary Social and Political Issues through its Constitution (UPM)">Spanish Contemporary Social and Political Issues through ...</a></td>
+        <td class="type_enseignement">Enseignement ATHENS</td>
+        <td class="domaines"></td>
+        <td class="categories">Athens Etranger.</td>
+            <td class="heures"></td>
+        <td class="responsables">Sigolène MORIN</td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">MOB_0AT74_EU</span> <a href="/catalogue/2024-2025/ue/19722/MOB-0AT74-EU-the-hidden-house-upm?from=P5015" title="The Hidden House (UPM)">The Hidden House (UPM)</a></td>
+        <td class="type_enseignement">Enseignement ATHENS</td>
+        <td class="domaines"></td>
+        <td class="categories">Athens Etranger.</td>
+            <td class="heures"></td>
+        <td class="responsables">Sigolène MORIN</td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">MOB_0AT75_EU</span> <a href="/catalogue/2024-2025/ue/19723/MOB-0AT75-EU-use-of-video-tools-for-tehs-analysis-of-human-movement-and-sport-techniques-upm?from=P5015" title="Use of video tools for tehs analysis of human movement and sport techniques (UPM)">Use of video tools for tehs analysis of human movement an...</a></td>
+        <td class="type_enseignement">Enseignement ATHENS</td>
+        <td class="domaines"></td>
+        <td class="categories">Athens Etranger.</td>
+            <td class="heures"></td>
+        <td class="responsables">Sigolène MORIN</td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">MOB_0AT76_EU</span> <a href="/catalogue/2024-2025/ue/22287/MOB-0AT76-EU-practical-geology-universidad-politecnica-de-madrid?from=P5015" title="Practical Geology  (Universidad Politecnica de Madrid)">Practical Geology  (Universidad Politecnica de Madrid)</a></td>
+        <td class="type_enseignement">Enseignement ATHENS</td>
+        <td class="domaines"></td>
+        <td class="categories">Athens Etranger.</td>
+            <td class="heures"></td>
+        <td class="responsables">Sigolène MORIN</td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">MOB_0AT77_EU</span> <a href="/catalogue/2024-2025/ue/19724/MOB-0AT77-EU-lasers-from-quantum-foundations-to-engineering-applications-upm?from=P5015" title="Lasers: from quantum foundations to engineering applications (UPM)">Lasers: from quantum foundations to engineering applicati...</a></td>
+        <td class="type_enseignement">Enseignement ATHENS</td>
+        <td class="domaines"></td>
+        <td class="categories">Athens Etranger.</td>
+            <td class="heures"></td>
+        <td class="responsables">Sigolène MORIN</td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">MOB_0AT78_EU</span> <a href="/catalogue/2024-2025/ue/19725/MOB-0AT78-EU-sensors-trees-and-plants-against-air-water-and-soil-pollution-in-big-cities-upm?from=P5015" title="Sensors, trees and plants against air, water and soil pollution in big cities (UPM)">Sensors, trees and plants against air, water and soil pol...</a></td>
+        <td class="type_enseignement">Enseignement ATHENS</td>
+        <td class="domaines"></td>
+        <td class="categories">Athens Etranger.</td>
+            <td class="heures"></td>
+        <td class="responsables">Sigolène MORIN</td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">MOB_0AT79_EU</span> <a href="/catalogue/2024-2025/ue/19726/MOB-0AT79-EU-madrid-1972-2022-architecture-and-urbanscape-an-analytic-approach-upm?from=P5015" title="Madrid 1972-2022 Architecture and urbanscape: an analytic approach (UPM)">Madrid 1972-2022 Architecture and urbanscape: an analytic...</a></td>
+        <td class="type_enseignement">Enseignement ATHENS</td>
+        <td class="domaines"></td>
+        <td class="categories">Athens Etranger.</td>
+            <td class="heures"></td>
+        <td class="responsables">Sigolène MORIN</td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">MOB_0AT80_EU</span> <a href="/catalogue/2024-2025/ue/19728/MOB-0AT80-EU-introduction-to-cfd-with-openfoam-upm?from=P5015" title="Introduction to CFD with OpenFOAM (UPM)">Introduction to CFD with OpenFOAM (UPM)</a></td>
+        <td class="type_enseignement">Enseignement ATHENS</td>
+        <td class="domaines"></td>
+        <td class="categories">Athens Etranger.</td>
+            <td class="heures"></td>
+        <td class="responsables">Sigolène MORIN</td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">MOB_0AT81_EU</span> <a href="/catalogue/2024-2025/ue/19727/MOB-0AT81-EU-introduction-to-tech-diplomacy-the-new-geopolitics-of-technology-upm?from=P5015" title="Introduction to tech diplomacy: the new geopolitics of technology (UPM)">Introduction to tech diplomacy: the new geopolitics of te...</a></td>
+        <td class="type_enseignement">Enseignement ATHENS</td>
+        <td class="domaines"></td>
+        <td class="categories">Athens Etranger.</td>
+            <td class="heures"></td>
+        <td class="responsables">Sigolène MORIN</td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">MOB_0AT82_EU</span> <a href="/catalogue/2024-2025/ue/22286/MOB-0AT82-EU-big-data-and-geo-data-science-python-programming-for-geospatial-processing-analysis-and-query-universidad-politecnica-de-madrid?from=P5015" title="Big Data and Geo-Data Science: Python Programming for Geospatial Processing, Analysis, and Query (Universidad Politecnica de Madrid)">Big Data and Geo-Data Science: Python Programming for Geo...</a></td>
+        <td class="type_enseignement">Enseignement ATHENS</td>
+        <td class="domaines"></td>
+        <td class="categories">Athens Etranger.</td>
+            <td class="heures"></td>
+        <td class="responsables">Sigolène MORIN</td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">MOB_0AT83_EU</span> <a href="/catalogue/2024-2025/ue/22285/MOB-0AT83-EU-citizenship-laboratory-based-on-mathematics-and-sdg-universidad-politecnica-de-madrid?from=P5015" title="Citizenship laboratory based on mathematics and SDG (Universidad Politecnica de Madrid)">Citizenship laboratory based on mathematics and SDG (Univ...</a></td>
+        <td class="type_enseignement">Enseignement ATHENS</td>
+        <td class="domaines"></td>
+        <td class="categories">Athens Etranger.</td>
+            <td class="heures"></td>
+        <td class="responsables">Sigolène MORIN</td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">PDV_00001_TP</span> <a href="/catalogue/2024-2025/ue/17433/PDV-00001-TP-fh-fles-theatre?from=P5015" title="FH/FLES-Théâtre">FH/FLES-Th&eacute;&acirc;tre</a></td>
+        <td class="type_enseignement">Formation Humaine</td>
+        <td class="domaines">Formation Humaine, Créativité</td>
+        <td class="categories">FH-soir.</td>
+            <td class="heures">26</td>
+        <td class="responsables">Cécile BROSSAUD,<br />Dana DIMINESCU</td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">PDV_00004_TP</span> <a href="/catalogue/2024-2025/ue/19497/PDV-00004-TP-projet-etudiant-impact-societal-et-egalite-des-chances?from=P5015" title="Projet étudiant : Impact sociétal et égalité des chances">Projet &eacute;tudiant : Impact soci&eacute;tal et &eacute;galit&eacute; des chances</a></td>
+        <td class="type_enseignement">Formation Humaine</td>
+        <td class="domaines">Formation Humaine</td>
+        <td class="categories">FH Engagement et volontariat.</td>
+            <td class="heures">0</td>
+        <td class="responsables">Johanna LEGRU</td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">PDV_00007_TP</span> <a href="/catalogue/2024-2025/ue/12381/PDV-00007-TP-mieux-se-connaitre-pour-devenir-acteur-de-son-avenir?from=P5015" title="Mieux se connaître pour devenir acteur de son avenir">Mieux se conna&icirc;tre pour devenir acteur de son avenir</a></td>
+        <td class="type_enseignement">Formation Humaine</td>
+        <td class="domaines">Formation Humaine, Alter et Ego</td>
+        <td class="categories">FH-Mardi.</td>
+            <td class="heures">15</td>
+        <td class="responsables">Nicolas ROLLET</td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">PDV_00011_TP</span> <a href="/catalogue/2024-2025/ue/685/PDV-00011-TP-theatre-d-improvisation?from=P5015" title="Théâtre d'Improvisation">Th&eacute;&acirc;tre d'Improvisation</a></td>
+        <td class="type_enseignement">Formation Humaine</td>
+        <td class="domaines">Formation Humaine, Créativité</td>
+        <td class="categories">FH-soir.</td>
+            <td class="heures">96</td>
+        <td class="responsables">Dana DIMINESCU</td>
+            <td class="link">
+                            <a href="https://ecampus.paris-saclay.fr/enrol/index.php?id=21797" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">PDV_00013_TP</span> <a href="/catalogue/2024-2025/ue/898/PDV-00013-TP-english-theatre?from=P5015" title="English Theatre">English Theatre</a></td>
+        <td class="type_enseignement">Formation Humaine</td>
+        <td class="domaines">Langues et Cultures, Anglais, Formation Humaine, Créativité</td>
+        <td class="categories">FH-soir.</td>
+            <td class="heures">60</td>
+        <td class="responsables">Dana DIMINESCU</td>
+            <td class="link">
+                            <a href="http://thang.enst.fr/" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">PDV_00014_TP</span> <a href="/catalogue/2024-2025/ue/684/PDV-00014-TP-theatre-francais?from=P5015" title="Théâtre Français">Th&eacute;&acirc;tre Fran&ccedil;ais</a></td>
+        <td class="type_enseignement">Formation Humaine</td>
+        <td class="domaines">Formation Humaine, Créativité</td>
+        <td class="categories">FH-soir.</td>
+            <td class="heures">138</td>
+        <td class="responsables">Dana DIMINESCU</td>
+            <td class="link">
+                            <a href="https://ecampus.paris-saclay.fr/course/view.php?id=20910" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">PDV_00015_TP</span> <a href="/catalogue/2024-2025/ue/2240/PDV-00015-TP-creation-radio?from=P5015" title="Création radio">Cr&eacute;ation radio</a></td>
+        <td class="type_enseignement">Formation Humaine</td>
+        <td class="domaines">Formation Humaine, Créativité</td>
+        <td class="categories">FH-jours Groupés.</td>
+            <td class="heures">15</td>
+        <td class="responsables">Nicolas ROLLET</td>
+            <td class="link">
+                            <a href="https://ecampus.paris-saclay.fr/course/view.php?id=15369" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">PDV_00017_TP</span> <a href="/catalogue/2024-2025/ue/2670/PDV-00017-TP-impact-societal-et-egalite-des-chances-agir-pour-le-monde-de-demain?from=P5015" title="Impact sociétal et égalité des chances : agir pour le monde de demain">Impact soci&eacute;tal et &eacute;galit&eacute; des chances : agir pour le mon...</a></td>
+        <td class="type_enseignement">Formation Humaine</td>
+        <td class="domaines">Formation Humaine, Message</td>
+        <td class="categories">FH-jours Groupés.</td>
+            <td class="heures">0</td>
+        <td class="responsables">Christelle THOMAS</td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">PDV_00018_TP</span> <a href="/catalogue/2024-2025/ue/1066/PDV-00018-TP-atelier-d-ecriture-creative-pour-non-francophones?from=P5015" title="Atelier d'écriture créative pour non francophones">Atelier d'&eacute;criture cr&eacute;ative pour non francophones</a></td>
+        <td class="type_enseignement">Formation Humaine</td>
+        <td class="domaines">Français Langue Etrangère et/ou Seconde, Formation Humaine, Langues et Cultures, Créativité</td>
+        <td class="categories">FH-jours Groupés.</td>
+            <td class="heures">15</td>
+        <td class="responsables">Nicolas ROLLET</td>
+            <td class="link">
+                            <a href="https://ecampus.paris-saclay.fr/course/view.php?id=22715" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">PDV_00020_TP</span> <a href="/catalogue/2024-2025/ue/1094/PDV-00020-TP-travailler-en-equipe-dans-une-association?from=P5015" title="Travailler en équipe dans une association">Travailler en &eacute;quipe dans une association</a></td>
+        <td class="type_enseignement">Formation Humaine</td>
+        <td class="domaines">Formation Humaine, Engagement et Volontariat</td>
+        <td class="categories">FH-Week End.</td>
+            <td class="heures">15</td>
+        <td class="responsables">Nicolas ROLLET</td>
+            <td class="link">
+                            <a href="https://ecampus.paris-saclay.fr/course/view.php?id=22229" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">PDV_00022_TP</span> <a href="/catalogue/2024-2025/ue/17154/PDV-00022-TP-art-oratoire-et-leadership-par-le-corps?from=P5015" title="Art Oratoire et leadership par le corps">Art Oratoire et leadership par le corps</a></td>
+        <td class="type_enseignement">Formation Humaine</td>
+        <td class="domaines">Formation Humaine, Alter et Ego</td>
+        <td class="categories">FH-jours Groupés.</td>
+            <td class="heures">15</td>
+        <td class="responsables">Nicolas ROLLET</td>
+            <td class="link">
+                            <a href="https://ecampus.paris-saclay.fr/course/view.php?id=59877" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">PDV_00023_TP</span> <a href="/catalogue/2024-2025/ue/1070/PDV-00023-TP-communication-pour-non-francophones?from=P5015" title="Communication pour non francophones">Communication pour non francophones</a></td>
+        <td class="type_enseignement">Formation Humaine</td>
+        <td class="domaines">Français Langue Etrangère et/ou Seconde, Formation Humaine, Langues et Cultures, Message</td>
+        <td class="categories">FH-jours Groupés.</td>
+            <td class="heures">15</td>
+        <td class="responsables">Nicolas ROLLET</td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">PDV_00025_TP</span> <a href="/catalogue/2024-2025/ue/1072/PDV-00025-TP-mener-une-discussion-orientee-vers-l-accord?from=P5015" title="Mener une discussion orientée vers l'accord">Mener une discussion orient&eacute;e vers l'accord</a></td>
+        <td class="type_enseignement">Formation Humaine</td>
+        <td class="domaines">Formation Humaine</td>
+        <td class="categories">FH Alter et Ego.</td>
+            <td class="heures">15</td>
+        <td class="responsables">Olivier FOURNOUT</td>
+            <td class="link">
+                            <a href="https://ecampus.paris-saclay.fr/course/view.php?id=22690" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">PDV_00027_TP</span> <a href="/catalogue/2024-2025/ue/17152/PDV-00027-TP-art-oratoire-techniques-et-outils?from=P5015" title="Art Oratoire: techniques et outils">Art Oratoire: techniques et outils</a></td>
+        <td class="type_enseignement">Formation Humaine</td>
+        <td class="domaines">Formation Humaine, Alter et Ego</td>
+        <td class="categories">FH-jours Groupés.</td>
+            <td class="heures">15</td>
+        <td class="responsables">Nicolas ROLLET</td>
+            <td class="link">
+                            <a href="https://ecampus.paris-saclay.fr/course/view.php?id=59875" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">PDV_00028_TP</span> <a href="/catalogue/2024-2025/ue/1077/PDV-00028-TP-manager-et-travailler-en-equipe?from=P5015" title="Manager et travailler en équipe">Manager et travailler en &eacute;quipe</a></td>
+        <td class="type_enseignement">Formation Humaine</td>
+        <td class="domaines">Formation Humaine</td>
+        <td class="categories">FH Alter et Ego.</td>
+            <td class="heures">15</td>
+        <td class="responsables">Olivier FOURNOUT</td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">PDV_00029_TP</span> <a href="/catalogue/2024-2025/ue/1080/PDV-00029-TP-conduire-une-negociation?from=P5015" title="Conduire une négociation">Conduire une n&eacute;gociation</a></td>
+        <td class="type_enseignement">Formation Humaine</td>
+        <td class="domaines">Formation Humaine</td>
+        <td class="categories">FH Alter et Ego.</td>
+            <td class="heures">15</td>
+        <td class="responsables">Olivier FOURNOUT</td>
+            <td class="link">
+                            <a href="https://ecampus.paris-saclay.fr/course/view.php?id=22234" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">PDV_00030_TP</span> <a href="/catalogue/2024-2025/ue/1738/PDV-00030-TP-savoir-valoriser-son-profil-international-pour-non-francophones?from=P5015" title="Savoir valoriser son profil international pour non-francophones">Savoir valoriser son profil international pour non-franco...</a></td>
+        <td class="type_enseignement">Formation Humaine</td>
+        <td class="domaines">Français Langue Etrangère et/ou Seconde, Formation Humaine, Langues et Cultures, Message</td>
+        <td class="categories">FH-jours Groupés.</td>
+            <td class="heures">15</td>
+        <td class="responsables">Isabelle LALLEMAND</td>
+            <td class="link">
+                            <a href="https://ecampus.paris-saclay.fr/course/view.php?id=11559" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">PDV_00031_TP</span> <a href="/catalogue/2024-2025/ue/13610/PDV-00031-TP-atelier-de-creation-video?from=P5015" title="Atelier de création vidéo">Atelier de cr&eacute;ation vid&eacute;o</a></td>
+        <td class="type_enseignement">Formation Humaine</td>
+        <td class="domaines">Formation Humaine, Créativité</td>
+        <td class="categories">FH-jours Groupés.</td>
+            <td class="heures">15</td>
+        <td class="responsables">Olivier FOURNOUT,<br />Nicolas ROLLET</td>
+            <td class="link">
+                            <a href="https://ecampus.paris-saclay.fr/course/view.php?id=22370" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">PDV_00033_TP</span> <a href="/catalogue/2024-2025/ue/13613/PDV-00033-TP-c-est-vraiment-toi-qui-decide?from=P5015" title="« C’est (vraiment) toi qui décide ?»">&laquo; C&rsquo;est (vraiment) toi qui d&eacute;cide ?&raquo;</a></td>
+        <td class="type_enseignement">Formation Humaine</td>
+        <td class="domaines">Formation Humaine, Alter et Ego</td>
+        <td class="categories">FH-jours Groupés.</td>
+            <td class="heures">15</td>
+        <td class="responsables">Julien MOREL</td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">PDV_00037_TP</span> <a href="/catalogue/2024-2025/ue/11120/PDV-00037-TP-solidarite-numerique?from=P5015" title="Solidarité numérique">Solidarit&eacute; num&eacute;rique</a></td>
+        <td class="type_enseignement">Formation Humaine</td>
+        <td class="domaines">Formation Humaine, Message</td>
+        <td class="categories">FH-jours Groupés.</td>
+            <td class="heures">15</td>
+        <td class="responsables">Dana DIMINESCU</td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">PDV_00042_TP</span> <a href="/catalogue/2024-2025/ue/2737/PDV-00042-TP-leadership-et-cooperation-la-carte-de-l-equilibre?from=P5015" title="Leadership et coopération: la carte de l'équilibre">Leadership et coop&eacute;ration: la carte de l'&eacute;quilibre</a></td>
+        <td class="type_enseignement">Formation Humaine</td>
+        <td class="domaines">Formation Humaine</td>
+        <td class="categories">FH Alter et Ego.</td>
+            <td class="heures">15</td>
+        <td class="responsables">Olivier FOURNOUT</td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">PDV_00043_TP</span> <a href="/catalogue/2024-2025/ue/2834/PDV-00043-TP-prise-de-parole-en-public?from=P5015" title="Prise de parole en public">Prise de parole en public</a></td>
+        <td class="type_enseignement">Formation Humaine</td>
+        <td class="domaines">Formation Humaine, Alter et Ego</td>
+        <td class="categories">FH-jours Groupés.</td>
+            <td class="heures">15</td>
+        <td class="responsables">Julien MOREL</td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">PDV_00046_TP</span> <a href="/catalogue/2024-2025/ue/11122/PDV-00046-TP-competences-humaines-et-leadership?from=P5015" title="Compétences humaines et leadership">Comp&eacute;tences humaines et leadership</a></td>
+        <td class="type_enseignement">Formation Humaine</td>
+        <td class="domaines">Formation Humaine, Message</td>
+        <td class="categories">FH-jours Groupés.</td>
+            <td class="heures">15</td>
+        <td class="responsables">Julien MOREL</td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">PDV_00047_TP</span> <a href="/catalogue/2024-2025/ue/13720/PDV-00047-TP-cultiver-son-intelligence-relationnelle?from=P5015" title="Cultiver son intelligence relationnelle">Cultiver son intelligence relationnelle</a></td>
+        <td class="type_enseignement">Formation Humaine</td>
+        <td class="domaines">Formation Humaine, Alter et Ego</td>
+        <td class="categories">FH-jours Groupés.</td>
+            <td class="heures">15</td>
+        <td class="responsables">Nicolas ROLLET</td>
+            <td class="link">
+                            <a href="https://ecampus.paris-saclay.fr/course/view.php?id=22238" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">PDV_00049_TP</span> <a href="/catalogue/2024-2025/ue/14972/PDV-00049-TP-a-la-decouverte-de-mes-super-pouvoirs?from=P5015" title="A la découverte de mes super pouvoirs">A la d&eacute;couverte de mes super pouvoirs</a></td>
+        <td class="type_enseignement">Formation Humaine</td>
+        <td class="domaines">Formation Humaine, Alter et Ego</td>
+        <td class="categories">FH-jours Groupés.</td>
+            <td class="heures">15</td>
+        <td class="responsables">Nicolas ROLLET</td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">PDV_00050_TP</span> <a href="/catalogue/2024-2025/ue/14977/PDV-00050-TP-life-design-creez-votre-metier-creez-le-monde?from=P5015" title="Life Design: Créez votre métier, créez le monde !">Life Design: Cr&eacute;ez votre m&eacute;tier, cr&eacute;ez le monde !</a></td>
+        <td class="type_enseignement">Formation Humaine</td>
+        <td class="domaines">Formation Humaine</td>
+        <td class="categories">FH Créativité.</td>
+            <td class="heures">15</td>
+        <td class="responsables">Julien MOREL</td>
+            <td class="link">
+                            <a href="https://ecampus.paris-saclay.fr/course/view.php?id=24216" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">PDV_00052_TP</span> <a href="/catalogue/2024-2025/ue/15085/PDV-00052-TP-tournoi-debating-fda?from=P5015" title="Tournoi Debating FDA">Tournoi Debating FDA</a></td>
+        <td class="type_enseignement">Formation Humaine</td>
+        <td class="domaines">Anglais, Formation Humaine, Langues et Cultures</td>
+        <td class="categories">FH Message.</td>
+            <td class="heures"></td>
+        <td class="responsables">Jean-Samuel BEUSCART,<br />Zachary OBERG</td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">PDV_00053_TP</span> <a href="/catalogue/2024-2025/ue/15364/PDV-00053-TP-dialogue-des-diversites?from=P5015" title="Dialogue des diversités">Dialogue des diversit&eacute;s</a></td>
+        <td class="type_enseignement">Formation Humaine</td>
+        <td class="domaines">Formation Humaine</td>
+        <td class="categories">FH Alter et Ego.</td>
+            <td class="heures">15</td>
+        <td class="responsables">Olivier FOURNOUT</td>
+            <td class="link">
+                            <a href="https://ecampus.paris-saclay.fr/course/view.php?id=44215" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">PDV_00054_TP</span> <a href="/catalogue/2024-2025/ue/17333/PDV-00054-TP-tandem-franco-allemand?from=P5015" title="Tandem Franco-Allemand">Tandem Franco-Allemand</a></td>
+        <td class="type_enseignement">Formation Humaine</td>
+        <td class="domaines">Formation Humaine, Alter et Ego, Langues et Cultures, Allemand</td>
+        <td class="categories"></td>
+            <td class="heures">30</td>
+        <td class="responsables">Verena GALGANEK,<br />Nicolas ROLLET</td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">PDV_00055_TP</span> <a href="/catalogue/2024-2025/ue/19456/PDV-00055-TP-initiation-a-la-litterature-de-science-fiction-et-atelier-d-ecriture-creative-sur-le-theme-du-futur?from=P5015" title="Initiation à la littérature de science fiction et atelier d'écriture créative sur le thème du futur">Initiation &agrave; la litt&eacute;rature de science fiction et atelier...</a></td>
+        <td class="type_enseignement">Formation Humaine</td>
+        <td class="domaines">Formation Humaine</td>
+        <td class="categories"></td>
+            <td class="heures">15</td>
+        <td class="responsables">Olivier FOURNOUT</td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">PDV_00056_TP</span> <a href="/catalogue/2024-2025/ue/22156/PDV-00056-TP-atelier-speed-strat?from=P5015" title="Atelier speed strat">Atelier speed strat</a></td>
+        <td class="type_enseignement">Formation Humaine</td>
+        <td class="domaines">Formation Humaine, Message</td>
+        <td class="categories">FH-jours Groupés.</td>
+            <td class="heures">15</td>
+        <td class="responsables">Nicolas ROLLET</td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">PDV_00058_TP</span> <a href="/catalogue/2024-2025/ue/22158/PDV-00058-TP-intelligence-relationnnelle-pour-la-transition-ecologique?from=P5015" title="Intelligence relationnnelle pour la transition écologique">Intelligence relationnnelle pour la transition &eacute;cologique</a></td>
+        <td class="type_enseignement">Formation Humaine</td>
+        <td class="domaines">Formation Humaine</td>
+        <td class="categories"></td>
+            <td class="heures">15</td>
+        <td class="responsables">Olivier FOURNOUT</td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">PDV_00059_TP</span> <a href="/catalogue/2024-2025/ue/22159/PDV-00059-TP-paroles-en-public-et-litterature?from=P5015" title="Paroles en public et littérature">Paroles en public et litt&eacute;rature</a></td>
+        <td class="type_enseignement">Formation Humaine</td>
+        <td class="domaines">Formation Humaine, Alter et Ego</td>
+        <td class="categories">FH-jours Groupés.</td>
+            <td class="heures">15</td>
+        <td class="responsables">Nicolas ROLLET</td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">PDV_00060_TP</span> <a href="/catalogue/2024-2025/ue/22187/PDV-00060-TP-design-thinking-methodologie-d-innovation?from=P5015" title="Design Thinking : méthodologie d’innovation">Design Thinking : m&eacute;thodologie d&rsquo;innovation</a></td>
+        <td class="type_enseignement">Formation Humaine</td>
+        <td class="domaines">Formation Humaine, Message</td>
+        <td class="categories">FH-jours Groupés.</td>
+            <td class="heures"></td>
+        <td class="responsables">Nicolas ROLLET</td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">PDV_00061_TP</span> <a href="/catalogue/2024-2025/ue/24956/PDV-00061-TP-engager-son-corps-et-trouver-sa-voix?from=P5015" title="Engager son corps et trouver sa voix">Engager son corps et trouver sa voix</a></td>
+        <td class="type_enseignement">Formation Humaine</td>
+        <td class="domaines">Formation Humaine, Alter et Ego</td>
+        <td class="categories">FH-jours Groupés.</td>
+            <td class="heures">15</td>
+        <td class="responsables">Isabelle GARRON</td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">PHY_0EL14_TP</span> <a href="/catalogue/2024-2025/ue/22182/PHY-0EL14-TP-technologies-quantiques?from=P5015" title="Technologies quantiques">Technologies quantiques</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines">Communications, Electronique, Physique</td>
+        <td class="categories">UE partagée du créneau D.</td>
+            <td class="heures">24</td>
+        <td class="responsables">Nicolas FABRE</td>
+            <td class="link">
+                            <a href="https://sites.google.com/view/personalpagenicolasfabre/teaching" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+        </tbody>
+    <script type="text/javascript">
+    $(function () {
+        window.Application.Datatables = window.Application.Datatables || {}
+        window.Application.Datatables['tableau-unitesenseignementfiche'] = $("#tableau-unitesenseignementfiche").DataTable({"language":{"emptyTable":"Aucun r\u00e9sultat"},"order":[[0,"asc"]],"ordering":true,"paging":true,"searching":true,"info":false,"columsDefs":[{"targets":"no-sort","orderable":false}]});
+    });
+</script><style>
+    .no-sort::after { display: none!important; }
+    .no-sort { pointer-events: none!important; cursor: default!important; }
+</style>        <script type="text/javascript">
+
+            $(function () {
+                var filterableHeaders = ["Type d'enseignement","Domaines","Cat\u00e9gorie d'UE"];
+                var table = window.Application.Datatables['tableau-unitesenseignementfiche'];
+                var filters = new Application.DatatableFilters(table, filterableHeaders);
+
+                window.Application.FilterableDatatables = window.Application.FilterableDatatables || {}
+                window.Application.FilterableDatatables['tableau-unitesenseignementfiche'] = filters;
+
+                filters.init();
+
+            });
+        </script>    <script>  
+        ($(function() {
+            var filters = window.Application.FilterableDatatables['tableau-unitesenseignementfiche'];
+
+            $('.table-filter-toggle').on('click', filters.toggle);
+        }))
+    </script>
+    </table>
+</div>
+  </section>
+<!-- Modal -->
+<div class="container">
+    <div class="modal annuaire-modal-aware" data-backdrop="true" id="annuaire-modal" tabindex="-1" role="dialog" aria-labelledby="Détails de la personne sélectionnée">
+        <div class="modal-dialog  modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close-modal" data-dismiss="modal" aria-label="Close">
+                        <i class="fa fa-times"></i>
+                    </button>
+                    <h3 class="modal-title"></h3>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="photo-column annuaire-modal-photo">
+                                <img data-default-src="/assets/bootstrap/3.3.5/images/annuaire/unknown.gif" src="" alt="" class="img-responsive" />
+                            </div>
+                            <div class="data-column">
+                                <div class="detail-line">
+                                    <div class="row">
+                                        <div class="list-group-item-heading">E-mail</div>
+                                        <div class="list-group-item-text" data-field="emailetb"></div>
+                                    </div>
+                                </div>
+
+                                <div class="detail-line">
+                                    <div class="row">
+
+                                        <div class="list-group-item-heading">Catégorie</div>
+                                        <div class="list-group-item-text" data-field="idcategory"
+                                             data-secundary-field='libelle'></div>
+                                    </div>
+
+                                </div>
+                                <div class="detail-line">
+                                    <div class="row">
+
+                                        <div class="list-group-item-heading">Site(s)</div>
+                                        <div class="list-group-item-text" data-field="idlocalisation"
+                                             data-secundary-field='intitule'></div>
+                                    </div>
+
+                                </div>
+                                <div class="detail-line">
+                                    <div class="row">
+
+                                        <div class="list-group-item-heading">Téléphone</div>
+                                        <div class="list-group-item-text" data-field="telephone1"></div>
+                                    </div>
+
+                                </div>
+                                <div class="detail-line">
+                                    <div class="row">
+
+                                        <div class="list-group-item-heading">Téléphone</div>
+                                        <div class="list-group-item-text" data-field="idlocalisation"
+                                             data-secundary-field='telephone'></div>
+                                    </div>
+
+                                </div>
+                                <div class="detail-line">
+                                    <div class="row">
+
+                                        <div class="list-group-item-heading">Entité de rattachement :</div>
+                                        <div class="list-group-item-text" data-field="idpersentite"
+                                             data-secundary-field='nom'></div>
+                                    </div>
+
+                                </div>
+                                <div class="detail-line">
+                                    <div class="row">
+
+                                        <div class="list-group-item-heading">Libelle diplôme :</div>
+                                        <div class="list-group-item-text" data-field="diplome"
+                                             data-secundary-field='libelle'></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="list-group-item-secundary-heading">Niveau :</div>
+                                        <div class="list-group-item-text" data-field="diplome"
+                                             data-secundary-field='niveau'></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="list-group-item-secundary-heading">Site :</div>
+                                        <div class="list-group-item-text" data-field="diplome"
+                                             data-secundary-field='site'></div>
+                                    </div>
+
+                                </div>
+                                <div class="detail-line">
+                                    <div class="row">
+
+                                        <div class="list-group-item-heading">Fonction :</div>
+                                        <div class="list-group-item-text" data-field="fonctions"
+                                             data-secundary-field='entite'></div>
+                                    </div>
+
+                                </div>
+                                <div class="detail-line">
+                                    <div class="row">
+
+                                        <div class="list-group-item-heading">Programme d'échange :</div>
+                                        <div class="list-group-item-text" data-field="progechange"
+                                             data-secundary-field='libelle'></div>
+                                    </div>
+
+                                </div>
+                                <div class="detail-line">
+                                    <div class="row">
+                                        <div class="list-group-item-heading">Régime d'inscription :</div>
+                                        <div class="list-group-item-text"
+                                             data-field="regimeinscription" data-secundary-field='libelle'></div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="preloader-container" id="preloader">
+	<img alt="Veuillez patienter"
+		src="/assets/bootstrap/3.3.5/images/preloader.png" />
+</div>                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--/.container-fluid -->
+                <div id="footer">
+            <div class="row">
+                <div class="col-md-11">
+                    <div class="row">
+    <div class="col-md-4 col-sm-12">
+        <div class="row">
+            <div class="col-md-12">
+<h1>Plan du site</h1><ul><li>Accueil</li><li>Les formations</li></ul>            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+    <ul><li><a href="#" onclick="Application.Modal.showModalAjax('modal-footer-contenu', 'Mentions légales', '/contenu/MENT_LEG', true)">Mentions légales</a></li>            </div>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-12">
+    </div>
+    <div class="col-md-4 col-sm-12">
+    </div>
+</div>
+                    <div class="modal" id="modal-footer-contenu" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg modal-full-width" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="row">
+                    <div class="col-md-11">
+                        <h4 class="modal-title" id="modal-title"></h4>
+                    </div>
+                    <div class="col-md-1 pull-right">
+                        <button type="button" class="close-modal" data-dismiss="modal" aria-label="Close">
+                            <i class="fa fa-times"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-body"></div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+                </div>
+            </div>
+        </div>
+        
+        <script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;bootstrap_3_3_5_i18n_js.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;bootstrap_3_3_5_push_area_js.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;vendor_bootstraptree_js.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;bootstrap_3_3_5_annuaire_modal_js.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;bootstrap_3_3_5_catalogue_fiche_element_formation_js.js"></script>        <div class="device-xs visible-xs"></div>
+        <div class="device-sm visible-sm"></div>
+        <div class="device-md visible-md"></div>
+        <div class="device-lg visible-lg"></div>
+
+    </body>
+</html>

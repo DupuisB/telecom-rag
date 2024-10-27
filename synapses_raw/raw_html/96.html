@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <meta name="description" content="SynapseS">
+        <meta name="author" content="">
+        <script type="text/javascript">
+            var es6 = true;
+            try { eval("var foo = (x)=>x+1"); }
+            catch (e) { es6 = false; }
+
+            if (!es6) {
+                var script = document.createElement('script');
+                script.src = "/assets/app_polyfills.js";
+                script.setAttribute("type", "text/javascript");
+                document.head.appendChild(script);
+            }
+        </script>
+        <title>SynapseS</title><link href="&#x2F;assets&#x2F;app_base_print.css" media="print" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;favicon.png" rel="icon" sizes="16x16" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;favicon.ico" rel="icon" type="image&#x2F;x-icon&#x20;">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;apple-touch-icon.png" rel="apple-touch-icon" sizes="76x76" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;apple-touch-icon-iphone.png" rel="apple-touch-icon" sizes="76x76" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;apple-touch-icon-iphone-retina.png" rel="apple-touch-icon" sizes="120x120" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;apple-touch-icon-ipad.png" rel="apple-touch-icon" sizes="76x76" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;apple-touch-icon-ipad-retina.png" rel="apple-touch-icon" sizes="152x152" type="image&#x2F;png"><script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;app_base_vendor.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;vendor&#x2F;jquery-migrate&#x2F;jquery-migrate.min.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;app_base.js"></script>    </head>
+
+    <body>
+        <div class="container header">
+            <!-- topbar -->
+            <div class="header-topbar">
+                <div class="logo-container">
+    <a href="/" title="Accueil">
+        <img alt="logo" src="/assets/bootstrap/3.3.5/images/logo_telecomparistech_sm.png" />
+    </a>
+</div>
+
+                <div class="banner-controls-container">
+                    <div class="top-banner-controls-container">
+                        <nav>
+                            <ul id="header-navigation-menu" class=""><li><a href="/logout" ><span class="header-menu">Se déconnecter</span></a></li></ul>                        </nav>
+                    </div>
+
+                    <div class="bottom-banner-controls-container">
+                        <div class="language-switch-container">
+                            <ul id="language-switch">
+	<li class="dropdown">
+    	        <a class="dropdown-toggle" data-toggle="dropdown" href="#"> <span
+			class="lang-label" data-language="fr_FR">FR</span>
+            <span class="flag-icon flag-icon-fr"> </span>
+            <i class="fa fa-caret-down dropdown-toggle"></i>
+	</a>
+                <ul class="dropdown-menu">
+                                                            <li><a href="#" class="select-language"
+				data-language="en_US">
+                        <span class="flag-icon flag-icon-gb"> </span>
+                        English                    </a></li>
+                        </ul>
+	</li>
+</ul>
+<script>
+    var language = $(".lang-label").data("language");
+    i18next.use(i18nextXHRBackend).init({
+        ns: [language],
+        defaultNS: language,
+        nsSeparator: false,
+        keySeparator: false,
+        backend: {
+            loadPath: '/assets/i18n/' + language + '.json',
+        },
+        debug: false
+    });
+</script>
+<link href="&#x2F;assets&#x2F;app_base_print.css" media="print" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;favicon.png" rel="icon" sizes="16x16" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;favicon.ico" rel="icon" type="image&#x2F;x-icon&#x20;">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;apple-touch-icon.png" rel="apple-touch-icon" sizes="76x76" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;apple-touch-icon-iphone.png" rel="apple-touch-icon" sizes="76x76" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;apple-touch-icon-iphone-retina.png" rel="apple-touch-icon" sizes="120x120" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;apple-touch-icon-ipad.png" rel="apple-touch-icon" sizes="76x76" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;apple-touch-icon-ipad-retina.png" rel="apple-touch-icon" sizes="152x152" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;vendor&#x2F;flag-icon-css&#x2F;css&#x2F;flag-icon.min.css" rel="stylesheet" type="text&#x2F;css">                        </div>
+                    </div>
+
+                    <!-- logout on small screens -->
+                    <ul id="connection-form-container" class="nav navbar-nav">
+                                            </ul>
+
+                    <div class="header-content-responsive hidden-sm hidden-md hidden-lg">
+                        <div class="collapsed-button-container">
+                            <button type="button" class="navbar-toggle pull-right"
+                                    data-toggle="collapse" data-target="#main-navigation-menu"
+                                    aria-expanded="false" aria-controls="navbar">
+                                <i class="fa fa-bars fa-lg"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- banner with navigation -->
+            <div class="banner">
+                <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="logo-container">
+    <a href="/" title="Accueil">
+        <img alt="logo" src="/assets/bootstrap/3.3.5/images/logo_telecomparistech_lg.png" />
+    </a>
+</div>
+
+                            <div class="navbar-collapse collapse" id="main-navigation-menu">
+                                <div class="col-md-9 col-sm-12">
+                                    <ul class="nav navbar-nav">
+                                        <li class=""><a href="/" >Accueil</a></li>                                    </ul>
+                                </div>
+                            </div> <!-- navbar-collapse -->
+
+                        </div> <!-- row -->
+                    </div> <!-- container-fluid -->
+                </nav> <!--/.nav-collapse -->
+            </div>
+            <!-- Version SynapseS  -->
+            <div id="app-version-label">v2.11.0 (5705)</div>
+            <div id="breadcrumbs">
+                <ul>
+            <li class="item root-item">
+            <span>Accueil</span>
+        </li>
+    </ul>
+            </div>
+        </div>
+
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                                        <div id="content-wrapper" class="col-md-12">
+                        <div id="flash-messages" class="flash-messages" class="row">
+</div>
+<script type="text/javascript">
+    setTimeout(function() {
+        $('.flash-messages').find('ul').fadeOut(3000, function() {
+            $('.flash-messages').find('ul').remove();
+        });
+    }, 9000);
+</script>                        <h1>Une erreur 404 est survenue</h1>
+<h2>Page not found.</h2>
+
+
+
+<p>L'URL demandée n'a pas pu trouver de route correspondante.</p>
+
+
+
+
+
+<h3>Aucune exception disponible</h3>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--/.container-fluid -->
+                <div id="footer">
+            <div class="row">
+                <div class="col-md-11">
+                    <div class="row">
+    <div class="col-md-4 col-sm-12">
+        <div class="row">
+            <div class="col-md-12">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                </div>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-12">
+    </div>
+    <div class="col-md-4 col-sm-12">
+    </div>
+</div>
+                    <div class="modal" id="modal-footer-contenu" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg modal-full-width" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="row">
+                    <div class="col-md-11">
+                        <h4 class="modal-title" id="modal-title"></h4>
+                    </div>
+                    <div class="col-md-1 pull-right">
+                        <button type="button" class="close-modal" data-dismiss="modal" aria-label="Close">
+                            <i class="fa fa-times"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-body"></div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+                </div>
+            </div>
+        </div>
+        
+                <div class="device-xs visible-xs"></div>
+        <div class="device-sm visible-sm"></div>
+        <div class="device-md visible-md"></div>
+        <div class="device-lg visible-lg"></div>
+
+    </body>
+</html>

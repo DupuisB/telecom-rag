@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <meta name="description" content="SynapseS">
+        <meta name="author" content="">
+        <script type="text/javascript">
+            var es6 = true;
+            try { eval("var foo = (x)=>x+1"); }
+            catch (e) { es6 = false; }
+
+            if (!es6) {
+                var script = document.createElement('script');
+                script.src = "/assets/app_polyfills.js";
+                script.setAttribute("type", "text/javascript");
+                document.head.appendChild(script);
+            }
+        </script>
+        <title>SynapseS</title><link href="&#x2F;assets&#x2F;vendor&#x2F;fontawesome&#x2F;css&#x2F;fontawesome.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;vendor&#x2F;bootstrap&#x2F;css&#x2F;bootstrap.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;app_base.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_calendrier_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_i18n_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_navigation_menu_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_push-area_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;vendor&#x2F;bootstraptree&#x2F;bootstrap-tree.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_annuaire_modal_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_catalogue_parcours_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;app_base_print.css" media="print" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;favicon.png" rel="icon" sizes="16x16" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;favicon.ico" rel="icon" type="image&#x2F;x-icon&#x20;">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;apple-touch-icon.png" rel="apple-touch-icon" sizes="76x76" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;apple-touch-icon-iphone.png" rel="apple-touch-icon" sizes="76x76" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;apple-touch-icon-iphone-retina.png" rel="apple-touch-icon" sizes="120x120" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;apple-touch-icon-ipad.png" rel="apple-touch-icon" sizes="76x76" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;apple-touch-icon-ipad-retina.png" rel="apple-touch-icon" sizes="152x152" type="image&#x2F;png"><script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;app_base_vendor.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;vendor&#x2F;jquery-migrate&#x2F;jquery-migrate.min.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;app_base.js"></script>    </head>
+
+    <body>
+        <div class="container header">
+            <!-- topbar -->
+            <div class="header-topbar">
+                <div class="logo-container">
+    <a href="/" title="Accueil">
+        <img alt="logo" src="/assets/bootstrap/3.3.5/images/logo_telecomparistech_sm.png" />
+    </a>
+</div>
+
+                <div class="banner-controls-container">
+                    <div class="top-banner-controls-container">
+                        <nav>
+                            <ul id="header-navigation-menu" class=""></ul>                        </nav>
+                    </div>
+
+                    <div class="bottom-banner-controls-container">
+                        <div class="language-switch-container">
+                            <ul id="language-switch">
+	<li class="dropdown">
+    	        <a class="dropdown-toggle" data-toggle="dropdown" href="#"> <span
+			class="lang-label" data-language="fr_FR">FR</span>
+            <span class="flag-icon flag-icon-fr"> </span>
+            <i class="fa fa-caret-down dropdown-toggle"></i>
+	</a>
+                <ul class="dropdown-menu">
+                                                            <li><a href="#" class="select-language"
+				data-language="en_US">
+                        <span class="flag-icon flag-icon-gb"> </span>
+                        English                    </a></li>
+                        </ul>
+	</li>
+</ul>
+<script>
+    var language = $(".lang-label").data("language");
+    i18next.use(i18nextXHRBackend).init({
+        ns: [language],
+        defaultNS: language,
+        nsSeparator: false,
+        keySeparator: false,
+        backend: {
+            loadPath: '/assets/i18n/' + language + '.json',
+        },
+        debug: false
+    });
+</script>
+<link href="&#x2F;assets&#x2F;vendor&#x2F;fontawesome&#x2F;css&#x2F;fontawesome.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;vendor&#x2F;bootstrap&#x2F;css&#x2F;bootstrap.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;app_base.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_calendrier_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_i18n_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_navigation_menu_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_push-area_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;vendor&#x2F;bootstraptree&#x2F;bootstrap-tree.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_annuaire_modal_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_catalogue_parcours_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;app_base_print.css" media="print" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;favicon.png" rel="icon" sizes="16x16" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;favicon.ico" rel="icon" type="image&#x2F;x-icon&#x20;">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;apple-touch-icon.png" rel="apple-touch-icon" sizes="76x76" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;apple-touch-icon-iphone.png" rel="apple-touch-icon" sizes="76x76" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;apple-touch-icon-iphone-retina.png" rel="apple-touch-icon" sizes="120x120" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;apple-touch-icon-ipad.png" rel="apple-touch-icon" sizes="76x76" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;apple-touch-icon-ipad-retina.png" rel="apple-touch-icon" sizes="152x152" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;vendor&#x2F;flag-icon-css&#x2F;css&#x2F;flag-icon.min.css" rel="stylesheet" type="text&#x2F;css">                        </div>
+                    </div>
+
+                    <!-- logout on small screens -->
+                    <ul id="connection-form-container" class="nav navbar-nav">
+                        <li id="dropdown-authentication-menu" class="dropdown dropdown-authentication-menu">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+        <i class="fa fa-user fa-lg hidden-sm hidden-md hidden-lg"></i>
+        <span class="hidden-xs">Connexion</span>
+        <i class="fa fa-caret-down"></i>
+    </a>
+    <ul id="dropdown-authentication-menu-content" class="dropdown-menu">
+        <li>
+            <div class="row">
+                <div class="col-md-12">
+                    <header>Utiliser mon compte école</header>
+                                        <a href="/login?type=Shib">
+                        <button class="btn btn-success btn-block">
+                            Je me connecte                        </button>
+                    </a>
+                                        <hr>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <header>Utiliser un compte provisoire</header>
+                </div>
+                <form id="login-form">
+                    <div class="col-md-12 form">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="identifier-area"
+                                   data-minlength="5" pattern="^[a-zA-Z0-9._\-@]+$"
+                                   placeholder="Nom d'utilisateur"
+                                   required="required">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" id="credential-area"
+                                   placeholder="Mot de passe"
+                                   required="required">
+                        </div>
+                        <div class="form-group">
+                            <button id="btn-login-provisoire" type="submit" class="btn btn-default btn-block">Valider</button>
+                        </div>
+                        <div class="alert alert-danger hidden" role="alert"
+                             id="login-error-message-container">
+                            <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+                            <span class="sr-only">Error:</span> <span id="login-error-message"></span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </li>
+    </ul>
+</li>
+                    </ul>
+
+                    <div class="header-content-responsive hidden-sm hidden-md hidden-lg">
+                        <div class="collapsed-button-container">
+                            <button type="button" class="navbar-toggle pull-right"
+                                    data-toggle="collapse" data-target="#main-navigation-menu"
+                                    aria-expanded="false" aria-controls="navbar">
+                                <i class="fa fa-bars fa-lg"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- banner with navigation -->
+            <div class="banner">
+                <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="logo-container">
+    <a href="/" title="Accueil">
+        <img alt="logo" src="/assets/bootstrap/3.3.5/images/logo_telecomparistech_lg.png" />
+    </a>
+</div>
+
+                            <div class="navbar-collapse collapse" id="main-navigation-menu">
+                                <div class="col-md-9 col-sm-12">
+                                    <ul class="nav navbar-nav">
+                                        <li class=""><a href="/" >Accueil</a></li><li class="dropdown"><a href="/catalogue" class="dropdown-toggle" data-toggle="dropdown">Les formations<i class="fa fa-caret-down"></i></a><ul  class="dropdown-menu"><li class="dropdown-submenu"><a href="/catalogue/2024-2025" ><b>Catalogue 2024 - 2025</b></a><ul  class="dropdown-menu"><li class="dropdown-submenu"><a href="/catalogue/2024-2025/type/Ing%25C3%25A9nieur" >Ingénieur</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2024-2025/diplome/4/ING-diplome-d-ingenieur" >ING&nbsp;-&nbsp;Diplôme d'ingénieur</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2024-2025/type/Master" >Master</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2024-2025/diplome/2490/M1DATAAI-master-m1-data-and-artificial-intelligence" >M1DATAAI&nbsp;-&nbsp;Master M1 - Data and Artificial Intelligence</a></li><li class=""><a href="/catalogue/2024-2025/diplome/2489/M1IGD-master-m1-interaction-graphic-design" >M1IGD&nbsp;-&nbsp;Master M1 - Interaction, Graphic & Design</a></li><li class=""><a href="/catalogue/2024-2025/diplome/2064/M1REDESI-master-m1-recherche-en-design" >M1REDESI&nbsp;-&nbsp;Master M1 - recherche en Design</a></li><li class=""><a href="/catalogue/2024-2025/diplome/2083/M2DATAAI-master-m2-data-artificial-intelligence" >M2DATAAI&nbsp;-&nbsp;Master M2 - Data & Artificial Intelligence</a></li><li class=""><a href="/catalogue/2024-2025/diplome/1327/M2ICS-master-m2-integration-circuits-and-systems" >M2ICS&nbsp;-&nbsp;Master M2 - Integration, Circuits and Systems</a></li><li class=""><a href="/catalogue/2024-2025/diplome/26/M2IGD-master-m2-interaction-graphic-design" >M2IGD&nbsp;-&nbsp;Master M2 - Interaction, Graphic & Design</a></li><li class=""><a href="/catalogue/2024-2025/diplome/42/M2IREN-master-m2-industries-de-reseau-et-economie-numerique" >M2IREN&nbsp;-&nbsp;Master M2 - Industries de Réseau et Economie Numérique</a></li><li class=""><a href="/catalogue/2024-2025/diplome/2065/M2MICAS-master-m2-information-processing-machine-learning-communications-and-security" >M2MICAS&nbsp;-&nbsp;Master M2- Information processing: machine learning, communications and security</a></li><li class=""><a href="/catalogue/2024-2025/diplome/38/M2MVA-master-m2-mathematiques-vision-apprentissage" >M2MVA&nbsp;-&nbsp;Master M2 - Mathématiques, Vision, Apprentissage</a></li><li class=""><a href="/catalogue/2024-2025/diplome/2491/M2RECHDESI-master-m2-recherche-en-design" >M2RECHDESI&nbsp;-&nbsp;Master M2 - Recherche en Design</a></li><li class=""><a href="/catalogue/2024-2025/diplome/1857/M2SETI-master-m2-systemes-embarques-et-traitement-de-l-information" >M2SETI&nbsp;-&nbsp;Master M2 - Systèmes embarqués et traitement de l'information</a></li><li class=""><a href="/catalogue/2024-2025/diplome/2492/PHDCOMPSC-phd-track-computer-science" >PHDCOMPSC&nbsp;-&nbsp;PhD Track - Computer Science</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2024-2025/type/Mast%25C3%25A8re+sp%25C3%25A9cialis%25C3%25A9" >Mastère spécialisé</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2024-2025/diplome/61/ADE-architecte-digital-d-entreprise" >ADE&nbsp;-&nbsp;Architecte Digital d'Entreprise</a></li><li class=""><a href="/catalogue/2024-2025/diplome/60/ARC-architecte-reseaux-et-cybersecurite" >ARC&nbsp;-&nbsp;Architecte Réseaux et Cybersécurité</a></li><li class=""><a href="/catalogue/2024-2025/diplome/62/BGD-big-data-gestion-et-analyse-des-donnees-massives" >BGD&nbsp;-&nbsp;Big Data : gestion et analyse des données massives</a></li><li class=""><a href="/catalogue/2024-2025/diplome/78/CYBER2-cybersecurite-et-cyberdefense" >CYBER2&nbsp;-&nbsp;Cybersécurité et Cyberdéfense</a></li><li class=""><a href="/catalogue/2024-2025/diplome/65/ECRSI-expert-cybersecurite-des-reseaux-et-des-systemes-d-information" >ECRSI&nbsp;-&nbsp;Expert cybersécurité des réseaux et des systèmes d'information</a></li><li class=""><a href="/catalogue/2024-2025/diplome/1996/IA-ia-intelligence-artificielle" >IA&nbsp;-&nbsp;IA : Intelligence Artificielle</a></li><li class=""><a href="/catalogue/2024-2025/diplome/1846/SMOB-smart-mobility-transformation-numerique-des-systemes-de-mobilite" >SMOB&nbsp;-&nbsp;Smart Mobility - Transformation Numérique des Systèmes de Mobilité</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2024-2025/type/Programme+d%2527%25C3%25A9change" >Programme d'échange</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2024-2025/diplome/1/PEI-echange-international-non-diplomant" >PEI&nbsp;-&nbsp;Echange international non diplomant</a></li></ul></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2023-2024" >Catalogue 2023 - 2024</a><ul  class="dropdown-menu"><li class="dropdown-submenu"><a href="/catalogue/2023-2024/type/Certificat+d%2527Etudes+Sp%25C3%25A9cialis%25C3%25A9es" >Certificat d'Etudes Spécialisées</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2023-2024/diplome/2179/CESCDRS-ces-cybersecurite-des-donnees-reseaux-et-systemes" >CESCDRS&nbsp;-&nbsp;CES Cybersécurité des données, réseaux et systèmes</a></li><li class=""><a href="/catalogue/2023-2024/diplome/2276/CESCDRS-INTRA-ces-cybersecurite-des-donnees-reseaux-et-systemes-intra" >CESCDRS-INTRA&nbsp;-&nbsp;CES Cybersécurité des données, réseaux et systèmes-INTRA</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2023-2024/type/Ing%25C3%25A9nieur" >Ingénieur</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2023-2024/diplome/4/ING-diplome-d-ingenieur" >ING&nbsp;-&nbsp;Diplôme d'ingénieur</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2023-2024/type/Master" >Master</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2023-2024/diplome/2083/DATA-AI-data-artificial-intelligence" >DATA AI&nbsp;-&nbsp;Data & Artificial Intelligence</a></li><li class=""><a href="/catalogue/2023-2024/diplome/2064/DESIGN-master-recherche-en-design" >DESIGN&nbsp;-&nbsp;Master recherche en Design</a></li><li class=""><a href="/catalogue/2023-2024/diplome/1327/ICS-integration-circuits-systems" >ICS&nbsp;-&nbsp;Integration Circuits Systems</a></li><li class=""><a href="/catalogue/2023-2024/diplome/26/IGD-interaction-graphic-design" >IGD&nbsp;-&nbsp;Interaction, Graphic & Design</a></li><li class=""><a href="/catalogue/2023-2024/diplome/42/IREN-industries-de-reseau-et-economie-numerique-iren" >IREN&nbsp;-&nbsp;Industries de réseau et economie numérique (IREN)</a></li><li class=""><a href="/catalogue/2023-2024/diplome/2065/MICAS-information-processing-machine-learning-communications-and-security" >MICAS&nbsp;-&nbsp;Information processing: machine learning, communications and security</a></li><li class=""><a href="/catalogue/2023-2024/diplome/38/MVA-mathematiques-vision-apprentissage" >MVA&nbsp;-&nbsp;Mathématiques, Vision, Apprentissage</a></li><li class=""><a href="/catalogue/2023-2024/diplome/1857/SETI-systemes-embarques-et-traitement-de-l-information" >SETI&nbsp;-&nbsp;Systèmes embarqués et traitement de l'information</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2023-2024/type/Master+T%25C3%25A9l%25C3%25A9com+SudParis" >Master Télécom SudParis</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2023-2024/diplome/2067/CSN-informatique-pour-les-reseaux" >CSN&nbsp;-&nbsp;Informatique pour les Réseaux</a></li><li class=""><a href="/catalogue/2023-2024/diplome/2072/CYBER-M1-cybersecurity-m1" >Cyber M1&nbsp;-&nbsp;Cybersecurity M1</a></li><li class=""><a href="/catalogue/2023-2024/diplome/2073/CYBER-M2-cybersecurity-m2" >Cyber M2&nbsp;-&nbsp;Cybersecurity M2</a></li><li class=""><a href="/catalogue/2023-2024/diplome/2291/EECIP-electrical-engineering-for-communication-information-processing" >EECIP&nbsp;-&nbsp;Electrical Engineering for Communication Information Processing</a></li><li class=""><a href="/catalogue/2023-2024/diplome/40/MN-multimedia-networking-m2" >MN&nbsp;-&nbsp;Multimedia Networking M2</a></li><li class=""><a href="/catalogue/2023-2024/diplome/2076/PDS-M1-systemes-distribues-et-paralleles-m1" >PDS M1&nbsp;-&nbsp;Systèmes distribués et parallèles M1</a></li><li class=""><a href="/catalogue/2023-2024/diplome/2077/PDS-M2-systemes-distribues-et-paralleles-m2" >PDS M2&nbsp;-&nbsp;Systèmes distribués et parallèles M2</a></li><li class=""><a href="/catalogue/2023-2024/diplome/2069/TRIED-M2-traitement-de-l-information-exploitation-des-donnees-master-2" >TRIED M2&nbsp;-&nbsp;Traitement de l'Information & Exploitation des Données Master 2</a></li><li class=""><a href="/catalogue/2023-2024/diplome/2070/VAR-virtual-augmented-reality-m2" >VAR&nbsp;-&nbsp;Virtual & Augmented Reality M2</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2023-2024/type/Mast%25C3%25A8re+sp%25C3%25A9cialis%25C3%25A9" >Mastère spécialisé</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2023-2024/diplome/61/ADE-architecte-digital-d-entreprise" >ADE&nbsp;-&nbsp;Architecte Digital d'Entreprise</a></li><li class=""><a href="/catalogue/2023-2024/diplome/60/ARC-architecte-reseaux-et-cybersecurite" >ARC&nbsp;-&nbsp;Architecte Réseaux et Cybersécurité</a></li><li class=""><a href="/catalogue/2023-2024/diplome/62/BGD-big-data-gestion-et-analyse-des-donnees-massives" >BGD&nbsp;-&nbsp;Big Data : gestion et analyse des données massives</a></li><li class=""><a href="/catalogue/2023-2024/diplome/65/CARC-conception-architecture-de-reseaux-et-cybersecurite" >CARC&nbsp;-&nbsp;Conception, Architecture de Réseaux et Cybersécurité</a></li><li class=""><a href="/catalogue/2023-2024/diplome/64/CPD-concepteur-de-projet-digital" >CPD&nbsp;-&nbsp;Concepteur de Projet Digital</a></li><li class=""><a href="/catalogue/2023-2024/diplome/78/CYBER2-cybersecurite-et-cyberdefense" >CYBER2&nbsp;-&nbsp;Cybersécurité et Cyberdéfense</a></li><li class=""><a href="/catalogue/2023-2024/diplome/1996/IA-ia-intelligence-artificielle" >IA&nbsp;-&nbsp;IA : Intelligence Artificielle</a></li><li class=""><a href="/catalogue/2023-2024/diplome/72/MSIR-management-des-systemes-d-information-en-reseaux" >MSIR&nbsp;-&nbsp;Management des systèmes d'information en réseaux</a></li><li class=""><a href="/catalogue/2023-2024/diplome/1846/SMOB-smart-mobility-transformation-numerique-des-systemes-de-mobilite" >SMOB&nbsp;-&nbsp;Smart Mobility - Transformation Numérique des Systèmes de Mobilité</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2023-2024/type/Programme+d%2527%25C3%25A9change" >Programme d'échange</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2023-2024/diplome/1/PEI-echange-international-non-diplomant" >PEI&nbsp;-&nbsp;Echange international non diplomant</a></li></ul></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2022-2023" >Catalogue 2022 - 2023</a><ul  class="dropdown-menu"><li class="dropdown-submenu"><a href="/catalogue/2022-2023/type/Ing%25C3%25A9nieur" >Ingénieur</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2022-2023/diplome/4/ING-diplome-d-ingenieur" >ING&nbsp;-&nbsp;Diplôme d'ingénieur</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2022-2023/type/Master" >Master</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2022-2023/diplome/2083/DATA-AI-data-artificial-intelligence" >DATA AI&nbsp;-&nbsp;Data & Artificial Intelligence</a></li><li class=""><a href="/catalogue/2022-2023/diplome/2064/DESIGN-master-recherche-en-design" >DESIGN&nbsp;-&nbsp;Master recherche en Design</a></li><li class=""><a href="/catalogue/2022-2023/diplome/1327/ICS-integration-circuits-systems" >ICS&nbsp;-&nbsp;Integration Circuits Systems</a></li><li class=""><a href="/catalogue/2022-2023/diplome/26/IGD-interaction-graphic-design" >IGD&nbsp;-&nbsp;Interaction, Graphic & Design</a></li><li class=""><a href="/catalogue/2022-2023/diplome/42/IREN-industries-de-reseau-et-economie-numerique-iren" >IREN&nbsp;-&nbsp;Industries de réseau et economie numérique (IREN)</a></li><li class=""><a href="/catalogue/2022-2023/diplome/2065/MICAS-information-processing-machine-learning-communications-and-security" >MICAS&nbsp;-&nbsp;Information processing: machine learning, communications and security</a></li><li class=""><a href="/catalogue/2022-2023/diplome/38/MVA-mathematiques-vision-apprentissage" >MVA&nbsp;-&nbsp;Mathématiques, Vision, Apprentissage</a></li><li class=""><a href="/catalogue/2022-2023/diplome/1857/SETI-systemes-embarques-et-traitement-de-l-information" >SETI&nbsp;-&nbsp;Systèmes embarqués et traitement de l'information</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2022-2023/type/Master+T%25C3%25A9l%25C3%25A9com+SudParis" >Master Télécom SudParis</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2022-2023/diplome/2073/CYBER-M2-cybersecurity-m2" >Cyber M2&nbsp;-&nbsp;Cybersecurity M2</a></li><li class=""><a href="/catalogue/2022-2023/diplome/40/MN-multimedia-networking-m2" >MN&nbsp;-&nbsp;Multimedia Networking M2</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2022-2023/type/Mast%25C3%25A8re+sp%25C3%25A9cialis%25C3%25A9" >Mastère spécialisé</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2022-2023/diplome/61/ADE-architecte-digital-d-entreprise" >ADE&nbsp;-&nbsp;Architecte Digital d'Entreprise</a></li><li class=""><a href="/catalogue/2022-2023/diplome/60/ARC-architecte-reseaux-et-cybersecurite" >ARC&nbsp;-&nbsp;Architecte Réseaux et Cybersécurité</a></li><li class=""><a href="/catalogue/2022-2023/diplome/62/BGD-big-data-gestion-et-analyse-des-donnees-massives" >BGD&nbsp;-&nbsp;Big Data : gestion et analyse des données massives</a></li><li class=""><a href="/catalogue/2022-2023/diplome/65/CARC-conception-et-architecture-de-reseaux-et-cybersecurite" >CARC&nbsp;-&nbsp;Conception et Architecture de Réseaux et Cybersécurité</a></li><li class=""><a href="/catalogue/2022-2023/diplome/64/CPD-concepteur-de-projet-digital" >CPD&nbsp;-&nbsp;Concepteur de Projet Digital</a></li><li class=""><a href="/catalogue/2022-2023/diplome/78/CYBER2-cybersecurite-et-cyberdefense" >CYBER2&nbsp;-&nbsp;Cybersécurité et Cyberdéfense</a></li><li class=""><a href="/catalogue/2022-2023/diplome/1996/IA-ia-intelligence-artificielle" >IA&nbsp;-&nbsp;IA : Intelligence Artificielle</a></li><li class=""><a href="/catalogue/2022-2023/diplome/72/MSIR-management-des-systemes-d-information-en-reseaux" >MSIR&nbsp;-&nbsp;Management des systèmes d'information en réseaux</a></li><li class=""><a href="/catalogue/2022-2023/diplome/1846/SMOB-smart-mobility-transformation-numerique-des-systemes-de-mobilite" >SMOB&nbsp;-&nbsp;Smart Mobility - Transformation Numérique des Systèmes de Mobilité</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2022-2023/type/Programme+d%2527%25C3%25A9change" >Programme d'échange</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2022-2023/diplome/1/PEI-echange-international-non-diplomant" >PEI&nbsp;-&nbsp;Echange international non diplomant</a></li></ul></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2021-2022" >Catalogue 2021 - 2022</a><ul  class="dropdown-menu"><li class="dropdown-submenu"><a href="/catalogue/2021-2022/type/Master" >Master</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2021-2022/diplome/2064/DESIGN-master-recherche-en-design" >DESIGN&nbsp;-&nbsp;Master recherche en Design</a></li></ul></li></ul></li></ul></li>                                    </ul>
+                                </div>
+                            </div> <!-- navbar-collapse -->
+
+                        </div> <!-- row -->
+                    </div> <!-- container-fluid -->
+                </nav> <!--/.nav-collapse -->
+            </div>
+            <!-- Version SynapseS  -->
+            <div id="app-version-label">v2.11.0 (5705)</div>
+            <div id="breadcrumbs">
+                <ul>
+            <li class="item root-item">
+            <span>Accueil</span>
+        </li>
+    </ul>
+            </div>
+        </div>
+
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                                        <div id="content-wrapper" class="col-md-12">
+                        <div id="flash-messages" class="flash-messages" class="row">
+</div>
+<script type="text/javascript">
+    setTimeout(function() {
+        $('.flash-messages').find('ul').fadeOut(3000, function() {
+            $('.flash-messages').find('ul').remove();
+        });
+    }, 9000);
+</script>                        <link href="&#x2F;assets&#x2F;vendor&#x2F;fontawesome&#x2F;css&#x2F;fontawesome.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;vendor&#x2F;bootstrap&#x2F;css&#x2F;bootstrap.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;app_base.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_calendrier_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_i18n_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_navigation_menu_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_push-area_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;vendor&#x2F;bootstraptree&#x2F;bootstrap-tree.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_annuaire_modal_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_catalogue_parcours_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;vendor&#x2F;select2&#x2F;dist&#x2F;css&#x2F;select2.min.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;vendor&#x2F;datatables&#x2F;media&#x2F;css&#x2F;dataTables.bootstrap.min.css" media="screen" rel="stylesheet" type="text&#x2F;css"><script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;vendor&#x2F;select2&#x2F;dist&#x2F;js&#x2F;select2.min.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;vendor&#x2F;datatables&#x2F;media&#x2F;js&#x2F;jquery.dataTables.min.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;vendor&#x2F;datatables&#x2F;media&#x2F;js&#x2F;dataTables.bootstrap.min.js"></script><script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;bootstrap_3_3_5_i18n_js.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;bootstrap_3_3_5_push_area_js.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;vendor_bootstraptree_js.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;bootstrap_3_3_5_annuaire_modal_js.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;bootstrap_3_3_5_catalogue_fiche_element_formation_js.js"></script><header>
+    <h1>
+        <a href="/catalogue/2024-2025">
+            <i class="fa fa-level-up btn"></i>
+        </a>
+        <span class="type-objet-fiche">Filières de 2e année</span>&nbsp;-&nbsp;<span class="code">CYBER&nbsp;: </span><span class="titre">Filière Cybersécurité (créneau A)</span>    </h1>
+
+    <h2 class="subtitle">Domaine&nbsp;&gt;&nbsp;Réseaux.</h2>
+</header>
+<script type = 'text/javascript'>
+    $(function() {
+        var nbItems = $('#breadcrumbs ul li').length;
+        var firstItem, secondItem;
+        if (nbItems == 1) {
+            firstItem = '<li class="item level-1"><span><a href="/catalogue"><span>'+$('.navbar-nav [href="/catalogue"]').text()+'</span></a></li>';
+            secondItem = '<li class="item level-2"><span>'+ $('h1 .type-objet-fiche').html() +'</span></li>';
+            var currentItem = '<li class="item current-item"><span>'+ $('h1 .code').text() + ' ' + $('h1 .titre').text() +'</span></li>';
+            $('#breadcrumbs ul').html(firstItem + secondItem + currentItem);
+        }
+                firstItem = '<span><a href="'+'/catalogue/2024-2025'+'">'+'Catalogue 2024-2025'+'</span></a>';
+        $('#breadcrumbs ul li.level-1').html(firstItem);
+        $('.fa-level-up').parent('a').attr('href', '/catalogue/2024-2025');
+                $('#breadcrumbs ul li.level-2').remove();
+            });
+</script>
+<main id="main-content-fiche-parcours">
+    <section class="first-paragraph">
+<h2 class="titre_paragraphe">Descriptif</h2>
+
+<div class="tiny-mce-content">
+<p style="font-weight: 400; text-align: justify;"><em>Responsable fili&egrave;re : S&eacute;bastien Canard<br /></em><em>Coordination des stages : S&eacute;bastien Canard<br /></em><em>Responsable mobilit&eacute; : Rida Khatoun</em></p>
+<p style="font-weight: 400; text-align: justify;">Nous utilisons aujourd&rsquo;hui quotidiennement de multiples ressources pour collecter, classifier, stocker, g&eacute;rer et diffuser de l&rsquo;information. Qu&rsquo;elle soit ainsi manipul&eacute;e au sein d&rsquo;un site industriel, par une personne physique, un processus, ou un mat&eacute;riel donn&eacute;, ou bien qu&rsquo;elle soit en train de transiter via un r&eacute;seau d&eacute;di&eacute;, cette information est aujourd&rsquo;hui tr&egrave;s convoit&eacute;e et, de ce fait, sujette &agrave; de nombreuses attaques. Ces derni&egrave;res sont initi&eacute;es par de multiples acteurs, et pour des raisons diverses : groupe attir&eacute; par l&rsquo;app&acirc;t du gain, groupe motiv&eacute; par des enjeux politiques ou religieux, concurrent industriel, &eacute;tat ennemi, etc. Elles touchent par ailleurs des cibles tr&egrave;s vari&eacute;es, que ce soient des collectivit&eacute;s territoriales, des PME, des entreprises strat&eacute;giques, ou m&ecirc;me des &eacute;tablissements de sant&eacute;. L&rsquo;impact pour ces derni&egrave;res est majeur, touchant leurs finances, leur image et leur r&eacute;putation, leur organisation ou m&ecirc;me leur stabilit&eacute; juridique et r&eacute;glementaire.</p>
+<p style="font-weight: 400; text-align: justify;">La fili&egrave;re CYBER a pour objectif de former des ing&eacute;nieurs en cybers&eacute;curit&eacute;, hautement qualifi&eacute;s pour assurer la s&eacute;curit&eacute; de l&rsquo;ensemble des biens manipul&eacute;s par les syst&egrave;mes d&rsquo;information de ces entit&eacute;s.</p>
+</div>
+<p style="text-align: justify;"><strong>Associations avec d'autres fili&egrave;res recommand&eacute;es :</strong></p>
+<p style="text-align: justify;">La cybers&eacute;curit&eacute; &eacute;tant une composante transversale qui est applicable &agrave; l&rsquo;ensemble des domaines des t&eacute;l&eacute;communications, la fili&egrave;re CYBER peut tout &agrave; fait &ecirc;tre associ&eacute;e avec n&rsquo;importe quelle autre fili&egrave;re. Il existe cependant des associations plus naturelles, selon les d&eacute;sirs de chacun :</p>
+<ul style="text-align: justify;">
+<li>Les fili&egrave;res th&eacute;oriques ACCQ et MITRO pour aller plus loin dans la fa&ccedil;on dont les math&eacute;matiques et l&rsquo;informatique sont utilis&eacute;es en cybers&eacute;curit&eacute;, et notamment en cryptologie.<span class="Apple-converted-space">&nbsp;</span></li>
+<li>La fili&egrave;re SD portant sur la science des donn&eacute;es, du fait qu&rsquo;il est important de s&eacute;curiser les donn&eacute;es manipul&eacute;es par les techniques d&rsquo;IA, mais aussi que l&rsquo;apprentissage machine est de plus en plus utilis&eacute; en cybers&eacute;curit&eacute;.</li>
+<li>La fili&egrave;re MODS pour ceux qui veulent se lancer dans la gouvernance de la s&eacute;curit&eacute;, et ainsi avoir une vision strat&eacute;gique globale.</li>
+<li>La fili&egrave;re RIO pour ceux qui veulent s&rsquo;orienter vers la s&eacute;curit&eacute; des r&eacute;seaux mobiles ou de l&rsquo;IoT, et ainsi avoir l&rsquo;ensemble des comp&eacute;tences et savoir comment adapter les outils de cybers&eacute;curit&eacute; &agrave; ces diff&eacute;rents modes de communication.</li>
+<li>La fili&egrave;re SE pour ceux qui voudraient comprendre &agrave; la fois comment s&eacute;curiser les syst&egrave;mes embarqu&eacute;s mais aussi comment un syst&egrave;me embarqu&eacute; peut &ecirc;tre utilis&eacute; en cybers&eacute;curit&eacute;.<span class="Apple-converted-space">&nbsp;</span></li>
+</ul>
+<p style="font-weight: 400;"><strong>Pr&eacute;requis :</strong></p>
+<p style="font-weight: 400;">La cybers&eacute;curit&eacute; est un domaine qui s&rsquo;appuie fortement sur les pr&eacute;requis suivants.</p>
+<ul>
+<li>Math&eacute;matiques : alg&egrave;bre, probabilit&eacute;s, , arithm&eacute;tique.</li>
+<li>Informatique : compilation, architecture des ordinateurs, programmation, fonctionnement d&rsquo;un syst&egrave;me d&rsquo;exploitation, syst&egrave;me de fichier, base de donn&eacute;es, algorithmique, th&eacute;orie de l&rsquo;information.</li>
+<li>R&eacute;seaux : architecture d&rsquo;un r&eacute;seau, DNS, r&eacute;seaux TCP/IP, DHCP, HTTP, LAN.</li>
+</ul>
+<p style="font-weight: 400;"><strong>D&eacute;bouch&eacute;s :</strong></p>
+<p style="font-weight: 400;">La fili&egrave;re CYBER ouvre &agrave; l&rsquo;ensemble des m&eacute;tiers de la cybers&eacute;curit&eacute;, avec des besoins et des profils recherch&eacute;s tr&egrave;s diff&eacute;rents.</p>
+<ul>
+<li>Gestion de la s&eacute;curit&eacute; et pilotage des projets de s&eacute;curit&eacute; : RSSI, coordinateur.trice/directeur.trice cybers&eacute;curit&eacute;, etc.</li>
+<li>Conception et maintien d&rsquo;un SI s&eacute;curis&eacute; : architecte s&eacute;curit&eacute;, chef s&eacute;curit&eacute; de projet, cryptologie, administrateur.trice de solutions de s&eacute;curit&eacute;, auditeur.trice de s&eacute;curit&eacute; technique ou organisationnelle, etc.</li>
+<li>Gestion des incidents et des crises de s&eacute;curit&eacute; : responsable de SOC, op&eacute;rateur analyse SOC, analyste r&eacute;ponse aux incidents de s&eacute;curit&eacute;, gestionnaire de crise de cybers&eacute;curit&eacute;, etc.</li>
+<li>Conseil, services et recherche : consultant.e en cybers&eacute;curit&eacute;, formateur en cybers&eacute;curit&eacute;, d&eacute;veloppeur ou int&eacute;grateur.trice de solutions de s&eacute;curit&eacute;, chercheur en s&eacute;curit&eacute; des syst&egrave;mes d&rsquo;information, etc.</li>
+</ul></section>
+<section class="paragraph">
+<h2 class="titre_paragraphe">Objectifs</h2>
+
+<div class="tiny-mce-content">
+<p style="text-align: justify;"><strong>2&egrave;me ann&eacute;e :</strong></p>
+<p style="font-weight: 400;">Les cours de la fili&egrave;re permettent de voir l&rsquo;ensemble d&rsquo;un syst&egrave;me de gestion de s&eacute;curit&eacute; de l&rsquo;information, que ce soit l&rsquo;analyse de risque, les attaques possibles, la mise en place de bonnes pratiques, les mesures de s&eacute;curit&eacute; ad&eacute;quates, les audits et la conformit&eacute;, la planification et le suivi des actions correctrices et la d&eacute;tection d&rsquo;incidents. La plus grosse partie partie concerne les diff&eacute;rentes mesures de s&eacute;curit&eacute; qui peuvent &ecirc;tre utilis&eacute;es pour s&eacute;curiser un syst&egrave;me d&rsquo;information : la cryptologie, les m&eacute;canismes d&rsquo;authentification et de contr&ocirc;le d&rsquo;acc&egrave;s, les outils pour la s&eacute;curit&eacute; des r&eacute;seaux et des infrastructures, ou encore les moyens de s&eacute;curiser un protocole.</p>
+<p style="font-weight: 400;">Voici la liste des cours de 2&egrave;me ann&eacute;e. Les d&eacute;tails peuvent &ecirc;tre trouv&eacute;s en allant sur les descriptions de chaque UE.</p>
+<table style="border-collapse: collapse; width: 84.4664%; height: 180px;" border="1">
+<tbody>
+<tr style="height: 36px;">
+<td style="width: 12.0914%; height: 36px; text-align: center;"><strong>Semestre</strong></td>
+<td style="width: 6.53829%; height: 36px; text-align: center;"><strong>P&eacute;riode</strong></td>
+<td style="width: 9.16361%; height: 36px; text-align: center;"><strong>Cr&eacute;neau</strong></td>
+<td style="width: 14.5097%; height: 36px; text-align: center;"><strong>Code UE</strong></td>
+<td style="width: 8.95657%; height: 36px; text-align: center;"><strong>Cr&eacute;dits</strong></td>
+<td style="width: 9.86905%; height: 36px; text-align: center;"><strong>TH</strong></td>
+<td style="width: 23.3378%; height: 36px; text-align: center;"><strong>Intitul&eacute; de l'UE</strong></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 12.0914%; height: 72px; text-align: center;" rowspan="4">S1</td>
+<td style="width: 6.53829%; height: 36px; text-align: center;" rowspan="2">P1</td>
+<td style="width: 9.16361%; height: 18px; text-align: center;">A1</td>
+<td style="width: 14.5097%; height: 18px; text-align: center;"><strong>CSC_4CS01_TP</strong> (GIN-SR2I201)</td>
+<td style="width: 8.95657%; height: 18px; text-align: center;">2,5</td>
+<td style="width: 9.86905%; height: 18px; text-align: center;">16</td>
+<td style="width: 23.3378%; height: 18px; text-align: center;">R&eacute;seaux IP</td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 9.16361%; height: 18px; text-align: center;">A2</td>
+<td style="width: 14.5097%; height: 18px; text-align: center;"><strong>CSC_4CS02_TP</strong> (GIN-SR2I202)</td>
+<td style="width: 8.95657%; height: 18px; text-align: center;">2,5</td>
+<td style="width: 9.86905%; height: 18px; text-align: center;">16</td>
+<td style="width: 23.3378%; height: 18px; text-align: center;">Cryptologie</td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 6.53829%; height: 36px; text-align: center;" rowspan="2">P2</td>
+<td style="width: 9.16361%; height: 18px; text-align: center;">A1</td>
+<td style="width: 14.5097%; height: 18px; text-align: center;"><strong>CSC_4CS04_TP</strong> (SR2I204)</td>
+<td style="width: 8.95657%; height: 18px; text-align: center;">2,5</td>
+<td style="width: 9.86905%; height: 18px; text-align: center;">16</td>
+<td style="width: 23.3378%; height: 18px; text-align: center;">Contr&ocirc;le d'acc&egrave;s, IAM, protocoles, authentification</td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 9.16361%; height: 18px; text-align: center;">A2</td>
+<td style="width: 14.5097%; height: 18px; text-align: center;"><strong>CSC_4CS03_TP</strong> (SR2I203)</td>
+<td style="width: 8.95657%; height: 18px; text-align: center;">2,5</td>
+<td style="width: 9.86905%; height: 18px; text-align: center;">16</td>
+<td style="width: 23.3378%; height: 18px; text-align: center;">Hacking : m&eacute;thodes et pratiques</td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 12.0914%; height: 72px; text-align: center;" rowspan="4">S2</td>
+<td style="width: 6.53829%; height: 36px; text-align: center;" rowspan="2">P3</td>
+<td style="width: 9.16361%; height: 18px; text-align: center;">A1</td>
+<td style="width: 14.5097%; height: 18px; text-align: center;"><strong>CSC_4CS05_TP</strong> (GIN-SR2I205)</td>
+<td style="width: 8.95657%; height: 18px; text-align: center;">2,5</td>
+<td style="width: 9.86905%; height: 18px; text-align: center;">16</td>
+<td style="width: 23.3378%; height: 18px; text-align: center;">Solutions de s&eacute;curit&eacute; : architecture et protocoles</td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 9.16361%; height: 18px; text-align: center;">A2</td>
+<td style="width: 14.5097%; height: 18px; text-align: center;"><strong>CSC_4CS09_TP</strong> (SR2I206)</td>
+<td style="width: 8.95657%; height: 18px; text-align: center;">2,5</td>
+<td style="width: 9.86905%; height: 18px; text-align: center;">16</td>
+<td style="width: 23.3378%; height: 18px; text-align: center;">Audit de s&eacute;curit&eacute; et vuln&eacute;rabilit&eacute;s</td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 6.53829%; height: 36px; text-align: center;" rowspan="2">P4</td>
+<td style="width: 9.16361%; height: 18px; text-align: center;">A1</td>
+<td style="width: 14.5097%; height: 18px; text-align: center;"><strong>CSC_4CS07_TP</strong> (SR2I207)</td>
+<td style="width: 8.95657%; height: 18px; text-align: center;">2,5</td>
+<td style="width: 9.86905%; height: 18px; text-align: center;">16</td>
+<td style="width: 23.3378%; height: 18px; text-align: center;">PKI et s&eacute;curit&eacute; des protocoles</td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 9.16361%; height: 18px; text-align: center;">A2</td>
+<td style="width: 14.5097%; height: 18px; text-align: center;"><strong>CSC_4CS08_TP</strong> (SR2I208)</td>
+<td style="width: 8.95657%; height: 18px; text-align: center;">2,5</td>
+<td style="width: 9.86905%; height: 18px; text-align: center;">16</td>
+<td style="width: 23.3378%; height: 18px; text-align: center;">Projet de fili&egrave;re</td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><strong>3&egrave;me ann&eacute;e :</strong></p>
+<p style="text-align: justify;">La fili&egrave;re CYBER permet de pr&eacute;parer plusieurs voies pour la 3&egrave;me ann&eacute;e, que ce soit en interne ou en externe.</p>
+<table style="border-collapse: collapse; width: 71.4923%; height: 392px;" border="1">
+<tbody>
+<tr style="height: 46px;">
+<td style="width: 11.7305%; height: 46px;" valign="top">
+<p><strong>Option interne</strong></p>
+</td>
+<td style="width: 59.6137%; height: 46px;" valign="top">
+<p>Faire l&rsquo;option interne CYBER &agrave; l&rsquo;&eacute;cole.</p>
+</td>
+</tr>
+<tr style="height: 118px;">
+<td style="width: 11.7305%; height: 118px;" valign="top">
+<p><strong>Master M2</strong></p>
+</td>
+<td style="width: 59.6137%; height: 118px;" valign="top">
+<p style="text-align: justify;">Postuler pour le Master M2 Cybersecurity, mention informatique, de l&rsquo;Institut Polytechnique de Paris.<br />D&rsquo;autres Master M2 sont aussi tout &agrave; fait possible, et notamment le Master Parisien de Recherche en Informatique (MPRI) avec des choix d&rsquo;UE autour de la cybers&eacute;curit&eacute;.</p>
+</td>
+</tr>
+<tr style="height: 64px;">
+<td style="width: 11.7305%; height: 64px;" valign="top">
+<p><strong>Formation &agrave; l&rsquo;&eacute;tranger</strong></p>
+</td>
+<td style="width: 59.6137%; height: 64px;" valign="top">
+<p>Partir &agrave; l'&eacute;tranger dans une Universit&eacute; ou une &eacute;cole partenaire (contacter le responsable mobilit&eacute; de la fili&egrave;re).</p>
+</td>
+</tr>
+<tr style="height: 164px;">
+<td style="width: 11.7305%; height: 164px;" valign="top">
+<p><strong>Autre</strong></p>
+</td>
+<td style="width: 59.6137%; height: 164px;" valign="top">
+<p>Choisir, apr&egrave;s la 2&egrave;me ann&eacute;e, de suivre en 3&egrave;me ann&eacute;e :</p>
+<ul>
+<li>Un cursus transverse, c&rsquo;est-&agrave;-dire ouvert quelle que la soit la fili&egrave;re choisie en 2&egrave;me ann&eacute;e, &agrave; savoir l&rsquo;option interne Quantum Engineering ou des M2 transverses du domaine SES (PIC / IREN / COSI).</li>
+<li>Une mobilit&eacute; en France dans une &eacute;cole de l&rsquo;Institut Mines-T&eacute;l&eacute;com ou de ParisTech.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+</div></section>
+<ul role="tablist" class="nav nav-tabs">
+    
+        <li role="presentation" class="active">
+		<a aria-expanded="true"
+		aria-controls="informations" data-toggle="tab" role="tab"
+		id="informations-tab" href="#informations">Informations générales</a>
+	</li>
+    
+        <li role="presentation" class="">
+		<a aria-expanded="false"
+		aria-controls="prerequis" data-toggle="tab" role="tab"
+		id="prerequis-tab" href="#prerequis">Pré-requis et acquisition</a>
+	</li>
+    </ul>
+
+<div class="tab-content" id="tab-content">
+            <div aria-labelledby="informations-tab" id="informations" class="tab-pane fade active in" role="tabpanel">
+        <h3 class="tab-paragraph-title">Diplômes concernés</h3><ul class="link-list tab-link-list">
+    <li><a href="/catalogue/2024-2025/diplome/1/PEI-echange-international-non-diplomant" class="fiche">Echange international non diplomant</a></li><li><a href="/catalogue/2024-2025/diplome/4/ING-diplome-d-ingenieur" class="fiche">Diplôme d'ingénieur</a></li></ul>
+        </div>
+                <div aria-labelledby="prerequis-tab" id="prerequis" class="tab-pane fade in" role="tabpanel">
+        <h3 class="tab-paragraph-title">Pré-requis</h3>Pas d'UE du créneau partagé D prérequise -- CSC_4SE06_TP  (INF224) recommandée pour les élèves n'ayant pas les pré-requis<h3 class="tab-paragraph-title">Modalités d'acquisition</h3><p style="text-align: justify;">La fili&egrave;re est valid&eacute;e si la moyenne des notes finales est &ge; 10 et si vous obtenez au minimum 15 cr&eacute;dits ECTS. Toutes les UEs qui constituent la fili&egrave;re doivent &ecirc;tre suivies.</p>
+<p style="font-weight: 400; text-align: justify;"><strong>Acquisitions de comp&eacute;tences&nbsp;:</strong></p>
+<p style="font-weight: 400; text-align: justify;">A l&rsquo;issue de cette fili&egrave;re, les &eacute;tudiants.es seront capables de :</p>
+<ul style="text-align: justify;">
+<li>Identifier les vuln&eacute;rabilit&eacute;s (faiblesses d&rsquo;un bien au niveau de sa conception, r&eacute;alisation, installation, configuration ou utilisation) et les menaces (cause potentielle d&rsquo;un incident, pouvant entrainer des dommages sur un bien si elle se concr&eacute;tise) d&rsquo;un syst&egrave;me d&rsquo;information.</li>
+<li>Identifier et &eacute;valuer les risques de s&eacute;curit&eacute; qui menacent les biens et impactent un syst&egrave;me d&rsquo;information au sein d&rsquo;un p&eacute;rim&egrave;tre choisi.</li>
+<li>Expliquer les principes g&eacute;n&eacute;raux des outils de s&eacute;curit&eacute;, &agrave; savoir la cryptographie, l&rsquo;authentification et le contr&ocirc;le d&rsquo;acc&egrave;s, les protocoles, ceux aff&eacute;rents aux r&eacute;seaux (pare-feu, r&eacute;seau priv&eacute; virtuel, syst&egrave;me de d&eacute;tection d&rsquo;intrusion, etc.).</li>
+<li>Faire des recommandations sur le choix et la configuration des outils de s&eacute;curit&eacute; &agrave; mettre en place en fonction des exigences d'un produit ou d'un service.</li>
+<li>&Eacute;valuer la s&eacute;curit&eacute; du syst&egrave;me d&rsquo;information d&rsquo;une organisation via des techniques d&rsquo;audit.</li>
+<li>Surveiller les menaces et qualifier les incidents via des outils de gestions et de surveillance des syst&egrave;mes d&rsquo;information.</li>
+</ul>
+<p style="font-weight: 400; text-align: justify;">Gr&acirc;ce &agrave; cette fili&egrave;re, l&rsquo;&eacute;tudiant.e validera des comp&eacute;tences portant sur la conception et la gestion de la s&eacute;curit&eacute;, la protection de l'information et ses supports, tout au long de leur cycle de vie. Plus pr&eacute;cis&eacute;ment, un.e &eacute;tudiant.e de la fili&egrave;re CYBER pourra :</p>
+<ul style="text-align: justify;">
+<li>Identifier, analyser et caract&eacute;riser les &eacute;l&eacute;ments de s&eacute;curit&eacute; permettant d&rsquo;atteindre un objectif cible (disponibilit&eacute;, int&eacute;grit&eacute;, authentification, confidentialit&eacute;, tra&ccedil;abilit&eacute;) en vue de g&eacute;rer la s&eacute;curit&eacute; des syst&egrave;mes num&eacute;riques.</li>
+<li>Concevoir, dimensionner, mettre en place la s&eacute;curit&eacute; d&rsquo;un syst&egrave;me num&eacute;rique en s&rsquo;appuyant sur les architectures, les technologies, les outils et les m&eacute;thodes n&eacute;cessaires pour assurer l&rsquo;atteinte des objectifs de s&eacute;curit&eacute; du syst&egrave;me.</li>
+<li>&Eacute;valuer d&rsquo;un point de vue technique et organisationnel les vuln&eacute;rabilit&eacute;s, les menaces et les attaques en identifiant les non-conformit&eacute;s, en s&rsquo;appuyant sur la veille technologique, en d&eacute;tectant et en g&eacute;rant les incidents de s&eacute;curit&eacute;.</li>
+<li>Innover dans le domaine de la s&eacute;curit&eacute; en int&eacute;grant l&rsquo;ensemble des concepts scientifiques et techniques afin d&rsquo;en anticiper les &eacute;volutions.</li>
+</ul>
+<p style="font-weight: 400; text-align: justify;">La ma&icirc;trise des concepts/outils s&rsquo;effectuera au travers d&rsquo;un enseignement th&eacute;orique renforc&eacute; par une pratique abondante qui prend la forme d&rsquo;ateliers, de travaux pratiques, de projets en groupes et de projets individuels.</p>        </div>
+        </div>
+<section class="bloc">
+  <h2 class="title-bloc-parcours">
+    Composition du parcours</h2><div class="tree well">
+    <ul role="tree" class="tree-indent">
+        <span class="label label-ue">CSC_4CS01_TP</span> <span class="label label-ue">CSC_4CS02_TP</span> <span class="label label-ue">CSC_4CS03_TP</span> <span class="label label-ue">CSC_4CS04_TP</span> <span class="label label-ue">CSC_4CS05_TP</span> <span class="label label-ue">CSC_4CS09_TP</span> <span class="label label-ue">CSC_4CS07_TP</span> <span class="label label-ue">CSC_4CS08_TP</span>     </ul>
+</div>
+  </section>
+</main><div class="sidebar" id="sidebar-fiche-parcours">
+    <div id='icon'>
+<!--        <a href="#" title="--><!--">-->
+<!--            <i class="fa btn fa-share-square-o"></i>-->
+<!--        </a>-->
+                    <a target="_blank" href="https://sitepedago.telecom-paristech.fr/front/frontoffice.php?SP_ID=3310#R3390" title="Accéder au site pédagogique">
+                <i class="fa btn fa-external-link"></i>
+            Site pédagogique</a>
+                </div>
+    <aside class="encadre" >
+<!-- ajout d'un ID CSS pour distinguer l'encadré Programmation de la fiche UE -->
+<h1 classe="titre-encadre">responsables</h1>
+            <div>
+                <div class="annuaire-modal-aware">                        <div class="annuaire-modal-photo">
+                                                            <i class="fa fa-user"></i>
+                            <a class="annuaire-modal-link" href="c8c0529c-64f3-4f77-a35d-238839de131a">Sébastien CANARD</a>                        </div>
+                                    </div>
+            </div>
+        
+</aside>
+<aside class="encadre" >
+<!-- ajout d'un ID CSS pour distinguer l'encadré Programmation de la fiche UE -->
+<h1 classe="titre-encadre">coordinateurs des études</h1>
+            <div>
+                <div class="annuaire-modal-aware">                        <div class="annuaire-modal-photo">
+                                                            <i class="fa fa-user"></i>
+                            <a class="annuaire-modal-link" href="17826cc7-5e1d-4bd7-af86-b19c9578c573">Marie-Asya KARA</a>                        </div>
+                                    </div>
+            </div>
+        
+</aside>
+<aside class="encadre" >
+<!-- ajout d'un ID CSS pour distinguer l'encadré Programmation de la fiche UE -->
+<h1 classe="titre-encadre">Equipe d'ingénierie pédagogique</h1>
+            <div>
+                <div class="annuaire-modal-aware">                        <div class="annuaire-modal-photo">
+                            <span>Hassane AISSAOUI</span>                        </div>
+                    <div class="annuaire-modal-aware">                        <div class="annuaire-modal-photo">
+                            <a class="annuaire-modal-link" href="c8c0529c-64f3-4f77-a35d-238839de131a">Sébastien CANARD</a>                        </div>
+                    <div class="annuaire-modal-aware">                        <div class="annuaire-modal-photo">
+                            <span>Rida KHATOUN</span>                        </div>
+                    <div class="annuaire-modal-aware">                        <div class="annuaire-modal-photo">
+                            <span>Jean LENEUTRE</span>                        </div>
+                    <div class="annuaire-modal-aware">                        <div class="annuaire-modal-photo">
+                            <span>Leonardo LINGUAGLOSSA</span>                        </div>
+                    <div class="annuaire-modal-aware">                        <div class="annuaire-modal-photo">
+                            <span>Mounira MSAHLI</span>                        </div>
+                    <div class="annuaire-modal-aware">                        <div class="annuaire-modal-photo">
+                            <span>Matthieu RAMBAUD</span>                        </div>
+                    <div class="annuaire-modal-aware">                        <div class="annuaire-modal-photo">
+                            <span>Thomas ROBERT</span>                        </div>
+                    <div class="annuaire-modal-aware">                        <div class="annuaire-modal-photo">
+                            <span>Jean-Louis ROUGIER</span>                        </div>
+                    <div class="annuaire-modal-aware">                        <div class="annuaire-modal-photo">
+                            <a class="annuaire-modal-link" href="20adb825-30e9-4469-a2c0-19a195977b26">Weiqiang WEN</a>                        </div>
+                                    </div>
+            </div>
+        
+</aside>
+</div>
+<section class="bloc">
+  <h2 class="title-bloc-ue">
+    Unités d'enseignement</h2>
+<div class="table-responsive" id="tableau-responsive">
+        <button class="btn table-filter-toggle">
+            <i class="fa fa-filter fa-lg"></i>
+            Filtres        </button>
+    <table class="table table-striped table-ues" id="tableau-unitesenseignementfiche">
+        <thead>
+        <tr>
+            <th>UE</th>
+            <th>Type d'enseignement</th>
+            <th>Domaines</th>
+            <th>Catégorie d'UE</th>
+                    <th>Volume horaire</th>
+            <th>Responsables</th>
+                    <th>Site pédagogique</th>
+        </tr>
+        </thead>
+        <tbody>         
+        <tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">CSC_4CS01_TP</span> <a href="/catalogue/2024-2025/ue/2069/CSC-4CS01-TP-reseaux-ip?from=P5140" title="Réseaux IP">R&eacute;seaux IP</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines">Réseaux</td>
+        <td class="categories">UE du créneau A.</td>
+            <td class="heures">24</td>
+        <td class="responsables">Leonardo LINGUAGLOSSA,<br />Jean-Louis ROUGIER</td>
+            <td class="link">
+                            <a href="https://ecampus.paris-saclay.fr/course/view.php?id=9640" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">CSC_4CS02_TP</span> <a href="/catalogue/2024-2025/ue/2071/CSC-4CS02-TP-cryptologie?from=P5140" title="Cryptologie">Cryptologie</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines">Réseaux</td>
+        <td class="categories">UE du créneau A.</td>
+            <td class="heures">24</td>
+        <td class="responsables">Sébastien CANARD</td>
+            <td class="link">
+                            <a href="https://ecampus.paris-saclay.fr/course/view.php?id=30401" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">CSC_4CS03_TP</span> <a href="/catalogue/2024-2025/ue/2072/CSC-4CS03-TP-hacking-methodes-et-pratiques?from=P5140" title="Hacking: méthodes et pratiques">Hacking: m&eacute;thodes et pratiques</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines">Réseaux</td>
+        <td class="categories">UE du créneau A.</td>
+            <td class="heures">24</td>
+        <td class="responsables">Hassane AISSAOUI</td>
+            <td class="link">
+                            <a href="https://ecampus.paris-saclay.fr/course/view.php?id=40586" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">CSC_4CS04_TP</span> <a href="/catalogue/2024-2025/ue/2073/CSC-4CS04-TP-controle-d-acces-iam-protocoles-authentification?from=P5140" title="Contrôle d’accès, IAM, Protocoles, Authentification">Contr&ocirc;le d&rsquo;acc&egrave;s, IAM, Protocoles, Authentification</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines">Informatique</td>
+        <td class="categories">UE du créneau A.</td>
+            <td class="heures">24</td>
+        <td class="responsables">Thomas ROBERT</td>
+            <td class="link">
+                            <a href="https://ecampus.paris-saclay.fr/enrol/index.php?id=40585" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">CSC_4CS05_TP</span> <a href="/catalogue/2024-2025/ue/2074/CSC-4CS05-TP-solutions-de-securite-architectures-et-protocoles?from=P5140" title="Solutions de sécurité : architectures et protocoles">Solutions de s&eacute;curit&eacute; : architectures et protocoles</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines">Réseaux</td>
+        <td class="categories">UE du créneau A.</td>
+            <td class="heures">24</td>
+        <td class="responsables">Rida KHATOUN</td>
+            <td class="link">
+                            <a href="https://ecampus.paris-saclay.fr/enrol/index.php?id=20914" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">CSC_4CS07_TP</span> <a href="/catalogue/2024-2025/ue/2076/CSC-4CS07-TP-pki-et-securite-des-protocoles?from=P5140" title="PKI et Sécurité des protocoles">PKI et S&eacute;curit&eacute; des protocoles</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines">Réseaux</td>
+        <td class="categories">UE du créneau A.</td>
+            <td class="heures">24</td>
+        <td class="responsables">Mounira MSAHLI</td>
+            <td class="link">
+                            <a href="https://ecampus.paris-saclay.fr/course/view.php?id=21781" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">CSC_4CS08_TP</span> <a href="/catalogue/2024-2025/ue/2077/CSC-4CS08-TP-analyse-de-risque-et-projet-de-remediation?from=P5140" title="Analyse de risque et projet de remédiation">Analyse de risque et projet de rem&eacute;diation</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines">Réseaux</td>
+        <td class="categories">UE du créneau A.</td>
+            <td class="heures">9</td>
+        <td class="responsables">Sébastien CANARD</td>
+            <td class="link">
+                            <a href="https://ecampus.paris-saclay.fr/enrol/index.php?id=21798" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">CSC_4CS09_TP</span> <a href="/catalogue/2024-2025/ue/2579/CSC-4CS09-TP-audit-de-securite-et-de-vulnerabilites?from=P5140" title="Audit de sécurité et de vulnérabilités">Audit de s&eacute;curit&eacute; et de vuln&eacute;rabilit&eacute;s</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines">Réseaux</td>
+        <td class="categories">UE d'option interne.</td>
+            <td class="heures">24</td>
+        <td class="responsables">Hassane AISSAOUI</td>
+            <td class="link">
+                            <a href="https://ecampus.paris-saclay.fr/enrol/index.php?id=21782" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+        </tbody>
+    <script type="text/javascript">
+    $(function () {
+        window.Application.Datatables = window.Application.Datatables || {}
+        window.Application.Datatables['tableau-unitesenseignementfiche'] = $("#tableau-unitesenseignementfiche").DataTable({"language":{"emptyTable":"Aucun r\u00e9sultat"},"order":[[0,"asc"]],"ordering":true,"paging":true,"searching":true,"info":false,"columsDefs":[{"targets":"no-sort","orderable":false}]});
+    });
+</script><style>
+    .no-sort::after { display: none!important; }
+    .no-sort { pointer-events: none!important; cursor: default!important; }
+</style>        <script type="text/javascript">
+
+            $(function () {
+                var filterableHeaders = ["Type d'enseignement","Domaines","Cat\u00e9gorie d'UE"];
+                var table = window.Application.Datatables['tableau-unitesenseignementfiche'];
+                var filters = new Application.DatatableFilters(table, filterableHeaders);
+
+                window.Application.FilterableDatatables = window.Application.FilterableDatatables || {}
+                window.Application.FilterableDatatables['tableau-unitesenseignementfiche'] = filters;
+
+                filters.init();
+
+            });
+        </script>    <script>  
+        ($(function() {
+            var filters = window.Application.FilterableDatatables['tableau-unitesenseignementfiche'];
+
+            $('.table-filter-toggle').on('click', filters.toggle);
+        }))
+    </script>
+    </table>
+</div>
+  </section>
+<!-- Modal -->
+<div class="container">
+    <div class="modal annuaire-modal-aware" data-backdrop="true" id="annuaire-modal" tabindex="-1" role="dialog" aria-labelledby="Détails de la personne sélectionnée">
+        <div class="modal-dialog  modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close-modal" data-dismiss="modal" aria-label="Close">
+                        <i class="fa fa-times"></i>
+                    </button>
+                    <h3 class="modal-title"></h3>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="photo-column annuaire-modal-photo">
+                                <img data-default-src="/assets/bootstrap/3.3.5/images/annuaire/unknown.gif" src="" alt="" class="img-responsive" />
+                            </div>
+                            <div class="data-column">
+                                <div class="detail-line">
+                                    <div class="row">
+                                        <div class="list-group-item-heading">E-mail</div>
+                                        <div class="list-group-item-text" data-field="emailetb"></div>
+                                    </div>
+                                </div>
+
+                                <div class="detail-line">
+                                    <div class="row">
+
+                                        <div class="list-group-item-heading">Catégorie</div>
+                                        <div class="list-group-item-text" data-field="idcategory"
+                                             data-secundary-field='libelle'></div>
+                                    </div>
+
+                                </div>
+                                <div class="detail-line">
+                                    <div class="row">
+
+                                        <div class="list-group-item-heading">Site(s)</div>
+                                        <div class="list-group-item-text" data-field="idlocalisation"
+                                             data-secundary-field='intitule'></div>
+                                    </div>
+
+                                </div>
+                                <div class="detail-line">
+                                    <div class="row">
+
+                                        <div class="list-group-item-heading">Téléphone</div>
+                                        <div class="list-group-item-text" data-field="telephone1"></div>
+                                    </div>
+
+                                </div>
+                                <div class="detail-line">
+                                    <div class="row">
+
+                                        <div class="list-group-item-heading">Téléphone</div>
+                                        <div class="list-group-item-text" data-field="idlocalisation"
+                                             data-secundary-field='telephone'></div>
+                                    </div>
+
+                                </div>
+                                <div class="detail-line">
+                                    <div class="row">
+
+                                        <div class="list-group-item-heading">Entité de rattachement :</div>
+                                        <div class="list-group-item-text" data-field="idpersentite"
+                                             data-secundary-field='nom'></div>
+                                    </div>
+
+                                </div>
+                                <div class="detail-line">
+                                    <div class="row">
+
+                                        <div class="list-group-item-heading">Libelle diplôme :</div>
+                                        <div class="list-group-item-text" data-field="diplome"
+                                             data-secundary-field='libelle'></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="list-group-item-secundary-heading">Niveau :</div>
+                                        <div class="list-group-item-text" data-field="diplome"
+                                             data-secundary-field='niveau'></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="list-group-item-secundary-heading">Site :</div>
+                                        <div class="list-group-item-text" data-field="diplome"
+                                             data-secundary-field='site'></div>
+                                    </div>
+
+                                </div>
+                                <div class="detail-line">
+                                    <div class="row">
+
+                                        <div class="list-group-item-heading">Fonction :</div>
+                                        <div class="list-group-item-text" data-field="fonctions"
+                                             data-secundary-field='entite'></div>
+                                    </div>
+
+                                </div>
+                                <div class="detail-line">
+                                    <div class="row">
+
+                                        <div class="list-group-item-heading">Programme d'échange :</div>
+                                        <div class="list-group-item-text" data-field="progechange"
+                                             data-secundary-field='libelle'></div>
+                                    </div>
+
+                                </div>
+                                <div class="detail-line">
+                                    <div class="row">
+                                        <div class="list-group-item-heading">Régime d'inscription :</div>
+                                        <div class="list-group-item-text"
+                                             data-field="regimeinscription" data-secundary-field='libelle'></div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="preloader-container" id="preloader">
+	<img alt="Veuillez patienter"
+		src="/assets/bootstrap/3.3.5/images/preloader.png" />
+</div>                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--/.container-fluid -->
+                <div id="footer">
+            <div class="row">
+                <div class="col-md-11">
+                    <div class="row">
+    <div class="col-md-4 col-sm-12">
+        <div class="row">
+            <div class="col-md-12">
+<h1>Plan du site</h1><ul><li>Accueil</li><li>Les formations</li></ul>            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+    <ul><li><a href="#" onclick="Application.Modal.showModalAjax('modal-footer-contenu', 'Mentions légales', '/contenu/MENT_LEG', true)">Mentions légales</a></li>            </div>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-12">
+    </div>
+    <div class="col-md-4 col-sm-12">
+    </div>
+</div>
+                    <div class="modal" id="modal-footer-contenu" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg modal-full-width" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="row">
+                    <div class="col-md-11">
+                        <h4 class="modal-title" id="modal-title"></h4>
+                    </div>
+                    <div class="col-md-1 pull-right">
+                        <button type="button" class="close-modal" data-dismiss="modal" aria-label="Close">
+                            <i class="fa fa-times"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-body"></div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+                </div>
+            </div>
+        </div>
+        
+        <script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;bootstrap_3_3_5_i18n_js.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;bootstrap_3_3_5_push_area_js.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;vendor_bootstraptree_js.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;bootstrap_3_3_5_annuaire_modal_js.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;bootstrap_3_3_5_catalogue_fiche_element_formation_js.js"></script>        <div class="device-xs visible-xs"></div>
+        <div class="device-sm visible-sm"></div>
+        <div class="device-md visible-md"></div>
+        <div class="device-lg visible-lg"></div>
+
+    </body>
+</html>

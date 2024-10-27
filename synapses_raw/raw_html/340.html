@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <meta name="description" content="SynapseS">
+        <meta name="author" content="">
+        <script type="text/javascript">
+            var es6 = true;
+            try { eval("var foo = (x)=>x+1"); }
+            catch (e) { es6 = false; }
+
+            if (!es6) {
+                var script = document.createElement('script');
+                script.src = "/assets/app_polyfills.js";
+                script.setAttribute("type", "text/javascript");
+                document.head.appendChild(script);
+            }
+        </script>
+        <title>UE LEN_4T007_TP | Catalogue 2024-2025 | SynapseS</title><link href="&#x2F;assets&#x2F;vendor&#x2F;fontawesome&#x2F;css&#x2F;fontawesome.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;vendor&#x2F;bootstrap&#x2F;css&#x2F;bootstrap.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;app_base.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_calendrier_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_i18n_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_navigation_menu_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_push-area_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;vendor&#x2F;bootstraptree&#x2F;bootstrap-tree.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_annuaire_modal_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_catalogue_ue_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;app_base_print.css" media="print" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;favicon.png" rel="icon" sizes="16x16" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;favicon.ico" rel="icon" type="image&#x2F;x-icon&#x20;">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;apple-touch-icon.png" rel="apple-touch-icon" sizes="76x76" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;apple-touch-icon-iphone.png" rel="apple-touch-icon" sizes="76x76" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;apple-touch-icon-iphone-retina.png" rel="apple-touch-icon" sizes="120x120" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;apple-touch-icon-ipad.png" rel="apple-touch-icon" sizes="76x76" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;apple-touch-icon-ipad-retina.png" rel="apple-touch-icon" sizes="152x152" type="image&#x2F;png"><script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;app_base_vendor.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;vendor&#x2F;jquery-migrate&#x2F;jquery-migrate.min.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;app_base.js"></script>    </head>
+
+    <body>
+        <div class="container header">
+            <!-- topbar -->
+            <div class="header-topbar">
+                <div class="logo-container">
+    <a href="/" title="Accueil">
+        <img alt="logo" src="/assets/bootstrap/3.3.5/images/logo_telecomparistech_sm.png" />
+    </a>
+</div>
+
+                <div class="banner-controls-container">
+                    <div class="top-banner-controls-container">
+                        <nav>
+                            <ul id="header-navigation-menu" class=""></ul>                        </nav>
+                    </div>
+
+                    <div class="bottom-banner-controls-container">
+                        <div class="language-switch-container">
+                            <ul id="language-switch">
+	<li class="dropdown">
+    	        <a class="dropdown-toggle" data-toggle="dropdown" href="#"> <span
+			class="lang-label" data-language="fr_FR">FR</span>
+            <span class="flag-icon flag-icon-fr"> </span>
+            <i class="fa fa-caret-down dropdown-toggle"></i>
+	</a>
+                <ul class="dropdown-menu">
+                                                            <li><a href="#" class="select-language"
+				data-language="en_US">
+                        <span class="flag-icon flag-icon-gb"> </span>
+                        English                    </a></li>
+                        </ul>
+	</li>
+</ul>
+<script>
+    var language = $(".lang-label").data("language");
+    i18next.use(i18nextXHRBackend).init({
+        ns: [language],
+        defaultNS: language,
+        nsSeparator: false,
+        keySeparator: false,
+        backend: {
+            loadPath: '/assets/i18n/' + language + '.json',
+        },
+        debug: false
+    });
+</script>
+<link href="&#x2F;assets&#x2F;vendor&#x2F;fontawesome&#x2F;css&#x2F;fontawesome.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;vendor&#x2F;bootstrap&#x2F;css&#x2F;bootstrap.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;app_base.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_calendrier_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_i18n_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_navigation_menu_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_push-area_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;vendor&#x2F;bootstraptree&#x2F;bootstrap-tree.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_annuaire_modal_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_catalogue_ue_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;app_base_print.css" media="print" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;favicon.png" rel="icon" sizes="16x16" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;favicon.ico" rel="icon" type="image&#x2F;x-icon&#x20;">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;apple-touch-icon.png" rel="apple-touch-icon" sizes="76x76" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;apple-touch-icon-iphone.png" rel="apple-touch-icon" sizes="76x76" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;apple-touch-icon-iphone-retina.png" rel="apple-touch-icon" sizes="120x120" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;apple-touch-icon-ipad.png" rel="apple-touch-icon" sizes="76x76" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;apple-touch-icon-ipad-retina.png" rel="apple-touch-icon" sizes="152x152" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;vendor&#x2F;flag-icon-css&#x2F;css&#x2F;flag-icon.min.css" rel="stylesheet" type="text&#x2F;css">                        </div>
+                    </div>
+
+                    <!-- logout on small screens -->
+                    <ul id="connection-form-container" class="nav navbar-nav">
+                        <li id="dropdown-authentication-menu" class="dropdown dropdown-authentication-menu">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+        <i class="fa fa-user fa-lg hidden-sm hidden-md hidden-lg"></i>
+        <span class="hidden-xs">Connexion</span>
+        <i class="fa fa-caret-down"></i>
+    </a>
+    <ul id="dropdown-authentication-menu-content" class="dropdown-menu">
+        <li>
+            <div class="row">
+                <div class="col-md-12">
+                    <header>Utiliser mon compte école</header>
+                                        <a href="/login?type=Shib">
+                        <button class="btn btn-success btn-block">
+                            Je me connecte                        </button>
+                    </a>
+                                        <hr>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <header>Utiliser un compte provisoire</header>
+                </div>
+                <form id="login-form">
+                    <div class="col-md-12 form">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="identifier-area"
+                                   data-minlength="5" pattern="^[a-zA-Z0-9._\-@]+$"
+                                   placeholder="Nom d'utilisateur"
+                                   required="required">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" id="credential-area"
+                                   placeholder="Mot de passe"
+                                   required="required">
+                        </div>
+                        <div class="form-group">
+                            <button id="btn-login-provisoire" type="submit" class="btn btn-default btn-block">Valider</button>
+                        </div>
+                        <div class="alert alert-danger hidden" role="alert"
+                             id="login-error-message-container">
+                            <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+                            <span class="sr-only">Error:</span> <span id="login-error-message"></span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </li>
+    </ul>
+</li>
+                    </ul>
+
+                    <div class="header-content-responsive hidden-sm hidden-md hidden-lg">
+                        <div class="collapsed-button-container">
+                            <button type="button" class="navbar-toggle pull-right"
+                                    data-toggle="collapse" data-target="#main-navigation-menu"
+                                    aria-expanded="false" aria-controls="navbar">
+                                <i class="fa fa-bars fa-lg"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- banner with navigation -->
+            <div class="banner">
+                <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="logo-container">
+    <a href="/" title="Accueil">
+        <img alt="logo" src="/assets/bootstrap/3.3.5/images/logo_telecomparistech_lg.png" />
+    </a>
+</div>
+
+                            <div class="navbar-collapse collapse" id="main-navigation-menu">
+                                <div class="col-md-9 col-sm-12">
+                                    <ul class="nav navbar-nav">
+                                        <li class=""><a href="/" >Accueil</a></li><li class="dropdown"><a href="/catalogue" class="dropdown-toggle" data-toggle="dropdown">Les formations<i class="fa fa-caret-down"></i></a><ul  class="dropdown-menu"><li class="dropdown-submenu"><a href="/catalogue/2024-2025" ><b>Catalogue 2024 - 2025</b></a><ul  class="dropdown-menu"><li class="dropdown-submenu"><a href="/catalogue/2024-2025/type/Ing%25C3%25A9nieur" >Ingénieur</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2024-2025/diplome/4/ING-diplome-d-ingenieur" >ING&nbsp;-&nbsp;Diplôme d'ingénieur</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2024-2025/type/Master" >Master</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2024-2025/diplome/2490/M1DATAAI-master-m1-data-and-artificial-intelligence" >M1DATAAI&nbsp;-&nbsp;Master M1 - Data and Artificial Intelligence</a></li><li class=""><a href="/catalogue/2024-2025/diplome/2489/M1IGD-master-m1-interaction-graphic-design" >M1IGD&nbsp;-&nbsp;Master M1 - Interaction, Graphic & Design</a></li><li class=""><a href="/catalogue/2024-2025/diplome/2064/M1REDESI-master-m1-recherche-en-design" >M1REDESI&nbsp;-&nbsp;Master M1 - recherche en Design</a></li><li class=""><a href="/catalogue/2024-2025/diplome/2083/M2DATAAI-master-m2-data-artificial-intelligence" >M2DATAAI&nbsp;-&nbsp;Master M2 - Data & Artificial Intelligence</a></li><li class=""><a href="/catalogue/2024-2025/diplome/1327/M2ICS-master-m2-integration-circuits-and-systems" >M2ICS&nbsp;-&nbsp;Master M2 - Integration, Circuits and Systems</a></li><li class=""><a href="/catalogue/2024-2025/diplome/26/M2IGD-master-m2-interaction-graphic-design" >M2IGD&nbsp;-&nbsp;Master M2 - Interaction, Graphic & Design</a></li><li class=""><a href="/catalogue/2024-2025/diplome/42/M2IREN-master-m2-industries-de-reseau-et-economie-numerique" >M2IREN&nbsp;-&nbsp;Master M2 - Industries de Réseau et Economie Numérique</a></li><li class=""><a href="/catalogue/2024-2025/diplome/2065/M2MICAS-master-m2-information-processing-machine-learning-communications-and-security" >M2MICAS&nbsp;-&nbsp;Master M2- Information processing: machine learning, communications and security</a></li><li class=""><a href="/catalogue/2024-2025/diplome/38/M2MVA-master-m2-mathematiques-vision-apprentissage" >M2MVA&nbsp;-&nbsp;Master M2 - Mathématiques, Vision, Apprentissage</a></li><li class=""><a href="/catalogue/2024-2025/diplome/2491/M2RECHDESI-master-m2-recherche-en-design" >M2RECHDESI&nbsp;-&nbsp;Master M2 - Recherche en Design</a></li><li class=""><a href="/catalogue/2024-2025/diplome/1857/M2SETI-master-m2-systemes-embarques-et-traitement-de-l-information" >M2SETI&nbsp;-&nbsp;Master M2 - Systèmes embarqués et traitement de l'information</a></li><li class=""><a href="/catalogue/2024-2025/diplome/2492/PHDCOMPSC-phd-track-computer-science" >PHDCOMPSC&nbsp;-&nbsp;PhD Track - Computer Science</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2024-2025/type/Mast%25C3%25A8re+sp%25C3%25A9cialis%25C3%25A9" >Mastère spécialisé</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2024-2025/diplome/61/ADE-architecte-digital-d-entreprise" >ADE&nbsp;-&nbsp;Architecte Digital d'Entreprise</a></li><li class=""><a href="/catalogue/2024-2025/diplome/60/ARC-architecte-reseaux-et-cybersecurite" >ARC&nbsp;-&nbsp;Architecte Réseaux et Cybersécurité</a></li><li class=""><a href="/catalogue/2024-2025/diplome/62/BGD-big-data-gestion-et-analyse-des-donnees-massives" >BGD&nbsp;-&nbsp;Big Data : gestion et analyse des données massives</a></li><li class=""><a href="/catalogue/2024-2025/diplome/78/CYBER2-cybersecurite-et-cyberdefense" >CYBER2&nbsp;-&nbsp;Cybersécurité et Cyberdéfense</a></li><li class=""><a href="/catalogue/2024-2025/diplome/65/ECRSI-expert-cybersecurite-des-reseaux-et-des-systemes-d-information" >ECRSI&nbsp;-&nbsp;Expert cybersécurité des réseaux et des systèmes d'information</a></li><li class=""><a href="/catalogue/2024-2025/diplome/1996/IA-ia-intelligence-artificielle" >IA&nbsp;-&nbsp;IA : Intelligence Artificielle</a></li><li class=""><a href="/catalogue/2024-2025/diplome/1846/SMOB-smart-mobility-transformation-numerique-des-systemes-de-mobilite" >SMOB&nbsp;-&nbsp;Smart Mobility - Transformation Numérique des Systèmes de Mobilité</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2024-2025/type/Programme+d%2527%25C3%25A9change" >Programme d'échange</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2024-2025/diplome/1/PEI-echange-international-non-diplomant" >PEI&nbsp;-&nbsp;Echange international non diplomant</a></li></ul></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2023-2024" >Catalogue 2023 - 2024</a><ul  class="dropdown-menu"><li class="dropdown-submenu"><a href="/catalogue/2023-2024/type/Certificat+d%2527Etudes+Sp%25C3%25A9cialis%25C3%25A9es" >Certificat d'Etudes Spécialisées</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2023-2024/diplome/2179/CESCDRS-ces-cybersecurite-des-donnees-reseaux-et-systemes" >CESCDRS&nbsp;-&nbsp;CES Cybersécurité des données, réseaux et systèmes</a></li><li class=""><a href="/catalogue/2023-2024/diplome/2276/CESCDRS-INTRA-ces-cybersecurite-des-donnees-reseaux-et-systemes-intra" >CESCDRS-INTRA&nbsp;-&nbsp;CES Cybersécurité des données, réseaux et systèmes-INTRA</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2023-2024/type/Ing%25C3%25A9nieur" >Ingénieur</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2023-2024/diplome/4/ING-diplome-d-ingenieur" >ING&nbsp;-&nbsp;Diplôme d'ingénieur</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2023-2024/type/Master" >Master</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2023-2024/diplome/2083/DATA-AI-data-artificial-intelligence" >DATA AI&nbsp;-&nbsp;Data & Artificial Intelligence</a></li><li class=""><a href="/catalogue/2023-2024/diplome/2064/DESIGN-master-recherche-en-design" >DESIGN&nbsp;-&nbsp;Master recherche en Design</a></li><li class=""><a href="/catalogue/2023-2024/diplome/1327/ICS-integration-circuits-systems" >ICS&nbsp;-&nbsp;Integration Circuits Systems</a></li><li class=""><a href="/catalogue/2023-2024/diplome/26/IGD-interaction-graphic-design" >IGD&nbsp;-&nbsp;Interaction, Graphic & Design</a></li><li class=""><a href="/catalogue/2023-2024/diplome/42/IREN-industries-de-reseau-et-economie-numerique-iren" >IREN&nbsp;-&nbsp;Industries de réseau et economie numérique (IREN)</a></li><li class=""><a href="/catalogue/2023-2024/diplome/2065/MICAS-information-processing-machine-learning-communications-and-security" >MICAS&nbsp;-&nbsp;Information processing: machine learning, communications and security</a></li><li class=""><a href="/catalogue/2023-2024/diplome/38/MVA-mathematiques-vision-apprentissage" >MVA&nbsp;-&nbsp;Mathématiques, Vision, Apprentissage</a></li><li class=""><a href="/catalogue/2023-2024/diplome/1857/SETI-systemes-embarques-et-traitement-de-l-information" >SETI&nbsp;-&nbsp;Systèmes embarqués et traitement de l'information</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2023-2024/type/Master+T%25C3%25A9l%25C3%25A9com+SudParis" >Master Télécom SudParis</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2023-2024/diplome/2067/CSN-informatique-pour-les-reseaux" >CSN&nbsp;-&nbsp;Informatique pour les Réseaux</a></li><li class=""><a href="/catalogue/2023-2024/diplome/2072/CYBER-M1-cybersecurity-m1" >Cyber M1&nbsp;-&nbsp;Cybersecurity M1</a></li><li class=""><a href="/catalogue/2023-2024/diplome/2073/CYBER-M2-cybersecurity-m2" >Cyber M2&nbsp;-&nbsp;Cybersecurity M2</a></li><li class=""><a href="/catalogue/2023-2024/diplome/2291/EECIP-electrical-engineering-for-communication-information-processing" >EECIP&nbsp;-&nbsp;Electrical Engineering for Communication Information Processing</a></li><li class=""><a href="/catalogue/2023-2024/diplome/40/MN-multimedia-networking-m2" >MN&nbsp;-&nbsp;Multimedia Networking M2</a></li><li class=""><a href="/catalogue/2023-2024/diplome/2076/PDS-M1-systemes-distribues-et-paralleles-m1" >PDS M1&nbsp;-&nbsp;Systèmes distribués et parallèles M1</a></li><li class=""><a href="/catalogue/2023-2024/diplome/2077/PDS-M2-systemes-distribues-et-paralleles-m2" >PDS M2&nbsp;-&nbsp;Systèmes distribués et parallèles M2</a></li><li class=""><a href="/catalogue/2023-2024/diplome/2069/TRIED-M2-traitement-de-l-information-exploitation-des-donnees-master-2" >TRIED M2&nbsp;-&nbsp;Traitement de l'Information & Exploitation des Données Master 2</a></li><li class=""><a href="/catalogue/2023-2024/diplome/2070/VAR-virtual-augmented-reality-m2" >VAR&nbsp;-&nbsp;Virtual & Augmented Reality M2</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2023-2024/type/Mast%25C3%25A8re+sp%25C3%25A9cialis%25C3%25A9" >Mastère spécialisé</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2023-2024/diplome/61/ADE-architecte-digital-d-entreprise" >ADE&nbsp;-&nbsp;Architecte Digital d'Entreprise</a></li><li class=""><a href="/catalogue/2023-2024/diplome/60/ARC-architecte-reseaux-et-cybersecurite" >ARC&nbsp;-&nbsp;Architecte Réseaux et Cybersécurité</a></li><li class=""><a href="/catalogue/2023-2024/diplome/62/BGD-big-data-gestion-et-analyse-des-donnees-massives" >BGD&nbsp;-&nbsp;Big Data : gestion et analyse des données massives</a></li><li class=""><a href="/catalogue/2023-2024/diplome/65/CARC-conception-architecture-de-reseaux-et-cybersecurite" >CARC&nbsp;-&nbsp;Conception, Architecture de Réseaux et Cybersécurité</a></li><li class=""><a href="/catalogue/2023-2024/diplome/64/CPD-concepteur-de-projet-digital" >CPD&nbsp;-&nbsp;Concepteur de Projet Digital</a></li><li class=""><a href="/catalogue/2023-2024/diplome/78/CYBER2-cybersecurite-et-cyberdefense" >CYBER2&nbsp;-&nbsp;Cybersécurité et Cyberdéfense</a></li><li class=""><a href="/catalogue/2023-2024/diplome/1996/IA-ia-intelligence-artificielle" >IA&nbsp;-&nbsp;IA : Intelligence Artificielle</a></li><li class=""><a href="/catalogue/2023-2024/diplome/72/MSIR-management-des-systemes-d-information-en-reseaux" >MSIR&nbsp;-&nbsp;Management des systèmes d'information en réseaux</a></li><li class=""><a href="/catalogue/2023-2024/diplome/1846/SMOB-smart-mobility-transformation-numerique-des-systemes-de-mobilite" >SMOB&nbsp;-&nbsp;Smart Mobility - Transformation Numérique des Systèmes de Mobilité</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2023-2024/type/Programme+d%2527%25C3%25A9change" >Programme d'échange</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2023-2024/diplome/1/PEI-echange-international-non-diplomant" >PEI&nbsp;-&nbsp;Echange international non diplomant</a></li></ul></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2022-2023" >Catalogue 2022 - 2023</a><ul  class="dropdown-menu"><li class="dropdown-submenu"><a href="/catalogue/2022-2023/type/Ing%25C3%25A9nieur" >Ingénieur</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2022-2023/diplome/4/ING-diplome-d-ingenieur" >ING&nbsp;-&nbsp;Diplôme d'ingénieur</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2022-2023/type/Master" >Master</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2022-2023/diplome/2083/DATA-AI-data-artificial-intelligence" >DATA AI&nbsp;-&nbsp;Data & Artificial Intelligence</a></li><li class=""><a href="/catalogue/2022-2023/diplome/2064/DESIGN-master-recherche-en-design" >DESIGN&nbsp;-&nbsp;Master recherche en Design</a></li><li class=""><a href="/catalogue/2022-2023/diplome/1327/ICS-integration-circuits-systems" >ICS&nbsp;-&nbsp;Integration Circuits Systems</a></li><li class=""><a href="/catalogue/2022-2023/diplome/26/IGD-interaction-graphic-design" >IGD&nbsp;-&nbsp;Interaction, Graphic & Design</a></li><li class=""><a href="/catalogue/2022-2023/diplome/42/IREN-industries-de-reseau-et-economie-numerique-iren" >IREN&nbsp;-&nbsp;Industries de réseau et economie numérique (IREN)</a></li><li class=""><a href="/catalogue/2022-2023/diplome/2065/MICAS-information-processing-machine-learning-communications-and-security" >MICAS&nbsp;-&nbsp;Information processing: machine learning, communications and security</a></li><li class=""><a href="/catalogue/2022-2023/diplome/38/MVA-mathematiques-vision-apprentissage" >MVA&nbsp;-&nbsp;Mathématiques, Vision, Apprentissage</a></li><li class=""><a href="/catalogue/2022-2023/diplome/1857/SETI-systemes-embarques-et-traitement-de-l-information" >SETI&nbsp;-&nbsp;Systèmes embarqués et traitement de l'information</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2022-2023/type/Master+T%25C3%25A9l%25C3%25A9com+SudParis" >Master Télécom SudParis</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2022-2023/diplome/2073/CYBER-M2-cybersecurity-m2" >Cyber M2&nbsp;-&nbsp;Cybersecurity M2</a></li><li class=""><a href="/catalogue/2022-2023/diplome/40/MN-multimedia-networking-m2" >MN&nbsp;-&nbsp;Multimedia Networking M2</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2022-2023/type/Mast%25C3%25A8re+sp%25C3%25A9cialis%25C3%25A9" >Mastère spécialisé</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2022-2023/diplome/61/ADE-architecte-digital-d-entreprise" >ADE&nbsp;-&nbsp;Architecte Digital d'Entreprise</a></li><li class=""><a href="/catalogue/2022-2023/diplome/60/ARC-architecte-reseaux-et-cybersecurite" >ARC&nbsp;-&nbsp;Architecte Réseaux et Cybersécurité</a></li><li class=""><a href="/catalogue/2022-2023/diplome/62/BGD-big-data-gestion-et-analyse-des-donnees-massives" >BGD&nbsp;-&nbsp;Big Data : gestion et analyse des données massives</a></li><li class=""><a href="/catalogue/2022-2023/diplome/65/CARC-conception-et-architecture-de-reseaux-et-cybersecurite" >CARC&nbsp;-&nbsp;Conception et Architecture de Réseaux et Cybersécurité</a></li><li class=""><a href="/catalogue/2022-2023/diplome/64/CPD-concepteur-de-projet-digital" >CPD&nbsp;-&nbsp;Concepteur de Projet Digital</a></li><li class=""><a href="/catalogue/2022-2023/diplome/78/CYBER2-cybersecurite-et-cyberdefense" >CYBER2&nbsp;-&nbsp;Cybersécurité et Cyberdéfense</a></li><li class=""><a href="/catalogue/2022-2023/diplome/1996/IA-ia-intelligence-artificielle" >IA&nbsp;-&nbsp;IA : Intelligence Artificielle</a></li><li class=""><a href="/catalogue/2022-2023/diplome/72/MSIR-management-des-systemes-d-information-en-reseaux" >MSIR&nbsp;-&nbsp;Management des systèmes d'information en réseaux</a></li><li class=""><a href="/catalogue/2022-2023/diplome/1846/SMOB-smart-mobility-transformation-numerique-des-systemes-de-mobilite" >SMOB&nbsp;-&nbsp;Smart Mobility - Transformation Numérique des Systèmes de Mobilité</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2022-2023/type/Programme+d%2527%25C3%25A9change" >Programme d'échange</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2022-2023/diplome/1/PEI-echange-international-non-diplomant" >PEI&nbsp;-&nbsp;Echange international non diplomant</a></li></ul></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2021-2022" >Catalogue 2021 - 2022</a><ul  class="dropdown-menu"><li class="dropdown-submenu"><a href="/catalogue/2021-2022/type/Master" >Master</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2021-2022/diplome/2064/DESIGN-master-recherche-en-design" >DESIGN&nbsp;-&nbsp;Master recherche en Design</a></li></ul></li></ul></li></ul></li>                                    </ul>
+                                </div>
+                            </div> <!-- navbar-collapse -->
+
+                        </div> <!-- row -->
+                    </div> <!-- container-fluid -->
+                </nav> <!--/.nav-collapse -->
+            </div>
+            <!-- Version SynapseS  -->
+            <div id="app-version-label">v2.11.0 (5705)</div>
+            <div id="breadcrumbs">
+                <ul>
+            <li class="item root-item">
+            <span>Accueil</span>
+        </li>
+    </ul>
+            </div>
+        </div>
+
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                                        <div id="content-wrapper" class="col-md-12">
+                        <div id="flash-messages" class="flash-messages" class="row">
+</div>
+<script type="text/javascript">
+    setTimeout(function() {
+        $('.flash-messages').find('ul').fadeOut(3000, function() {
+            $('.flash-messages').find('ul').remove();
+        });
+    }, 9000);
+</script>                        <header>
+    <h1>
+        <a href="/catalogue/2024-2025">
+            <i class="fa fa-level-up btn"></i>
+        </a>
+        <span class="type-objet-fiche">Langues et Culture</span>&nbsp;-&nbsp;<span class="code">LEN_4T007_TP&nbsp;: </span><span class="titre">Promotional Skills for the Sciences</span>    </h1>
+
+    <h2 class="subtitle">Domaine&nbsp;&gt;&nbsp;Langues et Cultures, Anglais.</h2>
+</header>
+<script type = 'text/javascript'>
+    $(function() {
+        var nbItems = $('#breadcrumbs ul li').length;
+        var firstItem, secondItem;
+        if (nbItems == 1) {
+            firstItem = '<li class="item level-1"><span><a href="/catalogue"><span>'+$('.navbar-nav [href="/catalogue"]').text()+'</span></a></li>';
+            secondItem = '<li class="item level-2"><span>'+ $('h1 .type-objet-fiche').html() +'</span></li>';
+            var currentItem = '<li class="item current-item"><span>'+ $('h1 .code').text() + ' ' + $('h1 .titre').text() +'</span></li>';
+            $('#breadcrumbs ul').html(firstItem + secondItem + currentItem);
+        }
+                firstItem = '<span><a href="'+'/catalogue/2024-2025'+'">'+'Catalogue 2024-2025'+'</span></a>';
+        $('#breadcrumbs ul li.level-1').html(firstItem);
+        $('.fa-level-up').parent('a').attr('href', '/catalogue/2024-2025');
+                $('#breadcrumbs ul li.level-2').remove();
+            });
+</script>
+<main id="main-content-fiche-ue">
+    <section class="first-paragraph">
+    <a href="/images/image_ue_2024_LEN_4T007_TP.png" target=_blank"><img src="/images/image_ue_2024_LEN_4T007_TP.png" id="img-fiche" alt="Illustration de la fiche" /></a>
+<h2 class="titre_paragraphe">Descriptif</h2>
+
+<p style="text-align: justify;">La communication scientifique est un art que toute personne travaillant dans le domaine des sciences doit ma&icirc;triser afin de diffuser ses connaissances et de promouvoir ses travaux aupr&egrave;s d'un public plus large. Ce cours s&rsquo;adresse &agrave; l&rsquo;ensemble de la communaut&eacute; de recherche en sciences dures ainsi qu&rsquo;en sciences humaines et sociales.</p>
+<p style="text-align: justify;">Utilisant le MOOC "Promote your Scientific Results" sur Coursera con&ccedil;u par le professeur, ce cours exceptionnel fusionne des sessions asynchrones et synchrones au cours du semestre. Les participants apprendront &agrave; pr&eacute;senter leur passion pour la science &agrave; leurs pairs, au grand public et aux m&eacute;dias.</p>
+<p>T&eacute;moignages d'&eacute;l&egrave;ves:&nbsp;</p>
+<p style="text-align: justify;">"Les vid&eacute;os &eacute;taient vraiment dynamiques et plus "ouvertes" que les "bonnes pratiques" habituelles ; j'ai beaucoup appr&eacute;ci&eacute; le fait que vous ne disiez pas "vous devez faire / vous ne devez pas faire", mais que vous indiquiez pourquoi certaines pratiques doivent &ecirc;tre &eacute;vit&eacute;es, pourquoi certaines sont meilleures, mais que, dans certaines circonstances, une pratique habituellement mauvaise peut &ecirc;tre acceptable. C'est un cours vraiment extraordinaire."</p>
+<p style="text-align: justify;">"Je trouve ce cours excellent ; les conseils sont tr&egrave;s pertinents et utiles. Il devrait &ecirc;tre propos&eacute; &agrave; tous nos &eacute;tudiants et chercheurs."</p>
+<p style="text-align: justify;">Ce cours a &eacute;galement &eacute;t&eacute; pr&eacute;s&eacute;lectionn&eacute; pour le prix de l'innovation p&eacute;dagogique du British Council pour 2022.</p>
+<p><strong>Le professeur :<br /></strong></p>
+<div>
+<div dir="ltr">
+<div>
+<p style="text-align: justify;">Bethany Cagnol est fi&egrave;re d&rsquo;&ecirc;tre membre du&nbsp;<a class="local newClass" href="https://www.telecom-paris.fr/fr/ingenieur/votre-formation-dingenieur/les-langues-et-cultures" target="_blank" rel="noopener">D&eacute;partement Langues et Cultures (LC)</a>&nbsp;de T&eacute;l&eacute;com Paris. Elle est charg&eacute;e d&rsquo;enseignement en anglais mais aide &eacute;galement T&eacute;l&eacute;com Paris &agrave; la mise en place d&rsquo;enseignements scientifiques et transversaux en anglais (EMI &ndash; English as a medium of instruction &ndash; Anglais comme langue d&rsquo;apprentissage). Elle aide enseignants et enseignants-chercheurs qui le souhaitent &agrave; donner leurs cours en anglais, publier des articles et/ou faire des pr&eacute;sentations lors de conf&eacute;rences en anglais. Elle s&rsquo;&eacute;tait sp&eacute;cialis&eacute;e dans la communication pour la communaut&eacute; scientifique, la prise de parole en public, le coaching linguistique et l&rsquo;&eacute;valuation des comp&eacute;tences linguistiques.</p>
+</div>
+</div>
+</div>
+<div>
+<div dir="ltr">
+<p style="text-align: justify;">Au cours de ses 18 ann&eacute;es d&rsquo;exp&eacute;rience, elle a &eacute;t&eacute; chef de projet, chef d&rsquo;entreprise et auteur de diverses publications p&eacute;dagogiques. Elle a une assez grande exp&eacute;rience du travail avec des professionnels du secteur public et priv&eacute; pour l&rsquo;am&eacute;lioration de leurs comp&eacute;tences de communication en anglais.</p>
+</div>
+</div>
+<p><strong>&nbsp;</strong></p></section>
+<section class="paragraph">
+<h2 class="titre_paragraphe">Objectifs pédagogiques</h2>
+
+<ul>
+<li>Identifier vos messages cl&eacute;s et les adapter &agrave; vos diff&eacute;rentes audiences.</li>
+<li>Affiner vos comp&eacute;tences en mati&egrave;re de pr&eacute;sentation en face &agrave; face et en ligne.&nbsp;</li>
+<li>Acqu&eacute;rir une pratique essentielle pour r&eacute;pondre aux questions les plus ardues du public.</li>
+<li>D&eacute;velopper des comp&eacute;tences de networking avec des pairs scientifiques et au-del&agrave; de votre domaine.&nbsp;</li>
+<li>Apprenez &agrave; contacter la presse et &agrave; communiquer avec elle.</li>
+</ul></section>
+<ul role="tablist" class="nav nav-tabs">
+    
+        <li role="presentation" class="active">
+		<a aria-expanded="true"
+		aria-controls="informations" data-toggle="tab" role="tab"
+		id="informations-tab" href="#informations">Informations générales</a>
+	</li>
+    
+        <li role="presentation" class="">
+		<a aria-expanded="false"
+		aria-controls="prerequis" data-toggle="tab" role="tab"
+		id="prerequis-tab" href="#prerequis">Pré-requis</a>
+	</li>
+    
+        <li role="presentation" class="">
+		<a aria-expanded="false"
+		aria-controls="acquisition" data-toggle="tab" role="tab"
+		id="acquisition-tab" href="#acquisition">Acquisition de l'UE</a>
+	</li>
+    
+        <li role="presentation" class="">
+		<a aria-expanded="false"
+		aria-controls="descriptif" data-toggle="tab" role="tab"
+		id="descriptif-tab" href="#descriptif">Descriptif & programme</a>
+	</li>
+    </ul>
+
+<div class="tab-content" id="tab-content">
+            <div aria-labelledby="informations-tab" id="informations" class="tab-pane fade active in" role="tabpanel">
+        <p class="tab-paragraph-title"></p><span class="temps-travail">
+    20 heures en présentiel</span>
+<p class="tab-paragraph-title"></p><span class="temps-travail">
+    30 heures de travail personnel estimé pour l’étudiant.</span>
+<p></p><h3 class="tab-paragraph-title" style="display: inline;" >effectifs minimal / maximal: </h3><span class="ue-effectifs">
+    5<span>/</span>15</span>
+<h3 class="tab-paragraph-title">Diplôme(s) concerné(s)</h3><ul class="link-list tab-link-list">
+    <li><a href="/catalogue/2024-2025/diplome/2063/PEF-programme-de-mobilite-des-etablissements-francais-partenaires" class="fiche">Programme de mobilité des établissements français partenaires</a></li><li><a href="/catalogue/2024-2025/diplome/1/PEI-echange-international-non-diplomant" class="fiche">Echange international non diplomant</a></li><li><a href="/catalogue/2024-2025/diplome/4/ING-diplome-d-ingenieur" class="fiche">Diplôme d'ingénieur</a></li></ul>
+        </div>
+                <div aria-labelledby="prerequis-tab" id="prerequis" class="tab-pane fade in" role="tabpanel">
+        <h3 class="tab-paragraph-title">Niveaux en cours d'acquisition</h3><ul class="item-list tab-item-list">
+    <li>
+        <span class="libelle">Niveau d'Anglais&nbsp;:</span>
+        <span class="valeur">B2.2</span>
+      </li><li>
+        <span class="libelle">Niveau d'Anglais&nbsp;:</span>
+        <span class="valeur">C1</span>
+      </li><li>
+        <span class="libelle">Niveau d'Anglais&nbsp;:</span>
+        <span class="valeur">C1.1</span>
+      </li><li>
+        <span class="libelle">Niveau d'Anglais&nbsp;:</span>
+        <span class="valeur">C1.2</span>
+      </li><li>
+        <span class="libelle">Niveau d'Anglais&nbsp;:</span>
+        <span class="valeur">C2</span>
+      </li><li>
+        <span class="libelle">Niveau d'Anglais&nbsp;:</span>
+        <span class="valeur">B2.1</span>
+      </li><li>
+        <span class="libelle">Niveau d'Anglais&nbsp;:</span>
+        <span class="valeur">B2</span>
+      </li><li>
+        <span class="libelle">Niveau d'Anglais&nbsp;:</span>
+        <span class="valeur">C2.1</span>
+      </li><li>
+        <span class="libelle">Niveau d'Anglais&nbsp;:</span>
+        <span class="valeur">C2.2</span>
+      </li></ul>
+<div class="prerequis">
+
+            <section class="fieldset prerequis" id="PEF" style="display:block">
+            <h2>Pour les étudiants du diplôme <span id="selected_diplome_title">Programme de mobilité des établissements français partenaires</span></h2>
+                    <p class="description tab-paragraph-text">Bien qu'il n'y ait pas de pr&eacute;-requis officielles pour ce cours (sauf &agrave; avoir acquis un niveau B2.1), il est pr&eacute;f&eacute;rable que les participants soient activement impliqu&eacute;s dans des associations (par exemple BDE, BDS, Forum, T&eacute;lespoir, associations internationales, etc.) et/ou tr&egrave;s motiv&eacute;s pour promouvoir leur passion pour la science.</p>
+                        </section>
+                <section class="fieldset prerequis" id="PEI" style="display:block">
+            <h2>Pour les étudiants du diplôme <span id="selected_diplome_title">Echange international non diplomant</span></h2>
+                    <p class="description tab-paragraph-text">Bien qu'il n'y ait pas de pr&eacute;-requis officielles pour ce cours (sauf &agrave; avoir acquis un niveau B2.1), il est pr&eacute;f&eacute;rable que les participants soient activement impliqu&eacute;s dans des associations (par exemple BDE, BDS, Forum, T&eacute;lespoir, associations internationales, etc.) et/ou tr&egrave;s motiv&eacute;s pour promouvoir leur passion pour la science.</p>
+                        </section>
+                <section class="fieldset prerequis" id="ING" style="display:block">
+            <h2>Pour les étudiants du diplôme <span id="selected_diplome_title">Diplôme d'ingénieur</span></h2>
+                    <p class="description tab-paragraph-text">Bien qu'il n'y ait pas de pr&eacute;-requis officielles pour ce cours (sauf &agrave; avoir acquis un niveau B2.1), il est pr&eacute;f&eacute;rable que les participants soient activement impliqu&eacute;s dans des associations (par exemple BDE, BDS, Forum, associations internationales, etc.) et/ou tr&egrave;s motiv&eacute;s pour promouvoir leur passion pour la science.</p>
+                        </section>
+        
+</div>
+        </div>
+                <div aria-labelledby="acquisition-tab" id="acquisition" class="tab-pane fade in" role="tabpanel">
+        <h3 class="tab-paragraph-title">Format des notes</h3>Numérique sur 20<p class="tab-paragraph-title"></p>Littérale/grade européen <div class="acquisition">
+
+    
+        <section class="fieldset acquisition" id="PEI" style="display:block">
+            <h2>Pour les étudiants du diplôme <span id="selected_diplome_title">Echange international non diplomant</span></h2>
+                            <h3 class="tab-paragraph-title">Vos modalités d'acquisition : </h3>
+              <p class="tab-paragraph-text"><p>- Regardez les 7 vid&eacute;os du premier module "Structurez vos id&eacute;es" avec C&eacute;cile Michaut du MOOC " Promote your Scientific Results ". Cela vous aidera &agrave; pr&eacute;parer vos pitchs pour la suite du cours. (participation)<br /><br />- Regardez les 5 vid&eacute;os du module "Am&eacute;liorez vos pr&eacute;sentations scientifiques" du MOOC " Promote your Scientific Results ". (participation)<br /><br />- Points de discussion et questions &eacute;crites. Vous devez suivre les directives strictes et soumettre votre travail sur E-campus. (5% de votre note finale)<br /><br />- Quiz 1 : Vous serez test&eacute; sur le contenu des vid&eacute;os "Enhance your Presentation Skills" du MOOC "Promote your Scientific Results". Vous pouvez utiliser vos notes. (5% de votre note finale)<br /><br />- Une pr&eacute;sentation &eacute;crite de 100-150 mots d'une cause qui vous passionne. Cette pr&eacute;sentation doit inclure une influence scientifique et suivre les directives strictes. (5% de votre note finale).&nbsp;</p>
+<p>- Pr&eacute;parez une pr&eacute;sentation de 1 &agrave; 2 minutes de ce que vous promouvez et que vous pr&eacute;senterez devant la classe. (participation)</p>
+<p>- Regardez les 6 vid&eacute;os du module du MOOC "R&eacute;pondre &agrave; des questions difficiles avec Sinead Namur" du MOOC "Promote your Scientific Results. (participation)</p>
+<p>- R&eacute;diger des points de discussion et des questions. "Podcast Like a Badass". Vous devez suivre les directives strictes et soumettre votre travail sur E-campus. (5% de votre note finale)</p>
+<p>-Visionner les vid&eacute;os du module "Networking with various experts" du MOOC. (participation) <br /><br />- Quiz 2 : Vous serez test&eacute; sur le contenu des vid&eacute;os "Networking with Various Experts" du MOOC Promote your Scientific Results. Vous pouvez utiliser vos notes. (5% de votre note)<br /><br />-Enregistrement MP3 de votre pr&eacute;sentation et de vos r&eacute;ponses aux questions. Vous devez suivre les directives strictes et soumettre votre travail sur E-campus. (15% de votre note finale)</p>
+<p>- EXAMEN ORAL DE MI-PARCOURS : Vous devez suivre les directives strictes de notation, qui sont disponibles ici sur E-campus (20% de votre note finale).<br />- Regardez les 5 vid&eacute;os du module " Interacting with the Press " du MOOC Promote your Scientific Results. (participation)<br /><br />-Vid&eacute;o Pitch. Vous devez suivre les directives strictes de notation, qui sont disponibles sur E-campus. (15% de votre note)<br /><br />-EXAMEN ORAL FINAL : Vous devez suivre les directives strictes de notation, qui sont disponibles sur E-campus. (15% de votre note finale)<br /><br /></p>
+<p><strong>Pour les cours de langues l'assiduit&eacute; globale sup&eacute;rieure &agrave; 90% est requise.</strong></p>
+<p><strong>Les premiers 10 % sont consid&eacute;r&eacute;s comme des absences toler&eacute;es.</strong></p>
+<p>Ensuite,&nbsp;<strong>toutes</strong>&nbsp;les absences, quelle qu'en soit la raison (&eacute;v&eacute;nements organis&eacute;s &agrave; l'&eacute;cole ou au nom de l'&eacute;cole, r&eacute;unions ou entretiens professionnels, &eacute;v&eacute;nements sportifs, maladie de courte dur&eacute;e, obligations familiales, f&ecirc;tes religieuses), sont consid&eacute;r&eacute;es comme des absences&nbsp;<strong>non excus&eacute;es.</strong></p>
+<p>-10% d&rsquo;absences tol&eacute;r&eacute; = 1TH (1TH= 1h30)</p>
+<p>- Possibilit&eacute; de pr&eacute;-rattrapage de maximum 20% d&rsquo;absences (toutes absences confondues) = 2TH (1TH= 1h30)</p>
+<p>- Plus de 30% d&rsquo;absences =&gt; cours non valid&eacute;</p>              </p>            L'UE est acquise si Note finale >= 10<ul><li>Crédits ECTS acquis : 2 ECTS<li>Crédit de Langue acquis : 2</ul>
+                                <p class="tab-paragraph-title">La note obtenue rentre dans le calcul de votre GPA.</p>
+                           </section>
+    
+        <section class="fieldset acquisition" id="ING" style="display:block">
+            <h2>Pour les étudiants du diplôme <span id="selected_diplome_title">Diplôme d'ingénieur</span></h2>
+                            <h3 class="tab-paragraph-title">Vos modalités d'acquisition : </h3>
+              <p class="tab-paragraph-text"><p>- Regardez les 7 vid&eacute;os du premier module "Structurez vos id&eacute;es" avec C&eacute;cile Michaut du MOOC " Promote your Scientific Results ". Cela vous aidera &agrave; pr&eacute;parer vos pitchs pour la suite du cours. (participation)<br /><br />- Regardez les 5 vid&eacute;os du module "Am&eacute;liorez vos pr&eacute;sentations scientifiques" du MOOC " Promote your Scientific Results ". (participation)<br /><br />- Points de discussion et questions &eacute;crites. Vous devez suivre les directives strictes et soumettre votre travail sur E-campus. (5% de votre note finale)<br /><br />- Quiz 1 : Vous serez test&eacute; sur le contenu des vid&eacute;os "Enhance your Presentation Skills" du MOOC "Promote your Scientific Results". Vous pouvez utiliser vos notes. (5% de votre note finale)<br /><br />- Une pr&eacute;sentation &eacute;crite de 100-150 mots d'une cause qui vous passionne. Cette pr&eacute;sentation doit inclure une influence scientifique et suivre les directives strictes. (5% de votre note finale).&nbsp;</p>
+<p>- Pr&eacute;parez une pr&eacute;sentation de 1 &agrave; 2 minutes de ce que vous promouvez et que vous pr&eacute;senterez devant la classe. (participation)</p>
+<p>- Regardez les 6 vid&eacute;os du module du MOOC "R&eacute;pondre &agrave; des questions difficiles avec Sinead Namur" du MOOC "Promote your Scientific Results. (participation)</p>
+<p>- R&eacute;diger des points de discussion et des questions. "Podcast Like a Badass". Vous devez suivre les directives strictes et soumettre votre travail sur E-campus. (5% de votre note finale)</p>
+<p>-Visionner les vid&eacute;os du module "Networking with various experts" du MOOC. (participation) <br /><br />- Quiz 2 : Vous serez test&eacute; sur le contenu des vid&eacute;os "Networking with Various Experts" du MOOC Promote your Scientific Results. Vous pouvez utiliser vos notes. (5% de votre note)<br /><br />-Enregistrement MP3 de votre pr&eacute;sentation et de vos r&eacute;ponses aux questions. Vous devez suivre les directives strictes et soumettre votre travail sur E-campus. (15% de votre note finale)</p>
+<p>- EXAMEN ORAL DE MI-PARCOURS : Vous devez suivre les directives strictes de notation, qui sont disponibles ici sur E-campus (20% de votre note finale).<br />- Regardez les 5 vid&eacute;os du module " Interacting with the Press " du MOOC Promote your Scientific Results. (participation)<br /><br />-Vid&eacute;o Pitch. Vous devez suivre les directives strictes de notation, qui sont disponibles sur E-campus. (15% de votre note)<br /><br />-EXAMEN ORAL FINAL : Vous devez suivre les directives strictes de notation, qui sont disponibles sur E-campus. (15% de votre note finale)<br /><br />- Pr&eacute;sence, ponctualit&eacute; et engagement g&eacute;n&eacute;ral dans le contenu du cours : (10% de votre note finale)</p>
+<p><strong>Pour les cours de langues l'assiduit&eacute; globale sup&eacute;rieure &agrave; 90% est requise.</strong></p>
+<p><strong>Les premiers 10 % sont consid&eacute;r&eacute;s comme des absences tol&eacute;r&eacute;es.</strong></p>
+<p>Ensuite,&nbsp;<strong>toutes</strong>&nbsp;les absences, quelle qu'en soit la raison (&eacute;v&eacute;nements organis&eacute;s &agrave; l'&eacute;cole ou au nom de l'&eacute;cole, r&eacute;unions ou entretiens professionnels, &eacute;v&eacute;nements sportifs, maladie de courte dur&eacute;e, obligations familiales, f&ecirc;tes religieuses), sont consid&eacute;r&eacute;es comme des absences&nbsp;<strong>non excus&eacute;es.</strong></p>
+<p>-10% d&rsquo;absences tol&eacute;r&eacute;es = 1TH (1TH= 1h30)</p>
+<p>- Possibilit&eacute; de pr&eacute;-rattrapage de maximum 20% d&rsquo;absences (toutes absences confondues) = 2TH (1TH= 1h30)</p>
+<p>- Plus de 30% d&rsquo;absences =&gt; cours non valid&eacute;</p>
+<p>&nbsp;</p>              </p>            L'UE est acquise si Note finale >= 10<ul><li>Crédits ECTS acquis : 2 ECTS<li>Crédit de Langue acquis : 2</ul>
+                                <p class="tab-paragraph-title">La note obtenue rentre dans le calcul de votre GPA.</p>
+                           </section>
+    
+        <section class="fieldset acquisition" id="PEF" style="display:block">
+            <h2>Pour les étudiants du diplôme <span id="selected_diplome_title">Programme de mobilité des établissements français partenaires</span></h2>
+                            <h3 class="tab-paragraph-title">Vos modalités d'acquisition : </h3>
+              <p class="tab-paragraph-text"><p>- Regardez les 7 vid&eacute;os du premier module "Structurez vos id&eacute;es" avec C&eacute;cile Michaut du MOOC " Promote your Scientific Results ". Cela vous aidera &agrave; pr&eacute;parer vos pitchs pour la suite du cours. (participation)<br /><br />- Regardez les 5 vid&eacute;os du module "Am&eacute;liorez vos pr&eacute;sentations scientifiques" du MOOC " Promote your Scientific Results ". (participation)<br /><br />- Points de discussion et questions &eacute;crites. Vous devez suivre les directives strictes et soumettre votre travail sur E-campus. (5% de votre note finale)<br /><br />- Quiz 1 : Vous serez test&eacute; sur le contenu des vid&eacute;os "Enhance your Presentation Skills" du MOOC "Promote your Scientific Results". Vous pouvez utiliser vos notes. (5% de votre note finale)<br /><br />- Une pr&eacute;sentation &eacute;crite de 100-150 mots d'une cause qui vous passionne. Cette pr&eacute;sentation doit inclure une influence scientifique et suivre les directives strictes. (5% de votre note finale).&nbsp;</p>
+<p>- Pr&eacute;parez une pr&eacute;sentation de 1 &agrave; 2 minutes de ce que vous promouvez et que vous pr&eacute;senterez devant la classe. (participation)</p>
+<p>- Regardez les 6 vid&eacute;os du module du MOOC "R&eacute;pondre &agrave; des questions difficiles avec Sinead Namur" du MOOC "Promote your Scientific Results. (participation)</p>
+<p>- R&eacute;diger des points de discussion et des questions. "Podcast Like a Badass". Vous devez suivre les directives strictes et soumettre votre travail sur E-campus. (5% de votre note finale)</p>
+<p>-Visionner les vid&eacute;os du module "Networking with various experts" du MOOC. (participation) <br /><br />- Quiz 2 : Vous serez test&eacute; sur le contenu des vid&eacute;os "Networking with Various Experts" du MOOC Promote your Scientific Results. Vous pouvez utiliser vos notes. (5% de votre note)<br /><br />-Enregistrement MP3 de votre pr&eacute;sentation et de vos r&eacute;ponses aux questions. Vous devez suivre les directives strictes et soumettre votre travail sur E-campus. (15% de votre note finale)</p>
+<p>- EXAMEN ORAL DE MI-PARCOURS : Vous devez suivre les directives strictes de notation, qui sont disponibles ici sur E-campus (20% de votre note finale).<br />- Regardez les 5 vid&eacute;os du module " Interacting with the Press " du MOOC Promote your Scientific Results. (participation)<br /><br />-Vid&eacute;o Pitch. Vous devez suivre les directives strictes de notation, qui sont disponibles sur E-campus. (15% de votre note)<br /><br />-EXAMEN ORAL FINAL : Vous devez suivre les directives strictes de notation, qui sont disponibles sur E-campus. (15% de votre note finale)<br /><br />- Pr&eacute;sence, ponctualit&eacute; et engagement g&eacute;n&eacute;ral dans le contenu du cours : (10% de votre note finale)</p>
+<p><strong>Pour les cours de langues l'assiduit&eacute; globale sup&eacute;rieure &agrave; 90% est requise.</strong></p>
+<p><strong>Les premiers 10 % sont consid&eacute;r&eacute;s comme des absences tol&eacute;r&eacute;es.</strong></p>
+<p>Ensuite,&nbsp;<strong>toutes</strong>&nbsp;les absences, quelle qu'en soit la raison (&eacute;v&eacute;nements organis&eacute;s &agrave; l'&eacute;cole ou au nom de l'&eacute;cole, r&eacute;unions ou entretiens professionnels, &eacute;v&eacute;nements sportifs, maladie de courte dur&eacute;e, obligations familiales, f&ecirc;tes religieuses), sont consid&eacute;r&eacute;es comme des absences&nbsp;<strong>non excus&eacute;es.</strong></p>
+<p>-10% d&rsquo;absences tol&eacute;r&eacute;es = 1TH (1TH= 1h30)</p>
+<p>- Possibilit&eacute; de pr&eacute;-rattrapage de maximum 20% d&rsquo;absences (toutes absences confondues) = 2TH (1TH= 1h30)</p>
+<p>- Plus de 30% d&rsquo;absences =&gt; cours non valid&eacute;</p>
+<p>&nbsp;</p>              </p>            L'UE est acquise si Note finale >= 10<ul><li>Crédits ECTS acquis : 1 ECTS<li>Crédit de Formation Humaine acquis : 2</ul>
+                                <p class="tab-paragraph-title">La note obtenue rentre dans le calcul de votre GPA.</p>
+                           </section>
+    
+</div>
+        </div>
+                <div aria-labelledby="descriptif-tab" id="descriptif" class="tab-pane fade in" role="tabpanel">
+        <h3 class="tab-paragraph-title">Programme détaillé</h3><p style="text-align: justify;"><strong>Module 1: "Structure your Ideas."</strong> <br />Bethany et C&eacute;cile Michaut seront vos coachs. Dans ce module, vous apprendrez &agrave; identifier votre objectif n&deg;1 pour promouvoir votre travail et votre message principal ; &agrave; adapter votre message &agrave; une vari&eacute;t&eacute; de publics et de contextes ; &agrave; savoir quand et comment limiter le jargon ; &agrave; rassembler le tout dans un pitch court et concis de votre travail.</p>
+<p style="text-align: justify;"><strong>Module 2: "Enhance your Scientific Presentations"</strong> <br />Bethany Cagnol sera votre coach. L'une des principales caract&eacute;ristiques de ce module est qu'il peut &ecirc;tre adapt&eacute; aux pr&eacute;sentations que vous faites devant vos pairs, mais aussi devant le grand public. Dans ce module, vous aborderez les bases de la prise de parole en public, certains points de langage cl&eacute;s et des conseils essentiels pour les discours via Zoom et en presentiel et les tables rondes. Enfin, nous terminerons le module par une Case Study de la NASA donn&eacute;e par l'expert international en climatologie et professeur &agrave; l'Universit&eacute; de G&eacute;orgie, le Dr J. Marshall Shepherd.</p>
+<p style="text-align: justify;"><strong>Module 3 "Handling Questions and Answers"</strong><br />Dans ce module, nous aborderons les sessions de questions-r&eacute;ponses (alias Q &amp; A). Vous aurez de nombreuses occasions de r&eacute;fl&eacute;chir et d'&eacute;tudier les bons et les moins bons exemples dans ce module interactif unique con&ccedil;u par votre coach pour cette semaine, Sinead Namur. Elle vous guidera &agrave; travers deux sc&eacute;narios hypoth&eacute;tiques de questions-r&eacute;ponses dans lesquels un professeur, le Dr Johnson, est confront&eacute; &agrave; des questions tr&egrave;s difficiles de la part de membres du public. Dans ces deux sc&eacute;narios, vous aurez l'occasion de r&eacute;fl&eacute;chir &agrave; ce qui fonctionne et &agrave; ce qui ne fonctionne pas. Et &agrave; la fin du module, vous recevrez des conseils et des phrases cl&eacute;s &agrave; ne pas rater, que vous pourrez utiliser si et quand vous serez confront&eacute; &agrave; une session de questions-r&eacute;ponses difficile.</p>
+<p style="text-align: justify;"><strong>Module 4: Networking</strong><br />Dans ce module, votre coach, Bethany, aborde l'importance du r&eacute;seautage dans les sciences, tant avec nos pairs qu'en dehors de nos contextes professionnels. Un ensemble d'experts ont accept&eacute; d'offrir leur contribution et de partager leur exp&eacute;rience avec vous.</p>
+<p style="text-align: justify;"><strong>Module 5: Interacting with the Press</strong><br />Dans le dernier module de ce cours, C&eacute;cile et Bethany sont vos coachs, ainsi qu'une &eacute;quipe d'experts pour vous aider &agrave; communiquer avec les m&eacute;dias. Fr&eacute;d&eacute;ric Restagno, professeur de physique au CNRS, vous fera part de son exp&eacute;rience directe du travail &agrave; la t&eacute;l&eacute;vision. Catherine de Coppet vous donnera des conseils infaillibles pour les interviews &agrave; la radio et les podcasts. Enfin, Audrey Mika&euml;lian abordera les r&eacute;alit&eacute;s des interventions &agrave; la t&eacute;l&eacute;vision.&nbsp;</p><h3 class="tab-paragraph-title">Mots clés</h3>Vulgarisation scientifique, reunions, entretiens, <h3 class="tab-paragraph-title">Méthodes pédagogiques</h3>Videos du MOOC (séances asynchrones), Cours en présentiel (sessions synchrones), classe inversée, séances interactives        </div>
+        </div>
+</main><div class="sidebar" id="sidebar-fiche-ue">
+    <div id='icon'>
+<!--        <a href="#" title="--><!--">-->
+<!--            <i class="fa btn fa-share-square-o"></i>-->
+<!--        </a>-->
+            </div>
+    <aside class="encadre" >
+<!-- ajout d'un ID CSS pour distinguer l'encadré Programmation de la fiche UE -->
+<h1 classe="titre-encadre">responsables</h1>
+            <div>
+                <div class="annuaire-modal-aware">                        <div class="annuaire-modal-photo">
+                                                            <i class="fa fa-user"></i>
+                            <span>Bethany CAGNOL</span>                        </div>
+                                    </div>
+            </div>
+        
+</aside>
+<aside class="encadre" >
+<!-- ajout d'un ID CSS pour distinguer l'encadré Programmation de la fiche UE -->
+<h1 classe="titre-encadre">coordinateurs des études</h1>
+            <div>
+                <div class="annuaire-modal-aware">                        <div class="annuaire-modal-photo">
+                                                            <i class="fa fa-user"></i>
+                            <span>Estelle HENRI</span>                        </div>
+                                    </div>
+            </div>
+        
+</aside>
+<aside class="encadre" >
+<!-- ajout d'un ID CSS pour distinguer l'encadré Programmation de la fiche UE -->
+<h1 classe="titre-encadre">Equipe d'ingénierie pédagogique</h1>
+
+</aside>
+<aside class="encadre" >
+<!-- ajout d'un ID CSS pour distinguer l'encadré Programmation de la fiche UE -->
+<h1 classe="titre-encadre">programmation</h1>
+            <section class="titrage-occurrence">
+
+                <h2>Promotional Skills for the Sciences-S2 - <span class="creneaux">LC-Lundi 17h</span></h2>
+
+                                    <p class="subtitle">2024-2025 -2ème semestre (du 11/02/25 au 27/06/25)</p>
+                            </section>
+                            <section class="responsable-occurrence">
+                    <!-- Responsable de l'Occurrence -->
+
+                    <h3>Responsable :</h3>
+                    <p>Bethany CAGNOL</p>                </section>
+                            <section class="langues-occurrence">
+
+                    <!--  Langues de l'Occurrence -->
+                    <h3>Langues :</h3>
+                                        <p> Anglais</p>
+                </section>
+
+                            <section class="effectifs-occurrence">
+
+                    <!--  Effectifs min/max de l'Occurrence -->
+                    <h3>Effectifs min./max. :</h3>
+                    <p>5 / 13</p>
+                </section>
+                                            <section class="titrage-occurrence">
+
+                <h2>Promotional Skills for the Sciences-S1 - <span class="creneaux">LC-Lundi 17h</span></h2>
+
+                                    <p class="subtitle">2024-2025 -1er semestre (du 11/09/24 au 12/02/25)</p>
+                            </section>
+                            <section class="responsable-occurrence">
+                    <!-- Responsable de l'Occurrence -->
+
+                    <h3>Responsable :</h3>
+                    <p>Bethany CAGNOL</p>                </section>
+                            <section class="langues-occurrence">
+
+                    <!--  Langues de l'Occurrence -->
+                    <h3>Langues :</h3>
+                                        <p> Anglais</p>
+                </section>
+
+                            <section class="effectifs-occurrence">
+
+                    <!--  Effectifs min/max de l'Occurrence -->
+                    <h3>Effectifs min./max. :</h3>
+                    <p>5 / 16</p>
+                </section>
+                                
+</aside>
+</div>
+<!-- Modal -->
+<div class="container">
+    <div class="modal annuaire-modal-aware" data-backdrop="true" id="annuaire-modal" tabindex="-1" role="dialog" aria-labelledby="Détails de la personne sélectionnée">
+        <div class="modal-dialog  modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close-modal" data-dismiss="modal" aria-label="Close">
+                        <i class="fa fa-times"></i>
+                    </button>
+                    <h3 class="modal-title"></h3>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="photo-column annuaire-modal-photo">
+                                <img data-default-src="/assets/bootstrap/3.3.5/images/annuaire/unknown.gif" src="" alt="" class="img-responsive" />
+                            </div>
+                            <div class="data-column">
+                                <div class="detail-line">
+                                    <div class="row">
+                                        <div class="list-group-item-heading">E-mail</div>
+                                        <div class="list-group-item-text" data-field="emailetb"></div>
+                                    </div>
+                                </div>
+
+                                <div class="detail-line">
+                                    <div class="row">
+
+                                        <div class="list-group-item-heading">Catégorie</div>
+                                        <div class="list-group-item-text" data-field="idcategory"
+                                             data-secundary-field='libelle'></div>
+                                    </div>
+
+                                </div>
+                                <div class="detail-line">
+                                    <div class="row">
+
+                                        <div class="list-group-item-heading">Site(s)</div>
+                                        <div class="list-group-item-text" data-field="idlocalisation"
+                                             data-secundary-field='intitule'></div>
+                                    </div>
+
+                                </div>
+                                <div class="detail-line">
+                                    <div class="row">
+
+                                        <div class="list-group-item-heading">Téléphone</div>
+                                        <div class="list-group-item-text" data-field="telephone1"></div>
+                                    </div>
+
+                                </div>
+                                <div class="detail-line">
+                                    <div class="row">
+
+                                        <div class="list-group-item-heading">Téléphone</div>
+                                        <div class="list-group-item-text" data-field="idlocalisation"
+                                             data-secundary-field='telephone'></div>
+                                    </div>
+
+                                </div>
+                                <div class="detail-line">
+                                    <div class="row">
+
+                                        <div class="list-group-item-heading">Entité de rattachement :</div>
+                                        <div class="list-group-item-text" data-field="idpersentite"
+                                             data-secundary-field='nom'></div>
+                                    </div>
+
+                                </div>
+                                <div class="detail-line">
+                                    <div class="row">
+
+                                        <div class="list-group-item-heading">Libelle diplôme :</div>
+                                        <div class="list-group-item-text" data-field="diplome"
+                                             data-secundary-field='libelle'></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="list-group-item-secundary-heading">Niveau :</div>
+                                        <div class="list-group-item-text" data-field="diplome"
+                                             data-secundary-field='niveau'></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="list-group-item-secundary-heading">Site :</div>
+                                        <div class="list-group-item-text" data-field="diplome"
+                                             data-secundary-field='site'></div>
+                                    </div>
+
+                                </div>
+                                <div class="detail-line">
+                                    <div class="row">
+
+                                        <div class="list-group-item-heading">Fonction :</div>
+                                        <div class="list-group-item-text" data-field="fonctions"
+                                             data-secundary-field='entite'></div>
+                                    </div>
+
+                                </div>
+                                <div class="detail-line">
+                                    <div class="row">
+
+                                        <div class="list-group-item-heading">Programme d'échange :</div>
+                                        <div class="list-group-item-text" data-field="progechange"
+                                             data-secundary-field='libelle'></div>
+                                    </div>
+
+                                </div>
+                                <div class="detail-line">
+                                    <div class="row">
+                                        <div class="list-group-item-heading">Régime d'inscription :</div>
+                                        <div class="list-group-item-text"
+                                             data-field="regimeinscription" data-secundary-field='libelle'></div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="preloader-container" id="preloader">
+	<img alt="Veuillez patienter"
+		src="/assets/bootstrap/3.3.5/images/preloader.png" />
+</div>                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--/.container-fluid -->
+                <div id="footer">
+            <div class="row">
+                <div class="col-md-11">
+                    <div class="row">
+    <div class="col-md-4 col-sm-12">
+        <div class="row">
+            <div class="col-md-12">
+<h1>Plan du site</h1><ul><li>Accueil</li><li>Les formations</li></ul>            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+    <ul><li><a href="#" onclick="Application.Modal.showModalAjax('modal-footer-contenu', 'Mentions légales', '/contenu/MENT_LEG', true)">Mentions légales</a></li>            </div>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-12">
+    </div>
+    <div class="col-md-4 col-sm-12">
+    </div>
+</div>
+                    <div class="modal" id="modal-footer-contenu" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg modal-full-width" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="row">
+                    <div class="col-md-11">
+                        <h4 class="modal-title" id="modal-title"></h4>
+                    </div>
+                    <div class="col-md-1 pull-right">
+                        <button type="button" class="close-modal" data-dismiss="modal" aria-label="Close">
+                            <i class="fa fa-times"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-body"></div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+                </div>
+            </div>
+        </div>
+        
+        <script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;bootstrap_3_3_5_i18n_js.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;bootstrap_3_3_5_push_area_js.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;vendor_bootstraptree_js.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;bootstrap_3_3_5_annuaire_modal_js.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;bootstrap_3_3_5_catalogue_fiche_element_formation_js.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;bootstrap_3_3_5_catalogue_fiche_ue_js.js"></script>        <div class="device-xs visible-xs"></div>
+        <div class="device-sm visible-sm"></div>
+        <div class="device-md visible-md"></div>
+        <div class="device-lg visible-lg"></div>
+
+    </body>
+</html>

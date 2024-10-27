@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <meta name="description" content="SynapseS">
+        <meta name="author" content="">
+        <script type="text/javascript">
+            var es6 = true;
+            try { eval("var foo = (x)=>x+1"); }
+            catch (e) { es6 = false; }
+
+            if (!es6) {
+                var script = document.createElement('script');
+                script.src = "/assets/app_polyfills.js";
+                script.setAttribute("type", "text/javascript");
+                document.head.appendChild(script);
+            }
+        </script>
+        <title>SynapseS</title><link href="&#x2F;assets&#x2F;vendor&#x2F;fontawesome&#x2F;css&#x2F;fontawesome.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;vendor&#x2F;bootstrap&#x2F;css&#x2F;bootstrap.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;app_base.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_calendrier_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_i18n_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_navigation_menu_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_push-area_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;vendor&#x2F;bootstraptree&#x2F;bootstrap-tree.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_annuaire_modal_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_catalogue_diplome_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;app_base_print.css" media="print" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;favicon.png" rel="icon" sizes="16x16" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;favicon.ico" rel="icon" type="image&#x2F;x-icon&#x20;">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;apple-touch-icon.png" rel="apple-touch-icon" sizes="76x76" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;apple-touch-icon-iphone.png" rel="apple-touch-icon" sizes="76x76" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;apple-touch-icon-iphone-retina.png" rel="apple-touch-icon" sizes="120x120" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;apple-touch-icon-ipad.png" rel="apple-touch-icon" sizes="76x76" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;apple-touch-icon-ipad-retina.png" rel="apple-touch-icon" sizes="152x152" type="image&#x2F;png"><script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;app_base_vendor.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;vendor&#x2F;jquery-migrate&#x2F;jquery-migrate.min.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;app_base.js"></script>    </head>
+
+    <body>
+        <div class="container header">
+            <!-- topbar -->
+            <div class="header-topbar">
+                <div class="logo-container">
+    <a href="/" title="Accueil">
+        <img alt="logo" src="/assets/bootstrap/3.3.5/images/logo_telecomparistech_sm.png" />
+    </a>
+</div>
+
+                <div class="banner-controls-container">
+                    <div class="top-banner-controls-container">
+                        <nav>
+                            <ul id="header-navigation-menu" class=""></ul>                        </nav>
+                    </div>
+
+                    <div class="bottom-banner-controls-container">
+                        <div class="language-switch-container">
+                            <ul id="language-switch">
+	<li class="dropdown">
+    	        <a class="dropdown-toggle" data-toggle="dropdown" href="#"> <span
+			class="lang-label" data-language="fr_FR">FR</span>
+            <span class="flag-icon flag-icon-fr"> </span>
+            <i class="fa fa-caret-down dropdown-toggle"></i>
+	</a>
+                <ul class="dropdown-menu">
+                                                            <li><a href="#" class="select-language"
+				data-language="en_US">
+                        <span class="flag-icon flag-icon-gb"> </span>
+                        English                    </a></li>
+                        </ul>
+	</li>
+</ul>
+<script>
+    var language = $(".lang-label").data("language");
+    i18next.use(i18nextXHRBackend).init({
+        ns: [language],
+        defaultNS: language,
+        nsSeparator: false,
+        keySeparator: false,
+        backend: {
+            loadPath: '/assets/i18n/' + language + '.json',
+        },
+        debug: false
+    });
+</script>
+<link href="&#x2F;assets&#x2F;vendor&#x2F;fontawesome&#x2F;css&#x2F;fontawesome.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;vendor&#x2F;bootstrap&#x2F;css&#x2F;bootstrap.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;app_base.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_calendrier_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_i18n_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_navigation_menu_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_push-area_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;vendor&#x2F;bootstraptree&#x2F;bootstrap-tree.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_annuaire_modal_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_catalogue_diplome_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;app_base_print.css" media="print" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;favicon.png" rel="icon" sizes="16x16" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;favicon.ico" rel="icon" type="image&#x2F;x-icon&#x20;">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;apple-touch-icon.png" rel="apple-touch-icon" sizes="76x76" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;apple-touch-icon-iphone.png" rel="apple-touch-icon" sizes="76x76" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;apple-touch-icon-iphone-retina.png" rel="apple-touch-icon" sizes="120x120" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;apple-touch-icon-ipad.png" rel="apple-touch-icon" sizes="76x76" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;apple-touch-icon-ipad-retina.png" rel="apple-touch-icon" sizes="152x152" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;vendor&#x2F;flag-icon-css&#x2F;css&#x2F;flag-icon.min.css" rel="stylesheet" type="text&#x2F;css">                        </div>
+                    </div>
+
+                    <!-- logout on small screens -->
+                    <ul id="connection-form-container" class="nav navbar-nav">
+                        <li id="dropdown-authentication-menu" class="dropdown dropdown-authentication-menu">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+        <i class="fa fa-user fa-lg hidden-sm hidden-md hidden-lg"></i>
+        <span class="hidden-xs">Connexion</span>
+        <i class="fa fa-caret-down"></i>
+    </a>
+    <ul id="dropdown-authentication-menu-content" class="dropdown-menu">
+        <li>
+            <div class="row">
+                <div class="col-md-12">
+                    <header>Utiliser mon compte école</header>
+                                        <a href="/login?type=Shib">
+                        <button class="btn btn-success btn-block">
+                            Je me connecte                        </button>
+                    </a>
+                                        <hr>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <header>Utiliser un compte provisoire</header>
+                </div>
+                <form id="login-form">
+                    <div class="col-md-12 form">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="identifier-area"
+                                   data-minlength="5" pattern="^[a-zA-Z0-9._\-@]+$"
+                                   placeholder="Nom d'utilisateur"
+                                   required="required">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" id="credential-area"
+                                   placeholder="Mot de passe"
+                                   required="required">
+                        </div>
+                        <div class="form-group">
+                            <button id="btn-login-provisoire" type="submit" class="btn btn-default btn-block">Valider</button>
+                        </div>
+                        <div class="alert alert-danger hidden" role="alert"
+                             id="login-error-message-container">
+                            <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+                            <span class="sr-only">Error:</span> <span id="login-error-message"></span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </li>
+    </ul>
+</li>
+                    </ul>
+
+                    <div class="header-content-responsive hidden-sm hidden-md hidden-lg">
+                        <div class="collapsed-button-container">
+                            <button type="button" class="navbar-toggle pull-right"
+                                    data-toggle="collapse" data-target="#main-navigation-menu"
+                                    aria-expanded="false" aria-controls="navbar">
+                                <i class="fa fa-bars fa-lg"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- banner with navigation -->
+            <div class="banner">
+                <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="logo-container">
+    <a href="/" title="Accueil">
+        <img alt="logo" src="/assets/bootstrap/3.3.5/images/logo_telecomparistech_lg.png" />
+    </a>
+</div>
+
+                            <div class="navbar-collapse collapse" id="main-navigation-menu">
+                                <div class="col-md-9 col-sm-12">
+                                    <ul class="nav navbar-nav">
+                                        <li class=""><a href="/" >Accueil</a></li><li class="dropdown"><a href="/catalogue" class="dropdown-toggle" data-toggle="dropdown">Les formations<i class="fa fa-caret-down"></i></a><ul  class="dropdown-menu"><li class="dropdown-submenu"><a href="/catalogue/2024-2025" ><b>Catalogue 2024 - 2025</b></a><ul  class="dropdown-menu"><li class="dropdown-submenu"><a href="/catalogue/2024-2025/type/Ing%25C3%25A9nieur" >Ingénieur</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2024-2025/diplome/4/ING-diplome-d-ingenieur" >ING&nbsp;-&nbsp;Diplôme d'ingénieur</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2024-2025/type/Master" >Master</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2024-2025/diplome/2490/M1DATAAI-master-m1-data-and-artificial-intelligence" >M1DATAAI&nbsp;-&nbsp;Master M1 - Data and Artificial Intelligence</a></li><li class=""><a href="/catalogue/2024-2025/diplome/2489/M1IGD-master-m1-interaction-graphic-design" >M1IGD&nbsp;-&nbsp;Master M1 - Interaction, Graphic & Design</a></li><li class=""><a href="/catalogue/2024-2025/diplome/2064/M1REDESI-master-m1-recherche-en-design" >M1REDESI&nbsp;-&nbsp;Master M1 - recherche en Design</a></li><li class=""><a href="/catalogue/2024-2025/diplome/2083/M2DATAAI-master-m2-data-artificial-intelligence" >M2DATAAI&nbsp;-&nbsp;Master M2 - Data & Artificial Intelligence</a></li><li class=""><a href="/catalogue/2024-2025/diplome/1327/M2ICS-master-m2-integration-circuits-and-systems" >M2ICS&nbsp;-&nbsp;Master M2 - Integration, Circuits and Systems</a></li><li class=""><a href="/catalogue/2024-2025/diplome/26/M2IGD-master-m2-interaction-graphic-design" >M2IGD&nbsp;-&nbsp;Master M2 - Interaction, Graphic & Design</a></li><li class=""><a href="/catalogue/2024-2025/diplome/42/M2IREN-master-m2-industries-de-reseau-et-economie-numerique" >M2IREN&nbsp;-&nbsp;Master M2 - Industries de Réseau et Economie Numérique</a></li><li class=""><a href="/catalogue/2024-2025/diplome/2065/M2MICAS-master-m2-information-processing-machine-learning-communications-and-security" >M2MICAS&nbsp;-&nbsp;Master M2- Information processing: machine learning, communications and security</a></li><li class=""><a href="/catalogue/2024-2025/diplome/38/M2MVA-master-m2-mathematiques-vision-apprentissage" >M2MVA&nbsp;-&nbsp;Master M2 - Mathématiques, Vision, Apprentissage</a></li><li class=""><a href="/catalogue/2024-2025/diplome/2491/M2RECHDESI-master-m2-recherche-en-design" >M2RECHDESI&nbsp;-&nbsp;Master M2 - Recherche en Design</a></li><li class=""><a href="/catalogue/2024-2025/diplome/1857/M2SETI-master-m2-systemes-embarques-et-traitement-de-l-information" >M2SETI&nbsp;-&nbsp;Master M2 - Systèmes embarqués et traitement de l'information</a></li><li class=""><a href="/catalogue/2024-2025/diplome/2492/PHDCOMPSC-phd-track-computer-science" >PHDCOMPSC&nbsp;-&nbsp;PhD Track - Computer Science</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2024-2025/type/Mast%25C3%25A8re+sp%25C3%25A9cialis%25C3%25A9" >Mastère spécialisé</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2024-2025/diplome/61/ADE-architecte-digital-d-entreprise" >ADE&nbsp;-&nbsp;Architecte Digital d'Entreprise</a></li><li class=""><a href="/catalogue/2024-2025/diplome/60/ARC-architecte-reseaux-et-cybersecurite" >ARC&nbsp;-&nbsp;Architecte Réseaux et Cybersécurité</a></li><li class=""><a href="/catalogue/2024-2025/diplome/62/BGD-big-data-gestion-et-analyse-des-donnees-massives" >BGD&nbsp;-&nbsp;Big Data : gestion et analyse des données massives</a></li><li class=""><a href="/catalogue/2024-2025/diplome/78/CYBER2-cybersecurite-et-cyberdefense" >CYBER2&nbsp;-&nbsp;Cybersécurité et Cyberdéfense</a></li><li class=""><a href="/catalogue/2024-2025/diplome/65/ECRSI-expert-cybersecurite-des-reseaux-et-des-systemes-d-information" >ECRSI&nbsp;-&nbsp;Expert cybersécurité des réseaux et des systèmes d'information</a></li><li class=""><a href="/catalogue/2024-2025/diplome/1996/IA-ia-intelligence-artificielle" >IA&nbsp;-&nbsp;IA : Intelligence Artificielle</a></li><li class=""><a href="/catalogue/2024-2025/diplome/1846/SMOB-smart-mobility-transformation-numerique-des-systemes-de-mobilite" >SMOB&nbsp;-&nbsp;Smart Mobility - Transformation Numérique des Systèmes de Mobilité</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2024-2025/type/Programme+d%2527%25C3%25A9change" >Programme d'échange</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2024-2025/diplome/1/PEI-echange-international-non-diplomant" >PEI&nbsp;-&nbsp;Echange international non diplomant</a></li></ul></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2023-2024" >Catalogue 2023 - 2024</a><ul  class="dropdown-menu"><li class="dropdown-submenu"><a href="/catalogue/2023-2024/type/Certificat+d%2527Etudes+Sp%25C3%25A9cialis%25C3%25A9es" >Certificat d'Etudes Spécialisées</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2023-2024/diplome/2179/CESCDRS-ces-cybersecurite-des-donnees-reseaux-et-systemes" >CESCDRS&nbsp;-&nbsp;CES Cybersécurité des données, réseaux et systèmes</a></li><li class=""><a href="/catalogue/2023-2024/diplome/2276/CESCDRS-INTRA-ces-cybersecurite-des-donnees-reseaux-et-systemes-intra" >CESCDRS-INTRA&nbsp;-&nbsp;CES Cybersécurité des données, réseaux et systèmes-INTRA</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2023-2024/type/Ing%25C3%25A9nieur" >Ingénieur</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2023-2024/diplome/4/ING-diplome-d-ingenieur" >ING&nbsp;-&nbsp;Diplôme d'ingénieur</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2023-2024/type/Master" >Master</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2023-2024/diplome/2083/DATA-AI-data-artificial-intelligence" >DATA AI&nbsp;-&nbsp;Data & Artificial Intelligence</a></li><li class=""><a href="/catalogue/2023-2024/diplome/2064/DESIGN-master-recherche-en-design" >DESIGN&nbsp;-&nbsp;Master recherche en Design</a></li><li class=""><a href="/catalogue/2023-2024/diplome/1327/ICS-integration-circuits-systems" >ICS&nbsp;-&nbsp;Integration Circuits Systems</a></li><li class=""><a href="/catalogue/2023-2024/diplome/26/IGD-interaction-graphic-design" >IGD&nbsp;-&nbsp;Interaction, Graphic & Design</a></li><li class=""><a href="/catalogue/2023-2024/diplome/42/IREN-industries-de-reseau-et-economie-numerique-iren" >IREN&nbsp;-&nbsp;Industries de réseau et economie numérique (IREN)</a></li><li class=""><a href="/catalogue/2023-2024/diplome/2065/MICAS-information-processing-machine-learning-communications-and-security" >MICAS&nbsp;-&nbsp;Information processing: machine learning, communications and security</a></li><li class=""><a href="/catalogue/2023-2024/diplome/38/MVA-mathematiques-vision-apprentissage" >MVA&nbsp;-&nbsp;Mathématiques, Vision, Apprentissage</a></li><li class=""><a href="/catalogue/2023-2024/diplome/1857/SETI-systemes-embarques-et-traitement-de-l-information" >SETI&nbsp;-&nbsp;Systèmes embarqués et traitement de l'information</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2023-2024/type/Master+T%25C3%25A9l%25C3%25A9com+SudParis" >Master Télécom SudParis</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2023-2024/diplome/2067/CSN-informatique-pour-les-reseaux" >CSN&nbsp;-&nbsp;Informatique pour les Réseaux</a></li><li class=""><a href="/catalogue/2023-2024/diplome/2072/CYBER-M1-cybersecurity-m1" >Cyber M1&nbsp;-&nbsp;Cybersecurity M1</a></li><li class=""><a href="/catalogue/2023-2024/diplome/2073/CYBER-M2-cybersecurity-m2" >Cyber M2&nbsp;-&nbsp;Cybersecurity M2</a></li><li class=""><a href="/catalogue/2023-2024/diplome/2291/EECIP-electrical-engineering-for-communication-information-processing" >EECIP&nbsp;-&nbsp;Electrical Engineering for Communication Information Processing</a></li><li class=""><a href="/catalogue/2023-2024/diplome/40/MN-multimedia-networking-m2" >MN&nbsp;-&nbsp;Multimedia Networking M2</a></li><li class=""><a href="/catalogue/2023-2024/diplome/2076/PDS-M1-systemes-distribues-et-paralleles-m1" >PDS M1&nbsp;-&nbsp;Systèmes distribués et parallèles M1</a></li><li class=""><a href="/catalogue/2023-2024/diplome/2077/PDS-M2-systemes-distribues-et-paralleles-m2" >PDS M2&nbsp;-&nbsp;Systèmes distribués et parallèles M2</a></li><li class=""><a href="/catalogue/2023-2024/diplome/2069/TRIED-M2-traitement-de-l-information-exploitation-des-donnees-master-2" >TRIED M2&nbsp;-&nbsp;Traitement de l'Information & Exploitation des Données Master 2</a></li><li class=""><a href="/catalogue/2023-2024/diplome/2070/VAR-virtual-augmented-reality-m2" >VAR&nbsp;-&nbsp;Virtual & Augmented Reality M2</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2023-2024/type/Mast%25C3%25A8re+sp%25C3%25A9cialis%25C3%25A9" >Mastère spécialisé</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2023-2024/diplome/61/ADE-architecte-digital-d-entreprise" >ADE&nbsp;-&nbsp;Architecte Digital d'Entreprise</a></li><li class=""><a href="/catalogue/2023-2024/diplome/60/ARC-architecte-reseaux-et-cybersecurite" >ARC&nbsp;-&nbsp;Architecte Réseaux et Cybersécurité</a></li><li class=""><a href="/catalogue/2023-2024/diplome/62/BGD-big-data-gestion-et-analyse-des-donnees-massives" >BGD&nbsp;-&nbsp;Big Data : gestion et analyse des données massives</a></li><li class=""><a href="/catalogue/2023-2024/diplome/65/CARC-conception-architecture-de-reseaux-et-cybersecurite" >CARC&nbsp;-&nbsp;Conception, Architecture de Réseaux et Cybersécurité</a></li><li class=""><a href="/catalogue/2023-2024/diplome/64/CPD-concepteur-de-projet-digital" >CPD&nbsp;-&nbsp;Concepteur de Projet Digital</a></li><li class=""><a href="/catalogue/2023-2024/diplome/78/CYBER2-cybersecurite-et-cyberdefense" >CYBER2&nbsp;-&nbsp;Cybersécurité et Cyberdéfense</a></li><li class=""><a href="/catalogue/2023-2024/diplome/1996/IA-ia-intelligence-artificielle" >IA&nbsp;-&nbsp;IA : Intelligence Artificielle</a></li><li class=""><a href="/catalogue/2023-2024/diplome/72/MSIR-management-des-systemes-d-information-en-reseaux" >MSIR&nbsp;-&nbsp;Management des systèmes d'information en réseaux</a></li><li class=""><a href="/catalogue/2023-2024/diplome/1846/SMOB-smart-mobility-transformation-numerique-des-systemes-de-mobilite" >SMOB&nbsp;-&nbsp;Smart Mobility - Transformation Numérique des Systèmes de Mobilité</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2023-2024/type/Programme+d%2527%25C3%25A9change" >Programme d'échange</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2023-2024/diplome/1/PEI-echange-international-non-diplomant" >PEI&nbsp;-&nbsp;Echange international non diplomant</a></li></ul></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2022-2023" >Catalogue 2022 - 2023</a><ul  class="dropdown-menu"><li class="dropdown-submenu"><a href="/catalogue/2022-2023/type/Ing%25C3%25A9nieur" >Ingénieur</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2022-2023/diplome/4/ING-diplome-d-ingenieur" >ING&nbsp;-&nbsp;Diplôme d'ingénieur</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2022-2023/type/Master" >Master</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2022-2023/diplome/2083/DATA-AI-data-artificial-intelligence" >DATA AI&nbsp;-&nbsp;Data & Artificial Intelligence</a></li><li class=""><a href="/catalogue/2022-2023/diplome/2064/DESIGN-master-recherche-en-design" >DESIGN&nbsp;-&nbsp;Master recherche en Design</a></li><li class=""><a href="/catalogue/2022-2023/diplome/1327/ICS-integration-circuits-systems" >ICS&nbsp;-&nbsp;Integration Circuits Systems</a></li><li class=""><a href="/catalogue/2022-2023/diplome/26/IGD-interaction-graphic-design" >IGD&nbsp;-&nbsp;Interaction, Graphic & Design</a></li><li class=""><a href="/catalogue/2022-2023/diplome/42/IREN-industries-de-reseau-et-economie-numerique-iren" >IREN&nbsp;-&nbsp;Industries de réseau et economie numérique (IREN)</a></li><li class=""><a href="/catalogue/2022-2023/diplome/2065/MICAS-information-processing-machine-learning-communications-and-security" >MICAS&nbsp;-&nbsp;Information processing: machine learning, communications and security</a></li><li class=""><a href="/catalogue/2022-2023/diplome/38/MVA-mathematiques-vision-apprentissage" >MVA&nbsp;-&nbsp;Mathématiques, Vision, Apprentissage</a></li><li class=""><a href="/catalogue/2022-2023/diplome/1857/SETI-systemes-embarques-et-traitement-de-l-information" >SETI&nbsp;-&nbsp;Systèmes embarqués et traitement de l'information</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2022-2023/type/Master+T%25C3%25A9l%25C3%25A9com+SudParis" >Master Télécom SudParis</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2022-2023/diplome/2073/CYBER-M2-cybersecurity-m2" >Cyber M2&nbsp;-&nbsp;Cybersecurity M2</a></li><li class=""><a href="/catalogue/2022-2023/diplome/40/MN-multimedia-networking-m2" >MN&nbsp;-&nbsp;Multimedia Networking M2</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2022-2023/type/Mast%25C3%25A8re+sp%25C3%25A9cialis%25C3%25A9" >Mastère spécialisé</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2022-2023/diplome/61/ADE-architecte-digital-d-entreprise" >ADE&nbsp;-&nbsp;Architecte Digital d'Entreprise</a></li><li class=""><a href="/catalogue/2022-2023/diplome/60/ARC-architecte-reseaux-et-cybersecurite" >ARC&nbsp;-&nbsp;Architecte Réseaux et Cybersécurité</a></li><li class=""><a href="/catalogue/2022-2023/diplome/62/BGD-big-data-gestion-et-analyse-des-donnees-massives" >BGD&nbsp;-&nbsp;Big Data : gestion et analyse des données massives</a></li><li class=""><a href="/catalogue/2022-2023/diplome/65/CARC-conception-et-architecture-de-reseaux-et-cybersecurite" >CARC&nbsp;-&nbsp;Conception et Architecture de Réseaux et Cybersécurité</a></li><li class=""><a href="/catalogue/2022-2023/diplome/64/CPD-concepteur-de-projet-digital" >CPD&nbsp;-&nbsp;Concepteur de Projet Digital</a></li><li class=""><a href="/catalogue/2022-2023/diplome/78/CYBER2-cybersecurite-et-cyberdefense" >CYBER2&nbsp;-&nbsp;Cybersécurité et Cyberdéfense</a></li><li class=""><a href="/catalogue/2022-2023/diplome/1996/IA-ia-intelligence-artificielle" >IA&nbsp;-&nbsp;IA : Intelligence Artificielle</a></li><li class=""><a href="/catalogue/2022-2023/diplome/72/MSIR-management-des-systemes-d-information-en-reseaux" >MSIR&nbsp;-&nbsp;Management des systèmes d'information en réseaux</a></li><li class=""><a href="/catalogue/2022-2023/diplome/1846/SMOB-smart-mobility-transformation-numerique-des-systemes-de-mobilite" >SMOB&nbsp;-&nbsp;Smart Mobility - Transformation Numérique des Systèmes de Mobilité</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2022-2023/type/Programme+d%2527%25C3%25A9change" >Programme d'échange</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2022-2023/diplome/1/PEI-echange-international-non-diplomant" >PEI&nbsp;-&nbsp;Echange international non diplomant</a></li></ul></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2021-2022" >Catalogue 2021 - 2022</a><ul  class="dropdown-menu"><li class="dropdown-submenu"><a href="/catalogue/2021-2022/type/Master" >Master</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2021-2022/diplome/2064/DESIGN-master-recherche-en-design" >DESIGN&nbsp;-&nbsp;Master recherche en Design</a></li></ul></li></ul></li></ul></li>                                    </ul>
+                                </div>
+                            </div> <!-- navbar-collapse -->
+
+                        </div> <!-- row -->
+                    </div> <!-- container-fluid -->
+                </nav> <!--/.nav-collapse -->
+            </div>
+            <!-- Version SynapseS  -->
+            <div id="app-version-label">v2.11.0 (5705)</div>
+            <div id="breadcrumbs">
+                <ul>
+            <li class="item root-item">
+            <span>Accueil</span>
+        </li>
+    </ul>
+            </div>
+        </div>
+
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                                        <div id="content-wrapper" class="col-md-12">
+                        <div id="flash-messages" class="flash-messages" class="row">
+</div>
+<script type="text/javascript">
+    setTimeout(function() {
+        $('.flash-messages').find('ul').fadeOut(3000, function() {
+            $('.flash-messages').find('ul').remove();
+        });
+    }, 9000);
+</script>                        <link href="&#x2F;assets&#x2F;vendor&#x2F;fontawesome&#x2F;css&#x2F;fontawesome.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;vendor&#x2F;bootstrap&#x2F;css&#x2F;bootstrap.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;app_base.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_calendrier_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_i18n_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_navigation_menu_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_push-area_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;vendor&#x2F;bootstraptree&#x2F;bootstrap-tree.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_annuaire_modal_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_catalogue_diplome_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;vendor&#x2F;select2&#x2F;dist&#x2F;css&#x2F;select2.min.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;vendor&#x2F;datatables&#x2F;media&#x2F;css&#x2F;dataTables.bootstrap.min.css" media="screen" rel="stylesheet" type="text&#x2F;css"><script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;vendor&#x2F;select2&#x2F;dist&#x2F;js&#x2F;select2.min.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;vendor&#x2F;datatables&#x2F;media&#x2F;js&#x2F;jquery.dataTables.min.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;vendor&#x2F;datatables&#x2F;media&#x2F;js&#x2F;dataTables.bootstrap.min.js"></script><script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;bootstrap_3_3_5_i18n_js.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;bootstrap_3_3_5_push_area_js.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;vendor_bootstraptree_js.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;bootstrap_3_3_5_annuaire_modal_js.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;bootstrap_3_3_5_catalogue_fiche_element_formation_js.js"></script><header>
+    <h1>
+        <a href="/catalogue/2024-2025">
+            <i class="fa fa-level-up btn"></i>
+        </a>
+        <span class="type-objet-fiche">Mastère spécialisé</span>&nbsp;-&nbsp;<span class="titre">Architecte Digital d'Entreprise</span>    </h1>
+
+    <h2 class="subtitle"></h2>
+</header>
+<script type = 'text/javascript'>
+    $(function() {
+        var nbItems = $('#breadcrumbs ul li').length;
+        var firstItem, secondItem;
+        if (nbItems == 1) {
+            firstItem = '<li class="item level-1"><span><a href="/catalogue"><span>'+$('.navbar-nav [href="/catalogue"]').text()+'</span></a></li>';
+            secondItem = '<li class="item level-2"><span>'+ $('h1 .type-objet-fiche').html() +'</span></li>';
+            var currentItem = '<li class="item current-item"><span>'+ $('h1 .code').text() + ' ' + $('h1 .titre').text() +'</span></li>';
+            $('#breadcrumbs ul').html(firstItem + secondItem + currentItem);
+        }
+            });
+</script>
+<main id="main-content-fiche-diplome">
+    <section class="first-paragraph">
+<h2 class="titre_paragraphe">Contexte</h2>
+
+<div class="tiny-mce-content">Les usagers des r&eacute;seaux de t&eacute;l&eacute;communications s&rsquo;attendent &agrave; :une garantie de qualit&eacute; de service, des infrastructures et des services s&eacute;curis&eacute;s, des usages diversifi&eacute;s, des technologies de pointe.<br />Dans ce contexte exigeant et concurrentiel, l&rsquo;architecte de services t&eacute;l&eacute;com occupe d&eacute;sormais un r&ocirc;le cl&eacute; et collabore de mani&egrave;re transverse avec les services technique, innovation, marketing et commercial de l&rsquo;entreprise. Sa capacit&eacute; &agrave; coordonner et piloter des projets complexes devient cruciale.</div></section>
+<section class="paragraph">
+<h2 class="titre_paragraphe">Objectif</h2>
+
+<div class="tiny-mce-content">Rejoignez la nouvelle g&eacute;n&eacute;ration d&rsquo;architectes en alliant un socle de comp&eacute;tences techniques et business vous permettant d&rsquo;int&eacute;grer toutes les probl&eacute;matiques de la transformation digitale : le&nbsp; &laquo; As A Service &raquo;, Cloud, Fog, Dew, Big Data, IoT, Cybers&eacute;curit&eacute;, et R&eacute;alit&eacute; Virtuelle.<br />Adoptez une pratique de l&rsquo;architecture reposant sur le dialogue entre urbanisme, prescriptions et projets fonctionnels.<br />Apprenez avec des implications concr&egrave;tes sur les pratiques professionnelles des architectes (la dimension op&eacute;rationnelle).<br />Devenez un des acteurs majeur de la transformation num&eacute;rique en prenant conscience d&rsquo;un changement culturel : d&rsquo;une architecture centr&eacute;e sur les technologies techno centric vers une architecture centr&eacute;e sur le client customer centric et de la dimension strat&eacute;gique que cela conf&egrave;re &agrave; cette activit&eacute;.<br /><br /></div></section>
+<ul role="tablist" class="nav nav-tabs">
+    
+        <li role="presentation" class="active">
+		<a aria-expanded="true"
+		aria-controls="contenu" data-toggle="tab" role="tab"
+		id="contenu-tab" href="#contenu">Contenu</a>
+	</li>
+    
+        <li role="presentation" class="">
+		<a aria-expanded="false"
+		aria-controls="admission" data-toggle="tab" role="tab"
+		id="admission-tab" href="#admission">Admission</a>
+	</li>
+    
+        <li role="presentation" class="">
+		<a aria-expanded="false"
+		aria-controls="finalites" data-toggle="tab" role="tab"
+		id="finalites-tab" href="#finalites">Finalités</a>
+	</li>
+    </ul>
+
+<div class="tab-content" id="tab-content">
+            <div aria-labelledby="contenu-tab" id="contenu" class="tab-pane fade active in" role="tabpanel">
+        <h3 class="tab-paragraph-title">contenu</h3><p class="tiny-mce-content"><strong>D&eacute;veloppement personnel</strong><br />Exposer un projet, r&eacute;diger des &eacute;crits incitant &agrave; l&rsquo;action, am&eacute;liorer la productivit&eacute; des r&eacute;unions<br /><br /><strong>Le client au coeur de l&rsquo;architecture</strong><br />Client et architecture, usage et design, juridique, marketing et finance<br /><br />Ce cursus est compl&eacute;t&eacute; par un projet d&rsquo;&eacute;quipe.<br /><br /><strong>L&rsquo;architecte dans l&rsquo;entreprise</strong> <br />Gouvernance, processus, gestion des exigences et UML, atelier de mise en oeuvre et synth&egrave;se<br /><br /><strong>Technologies &ndash; composants d&rsquo;architecture </strong><strong>orient&eacute;e services</strong> <br />IHM, &eacute;quipements, r&eacute;seaux, logiciel, infrastructures, s&eacute;curit&eacute;, performance, plates-formes de services<br /><br /><strong>R&eacute;f&eacute;rentiels d&rsquo;architectures</strong><br />Notions d&rsquo;urbanisme, pr&eacute;sentation des architectures connues &ndash; celles qui ont fait leur preuve et les plus innovantes (IMS, Cloud computing, architectures big data, etc.)<br /><br /><strong>Management des services</strong> <br />Etapes et outils de la mise en place d&rsquo;un nouveau service de sa cr&eacute;ation &agrave; sa r&eacute;siliation, avec toujours le souci de la perception client<br /><br /><strong>Design de solutions<br /></strong>Macro design, d&eacute;couverte d&rsquo;un urbanisme, analyse critique de solutions d&rsquo;architecture afin d&rsquo;optimiser robustesse, performances et co&ucirc;ts<br /><br /><strong>Strat&eacute;gie et prescriptions</strong> <br />Synth&egrave;se du MS, de la prescription de l&rsquo;architecture &agrave; sa validation en fonction de la strat&eacute;gie globale de l&rsquo;entreprise</p><h3 class="tab-paragraph-title">mots clés</h3>Architecture d’un système, conception de solutions orientées vers les services, innovation, technologies émergentes        </div>
+                <div aria-labelledby="admission-tab" id="admission" class="tab-pane fade in" role="tabpanel">
+        <h3 class="tab-paragraph-title">niveau requis</h3><p class="tiny-mce-content">Les candidats doivent &ecirc;tre :<br />- Titulaire d&rsquo;un dipl&ocirc;me d&rsquo;ing&eacute;nieur habilit&eacute; par la Commission des titres d&rsquo;ing&eacute;nieurs (Bac+5), ou<br />- Titulaire d&rsquo;un dipl&ocirc;me d&rsquo;une &eacute;cole de management ou de commerce habilit&eacute; &agrave; d&eacute;livrer le grade de Master (Bac+5), ou<br />- Titulaire de dipl&ocirc;mes universitaires de niveau Master M2 (ex DEA ou DESS, Bac+5), ou<br />- Titulaire de dipl&ocirc;mes universitaires de niveau M1 ou Ma&icirc;trise (Bac+4) et trois ann&eacute;es d&rsquo;exp&eacute;rience professionnelle, ou <br />- Titulaire de dipl&ocirc;mes &eacute;trangers de niveau &eacute;quivalent.</p><h3 class="tab-paragraph-title">admission</h3><p class="tiny-mce-content">Admission sur dossier et entretien<a title="Mode d'emploi de l'admission" href="http://www.telecom-paristech.fr/fileadmin/documents/pdf/Masteres_Spe/Masteres-Spe_Memo-admission.pdf"><br /></a><strong><a title="Demande d'admission en ligne" href="https://admissions-ms.telecom-paris.fr/" target="_blank" rel="noopener">Demande d'admission en ligne</a></strong></p><h3 class="tab-paragraph-title">vie étudiante</h3><p class="tiny-mce-content">&nbsp;</p><h3 class="tab-paragraph-title">informations pratiques</h3><p class="tiny-mce-content"><strong>Responsables du mast&egrave;re</strong> <br />No&eacute;mie SIMONI (noemie.simoni@telecom-paris.fr)</p>
+<p class="tiny-mce-content">Keunwoo LIM (keunwoo.lim@telecom-paris.fr)<br /><br /><strong>Modalit&eacute;s d'inscription et dates<br /></strong>Frais de dossier 90 &euro;<strong><br /></strong><a title="Admission, dates, tarifs" href="https://www.telecom-paris.fr/fr/masteres-specialises/formation-architecte-digital-entreprisee" target="_blank" rel="noopener">Admission, dates limites, tarifs</a><br /><br />en partenariat industriel avec Orange<br /><br /></p>
+<p class="tiny-mce-content">&nbsp;</p><h3 class="tab-paragraph-title">commentaires complémentaires</h3><p class="tiny-mce-content">&nbsp;</p>        </div>
+                <div aria-labelledby="finalites-tab" id="finalites" class="tab-pane fade in" role="tabpanel">
+        <h3 class="tab-paragraph-title">compétences acquises</h3><p class="tiny-mce-content"></p><h3 class="tab-paragraph-title">métiers</h3><p class="tiny-mce-content"></p><h3 class="tab-paragraph-title">atouts</h3><p class="tiny-mce-content"></p><h3 class="tab-paragraph-title">débouchés</h3><p class="tiny-mce-content">Les dipl&ocirc;m&eacute;s du Mast&egrave;re Sp&eacute;cialis&eacute;&reg; (MS) Architecte Digital d&rsquo;Entreprise exercent 3 grands types d&rsquo;activit&eacute;s :<br />- En charge du design d&rsquo;une architecture de t&eacute;l&eacute;communications, ils garantissent sa faisabilit&eacute; technique et la qualit&eacute; de service (QOS) associ&eacute;e. Ils accompagnent l&rsquo;industrialisation et interviennent en support technico- &eacute;conomique au marketing,<br />- Comme conseil en architecture, ils con&ccedil;oivent celle-ci &agrave; partir des besoins du client,<br />- Moteurs dans la mise en place d&rsquo;innovations, ils prescrivent la mise en oeuvre des technologies &eacute;mergentes pour les industrialiser dans les meilleurs d&eacute;lais.</p>        </div>
+        </div>
+<section class="bloc">
+  <h2 class="title-bloc-parcours">
+    Parcours</h2><div class="tree well">
+    <ul role="tree" class="tree-indent">
+        <li class="parent_li" role="treeitem"><i class="fa fa-caret-square-o-right"></i> <span class="code-parcours label label-parcours" title="ADE- MS1">ADE- MS1</span> <a href="/catalogue/2024-2025/parcours/1583/ADE-MS1-architecte-digital-d-entreprise-mastere-specialise-1ere-annee?from=D61">Architecte Digital d'Entreprise - Mastère Spécialisé 1ère année</a><ul class="tree-indent" role="group"><li role="treeitem"><i class="fa fa-caret-square-o-right"></i>&nbsp;<span class="code-parcours label label-parcours" title="ADE - BE1">ADE - BE1</span> <a href="/catalogue/2024-2025/parcours/3080/ADE-BE1-mastere-specialise-ade-be1-ecosysteme-de-l-architecture-digital?from=D61" style="text-decoration: none;color: inherit;">Mastère spécialisé ADE - BE1 : Ecosystème de l'architecture Digital</a><ul class="list-codes-ues tree-indent" role="group"><li role="treeitem"><span class="ue label label-ue">ADE700</span> <a href="/catalogue/2024-2025/ue/13716/ADE700-developpement-personnel?from=D61">Développement personnel</a></li><li role="treeitem"><span class="ue label label-ue">ADE701</span> <a href="/catalogue/2024-2025/ue/13717/ADE701-le-client-au-coeur-de-l-architecture?from=D61">Le client au coeur de l'architecture</a></li><li role="treeitem"><span class="ue label label-ue">ADE702</span> <a href="/catalogue/2024-2025/ue/19311/ADE702-ecosysteme-digital-et-le-marketing-finance?from=D61">Ecosystème digital et le marketing/finance</a></li><li role="treeitem"><span class="ue label label-ue">ADE703</span> <a href="/catalogue/2024-2025/ue/19314/ADE703-ecosysteme-digital-et-le-juridique?from=D61">Ecosystème digital et le juridique</a></li><li role="treeitem"><span class="ue label label-ue">ADE704</span> <a href="/catalogue/2024-2025/ue/13718/ADE704-l-architecture-dans-l-entreprise?from=D61">L' architecture dans l'entreprise</a></li></ul></li><li role="treeitem"><i class="fa fa-caret-square-o-right"></i>&nbsp;<span class="code-parcours label label-parcours" title="ADE - BE2">ADE - BE2</span> <a href="/catalogue/2024-2025/parcours/3081/ADE-BE2-mastere-specialise-ade-be2-media-delivery?from=D61" style="text-decoration: none;color: inherit;">Mastère spécialisé ADE - BE2 : Media Delivery</a><ul class="list-codes-ues tree-indent" role="group"><li role="treeitem"><span class="ue label label-ue">ADE705</span> <a href="/catalogue/2024-2025/ue/19317/ADE705-reseaux-mobiles?from=D61">Réseaux mobiles</a></li><li role="treeitem"><span class="ue label label-ue">ADE706</span> <a href="/catalogue/2024-2025/ue/19319/ADE706-reseaux-coeurs?from=D61">Réseaux coeurs</a></li><li role="treeitem"><span class="ue label label-ue">ADE707</span> <a href="/catalogue/2024-2025/ue/19318/ADE707-softwarisation-sdn?from=D61">Softwarisation (SDN)</a></li><li role="treeitem"><span class="ue label label-ue">ADE708</span> <a href="/catalogue/2024-2025/ue/19320/ADE708-industrie-4-0-et-iot?from=D61">Industrie 4.0 et IoT</a></li></ul></li><li role="treeitem"><i class="fa fa-caret-square-o-right"></i>&nbsp;<span class="code-parcours label label-parcours" title="ADE - BE3">ADE - BE3</span> <a href="/catalogue/2024-2025/parcours/3082/ADE-BE3-mastere-specialise-ade-be3-les-architectuers-de-service?from=D61" style="text-decoration: none;color: inherit;">Mastère spécialisé ADE - BE3 :  les architectuers de service</a><ul class="list-codes-ues tree-indent" role="group"><li role="treeitem"><span class="ue label label-ue">ADE709</span> <a href="/catalogue/2024-2025/ue/19315/ADE709-ia-et-big-data?from=D61">IA et Big Data</a></li><li role="treeitem"><span class="ue label label-ue">ADE710</span> <a href="/catalogue/2024-2025/ue/19316/ADE710-cybersecurite?from=D61">Cybersécurité</a></li><li role="treeitem"><span class="ue label label-ue">ADE711</span> <a href="/catalogue/2024-2025/ue/19321/ADE711-cloudification?from=D61">Cloudification</a></li><li role="treeitem"><span class="ue label label-ue">ADE712</span> <a href="/catalogue/2024-2025/ue/19322/ADE712-l-it-et-la-digitalisation?from=D61">L'IT et la Digitalisation</a></li></ul></li><li role="treeitem"><i class="fa fa-caret-square-o-right"></i>&nbsp;<span class="code-parcours label label-parcours" title="ADE - BE4">ADE - BE4</span> <a href="/catalogue/2024-2025/parcours/3083/ADE-BE4-mastere-specialise-ade-be4-as-a-service?from=D61" style="text-decoration: none;color: inherit;">Mastère spécialisé ADE - BE4 :  AS a service</a><ul class="list-codes-ues tree-indent" role="group"><li role="treeitem"><span class="ue label label-ue">ADE713</span> <a href="/catalogue/2024-2025/ue/13735/ADE713-management-des-services?from=D61">Management des services</a></li><li role="treeitem"><span class="ue label label-ue">ADE714</span> <a href="/catalogue/2024-2025/ue/13736/ADE714-design-des-solutions?from=D61">Design des solutions</a></li><li role="treeitem"><span class="ue label label-ue">ADE715</span> <a href="/catalogue/2024-2025/ue/19312/ADE715-as-a-service-de-bout-en-bout?from=D61">“As a service” de bout en bout</a></li></ul></li><li role="treeitem"><span class="ue label label-ue">ADE716</span> <a href="/catalogue/2024-2025/ue/13738/ADE716-fil-rouge?from=D61">Fil rouge</a></li></ul></li><li class="item"><a href="/catalogue/2024-2025/parcours/3123/ADE-MS2-architecte-digital-d-entreprise-mastere-specialise-2eme-annee?from=D61"><span class="code-parcours" title="ADE - MS2">ADE - MS2</span>&nbsp;-&nbsp;Architecte Digital d'Entreprise - Mastère Spécialisé 2ème année</a></li>    </ul>
+</div>
+  </section>
+</main><div class="sidebar" id="sidebar-fiche-diplome">
+    <div id='icon'>
+<!--        <a href="#" title="--><!--">-->
+<!--            <i class="fa btn fa-share-square-o"></i>-->
+<!--        </a>-->
+            </div>
+    <aside class="encadre" >
+<!-- ajout d'un ID CSS pour distinguer l'encadré Programmation de la fiche UE -->
+<h1 classe="titre-encadre">partenaires</h1>
+
+        <div class="label-partenaire">
+            <p>
+                <!-- Affichage du logo du partenariat -->
+                                <span></span>
+            </p>
+        </div>
+
+        
+</aside>
+<aside class="encadre" >
+<!-- ajout d'un ID CSS pour distinguer l'encadré Programmation de la fiche UE -->
+<h1 classe="titre-encadre">contacts</h1>
+        <p><a href="#"></a></p>
+        <p>Laurent Hasquenoph (laurent.hasquenoph@telecom-paris.fr) - Tél 01 75 31 41 08</p>
+        
+</aside>
+<aside class="encadre" >
+<!-- ajout d'un ID CSS pour distinguer l'encadré Programmation de la fiche UE -->
+<h1 classe="titre-encadre">informations pratiques</h1>
+            <h2>Durée&nbsp;:</h2>
+                            <p></p>
+                        <h2>Crédits ECTS&nbsp;:</h2>
+                            <p></p>
+                        <h2>Calendrier général&nbsp;:</h2>
+                            <p>Formation à temps partiel : 62 jours de cours (7h/j, 432 heures), soit 6 jours par mois sur 9 mois - Stage de thèse professionnelle (mission de  4 à 6 mois)</p>
+                        <h2>Langues d'enseignement&nbsp;:</h2>
+            </p>            <h2>Lieu de la formation&nbsp;:</h2>
+                            <p>Télécom Paris</p>
+                        <h2>Nombre de places offertes&nbsp;:</h2>
+                            <p></p>
+                        <h2>Coût&nbsp;:</h2>
+                            <p>12.700 €( pour les étudiants et les demandeurs d’emploi) - 18 200 € (pour les professionnels)</p>
+            
+</aside>
+</div>
+<section class="bloc">
+  <h2 class="title-bloc-ue">
+    Unités d'enseignement</h2>
+<div class="table-responsive" id="tableau-responsive">
+        <button class="btn table-filter-toggle">
+            <i class="fa fa-filter fa-lg"></i>
+            Filtres        </button>
+    <table class="table table-striped table-ues" id="tableau-unitesenseignementfiche">
+        <thead>
+        <tr>
+            <th>UE</th>
+            <th>Type d'enseignement</th>
+            <th>Domaines</th>
+            <th>Catégorie d'UE</th>
+                    <th>Credit Ects</th> 
+                    <th>Volume horaire</th>
+            <th>Responsables</th>
+                    <th>Periode de programmation</th>
+                    <th>Site pédagogique</th>
+        </tr>
+        </thead>
+        <tbody>         
+        <tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">ADE700</span> <a href="/catalogue/2024-2025/ue/13716/ADE700-developpement-personnel?from=D61" title="Développement personnel"> D&eacute;veloppement personnel</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines"></td>
+        <td class="categories">Enseignement de Mastère Spécialisé.</td>
+            <td class="ects">2</td>
+            <td class="heures">24</td>
+        <td class="responsables">Noemie SIMONI</td>
+            <td class="periodeProgrammation">S1-P1</td>
+            <td class="link">
+                            <a href="https://ecampus.paris-saclay.fr/course/view.php?id=20840" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">ADE701</span> <a href="/catalogue/2024-2025/ue/13717/ADE701-le-client-au-coeur-de-l-architecture?from=D61" title="Le client au coeur de l'architecture"> Le client au coeur de l'architecture</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines"></td>
+        <td class="categories">Enseignement de Mastère Spécialisé.</td>
+            <td class="ects">3</td>
+            <td class="heures">24</td>
+        <td class="responsables">Noemie SIMONI</td>
+            <td class="periodeProgrammation">S1-P1</td>
+            <td class="link">
+                            <a href="https://ecampus.paris-saclay.fr/course/view.php?id=20841" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">ADE702</span> <a href="/catalogue/2024-2025/ue/19311/ADE702-ecosysteme-digital-et-le-marketing-finance?from=D61" title="Ecosystème digital et le marketing/finance"> Ecosyst&egrave;me digital et le marketing/finance</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines"></td>
+        <td class="categories">Enseignement de Mastère Spécialisé.</td>
+            <td class="ects">2</td>
+            <td class="heures">24</td>
+        <td class="responsables">Noemie SIMONI</td>
+            <td class="periodeProgrammation">S1-P1</td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">ADE703</span> <a href="/catalogue/2024-2025/ue/19314/ADE703-ecosysteme-digital-et-le-juridique?from=D61" title="Ecosystème digital et le juridique"> Ecosyst&egrave;me digital et le juridique</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines"></td>
+        <td class="categories">Enseignement de Mastère Spécialisé.</td>
+            <td class="ects">2</td>
+            <td class="heures">24</td>
+        <td class="responsables">Noemie SIMONI</td>
+            <td class="periodeProgrammation">S1-P1</td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">ADE704</span> <a href="/catalogue/2024-2025/ue/13718/ADE704-l-architecture-dans-l-entreprise?from=D61" title="L' architecture dans l'entreprise"> L' architecture dans l'entreprise</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines"></td>
+        <td class="categories">Enseignement de Mastère Spécialisé.</td>
+            <td class="ects">2</td>
+            <td class="heures">24</td>
+        <td class="responsables">Noemie SIMONI</td>
+            <td class="periodeProgrammation">S1-P1</td>
+            <td class="link">
+                            <a href="https://ecampus.paris-saclay.fr/course/view.php?id=20842" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">ADE705</span> <a href="/catalogue/2024-2025/ue/19317/ADE705-reseaux-mobiles?from=D61" title="Réseaux mobiles"> R&eacute;seaux mobiles</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines"></td>
+        <td class="categories">Enseignement de Mastère Spécialisé.</td>
+            <td class="ects">2</td>
+            <td class="heures">24</td>
+        <td class="responsables">Keunwoo LIM,<br />Noemie SIMONI</td>
+            <td class="periodeProgrammation">S1-P2</td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">ADE706</span> <a href="/catalogue/2024-2025/ue/19319/ADE706-reseaux-coeurs?from=D61" title="Réseaux coeurs"> R&eacute;seaux coeurs</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines"></td>
+        <td class="categories">Enseignement de Mastère Spécialisé.</td>
+            <td class="ects">2</td>
+            <td class="heures">24</td>
+        <td class="responsables">Bruno CHATRAS</td>
+            <td class="periodeProgrammation">S1-P2</td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">ADE707</span> <a href="/catalogue/2024-2025/ue/19318/ADE707-softwarisation-sdn?from=D61" title="Softwarisation (SDN)"> Softwarisation (SDN)</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines"></td>
+        <td class="categories">Enseignement de Mastère Spécialisé.</td>
+            <td class="ects">2</td>
+            <td class="heures">24</td>
+        <td class="responsables">Bruno CHATRAS,<br />Keunwoo LIM,<br />Noemie SIMONI</td>
+            <td class="periodeProgrammation">S1-P2</td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">ADE708</span> <a href="/catalogue/2024-2025/ue/19320/ADE708-industrie-4-0-et-iot?from=D61" title="Industrie 4.0 et IoT"> Industrie 4.0 et IoT</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines"></td>
+        <td class="categories">Enseignement de Mastère Spécialisé.</td>
+            <td class="ects">3</td>
+            <td class="heures">24</td>
+        <td class="responsables">Keunwoo LIM,<br />Noemie SIMONI</td>
+            <td class="periodeProgrammation">S1-P2</td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">ADE709</span> <a href="/catalogue/2024-2025/ue/19315/ADE709-ia-et-big-data?from=D61" title="IA et Big Data"> IA et Big Data</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines"></td>
+        <td class="categories">Enseignement de Mastère Spécialisé.</td>
+            <td class="ects">3</td>
+            <td class="heures">24</td>
+        <td class="responsables">Georges HEBRAIL,<br />Noemie SIMONI</td>
+            <td class="periodeProgrammation">S2-P3</td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">ADE710</span> <a href="/catalogue/2024-2025/ue/19316/ADE710-cybersecurite?from=D61" title="Cybersécurité"> Cybers&eacute;curit&eacute;</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines"></td>
+        <td class="categories">Enseignement de Mastère Spécialisé.</td>
+            <td class="ects">2</td>
+            <td class="heures">24</td>
+        <td class="responsables">Rida KHATOUN,<br />Noemie SIMONI</td>
+            <td class="periodeProgrammation">S2-P3</td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">ADE711</span> <a href="/catalogue/2024-2025/ue/19321/ADE711-cloudification?from=D61" title="Cloudification"> Cloudification</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines"></td>
+        <td class="categories">Enseignement de Mastère Spécialisé.</td>
+            <td class="ects">3</td>
+            <td class="heures">24</td>
+        <td class="responsables">Leonardo LINGUAGLOSSA,<br />Noemie SIMONI</td>
+            <td class="periodeProgrammation">S2-P3</td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">ADE712</span> <a href="/catalogue/2024-2025/ue/19322/ADE712-l-it-et-la-digitalisation?from=D61" title="L'IT et la Digitalisation"> L'IT et la Digitalisation</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines"></td>
+        <td class="categories">Enseignement de Mastère Spécialisé.</td>
+            <td class="ects">2</td>
+            <td class="heures">24</td>
+        <td class="responsables">Noemie SIMONI</td>
+            <td class="periodeProgrammation">S2-P3</td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">ADE713</span> <a href="/catalogue/2024-2025/ue/13735/ADE713-management-des-services?from=D61" title="Management des services"> Management des services</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines"></td>
+        <td class="categories">Enseignement de Mastère Spécialisé.</td>
+            <td class="ects">2</td>
+            <td class="heures">24</td>
+        <td class="responsables">Noemie SIMONI</td>
+            <td class="periodeProgrammation">S2-P4</td>
+            <td class="link">
+                            <a href="https://ecampus.paris-saclay.fr/course/view.php?id=20845" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">ADE714</span> <a href="/catalogue/2024-2025/ue/13736/ADE714-design-des-solutions?from=D61" title="Design des solutions"> Design des solutions</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines"></td>
+        <td class="categories">Enseignement de Mastère Spécialisé.</td>
+            <td class="ects">3</td>
+            <td class="heures">24</td>
+        <td class="responsables">Noemie SIMONI</td>
+            <td class="periodeProgrammation">S2-P4</td>
+            <td class="link">
+                            <a href="https://ecampus.paris-saclay.fr/course/view.php?id=20846" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">ADE715</span> <a href="/catalogue/2024-2025/ue/19312/ADE715-as-a-service-de-bout-en-bout?from=D61" title="“As a service” de bout en bout"> &ldquo;As a service&rdquo; de bout en bout</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines"></td>
+        <td class="categories">Enseignement de Mastère Spécialisé.</td>
+            <td class="ects">3</td>
+            <td class="heures">24</td>
+        <td class="responsables">Noemie SIMONI</td>
+            <td class="periodeProgrammation">S2-P4</td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">ADE716</span> <a href="/catalogue/2024-2025/ue/13738/ADE716-fil-rouge?from=D61" title="Fil rouge"> Fil rouge</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines"></td>
+        <td class="categories">Enseignement de Mastère Spécialisé.</td>
+            <td class="ects">7</td>
+            <td class="heures">78</td>
+        <td class="responsables">Keunwoo LIM,<br />Noemie SIMONI</td>
+            <td class="periodeProgrammation">S1-S2</td>
+            <td class="link">
+                            <a href="https://ecampus.paris-saclay.fr/course/view.php?id=20848" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+        </tbody>
+    <script type="text/javascript">
+    $(function () {
+        window.Application.Datatables = window.Application.Datatables || {}
+        window.Application.Datatables['tableau-unitesenseignementfiche'] = $("#tableau-unitesenseignementfiche").DataTable({"language":{"emptyTable":"Aucun r\u00e9sultat"},"order":[[0,"asc"]],"ordering":true,"paging":true,"searching":true,"info":false,"columsDefs":[{"targets":"no-sort","orderable":false}]});
+    });
+</script><style>
+    .no-sort::after { display: none!important; }
+    .no-sort { pointer-events: none!important; cursor: default!important; }
+</style>        <script type="text/javascript">
+
+            $(function () {
+                var filterableHeaders = ["Type d'enseignement","Domaines","Cat\u00e9gorie d'UE","Periode de programmation"];
+                var table = window.Application.Datatables['tableau-unitesenseignementfiche'];
+                var filters = new Application.DatatableFilters(table, filterableHeaders);
+
+                window.Application.FilterableDatatables = window.Application.FilterableDatatables || {}
+                window.Application.FilterableDatatables['tableau-unitesenseignementfiche'] = filters;
+
+                filters.init();
+
+            });
+        </script>    <script>  
+        ($(function() {
+            var filters = window.Application.FilterableDatatables['tableau-unitesenseignementfiche'];
+
+            $('.table-filter-toggle').on('click', filters.toggle);
+        }))
+    </script>
+    </table>
+</div>
+  </section>
+<!-- Modal -->
+<div class="container">
+    <div class="modal annuaire-modal-aware" data-backdrop="true" id="annuaire-modal" tabindex="-1" role="dialog" aria-labelledby="Détails de la personne sélectionnée">
+        <div class="modal-dialog  modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close-modal" data-dismiss="modal" aria-label="Close">
+                        <i class="fa fa-times"></i>
+                    </button>
+                    <h3 class="modal-title"></h3>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="photo-column annuaire-modal-photo">
+                                <img data-default-src="/assets/bootstrap/3.3.5/images/annuaire/unknown.gif" src="" alt="" class="img-responsive" />
+                            </div>
+                            <div class="data-column">
+                                <div class="detail-line">
+                                    <div class="row">
+                                        <div class="list-group-item-heading">E-mail</div>
+                                        <div class="list-group-item-text" data-field="emailetb"></div>
+                                    </div>
+                                </div>
+
+                                <div class="detail-line">
+                                    <div class="row">
+
+                                        <div class="list-group-item-heading">Catégorie</div>
+                                        <div class="list-group-item-text" data-field="idcategory"
+                                             data-secundary-field='libelle'></div>
+                                    </div>
+
+                                </div>
+                                <div class="detail-line">
+                                    <div class="row">
+
+                                        <div class="list-group-item-heading">Site(s)</div>
+                                        <div class="list-group-item-text" data-field="idlocalisation"
+                                             data-secundary-field='intitule'></div>
+                                    </div>
+
+                                </div>
+                                <div class="detail-line">
+                                    <div class="row">
+
+                                        <div class="list-group-item-heading">Téléphone</div>
+                                        <div class="list-group-item-text" data-field="telephone1"></div>
+                                    </div>
+
+                                </div>
+                                <div class="detail-line">
+                                    <div class="row">
+
+                                        <div class="list-group-item-heading">Téléphone</div>
+                                        <div class="list-group-item-text" data-field="idlocalisation"
+                                             data-secundary-field='telephone'></div>
+                                    </div>
+
+                                </div>
+                                <div class="detail-line">
+                                    <div class="row">
+
+                                        <div class="list-group-item-heading">Entité de rattachement :</div>
+                                        <div class="list-group-item-text" data-field="idpersentite"
+                                             data-secundary-field='nom'></div>
+                                    </div>
+
+                                </div>
+                                <div class="detail-line">
+                                    <div class="row">
+
+                                        <div class="list-group-item-heading">Libelle diplôme :</div>
+                                        <div class="list-group-item-text" data-field="diplome"
+                                             data-secundary-field='libelle'></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="list-group-item-secundary-heading">Niveau :</div>
+                                        <div class="list-group-item-text" data-field="diplome"
+                                             data-secundary-field='niveau'></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="list-group-item-secundary-heading">Site :</div>
+                                        <div class="list-group-item-text" data-field="diplome"
+                                             data-secundary-field='site'></div>
+                                    </div>
+
+                                </div>
+                                <div class="detail-line">
+                                    <div class="row">
+
+                                        <div class="list-group-item-heading">Fonction :</div>
+                                        <div class="list-group-item-text" data-field="fonctions"
+                                             data-secundary-field='entite'></div>
+                                    </div>
+
+                                </div>
+                                <div class="detail-line">
+                                    <div class="row">
+
+                                        <div class="list-group-item-heading">Programme d'échange :</div>
+                                        <div class="list-group-item-text" data-field="progechange"
+                                             data-secundary-field='libelle'></div>
+                                    </div>
+
+                                </div>
+                                <div class="detail-line">
+                                    <div class="row">
+                                        <div class="list-group-item-heading">Régime d'inscription :</div>
+                                        <div class="list-group-item-text"
+                                             data-field="regimeinscription" data-secundary-field='libelle'></div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="preloader-container" id="preloader">
+	<img alt="Veuillez patienter"
+		src="/assets/bootstrap/3.3.5/images/preloader.png" />
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--/.container-fluid -->
+                <div id="footer">
+            <div class="row">
+                <div class="col-md-11">
+                    <div class="row">
+    <div class="col-md-4 col-sm-12">
+        <div class="row">
+            <div class="col-md-12">
+<h1>Plan du site</h1><ul><li>Accueil</li><li>Les formations</li></ul>            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+    <ul><li><a href="#" onclick="Application.Modal.showModalAjax('modal-footer-contenu', 'Mentions légales', '/contenu/MENT_LEG', true)">Mentions légales</a></li>            </div>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-12">
+    </div>
+    <div class="col-md-4 col-sm-12">
+    </div>
+</div>
+                    <div class="modal" id="modal-footer-contenu" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg modal-full-width" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="row">
+                    <div class="col-md-11">
+                        <h4 class="modal-title" id="modal-title"></h4>
+                    </div>
+                    <div class="col-md-1 pull-right">
+                        <button type="button" class="close-modal" data-dismiss="modal" aria-label="Close">
+                            <i class="fa fa-times"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-body"></div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+                </div>
+            </div>
+        </div>
+        
+        <script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;bootstrap_3_3_5_i18n_js.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;bootstrap_3_3_5_push_area_js.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;vendor_bootstraptree_js.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;bootstrap_3_3_5_annuaire_modal_js.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;bootstrap_3_3_5_catalogue_fiche_element_formation_js.js"></script>        <div class="device-xs visible-xs"></div>
+        <div class="device-sm visible-sm"></div>
+        <div class="device-md visible-md"></div>
+        <div class="device-lg visible-lg"></div>
+
+    </body>
+</html>

@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <meta name="description" content="SynapseS">
+        <meta name="author" content="">
+        <script type="text/javascript">
+            var es6 = true;
+            try { eval("var foo = (x)=>x+1"); }
+            catch (e) { es6 = false; }
+
+            if (!es6) {
+                var script = document.createElement('script');
+                script.src = "/assets/app_polyfills.js";
+                script.setAttribute("type", "text/javascript");
+                document.head.appendChild(script);
+            }
+        </script>
+        <title>SynapseS</title><link href="&#x2F;assets&#x2F;vendor&#x2F;fontawesome&#x2F;css&#x2F;fontawesome.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;vendor&#x2F;bootstrap&#x2F;css&#x2F;bootstrap.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;app_base.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_calendrier_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_i18n_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_navigation_menu_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_push-area_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;vendor&#x2F;bootstraptree&#x2F;bootstrap-tree.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_annuaire_modal_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_catalogue_parcours_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;app_base_print.css" media="print" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;favicon.png" rel="icon" sizes="16x16" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;favicon.ico" rel="icon" type="image&#x2F;x-icon&#x20;">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;apple-touch-icon.png" rel="apple-touch-icon" sizes="76x76" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;apple-touch-icon-iphone.png" rel="apple-touch-icon" sizes="76x76" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;apple-touch-icon-iphone-retina.png" rel="apple-touch-icon" sizes="120x120" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;apple-touch-icon-ipad.png" rel="apple-touch-icon" sizes="76x76" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;apple-touch-icon-ipad-retina.png" rel="apple-touch-icon" sizes="152x152" type="image&#x2F;png"><script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;app_base_vendor.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;vendor&#x2F;jquery-migrate&#x2F;jquery-migrate.min.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;app_base.js"></script>    </head>
+
+    <body>
+        <div class="container header">
+            <!-- topbar -->
+            <div class="header-topbar">
+                <div class="logo-container">
+    <a href="/" title="Accueil">
+        <img alt="logo" src="/assets/bootstrap/3.3.5/images/logo_telecomparistech_sm.png" />
+    </a>
+</div>
+
+                <div class="banner-controls-container">
+                    <div class="top-banner-controls-container">
+                        <nav>
+                            <ul id="header-navigation-menu" class=""></ul>                        </nav>
+                    </div>
+
+                    <div class="bottom-banner-controls-container">
+                        <div class="language-switch-container">
+                            <ul id="language-switch">
+	<li class="dropdown">
+    	        <a class="dropdown-toggle" data-toggle="dropdown" href="#"> <span
+			class="lang-label" data-language="fr_FR">FR</span>
+            <span class="flag-icon flag-icon-fr"> </span>
+            <i class="fa fa-caret-down dropdown-toggle"></i>
+	</a>
+                <ul class="dropdown-menu">
+                                                            <li><a href="#" class="select-language"
+				data-language="en_US">
+                        <span class="flag-icon flag-icon-gb"> </span>
+                        English                    </a></li>
+                        </ul>
+	</li>
+</ul>
+<script>
+    var language = $(".lang-label").data("language");
+    i18next.use(i18nextXHRBackend).init({
+        ns: [language],
+        defaultNS: language,
+        nsSeparator: false,
+        keySeparator: false,
+        backend: {
+            loadPath: '/assets/i18n/' + language + '.json',
+        },
+        debug: false
+    });
+</script>
+<link href="&#x2F;assets&#x2F;vendor&#x2F;fontawesome&#x2F;css&#x2F;fontawesome.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;vendor&#x2F;bootstrap&#x2F;css&#x2F;bootstrap.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;app_base.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_calendrier_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_i18n_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_navigation_menu_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_push-area_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;vendor&#x2F;bootstraptree&#x2F;bootstrap-tree.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_annuaire_modal_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_catalogue_parcours_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;app_base_print.css" media="print" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;favicon.png" rel="icon" sizes="16x16" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;favicon.ico" rel="icon" type="image&#x2F;x-icon&#x20;">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;apple-touch-icon.png" rel="apple-touch-icon" sizes="76x76" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;apple-touch-icon-iphone.png" rel="apple-touch-icon" sizes="76x76" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;apple-touch-icon-iphone-retina.png" rel="apple-touch-icon" sizes="120x120" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;apple-touch-icon-ipad.png" rel="apple-touch-icon" sizes="76x76" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;apple-touch-icon-ipad-retina.png" rel="apple-touch-icon" sizes="152x152" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;vendor&#x2F;flag-icon-css&#x2F;css&#x2F;flag-icon.min.css" rel="stylesheet" type="text&#x2F;css">                        </div>
+                    </div>
+
+                    <!-- logout on small screens -->
+                    <ul id="connection-form-container" class="nav navbar-nav">
+                        <li id="dropdown-authentication-menu" class="dropdown dropdown-authentication-menu">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+        <i class="fa fa-user fa-lg hidden-sm hidden-md hidden-lg"></i>
+        <span class="hidden-xs">Connexion</span>
+        <i class="fa fa-caret-down"></i>
+    </a>
+    <ul id="dropdown-authentication-menu-content" class="dropdown-menu">
+        <li>
+            <div class="row">
+                <div class="col-md-12">
+                    <header>Utiliser mon compte école</header>
+                                        <a href="/login?type=Shib">
+                        <button class="btn btn-success btn-block">
+                            Je me connecte                        </button>
+                    </a>
+                                        <hr>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <header>Utiliser un compte provisoire</header>
+                </div>
+                <form id="login-form">
+                    <div class="col-md-12 form">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="identifier-area"
+                                   data-minlength="5" pattern="^[a-zA-Z0-9._\-@]+$"
+                                   placeholder="Nom d'utilisateur"
+                                   required="required">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" id="credential-area"
+                                   placeholder="Mot de passe"
+                                   required="required">
+                        </div>
+                        <div class="form-group">
+                            <button id="btn-login-provisoire" type="submit" class="btn btn-default btn-block">Valider</button>
+                        </div>
+                        <div class="alert alert-danger hidden" role="alert"
+                             id="login-error-message-container">
+                            <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+                            <span class="sr-only">Error:</span> <span id="login-error-message"></span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </li>
+    </ul>
+</li>
+                    </ul>
+
+                    <div class="header-content-responsive hidden-sm hidden-md hidden-lg">
+                        <div class="collapsed-button-container">
+                            <button type="button" class="navbar-toggle pull-right"
+                                    data-toggle="collapse" data-target="#main-navigation-menu"
+                                    aria-expanded="false" aria-controls="navbar">
+                                <i class="fa fa-bars fa-lg"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- banner with navigation -->
+            <div class="banner">
+                <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="logo-container">
+    <a href="/" title="Accueil">
+        <img alt="logo" src="/assets/bootstrap/3.3.5/images/logo_telecomparistech_lg.png" />
+    </a>
+</div>
+
+                            <div class="navbar-collapse collapse" id="main-navigation-menu">
+                                <div class="col-md-9 col-sm-12">
+                                    <ul class="nav navbar-nav">
+                                        <li class=""><a href="/" >Accueil</a></li><li class="dropdown"><a href="/catalogue" class="dropdown-toggle" data-toggle="dropdown">Les formations<i class="fa fa-caret-down"></i></a><ul  class="dropdown-menu"><li class="dropdown-submenu"><a href="/catalogue/2024-2025" ><b>Catalogue 2024 - 2025</b></a><ul  class="dropdown-menu"><li class="dropdown-submenu"><a href="/catalogue/2024-2025/type/Ing%25C3%25A9nieur" >Ingénieur</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2024-2025/diplome/4/ING-diplome-d-ingenieur" >ING&nbsp;-&nbsp;Diplôme d'ingénieur</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2024-2025/type/Master" >Master</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2024-2025/diplome/2490/M1DATAAI-master-m1-data-and-artificial-intelligence" >M1DATAAI&nbsp;-&nbsp;Master M1 - Data and Artificial Intelligence</a></li><li class=""><a href="/catalogue/2024-2025/diplome/2489/M1IGD-master-m1-interaction-graphic-design" >M1IGD&nbsp;-&nbsp;Master M1 - Interaction, Graphic & Design</a></li><li class=""><a href="/catalogue/2024-2025/diplome/2064/M1REDESI-master-m1-recherche-en-design" >M1REDESI&nbsp;-&nbsp;Master M1 - recherche en Design</a></li><li class=""><a href="/catalogue/2024-2025/diplome/2083/M2DATAAI-master-m2-data-artificial-intelligence" >M2DATAAI&nbsp;-&nbsp;Master M2 - Data & Artificial Intelligence</a></li><li class=""><a href="/catalogue/2024-2025/diplome/1327/M2ICS-master-m2-integration-circuits-and-systems" >M2ICS&nbsp;-&nbsp;Master M2 - Integration, Circuits and Systems</a></li><li class=""><a href="/catalogue/2024-2025/diplome/26/M2IGD-master-m2-interaction-graphic-design" >M2IGD&nbsp;-&nbsp;Master M2 - Interaction, Graphic & Design</a></li><li class=""><a href="/catalogue/2024-2025/diplome/42/M2IREN-master-m2-industries-de-reseau-et-economie-numerique" >M2IREN&nbsp;-&nbsp;Master M2 - Industries de Réseau et Economie Numérique</a></li><li class=""><a href="/catalogue/2024-2025/diplome/2065/M2MICAS-master-m2-information-processing-machine-learning-communications-and-security" >M2MICAS&nbsp;-&nbsp;Master M2- Information processing: machine learning, communications and security</a></li><li class=""><a href="/catalogue/2024-2025/diplome/38/M2MVA-master-m2-mathematiques-vision-apprentissage" >M2MVA&nbsp;-&nbsp;Master M2 - Mathématiques, Vision, Apprentissage</a></li><li class=""><a href="/catalogue/2024-2025/diplome/2491/M2RECHDESI-master-m2-recherche-en-design" >M2RECHDESI&nbsp;-&nbsp;Master M2 - Recherche en Design</a></li><li class=""><a href="/catalogue/2024-2025/diplome/1857/M2SETI-master-m2-systemes-embarques-et-traitement-de-l-information" >M2SETI&nbsp;-&nbsp;Master M2 - Systèmes embarqués et traitement de l'information</a></li><li class=""><a href="/catalogue/2024-2025/diplome/2492/PHDCOMPSC-phd-track-computer-science" >PHDCOMPSC&nbsp;-&nbsp;PhD Track - Computer Science</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2024-2025/type/Mast%25C3%25A8re+sp%25C3%25A9cialis%25C3%25A9" >Mastère spécialisé</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2024-2025/diplome/61/ADE-architecte-digital-d-entreprise" >ADE&nbsp;-&nbsp;Architecte Digital d'Entreprise</a></li><li class=""><a href="/catalogue/2024-2025/diplome/60/ARC-architecte-reseaux-et-cybersecurite" >ARC&nbsp;-&nbsp;Architecte Réseaux et Cybersécurité</a></li><li class=""><a href="/catalogue/2024-2025/diplome/62/BGD-big-data-gestion-et-analyse-des-donnees-massives" >BGD&nbsp;-&nbsp;Big Data : gestion et analyse des données massives</a></li><li class=""><a href="/catalogue/2024-2025/diplome/78/CYBER2-cybersecurite-et-cyberdefense" >CYBER2&nbsp;-&nbsp;Cybersécurité et Cyberdéfense</a></li><li class=""><a href="/catalogue/2024-2025/diplome/65/ECRSI-expert-cybersecurite-des-reseaux-et-des-systemes-d-information" >ECRSI&nbsp;-&nbsp;Expert cybersécurité des réseaux et des systèmes d'information</a></li><li class=""><a href="/catalogue/2024-2025/diplome/1996/IA-ia-intelligence-artificielle" >IA&nbsp;-&nbsp;IA : Intelligence Artificielle</a></li><li class=""><a href="/catalogue/2024-2025/diplome/1846/SMOB-smart-mobility-transformation-numerique-des-systemes-de-mobilite" >SMOB&nbsp;-&nbsp;Smart Mobility - Transformation Numérique des Systèmes de Mobilité</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2024-2025/type/Programme+d%2527%25C3%25A9change" >Programme d'échange</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2024-2025/diplome/1/PEI-echange-international-non-diplomant" >PEI&nbsp;-&nbsp;Echange international non diplomant</a></li></ul></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2023-2024" >Catalogue 2023 - 2024</a><ul  class="dropdown-menu"><li class="dropdown-submenu"><a href="/catalogue/2023-2024/type/Certificat+d%2527Etudes+Sp%25C3%25A9cialis%25C3%25A9es" >Certificat d'Etudes Spécialisées</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2023-2024/diplome/2179/CESCDRS-ces-cybersecurite-des-donnees-reseaux-et-systemes" >CESCDRS&nbsp;-&nbsp;CES Cybersécurité des données, réseaux et systèmes</a></li><li class=""><a href="/catalogue/2023-2024/diplome/2276/CESCDRS-INTRA-ces-cybersecurite-des-donnees-reseaux-et-systemes-intra" >CESCDRS-INTRA&nbsp;-&nbsp;CES Cybersécurité des données, réseaux et systèmes-INTRA</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2023-2024/type/Ing%25C3%25A9nieur" >Ingénieur</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2023-2024/diplome/4/ING-diplome-d-ingenieur" >ING&nbsp;-&nbsp;Diplôme d'ingénieur</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2023-2024/type/Master" >Master</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2023-2024/diplome/2083/DATA-AI-data-artificial-intelligence" >DATA AI&nbsp;-&nbsp;Data & Artificial Intelligence</a></li><li class=""><a href="/catalogue/2023-2024/diplome/2064/DESIGN-master-recherche-en-design" >DESIGN&nbsp;-&nbsp;Master recherche en Design</a></li><li class=""><a href="/catalogue/2023-2024/diplome/1327/ICS-integration-circuits-systems" >ICS&nbsp;-&nbsp;Integration Circuits Systems</a></li><li class=""><a href="/catalogue/2023-2024/diplome/26/IGD-interaction-graphic-design" >IGD&nbsp;-&nbsp;Interaction, Graphic & Design</a></li><li class=""><a href="/catalogue/2023-2024/diplome/42/IREN-industries-de-reseau-et-economie-numerique-iren" >IREN&nbsp;-&nbsp;Industries de réseau et economie numérique (IREN)</a></li><li class=""><a href="/catalogue/2023-2024/diplome/2065/MICAS-information-processing-machine-learning-communications-and-security" >MICAS&nbsp;-&nbsp;Information processing: machine learning, communications and security</a></li><li class=""><a href="/catalogue/2023-2024/diplome/38/MVA-mathematiques-vision-apprentissage" >MVA&nbsp;-&nbsp;Mathématiques, Vision, Apprentissage</a></li><li class=""><a href="/catalogue/2023-2024/diplome/1857/SETI-systemes-embarques-et-traitement-de-l-information" >SETI&nbsp;-&nbsp;Systèmes embarqués et traitement de l'information</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2023-2024/type/Master+T%25C3%25A9l%25C3%25A9com+SudParis" >Master Télécom SudParis</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2023-2024/diplome/2067/CSN-informatique-pour-les-reseaux" >CSN&nbsp;-&nbsp;Informatique pour les Réseaux</a></li><li class=""><a href="/catalogue/2023-2024/diplome/2072/CYBER-M1-cybersecurity-m1" >Cyber M1&nbsp;-&nbsp;Cybersecurity M1</a></li><li class=""><a href="/catalogue/2023-2024/diplome/2073/CYBER-M2-cybersecurity-m2" >Cyber M2&nbsp;-&nbsp;Cybersecurity M2</a></li><li class=""><a href="/catalogue/2023-2024/diplome/2291/EECIP-electrical-engineering-for-communication-information-processing" >EECIP&nbsp;-&nbsp;Electrical Engineering for Communication Information Processing</a></li><li class=""><a href="/catalogue/2023-2024/diplome/40/MN-multimedia-networking-m2" >MN&nbsp;-&nbsp;Multimedia Networking M2</a></li><li class=""><a href="/catalogue/2023-2024/diplome/2076/PDS-M1-systemes-distribues-et-paralleles-m1" >PDS M1&nbsp;-&nbsp;Systèmes distribués et parallèles M1</a></li><li class=""><a href="/catalogue/2023-2024/diplome/2077/PDS-M2-systemes-distribues-et-paralleles-m2" >PDS M2&nbsp;-&nbsp;Systèmes distribués et parallèles M2</a></li><li class=""><a href="/catalogue/2023-2024/diplome/2069/TRIED-M2-traitement-de-l-information-exploitation-des-donnees-master-2" >TRIED M2&nbsp;-&nbsp;Traitement de l'Information & Exploitation des Données Master 2</a></li><li class=""><a href="/catalogue/2023-2024/diplome/2070/VAR-virtual-augmented-reality-m2" >VAR&nbsp;-&nbsp;Virtual & Augmented Reality M2</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2023-2024/type/Mast%25C3%25A8re+sp%25C3%25A9cialis%25C3%25A9" >Mastère spécialisé</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2023-2024/diplome/61/ADE-architecte-digital-d-entreprise" >ADE&nbsp;-&nbsp;Architecte Digital d'Entreprise</a></li><li class=""><a href="/catalogue/2023-2024/diplome/60/ARC-architecte-reseaux-et-cybersecurite" >ARC&nbsp;-&nbsp;Architecte Réseaux et Cybersécurité</a></li><li class=""><a href="/catalogue/2023-2024/diplome/62/BGD-big-data-gestion-et-analyse-des-donnees-massives" >BGD&nbsp;-&nbsp;Big Data : gestion et analyse des données massives</a></li><li class=""><a href="/catalogue/2023-2024/diplome/65/CARC-conception-architecture-de-reseaux-et-cybersecurite" >CARC&nbsp;-&nbsp;Conception, Architecture de Réseaux et Cybersécurité</a></li><li class=""><a href="/catalogue/2023-2024/diplome/64/CPD-concepteur-de-projet-digital" >CPD&nbsp;-&nbsp;Concepteur de Projet Digital</a></li><li class=""><a href="/catalogue/2023-2024/diplome/78/CYBER2-cybersecurite-et-cyberdefense" >CYBER2&nbsp;-&nbsp;Cybersécurité et Cyberdéfense</a></li><li class=""><a href="/catalogue/2023-2024/diplome/1996/IA-ia-intelligence-artificielle" >IA&nbsp;-&nbsp;IA : Intelligence Artificielle</a></li><li class=""><a href="/catalogue/2023-2024/diplome/72/MSIR-management-des-systemes-d-information-en-reseaux" >MSIR&nbsp;-&nbsp;Management des systèmes d'information en réseaux</a></li><li class=""><a href="/catalogue/2023-2024/diplome/1846/SMOB-smart-mobility-transformation-numerique-des-systemes-de-mobilite" >SMOB&nbsp;-&nbsp;Smart Mobility - Transformation Numérique des Systèmes de Mobilité</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2023-2024/type/Programme+d%2527%25C3%25A9change" >Programme d'échange</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2023-2024/diplome/1/PEI-echange-international-non-diplomant" >PEI&nbsp;-&nbsp;Echange international non diplomant</a></li></ul></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2022-2023" >Catalogue 2022 - 2023</a><ul  class="dropdown-menu"><li class="dropdown-submenu"><a href="/catalogue/2022-2023/type/Ing%25C3%25A9nieur" >Ingénieur</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2022-2023/diplome/4/ING-diplome-d-ingenieur" >ING&nbsp;-&nbsp;Diplôme d'ingénieur</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2022-2023/type/Master" >Master</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2022-2023/diplome/2083/DATA-AI-data-artificial-intelligence" >DATA AI&nbsp;-&nbsp;Data & Artificial Intelligence</a></li><li class=""><a href="/catalogue/2022-2023/diplome/2064/DESIGN-master-recherche-en-design" >DESIGN&nbsp;-&nbsp;Master recherche en Design</a></li><li class=""><a href="/catalogue/2022-2023/diplome/1327/ICS-integration-circuits-systems" >ICS&nbsp;-&nbsp;Integration Circuits Systems</a></li><li class=""><a href="/catalogue/2022-2023/diplome/26/IGD-interaction-graphic-design" >IGD&nbsp;-&nbsp;Interaction, Graphic & Design</a></li><li class=""><a href="/catalogue/2022-2023/diplome/42/IREN-industries-de-reseau-et-economie-numerique-iren" >IREN&nbsp;-&nbsp;Industries de réseau et economie numérique (IREN)</a></li><li class=""><a href="/catalogue/2022-2023/diplome/2065/MICAS-information-processing-machine-learning-communications-and-security" >MICAS&nbsp;-&nbsp;Information processing: machine learning, communications and security</a></li><li class=""><a href="/catalogue/2022-2023/diplome/38/MVA-mathematiques-vision-apprentissage" >MVA&nbsp;-&nbsp;Mathématiques, Vision, Apprentissage</a></li><li class=""><a href="/catalogue/2022-2023/diplome/1857/SETI-systemes-embarques-et-traitement-de-l-information" >SETI&nbsp;-&nbsp;Systèmes embarqués et traitement de l'information</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2022-2023/type/Master+T%25C3%25A9l%25C3%25A9com+SudParis" >Master Télécom SudParis</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2022-2023/diplome/2073/CYBER-M2-cybersecurity-m2" >Cyber M2&nbsp;-&nbsp;Cybersecurity M2</a></li><li class=""><a href="/catalogue/2022-2023/diplome/40/MN-multimedia-networking-m2" >MN&nbsp;-&nbsp;Multimedia Networking M2</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2022-2023/type/Mast%25C3%25A8re+sp%25C3%25A9cialis%25C3%25A9" >Mastère spécialisé</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2022-2023/diplome/61/ADE-architecte-digital-d-entreprise" >ADE&nbsp;-&nbsp;Architecte Digital d'Entreprise</a></li><li class=""><a href="/catalogue/2022-2023/diplome/60/ARC-architecte-reseaux-et-cybersecurite" >ARC&nbsp;-&nbsp;Architecte Réseaux et Cybersécurité</a></li><li class=""><a href="/catalogue/2022-2023/diplome/62/BGD-big-data-gestion-et-analyse-des-donnees-massives" >BGD&nbsp;-&nbsp;Big Data : gestion et analyse des données massives</a></li><li class=""><a href="/catalogue/2022-2023/diplome/65/CARC-conception-et-architecture-de-reseaux-et-cybersecurite" >CARC&nbsp;-&nbsp;Conception et Architecture de Réseaux et Cybersécurité</a></li><li class=""><a href="/catalogue/2022-2023/diplome/64/CPD-concepteur-de-projet-digital" >CPD&nbsp;-&nbsp;Concepteur de Projet Digital</a></li><li class=""><a href="/catalogue/2022-2023/diplome/78/CYBER2-cybersecurite-et-cyberdefense" >CYBER2&nbsp;-&nbsp;Cybersécurité et Cyberdéfense</a></li><li class=""><a href="/catalogue/2022-2023/diplome/1996/IA-ia-intelligence-artificielle" >IA&nbsp;-&nbsp;IA : Intelligence Artificielle</a></li><li class=""><a href="/catalogue/2022-2023/diplome/72/MSIR-management-des-systemes-d-information-en-reseaux" >MSIR&nbsp;-&nbsp;Management des systèmes d'information en réseaux</a></li><li class=""><a href="/catalogue/2022-2023/diplome/1846/SMOB-smart-mobility-transformation-numerique-des-systemes-de-mobilite" >SMOB&nbsp;-&nbsp;Smart Mobility - Transformation Numérique des Systèmes de Mobilité</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2022-2023/type/Programme+d%2527%25C3%25A9change" >Programme d'échange</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2022-2023/diplome/1/PEI-echange-international-non-diplomant" >PEI&nbsp;-&nbsp;Echange international non diplomant</a></li></ul></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2021-2022" >Catalogue 2021 - 2022</a><ul  class="dropdown-menu"><li class="dropdown-submenu"><a href="/catalogue/2021-2022/type/Master" >Master</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2021-2022/diplome/2064/DESIGN-master-recherche-en-design" >DESIGN&nbsp;-&nbsp;Master recherche en Design</a></li></ul></li></ul></li></ul></li>                                    </ul>
+                                </div>
+                            </div> <!-- navbar-collapse -->
+
+                        </div> <!-- row -->
+                    </div> <!-- container-fluid -->
+                </nav> <!--/.nav-collapse -->
+            </div>
+            <!-- Version SynapseS  -->
+            <div id="app-version-label">v2.11.0 (5705)</div>
+            <div id="breadcrumbs">
+                <ul>
+            <li class="item root-item">
+            <span>Accueil</span>
+        </li>
+    </ul>
+            </div>
+        </div>
+
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                                        <div id="content-wrapper" class="col-md-12">
+                        <div id="flash-messages" class="flash-messages" class="row">
+</div>
+<script type="text/javascript">
+    setTimeout(function() {
+        $('.flash-messages').find('ul').fadeOut(3000, function() {
+            $('.flash-messages').find('ul').remove();
+        });
+    }, 9000);
+</script>                        <link href="&#x2F;assets&#x2F;vendor&#x2F;fontawesome&#x2F;css&#x2F;fontawesome.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;vendor&#x2F;bootstrap&#x2F;css&#x2F;bootstrap.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;app_base.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_calendrier_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_i18n_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_navigation_menu_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_push-area_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;vendor&#x2F;bootstraptree&#x2F;bootstrap-tree.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_annuaire_modal_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_catalogue_parcours_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;vendor&#x2F;select2&#x2F;dist&#x2F;css&#x2F;select2.min.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;vendor&#x2F;datatables&#x2F;media&#x2F;css&#x2F;dataTables.bootstrap.min.css" media="screen" rel="stylesheet" type="text&#x2F;css"><script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;vendor&#x2F;select2&#x2F;dist&#x2F;js&#x2F;select2.min.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;vendor&#x2F;datatables&#x2F;media&#x2F;js&#x2F;jquery.dataTables.min.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;vendor&#x2F;datatables&#x2F;media&#x2F;js&#x2F;dataTables.bootstrap.min.js"></script><script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;bootstrap_3_3_5_i18n_js.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;bootstrap_3_3_5_push_area_js.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;vendor_bootstraptree_js.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;bootstrap_3_3_5_annuaire_modal_js.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;bootstrap_3_3_5_catalogue_fiche_element_formation_js.js"></script><header>
+    <h1>
+        <a href="/catalogue/2024-2025">
+            <i class="fa fa-level-up btn"></i>
+        </a>
+        <span class="type-objet-fiche">Filières de 2e année</span>&nbsp;-&nbsp;<span class="code">TSIA&nbsp;: </span><span class="titre">Filière Traitement du signal pour l'intelligence artificielle (créneau C).</span>    </h1>
+
+    <h2 class="subtitle"></h2>
+</header>
+<script type = 'text/javascript'>
+    $(function() {
+        var nbItems = $('#breadcrumbs ul li').length;
+        var firstItem, secondItem;
+        if (nbItems == 1) {
+            firstItem = '<li class="item level-1"><span><a href="/catalogue"><span>'+$('.navbar-nav [href="/catalogue"]').text()+'</span></a></li>';
+            secondItem = '<li class="item level-2"><span>'+ $('h1 .type-objet-fiche').html() +'</span></li>';
+            var currentItem = '<li class="item current-item"><span>'+ $('h1 .code').text() + ' ' + $('h1 .titre').text() +'</span></li>';
+            $('#breadcrumbs ul').html(firstItem + secondItem + currentItem);
+        }
+                firstItem = '<span><a href="'+'/catalogue/2024-2025'+'">'+'Catalogue 2024-2025'+'</span></a>';
+        $('#breadcrumbs ul li.level-1').html(firstItem);
+        $('.fa-level-up').parent('a').attr('href', '/catalogue/2024-2025');
+                $('#breadcrumbs ul li.level-2').remove();
+            });
+</script>
+<main id="main-content-fiche-parcours">
+    <section class="first-paragraph">
+<h2 class="titre_paragraphe">Descriptif</h2>
+
+<div class="tiny-mce-content"><em>Responsable de la fili&egrave;re : Roland Badeau<br /></em></div>
+<div class="tiny-mce-content"><em>Responsable mobilit&eacute; internationale : Matthieu Labeau<br />Coordination des stages : Mathieu Fontaine<br /><br /></em>Le programme est <strong>en anglais</strong>.&nbsp;<em><br /><br /></em>A l&rsquo;issue de la fili&egrave;re, l&rsquo;&eacute;tudiant aura acquis une vision large et op&eacute;rationnelle de l'apprentissage statistique et du traitement du signal. <br />Il comprendra les enjeux du traitement des donn&eacute;es et du big data, les fondements m&eacute;thodologiques (statistiques, optimisation) et les techniques visant &agrave; traiter plus particuli&egrave;rement des donn&eacute;es temporelles (traitement du signal). <br />La fili&egrave;re vise &agrave; former de futurs ing&eacute;nieurs ayant un large spectre de comp&eacute;tences autour de l'apprentissage statistique (machine learning) et du traitement de signal, ce qui recouvre un immense panel de domaines applicatifs : musique et parole, signaux biologiques, radioastronomie, transmission et compression de l'information multim&eacute;dia, etc. <br />La p&eacute;dagogie met &agrave; la fois l'accent entre des cours magistraux rigoureux et des travaux pratiques en contexte r&eacute;aliste. La formation propos&eacute;e en deuxi&egrave;me ann&eacute;e est une introduction pertinente &agrave; diff&eacute;rents M2 de Paris-Saclay<em>&nbsp; </em>ou d'autres universit&eacute;s.<br /><br />Cette fili&egrave;re pourra &ecirc;tre associ&eacute;e avec profit &agrave; une des fili&egrave;res :&nbsp; <br />&nbsp;- <strong>Fili&egrave;re IMA</strong> : Le traitement de l'image et le traitement du signal partagent de nombreux outils fondamentaux. Les outils de traitement du signal abord&eacute;s en TSIA viennent naturellement renforcer les m&eacute;thodes sp&eacute;cifiques d'analyse des images. Les th&egrave;mes utiles, abord&eacute;s en TSIA sont : statistiques, ondelettes, bancs de filtre, compression et transmission de signaux multim&eacute;dia (images).<br /><br />&nbsp;- <strong>Fili&egrave;re MACS</strong> : La fili&egrave;re TSIA contient des cours de mod&eacute;lisation al&eacute;atoire qui apportent un compl&eacute;ment tr&egrave;s pertinent &agrave; la fili&egrave;re MACS : s&eacute;ries chronologiques, statistiques avanc&eacute;es, optimisation en contexte stochastique, filtrage et mod&egrave;les de Markov cach&eacute;s.<br /><br /><strong>2e ANNEE (M1)<br /></strong><br />Les enseignements (192 heures) sont compos&eacute;s&nbsp; <br />&nbsp; - d'UE sp&eacute;cifiques &agrave; TSIA sur les donn&eacute;es temporelles (code : TSIA) <br />&nbsp; - et d'UE communes avec la fili&egrave;re SD Science des donn&eacute;es, sur l'apprentissage statistique et la gestion de donn&eacute;es (code : SD-TSIA). <br />
+<div style="font-family: Helvetica; font-size: 13px; font-variant-ligatures: normal; font-variant-position: normal; font-variant-numeric: normal; font-variant-alternates: normal; font-variant-east-asian: normal; line-height: normal;">&nbsp;</div>
+Cinq cours sont communs, trois autres sont au choix (au P3 et au P4).</div>
+<div class="tiny-mce-content">&nbsp;</div>
+<div class="tiny-mce-content">La fili&egrave;re est compl&eacute;t&eacute;e par certains cours du cr&eacute;neau UE partag&eacute;es : <br />
+<ul class="Normal">
+<li><strong>APM_0EL02_TP</strong><em> (MDI 210)</em> Optimisation&nbsp; (obligatoire en P1)</li>
+<li><strong>APM_0EL02_TP</strong> <em>(MDI 220)</em> Statistiques&nbsp; (obligatoire en P1)</li>
+<li><strong>CSC_0EL13_TP</strong> <em>(SD202)</em> (recommand&eacute;e)</li>
+</ul>
+</div>
+<div class="tiny-mce-content">
+<table style="border-collapse: collapse; border-style: double; background-color: #fbddb9; width: 861px; height: 517px;" border="1" cellspacing="1" cellpadding="1">
+<tbody>
+<tr style="box-sizing: border-box; height: 18px; box-shadow: none !important;">
+<td style="box-sizing: border-box; padding: 0px; width: 29.8667px; height: 18px; box-shadow: none !important;">&nbsp;</td>
+<td style="box-sizing: border-box; padding: 0px; width: 195.583px; height: 18px; text-align: center; box-shadow: none !important;">P1</td>
+<td style="box-sizing: border-box; padding: 0px; width: 203.05px; height: 18px; text-align: center; box-shadow: none !important;">P2</td>
+<td style="box-sizing: border-box; padding: 0px; width: 228.433px; height: 18px; text-align: center; box-shadow: none !important;">P3</td>
+<td style="box-sizing: border-box; padding: 0px; width: 203.067px; height: 18px; text-align: center; box-shadow: none !important;">P4</td>
+</tr>
+<tr style="box-sizing: border-box; height: 82px; box-shadow: none !important;">
+<td style="box-sizing: border-box; padding: 0px; width: 29.8667px; height: 82px; text-align: center; box-shadow: none !important;">
+<p style="box-sizing: border-box; margin: 0px 0px 10px; box-shadow: none !important;">C1</p>
+</td>
+<td style="box-sizing: border-box; padding: 0px; width: 195.583px; height: 82px; text-align: center; box-shadow: none !important;">
+<p style="box-sizing: border-box; margin: 0px 0px 10px; box-shadow: none !important;"><strong><span style="box-sizing: border-box; font-family: opensanssemibold, sans-serif; box-shadow: none !important;">APM_4AI02_TP<br /></span></strong><em><span style="box-sizing: border-box; font-family: opensanssemibold, sans-serif; box-shadow: none !important;">(TSIA 202a)</span></em></p>
+<p style="box-sizing: border-box; margin: 0px 0px 10px; box-shadow: none !important;">S&eacute;ries chronologiques 1e partie</p>
+</td>
+<td style="box-sizing: border-box; padding: 0px; width: 203.05px; height: 82px; text-align: center; box-shadow: none !important;">
+<p style="box-sizing: border-box; margin: 0px 0px 10px; box-shadow: none !important;"><strong><span style="box-sizing: border-box; font-family: opensanssemibold, sans-serif; box-shadow: none !important;">APM_4AI08_TP<br /></span></strong><span style="box-sizing: border-box; font-family: opensanssemibold, sans-serif; box-shadow: none !important;"><em>(SD-TSIA 204)</em></span></p>
+<p style="box-sizing: border-box; margin: 0px 0px 10px; box-shadow: none !important;">Statistics &ndash; Linear models</p>
+</td>
+<td style="box-sizing: border-box; padding: 0px; width: 228.433px; height: 82px; text-align: center; box-shadow: none !important;">
+<p style="box-sizing: border-box; margin: 0px 0px 10px; box-shadow: none !important;"><strong><span style="box-sizing: border-box; font-family: opensanssemibold, sans-serif; box-shadow: none !important;">APM_4AI03_TP<br /></span></strong><span style="box-sizing: border-box; font-family: opensanssemibold, sans-serif; box-shadow: none !important;"><em>(TSIA 202b)</em></span></p>
+<p style="box-sizing: border-box; margin: 0px 0px 10px; box-shadow: none !important;">S&eacute;ries chronologiques 2e partie</p>
+<p style="box-sizing: border-box; margin: 0px 0px 10px; box-shadow: none !important;"><span style="box-sizing: border-box; font-family: opensanssemibold, sans-serif; box-shadow: none !important;"><em>-----OU-----</em></span></p>
+<p style="box-sizing: border-box; margin: 0px 0px 10px; box-shadow: none !important;"><strong>APM_4AI09_TP&nbsp;<span style="font-family: opensanssemibold, sans-serif; color: #111111;">SD-</span></strong><span style="font-family: opensanssemibold, sans-serif; color: #111111;"><em>(TSIA 205)</em></span></p>
+<p style="box-sizing: border-box; margin: 0px 0px 10px; box-shadow: none !important;">Advanced Statistics</p>
+<p style="box-sizing: border-box; margin: 0px 0px 10px; box-shadow: none !important;"><em style="box-sizing: border-box; box-shadow: none !important;">-----OU-----</em></p>
+<p style="caret-color: #ffffff; color: #000000; box-sizing: border-box; margin: 0px 0px 10px; box-shadow: none !important;"><strong><span style="box-sizing: border-box; font-family: opensanssemibold, sans-serif; box-shadow: none !important;">APM_4AI12_TP<br /></span></strong><span style="box-sizing: border-box; font-family: opensanssemibold, sans-serif; box-shadow: none !important;"><em>(SD-TSIA 214)</em></span></p>
+<p style="caret-color: #ffffff; color: #000000; box-sizing: border-box; margin: 0px 0px 10px; box-shadow: none !important;">Machine Learning for Text Mining</p>
+</td>
+<td style="box-sizing: border-box; padding: 0px; width: 203.067px; height: 82px; text-align: center; box-shadow: none !important;">
+<p style="box-sizing: border-box; margin: 0px 0px 10px; box-shadow: none !important;"><strong><span style="box-sizing: border-box; font-family: opensanssemibold, sans-serif; box-shadow: none !important;">APM_4AI04_TP<br /></span></strong><span style="box-sizing: border-box; font-family: opensanssemibold, sans-serif; box-shadow: none !important;"><em>(TSIA206)</em></span></p>
+<p style="box-sizing: border-box; margin: 0px 0px 10px; box-shadow: none !important;">Analyse des signaux de musique et de parole</p>
+<p style="box-sizing: border-box; margin: 0px 0px 10px; box-shadow: none !important;"><span style="box-sizing: border-box; font-family: opensanssemibold, sans-serif; box-shadow: none !important;"><em>-----OU-----</em></span></p>
+<p style="box-sizing: border-box; margin: 0px 0px 10px; box-shadow: none !important;"><strong><span style="box-sizing: border-box; font-family: opensanssemibold, sans-serif; box-shadow: none !important;">CSC_4AI05_TP<br /></span></strong><span style="box-sizing: border-box; font-family: opensanssemibold, sans-serif; box-shadow: none !important;"><em>(TSIA 207)</em></span></p>
+<p style="box-sizing: border-box; margin: 0px 0px 10px; box-shadow: none !important;">Introduction au traitement et &agrave; la transmission des signaux multim&eacute;dia</p>
+</td>
+</tr>
+<tr style="box-sizing: border-box; box-shadow: none !important;">
+<td style="box-sizing: border-box; padding: 0px; width: 29.8667px; text-align: center; box-shadow: none !important; height: 76px;">
+<p style="box-sizing: border-box; margin: 0px 0px 10px; box-shadow: none !important;">C2</p>
+</td>
+<td style="box-sizing: border-box; padding: 0px; width: 195.583px; text-align: center; box-shadow: none !important; height: 76px;">
+<p style="box-sizing: border-box; margin: 0px 0px 10px; box-shadow: none !important;">&nbsp;</p>
+<p style="box-sizing: border-box; margin: 0px 0px 10px; box-shadow: none !important;"><strong><span style="box-sizing: border-box; font-family: opensanssemibold, sans-serif; box-shadow: none !important;">APM_4AI01_TP<br /></span></strong><em><span style="box-sizing: border-box; font-family: opensanssemibold, sans-serif; box-shadow: none !important;">(TSIA 201)</span></em></p>
+<p style="box-sizing: border-box; margin: 0px 0px 10px; box-shadow: none !important;">Repr&eacute;sentations des signaux</p>
+</td>
+<td style="box-sizing: border-box; padding: 0px; width: 203.05px; text-align: center; box-shadow: none !important; height: 76px;">
+<p style="box-sizing: border-box; margin: 0px 0px 10px; box-shadow: none !important;">&nbsp;</p>
+<p style="box-sizing: border-box; margin: 0px 0px 10px; box-shadow: none !important;"><strong><span style="box-sizing: border-box; font-family: opensanssemibold, sans-serif; box-shadow: none !important;">APM_4AI11_TP<br /></span></strong><em><span style="box-sizing: border-box; font-family: opensanssemibold, sans-serif; box-shadow: none !important;">(SD-TSIA 211)</span></em></p>
+<p style="box-sizing: border-box; margin: 0px 0px 10px; box-shadow: none !important;">Optimization for machine learning</p>
+<p style="box-sizing: border-box; margin: 0px 0px 10px; box-shadow: none !important;">&nbsp;</p>
+</td>
+<td style="box-sizing: border-box; padding: 0px; width: 228.433px; text-align: center; box-shadow: none !important; height: 76px;">
+<p style="caret-color: #ffffff; color: #000000; box-sizing: border-box; margin: 0px 0px 10px; box-shadow: none !important;"><strong>APM_4AI10_TP<br /></strong><em>&nbsp;(<span style="box-sizing: border-box; font-family: opensanssemibold, sans-serif; box-shadow: none !important;">SD-TSIA 210)</span></em></p>
+<p style="box-sizing: border-box; margin: 0px 0px 10px; box-shadow: none !important;">&nbsp;Machine Learning</p>
+</td>
+<td style="box-sizing: border-box; padding: 0px; width: 203.067px; text-align: center; box-shadow: none !important; height: 76px;">
+<p style="box-sizing: border-box; margin: 0px 0px 10px; box-shadow: none !important;"><strong><span style="box-sizing: border-box; font-family: opensanssemibold, sans-serif; box-shadow: none !important;">CSC_4AI07_TP<br /></span></strong><span style="box-sizing: border-box; font-family: opensanssemibold, sans-serif; box-shadow: none !important;"><em>(SD-TSIA 203)</em></span></p>
+<p style="box-sizing: border-box; margin: 0px 0px 10px; box-shadow: none !important;">Introduction to deep learning</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tiny-mce-content">&nbsp;</div>
+<div class="tiny-mce-content">&nbsp;</div>
+<div class="tiny-mce-content"><strong>3e ANNEE (M2)</strong><br />En troisi&egrave;me ann&eacute;e les &eacute;tudiants peuvent choisir : <br />
+<table class=" table table-striped table-hover table-bordered">
+<tbody>
+<tr>
+<td><strong>Option interne</strong></td>
+<td>
+<p>- Suivre l'option interne Science de donn&eacute;es, compos&eacute;e de 120 heures de cours issus des M2 ci-dessous&nbsp; et&nbsp; d'un projet PRIM, compl&eacute;t&eacute;e par un stage au S2. Le choix des cours d&eacute;pendra de l'orientation souhait&eacute;e : coloration apprentissage statistique et signal, Audio et parole, Multimedia<br />- Suivre l'option interne IA, Intelligence Artificielle en collaboration avec l'ENSTA Paris.</p>
+</td>
+</tr>
+<tr>
+<td><strong>Master M2</strong></td>
+<td>
+<p>Postuler pour un de ces Masters 2 qui incluent un stage :</p>
+<ul>
+<li>ATSI Automatique et Traitement du Signal et des Images&nbsp; (Upsay, mention E3A)</li>
+<li>Data AI Artificial Intelligence (IP Paris)</li>
+<li>Data Science (IP Paris)</li>
+<li>MVA, Math&eacute;matiques, Vision, Apprentissage (IP Paris)</li>
+<li>ATIAM, Acoustique, traitement du signal et informatique appliqu&eacute;s &agrave; la musique&nbsp; (Sorbonne Universit&eacute;)</li>
+<li>BME-Paris, BIM - BioMedical Imaging&nbsp; (mention BME, Universit&eacute; Paris Cit&eacute; et Arts et M&eacute;tiers et PSL)</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>Formation &agrave; l&rsquo;&eacute;tranger</strong></td>
+<td>
+<p>Suivre une formation &eacute;quivalente &agrave; l'&eacute;tranger <em>(contacter le responsable mobilit&eacute; internationale de la fili&egrave;re)</em></p>
+</td>
+</tr>
+<tr>
+<td><strong>Autre</strong></td>
+<td>
+<p>Vous pouvez aussi choisir, apr&egrave;s la 2e ann&eacute;e,&nbsp; de suivre en 3eA&nbsp; :</p>
+<ul>
+<li>un cursus transverse, c'est &agrave; dire ouvert quelle que soit la fili&egrave;re choisie en 2e ann&eacute;e : Option interne Quantum Engineering,&nbsp; ou un des M2 transverses du domaine SES (PIC / IREN / COSI)</li>
+<li>une mobilit&eacute; en France dans une &eacute;cole de l'Institut Mines-T&eacute;l&eacute;com ou de IP Paris.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div>&nbsp;Quelle que soit l'option choisie, les &eacute;l&egrave;ves font un stage ing&eacute;nieur ou de recherche de 6 mois.</div>
+</div></section>
+<section class="paragraph">
+<h2 class="titre_paragraphe">Objectifs</h2>
+
+<div class="tiny-mce-content"><span style="color: #000080;">&nbsp;</span><strong>Mobilit&eacute; internationale.</strong>
+<div>&nbsp;</div>
+<div>
+<div>Avant d'aller plus loin, assurez-vous que vous avez pris connaissance des informations g&eacute;n&eacute;rales concernant la mobilit&eacute; internationale. Notez en particulier que la DRI propose d&eacute;j&agrave; une offre cons&eacute;quente dans laquelle il est tr&egrave;s probable que vous trouviez votre bonheur.</div>
+<div>&nbsp;</div>
+<div>Ci-apr&egrave;s une petite s&eacute;lection d'&eacute;tablissements que nous recommandons pour des s&eacute;jours d'&eacute;tude (et qui s'&eacute;toffera au fur et &agrave; mesure des retours des &eacute;l&egrave;ves des promotions pr&eacute;c&eacute;dentes). A nouveau, d'autres choix sont possibles (en particulier ceux propos&eacute;s par la DRI), n'h&eacute;sitez pas &agrave; venir en discuter avec le responsable des mobilit&eacute;s de la fili&egrave;re.</div>
+<div><strong>Asie</strong></div>
+<div>National Taiwan University</div>
+<div>National University of Singapore</div>
+<div>Shanghai Jiao Tong University</div>
+<div>Tokyo Institute of Technology</div>
+<div><strong>Europe</strong></div>
+<div>ETH Zurich</div>
+<div>EPFL</div>
+<div>Imperial College</div>
+<div>KTH</div>
+<div>TU Berlin</div>
+<div>TU Munich</div>
+<div>TU Wien</div>
+<div>Universit&eacute; Catholique de Louvain-la-Neuve</div>
+<div>Universitat Polit&egrave;cnica de Catalunya, ETSETB</div>
+<div>Universidad Politecnica de Madrid, ETSIT &amp; ETSII</div>
+<div>&nbsp;</div>
+<div><strong>Stages &agrave; l'&eacute;tranger</strong></div>
+<div>&nbsp;</div>
+<div>Le plus naturel pour trouver un tel stage et de visiter les sites sp&eacute;cialis&eacute;s et les pages web des entreprises qui vous int&eacute;ressent sur lesquels des offres sont r&eacute;guli&egrave;rement publi&eacute;es. Contactez aussi le responsable des mobilit&eacute;s de la fili&egrave;re qui pourra vous orienter vers des offres dont il est au courant. Il vous aidera &eacute;galement &agrave; "d&eacute;coder" les comp&eacute;tences requises pour les offres qui vous int&eacute;ressent et &agrave; vous assurer que vous y correspondez.</div>
+<div><strong>&nbsp;</strong></div>
+<div><strong>Retour sur exp&eacute;rience</strong></div>
+<div>&nbsp;</div>
+<div>Le responsable des mobilit&eacute;s de la fili&egrave;re maintient une liste des anciens &eacute;l&egrave;ves de TSIA&nbsp;qui sont d&eacute;j&agrave; partis &agrave; l'&eacute;tranger. Vous verrez appara&icirc;tre ci-dessous les &eacute;tablissements et les entreprises dans lesquels ces &eacute;l&egrave;ves sont d&eacute;j&agrave; partis. Contactez le responsable pour qu'il vous mette en relation.</div>
+<div>&nbsp;</div>
+<div>Etablissements d'enseignement</div>
+<div>NUS</div>
+</div>
+</div></section>
+<ul role="tablist" class="nav nav-tabs">
+    
+        <li role="presentation" class="active">
+		<a aria-expanded="true"
+		aria-controls="informations" data-toggle="tab" role="tab"
+		id="informations-tab" href="#informations">Informations générales</a>
+	</li>
+    
+        <li role="presentation" class="">
+		<a aria-expanded="false"
+		aria-controls="prerequis" data-toggle="tab" role="tab"
+		id="prerequis-tab" href="#prerequis">Pré-requis et acquisition</a>
+	</li>
+    </ul>
+
+<div class="tab-content" id="tab-content">
+            <div aria-labelledby="informations-tab" id="informations" class="tab-pane fade active in" role="tabpanel">
+        <h3 class="tab-paragraph-title">Diplômes concernés</h3><ul class="link-list tab-link-list">
+    <li><a href="/catalogue/2024-2025/diplome/1/PEI-echange-international-non-diplomant" class="fiche">Echange international non diplomant</a></li><li><a href="/catalogue/2024-2025/diplome/4/ING-diplome-d-ingenieur" class="fiche">Diplôme d'ingénieur</a></li></ul>
+        </div>
+                <div aria-labelledby="prerequis-tab" id="prerequis" class="tab-pane fade in" role="tabpanel">
+        <h3 class="tab-paragraph-title">Pré-requis</h3>UE du créneau D partagé obligatoires en P1 : MDI210 Optimisation et MDI220 Statistiques. UE partagée du créneau D recommandée : SD202 Bases de données<h3 class="tab-paragraph-title">Modalités d'acquisition</h3><p>La fili&egrave;re est valid&eacute;e si la moyenne des notes finales est &ge; 10 et si vous obtenez au minimum 15 cr&eacute;dits ECTS.<br /><br /></p>        </div>
+        </div>
+<section class="bloc">
+  <h2 class="title-bloc-parcours">
+    Composition du parcours</h2><div class="tree well">
+    <ul role="tree" class="tree-indent">
+        <span class="label label-ue">APM_4AI02_TP</span> <span class="label label-ue">APM_4AI01_TP</span> <span class="label label-ue">APM_4AI08_TP</span> <span class="label label-ue">APM_4AI11_TP</span> <span class="label label-ue">APM_4AI10_TP</span> <span class="label label-ue">APM_4AI03_TP</span> <span class="label label-ue">APM_4AI09_TP</span> <span class="label label-ue">APM_4AI12_TP</span> <span class="label label-ue">APM_4AI04_TP</span> <span class="label label-ue">CSC_4AI05_TP</span> <span class="label label-ue">CSC_4AI07_TP</span>     </ul>
+</div>
+  </section>
+</main><div class="sidebar" id="sidebar-fiche-parcours">
+    <div id='icon'>
+<!--        <a href="#" title="--><!--">-->
+<!--            <i class="fa btn fa-share-square-o"></i>-->
+<!--        </a>-->
+            </div>
+    <aside class="encadre" >
+<!-- ajout d'un ID CSS pour distinguer l'encadré Programmation de la fiche UE -->
+<h1 classe="titre-encadre">responsables</h1>
+            <div>
+                <div class="annuaire-modal-aware">                        <div class="annuaire-modal-photo">
+                                                            <i class="fa fa-user"></i>
+                            <span>Roland BADEAU</span>                        </div>
+                                    </div>
+            </div>
+        
+</aside>
+<aside class="encadre" >
+<!-- ajout d'un ID CSS pour distinguer l'encadré Programmation de la fiche UE -->
+<h1 classe="titre-encadre">coordinateurs des études</h1>
+            <div>
+                <div class="annuaire-modal-aware">                        <div class="annuaire-modal-photo">
+                                                            <i class="fa fa-user"></i>
+                            <span>Jérome CAHORS</span>                        </div>
+                                    </div>
+            </div>
+        
+</aside>
+<aside class="encadre" >
+<!-- ajout d'un ID CSS pour distinguer l'encadré Programmation de la fiche UE -->
+<h1 classe="titre-encadre">Equipe d'ingénierie pédagogique</h1>
+            <div>
+                <div class="annuaire-modal-aware">                        <div class="annuaire-modal-photo">
+                            <span>Roland BADEAU</span>                        </div>
+                                    </div>
+            </div>
+        
+</aside>
+</div>
+<section class="bloc">
+  <h2 class="title-bloc-ue">
+    Unités d'enseignement</h2>
+<div class="table-responsive" id="tableau-responsive">
+        <button class="btn table-filter-toggle">
+            <i class="fa fa-filter fa-lg"></i>
+            Filtres        </button>
+    <table class="table table-striped table-ues" id="tableau-unitesenseignementfiche">
+        <thead>
+        <tr>
+            <th>UE</th>
+            <th>Type d'enseignement</th>
+            <th>Domaines</th>
+            <th>Catégorie d'UE</th>
+                    <th>Volume horaire</th>
+            <th>Responsables</th>
+                    <th>Site pédagogique</th>
+        </tr>
+        </thead>
+        <tbody>         
+        <tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">APM_4AI01_TP</span> <a href="/catalogue/2024-2025/ue/2171/APM-4AI01-TP-representations-des-signaux?from=P5175" title="Représentations des signaux">Repr&eacute;sentations des signaux</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines">Image-Données-Signal</td>
+        <td class="categories">UE du créneau C.</td>
+            <td class="heures">24</td>
+        <td class="responsables">Roland BADEAU</td>
+            <td class="link">
+                            <a href="https://ecampus.paris-saclay.fr/course/view.php?id=9364" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">APM_4AI02_TP</span> <a href="/catalogue/2024-2025/ue/2172/APM-4AI02-TP-series-chronologiques-partie-1?from=P5175" title="Séries chronologiques (partie 1)">S&eacute;ries chronologiques (partie 1)</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines">Mathématiques</td>
+        <td class="categories">UE du créneau C.</td>
+            <td class="heures">24</td>
+        <td class="responsables">Francois ROUEFF</td>
+            <td class="link">
+                            <a href="https://ecampus.paris-saclay.fr/course/view.php?id=31132" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">APM_4AI03_TP</span> <a href="/catalogue/2024-2025/ue/2223/APM-4AI03-TP-series-chronologiques-partie-2?from=P5175" title="Séries chronologiques (partie 2)">S&eacute;ries chronologiques (partie 2)</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines">Mathématiques</td>
+        <td class="categories">UE du créneau C.</td>
+            <td class="heures">24</td>
+        <td class="responsables">Roland BADEAU</td>
+            <td class="link">
+                            <a href="https://ecampus.paris-saclay.fr/course/view.php?id=9365" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">APM_4AI04_TP</span> <a href="/catalogue/2024-2025/ue/2176/APM-4AI04-TP-analyse-des-signaux-de-musique-et-de-parole-methodes-et-applications?from=P5175" title="Analyse des signaux de musique et de parole : méthodes et applications">Analyse des signaux de musique et de parole : m&eacute;thodes et...</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines">Image-Données-Signal</td>
+        <td class="categories">UE du créneau C.</td>
+            <td class="heures">24</td>
+        <td class="responsables">Roland BADEAU</td>
+            <td class="link">
+                            <a href="https://moodle.r2.enst.fr/moodle/course/view.php?id=64" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">APM_4AI08_TP</span> <a href="/catalogue/2024-2025/ue/2149/APM-4AI08-TP-statistics-linear-models-statistique-modeles-lineaires?from=P5175" title="Statistics: linear models/Statistique : modèles linéaires">Statistics: linear models/Statistique : mod&egrave;les lin&eacute;aires</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines">Mathématiques</td>
+        <td class="categories">UE du créneau C.</td>
+            <td class="heures">24</td>
+        <td class="responsables">Ekhine IRUROZKI ARRIETA</td>
+            <td class="link">
+                            <a href="https://ecampus.paris-saclay.fr/course/view.php?id=40142" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">APM_4AI09_TP</span> <a href="/catalogue/2024-2025/ue/2152/APM-4AI09-TP-advanced-statistics-statistique-avancee?from=P5175" title="Advanced Statistics/Statistique avancée">Advanced Statistics/Statistique avanc&eacute;e</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines">Mathématiques</td>
+        <td class="categories">SD Apprentissage statistique, UE du créneau C.</td>
+            <td class="heures">24</td>
+        <td class="responsables">Philippe CIBLAT</td>
+            <td class="link">
+                            <a href="https://ecampus.paris-saclay.fr/course/view.php?id=20913" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">APM_4AI10_TP</span> <a href="/catalogue/2024-2025/ue/2150/APM-4AI10-TP-machine-learning?from=P5175" title="Machine Learning">Machine Learning</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines">Mathématiques</td>
+        <td class="categories">UE du créneau C.</td>
+            <td class="heures">24</td>
+        <td class="responsables">Florence D'ALCHE</td>
+            <td class="link">
+                            <a href="https://ecampus.paris-saclay.fr/course/view.php?id=20505" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">APM_4AI11_TP</span> <a href="/catalogue/2024-2025/ue/2155/APM-4AI11-TP-optimization-for-machine-learning?from=P5175" title="Optimization for Machine Learning">Optimization for Machine Learning</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines">Mathématiques</td>
+        <td class="categories">UE du créneau C, SD Apprentissage statistique.</td>
+            <td class="heures">24</td>
+        <td class="responsables">Radu-Alexandru Dragomir,<br />Olivier FERCOQ</td>
+            <td class="link">
+                            <a href="https://ecampus.paris-saclay.fr/course/view.php?id=34753" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">APM_4AI12_TP</span> <a href="/catalogue/2024-2025/ue/2157/APM-4AI12-TP-machine-learning-for-text-mining?from=P5175" title="Machine Learning for Text Mining">Machine Learning for Text Mining</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines">Mathématiques</td>
+        <td class="categories">SD Apprentissage statistique.</td>
+            <td class="heures">24</td>
+        <td class="responsables">Matthieu LABEAU</td>
+            <td class="link">
+                            <a href="https://ecampus.paris-saclay.fr/course/view.php?id=22180" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">CSC_4AI05_TP</span> <a href="/catalogue/2024-2025/ue/2177/CSC-4AI05-TP-introduction-au-traitement-et-a-la-transmission-des-signaux-multimedia?from=P5175" title="Introduction au traitement et à la transmission des signaux multimédia">Introduction au traitement et &agrave; la transmission des signa...</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines">Image-Données-Signal</td>
+        <td class="categories">UE du créneau C.</td>
+            <td class="heures">24</td>
+        <td class="responsables">Jean LE FEUVRE</td>
+            <td class="link">
+                            <a href="https://ecampus.paris-saclay.fr/course/view.php?id=45461" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">CSC_4AI07_TP</span> <a href="/catalogue/2024-2025/ue/2173/CSC-4AI07-TP-introduction-to-deep-learning?from=P5175" title="Introduction to deep learning">Introduction to deep learning</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines">Image-Données-Signal</td>
+        <td class="categories">UE du créneau C.</td>
+            <td class="heures">21</td>
+        <td class="responsables">Geoffroy PEETERS</td>
+            <td class="link">
+                            <a href="https://ecampus.paris-saclay.fr/course/view.php?id=22120" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+        </tbody>
+    <script type="text/javascript">
+    $(function () {
+        window.Application.Datatables = window.Application.Datatables || {}
+        window.Application.Datatables['tableau-unitesenseignementfiche'] = $("#tableau-unitesenseignementfiche").DataTable({"language":{"emptyTable":"Aucun r\u00e9sultat"},"order":[[0,"asc"]],"ordering":true,"paging":true,"searching":true,"info":false,"columsDefs":[{"targets":"no-sort","orderable":false}]});
+    });
+</script><style>
+    .no-sort::after { display: none!important; }
+    .no-sort { pointer-events: none!important; cursor: default!important; }
+</style>        <script type="text/javascript">
+
+            $(function () {
+                var filterableHeaders = ["Type d'enseignement","Domaines","Cat\u00e9gorie d'UE"];
+                var table = window.Application.Datatables['tableau-unitesenseignementfiche'];
+                var filters = new Application.DatatableFilters(table, filterableHeaders);
+
+                window.Application.FilterableDatatables = window.Application.FilterableDatatables || {}
+                window.Application.FilterableDatatables['tableau-unitesenseignementfiche'] = filters;
+
+                filters.init();
+
+            });
+        </script>    <script>  
+        ($(function() {
+            var filters = window.Application.FilterableDatatables['tableau-unitesenseignementfiche'];
+
+            $('.table-filter-toggle').on('click', filters.toggle);
+        }))
+    </script>
+    </table>
+</div>
+  </section>
+<!-- Modal -->
+<div class="container">
+    <div class="modal annuaire-modal-aware" data-backdrop="true" id="annuaire-modal" tabindex="-1" role="dialog" aria-labelledby="Détails de la personne sélectionnée">
+        <div class="modal-dialog  modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close-modal" data-dismiss="modal" aria-label="Close">
+                        <i class="fa fa-times"></i>
+                    </button>
+                    <h3 class="modal-title"></h3>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="photo-column annuaire-modal-photo">
+                                <img data-default-src="/assets/bootstrap/3.3.5/images/annuaire/unknown.gif" src="" alt="" class="img-responsive" />
+                            </div>
+                            <div class="data-column">
+                                <div class="detail-line">
+                                    <div class="row">
+                                        <div class="list-group-item-heading">E-mail</div>
+                                        <div class="list-group-item-text" data-field="emailetb"></div>
+                                    </div>
+                                </div>
+
+                                <div class="detail-line">
+                                    <div class="row">
+
+                                        <div class="list-group-item-heading">Catégorie</div>
+                                        <div class="list-group-item-text" data-field="idcategory"
+                                             data-secundary-field='libelle'></div>
+                                    </div>
+
+                                </div>
+                                <div class="detail-line">
+                                    <div class="row">
+
+                                        <div class="list-group-item-heading">Site(s)</div>
+                                        <div class="list-group-item-text" data-field="idlocalisation"
+                                             data-secundary-field='intitule'></div>
+                                    </div>
+
+                                </div>
+                                <div class="detail-line">
+                                    <div class="row">
+
+                                        <div class="list-group-item-heading">Téléphone</div>
+                                        <div class="list-group-item-text" data-field="telephone1"></div>
+                                    </div>
+
+                                </div>
+                                <div class="detail-line">
+                                    <div class="row">
+
+                                        <div class="list-group-item-heading">Téléphone</div>
+                                        <div class="list-group-item-text" data-field="idlocalisation"
+                                             data-secundary-field='telephone'></div>
+                                    </div>
+
+                                </div>
+                                <div class="detail-line">
+                                    <div class="row">
+
+                                        <div class="list-group-item-heading">Entité de rattachement :</div>
+                                        <div class="list-group-item-text" data-field="idpersentite"
+                                             data-secundary-field='nom'></div>
+                                    </div>
+
+                                </div>
+                                <div class="detail-line">
+                                    <div class="row">
+
+                                        <div class="list-group-item-heading">Libelle diplôme :</div>
+                                        <div class="list-group-item-text" data-field="diplome"
+                                             data-secundary-field='libelle'></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="list-group-item-secundary-heading">Niveau :</div>
+                                        <div class="list-group-item-text" data-field="diplome"
+                                             data-secundary-field='niveau'></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="list-group-item-secundary-heading">Site :</div>
+                                        <div class="list-group-item-text" data-field="diplome"
+                                             data-secundary-field='site'></div>
+                                    </div>
+
+                                </div>
+                                <div class="detail-line">
+                                    <div class="row">
+
+                                        <div class="list-group-item-heading">Fonction :</div>
+                                        <div class="list-group-item-text" data-field="fonctions"
+                                             data-secundary-field='entite'></div>
+                                    </div>
+
+                                </div>
+                                <div class="detail-line">
+                                    <div class="row">
+
+                                        <div class="list-group-item-heading">Programme d'échange :</div>
+                                        <div class="list-group-item-text" data-field="progechange"
+                                             data-secundary-field='libelle'></div>
+                                    </div>
+
+                                </div>
+                                <div class="detail-line">
+                                    <div class="row">
+                                        <div class="list-group-item-heading">Régime d'inscription :</div>
+                                        <div class="list-group-item-text"
+                                             data-field="regimeinscription" data-secundary-field='libelle'></div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="preloader-container" id="preloader">
+	<img alt="Veuillez patienter"
+		src="/assets/bootstrap/3.3.5/images/preloader.png" />
+</div>                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--/.container-fluid -->
+                <div id="footer">
+            <div class="row">
+                <div class="col-md-11">
+                    <div class="row">
+    <div class="col-md-4 col-sm-12">
+        <div class="row">
+            <div class="col-md-12">
+<h1>Plan du site</h1><ul><li>Accueil</li><li>Les formations</li></ul>            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+    <ul><li><a href="#" onclick="Application.Modal.showModalAjax('modal-footer-contenu', 'Mentions légales', '/contenu/MENT_LEG', true)">Mentions légales</a></li>            </div>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-12">
+    </div>
+    <div class="col-md-4 col-sm-12">
+    </div>
+</div>
+                    <div class="modal" id="modal-footer-contenu" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg modal-full-width" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="row">
+                    <div class="col-md-11">
+                        <h4 class="modal-title" id="modal-title"></h4>
+                    </div>
+                    <div class="col-md-1 pull-right">
+                        <button type="button" class="close-modal" data-dismiss="modal" aria-label="Close">
+                            <i class="fa fa-times"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-body"></div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+                </div>
+            </div>
+        </div>
+        
+        <script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;bootstrap_3_3_5_i18n_js.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;bootstrap_3_3_5_push_area_js.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;vendor_bootstraptree_js.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;bootstrap_3_3_5_annuaire_modal_js.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;bootstrap_3_3_5_catalogue_fiche_element_formation_js.js"></script>        <div class="device-xs visible-xs"></div>
+        <div class="device-sm visible-sm"></div>
+        <div class="device-md visible-md"></div>
+        <div class="device-lg visible-lg"></div>
+
+    </body>
+</html>

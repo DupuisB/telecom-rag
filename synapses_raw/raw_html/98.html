@@ -1,0 +1,1524 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <meta name="description" content="SynapseS">
+        <meta name="author" content="">
+        <script type="text/javascript">
+            var es6 = true;
+            try { eval("var foo = (x)=>x+1"); }
+            catch (e) { es6 = false; }
+
+            if (!es6) {
+                var script = document.createElement('script');
+                script.src = "/assets/app_polyfills.js";
+                script.setAttribute("type", "text/javascript");
+                document.head.appendChild(script);
+            }
+        </script>
+        <title>SynapseS</title><link href="&#x2F;assets&#x2F;vendor&#x2F;fontawesome&#x2F;css&#x2F;fontawesome.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;vendor&#x2F;bootstrap&#x2F;css&#x2F;bootstrap.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;app_base.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_calendrier_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_i18n_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_navigation_menu_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_push-area_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;vendor&#x2F;bootstraptree&#x2F;bootstrap-tree.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_annuaire_modal_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_catalogue_diplome_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;app_base_print.css" media="print" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;favicon.png" rel="icon" sizes="16x16" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;favicon.ico" rel="icon" type="image&#x2F;x-icon&#x20;">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;apple-touch-icon.png" rel="apple-touch-icon" sizes="76x76" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;apple-touch-icon-iphone.png" rel="apple-touch-icon" sizes="76x76" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;apple-touch-icon-iphone-retina.png" rel="apple-touch-icon" sizes="120x120" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;apple-touch-icon-ipad.png" rel="apple-touch-icon" sizes="76x76" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;apple-touch-icon-ipad-retina.png" rel="apple-touch-icon" sizes="152x152" type="image&#x2F;png"><script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;app_base_vendor.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;vendor&#x2F;jquery-migrate&#x2F;jquery-migrate.min.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;app_base.js"></script>    </head>
+
+    <body>
+        <div class="container header">
+            <!-- topbar -->
+            <div class="header-topbar">
+                <div class="logo-container">
+    <a href="/" title="Accueil">
+        <img alt="logo" src="/assets/bootstrap/3.3.5/images/logo_telecomparistech_sm.png" />
+    </a>
+</div>
+
+                <div class="banner-controls-container">
+                    <div class="top-banner-controls-container">
+                        <nav>
+                            <ul id="header-navigation-menu" class=""></ul>                        </nav>
+                    </div>
+
+                    <div class="bottom-banner-controls-container">
+                        <div class="language-switch-container">
+                            <ul id="language-switch">
+	<li class="dropdown">
+    	        <a class="dropdown-toggle" data-toggle="dropdown" href="#"> <span
+			class="lang-label" data-language="fr_FR">FR</span>
+            <span class="flag-icon flag-icon-fr"> </span>
+            <i class="fa fa-caret-down dropdown-toggle"></i>
+	</a>
+                <ul class="dropdown-menu">
+                                                            <li><a href="#" class="select-language"
+				data-language="en_US">
+                        <span class="flag-icon flag-icon-gb"> </span>
+                        English                    </a></li>
+                        </ul>
+	</li>
+</ul>
+<script>
+    var language = $(".lang-label").data("language");
+    i18next.use(i18nextXHRBackend).init({
+        ns: [language],
+        defaultNS: language,
+        nsSeparator: false,
+        keySeparator: false,
+        backend: {
+            loadPath: '/assets/i18n/' + language + '.json',
+        },
+        debug: false
+    });
+</script>
+<link href="&#x2F;assets&#x2F;vendor&#x2F;fontawesome&#x2F;css&#x2F;fontawesome.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;vendor&#x2F;bootstrap&#x2F;css&#x2F;bootstrap.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;app_base.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_calendrier_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_i18n_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_navigation_menu_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_push-area_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;vendor&#x2F;bootstraptree&#x2F;bootstrap-tree.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_annuaire_modal_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_catalogue_diplome_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;app_base_print.css" media="print" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;favicon.png" rel="icon" sizes="16x16" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;favicon.ico" rel="icon" type="image&#x2F;x-icon&#x20;">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;apple-touch-icon.png" rel="apple-touch-icon" sizes="76x76" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;apple-touch-icon-iphone.png" rel="apple-touch-icon" sizes="76x76" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;apple-touch-icon-iphone-retina.png" rel="apple-touch-icon" sizes="120x120" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;apple-touch-icon-ipad.png" rel="apple-touch-icon" sizes="76x76" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;bootstrap&#x2F;3.3.5&#x2F;images&#x2F;apple-touch-icon-ipad-retina.png" rel="apple-touch-icon" sizes="152x152" type="image&#x2F;png">
+<link href="&#x2F;assets&#x2F;vendor&#x2F;flag-icon-css&#x2F;css&#x2F;flag-icon.min.css" rel="stylesheet" type="text&#x2F;css">                        </div>
+                    </div>
+
+                    <!-- logout on small screens -->
+                    <ul id="connection-form-container" class="nav navbar-nav">
+                        <li id="dropdown-authentication-menu" class="dropdown dropdown-authentication-menu">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+        <i class="fa fa-user fa-lg hidden-sm hidden-md hidden-lg"></i>
+        <span class="hidden-xs">Connexion</span>
+        <i class="fa fa-caret-down"></i>
+    </a>
+    <ul id="dropdown-authentication-menu-content" class="dropdown-menu">
+        <li>
+            <div class="row">
+                <div class="col-md-12">
+                    <header>Utiliser mon compte école</header>
+                                        <a href="/login?type=Shib">
+                        <button class="btn btn-success btn-block">
+                            Je me connecte                        </button>
+                    </a>
+                                        <hr>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <header>Utiliser un compte provisoire</header>
+                </div>
+                <form id="login-form">
+                    <div class="col-md-12 form">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="identifier-area"
+                                   data-minlength="5" pattern="^[a-zA-Z0-9._\-@]+$"
+                                   placeholder="Nom d'utilisateur"
+                                   required="required">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" id="credential-area"
+                                   placeholder="Mot de passe"
+                                   required="required">
+                        </div>
+                        <div class="form-group">
+                            <button id="btn-login-provisoire" type="submit" class="btn btn-default btn-block">Valider</button>
+                        </div>
+                        <div class="alert alert-danger hidden" role="alert"
+                             id="login-error-message-container">
+                            <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+                            <span class="sr-only">Error:</span> <span id="login-error-message"></span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </li>
+    </ul>
+</li>
+                    </ul>
+
+                    <div class="header-content-responsive hidden-sm hidden-md hidden-lg">
+                        <div class="collapsed-button-container">
+                            <button type="button" class="navbar-toggle pull-right"
+                                    data-toggle="collapse" data-target="#main-navigation-menu"
+                                    aria-expanded="false" aria-controls="navbar">
+                                <i class="fa fa-bars fa-lg"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- banner with navigation -->
+            <div class="banner">
+                <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="logo-container">
+    <a href="/" title="Accueil">
+        <img alt="logo" src="/assets/bootstrap/3.3.5/images/logo_telecomparistech_lg.png" />
+    </a>
+</div>
+
+                            <div class="navbar-collapse collapse" id="main-navigation-menu">
+                                <div class="col-md-9 col-sm-12">
+                                    <ul class="nav navbar-nav">
+                                        <li class=""><a href="/" >Accueil</a></li><li class="dropdown"><a href="/catalogue" class="dropdown-toggle" data-toggle="dropdown">Les formations<i class="fa fa-caret-down"></i></a><ul  class="dropdown-menu"><li class="dropdown-submenu"><a href="/catalogue/2024-2025" ><b>Catalogue 2024 - 2025</b></a><ul  class="dropdown-menu"><li class="dropdown-submenu"><a href="/catalogue/2024-2025/type/Ing%25C3%25A9nieur" >Ingénieur</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2024-2025/diplome/4/ING-diplome-d-ingenieur" >ING&nbsp;-&nbsp;Diplôme d'ingénieur</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2024-2025/type/Master" >Master</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2024-2025/diplome/2490/M1DATAAI-master-m1-data-and-artificial-intelligence" >M1DATAAI&nbsp;-&nbsp;Master M1 - Data and Artificial Intelligence</a></li><li class=""><a href="/catalogue/2024-2025/diplome/2489/M1IGD-master-m1-interaction-graphic-design" >M1IGD&nbsp;-&nbsp;Master M1 - Interaction, Graphic & Design</a></li><li class=""><a href="/catalogue/2024-2025/diplome/2064/M1REDESI-master-m1-recherche-en-design" >M1REDESI&nbsp;-&nbsp;Master M1 - recherche en Design</a></li><li class=""><a href="/catalogue/2024-2025/diplome/2083/M2DATAAI-master-m2-data-artificial-intelligence" >M2DATAAI&nbsp;-&nbsp;Master M2 - Data & Artificial Intelligence</a></li><li class=""><a href="/catalogue/2024-2025/diplome/1327/M2ICS-master-m2-integration-circuits-and-systems" >M2ICS&nbsp;-&nbsp;Master M2 - Integration, Circuits and Systems</a></li><li class=""><a href="/catalogue/2024-2025/diplome/26/M2IGD-master-m2-interaction-graphic-design" >M2IGD&nbsp;-&nbsp;Master M2 - Interaction, Graphic & Design</a></li><li class=""><a href="/catalogue/2024-2025/diplome/42/M2IREN-master-m2-industries-de-reseau-et-economie-numerique" >M2IREN&nbsp;-&nbsp;Master M2 - Industries de Réseau et Economie Numérique</a></li><li class=""><a href="/catalogue/2024-2025/diplome/2065/M2MICAS-master-m2-information-processing-machine-learning-communications-and-security" >M2MICAS&nbsp;-&nbsp;Master M2- Information processing: machine learning, communications and security</a></li><li class=""><a href="/catalogue/2024-2025/diplome/38/M2MVA-master-m2-mathematiques-vision-apprentissage" >M2MVA&nbsp;-&nbsp;Master M2 - Mathématiques, Vision, Apprentissage</a></li><li class=""><a href="/catalogue/2024-2025/diplome/2491/M2RECHDESI-master-m2-recherche-en-design" >M2RECHDESI&nbsp;-&nbsp;Master M2 - Recherche en Design</a></li><li class=""><a href="/catalogue/2024-2025/diplome/1857/M2SETI-master-m2-systemes-embarques-et-traitement-de-l-information" >M2SETI&nbsp;-&nbsp;Master M2 - Systèmes embarqués et traitement de l'information</a></li><li class=""><a href="/catalogue/2024-2025/diplome/2492/PHDCOMPSC-phd-track-computer-science" >PHDCOMPSC&nbsp;-&nbsp;PhD Track - Computer Science</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2024-2025/type/Mast%25C3%25A8re+sp%25C3%25A9cialis%25C3%25A9" >Mastère spécialisé</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2024-2025/diplome/61/ADE-architecte-digital-d-entreprise" >ADE&nbsp;-&nbsp;Architecte Digital d'Entreprise</a></li><li class=""><a href="/catalogue/2024-2025/diplome/60/ARC-architecte-reseaux-et-cybersecurite" >ARC&nbsp;-&nbsp;Architecte Réseaux et Cybersécurité</a></li><li class=""><a href="/catalogue/2024-2025/diplome/62/BGD-big-data-gestion-et-analyse-des-donnees-massives" >BGD&nbsp;-&nbsp;Big Data : gestion et analyse des données massives</a></li><li class=""><a href="/catalogue/2024-2025/diplome/78/CYBER2-cybersecurite-et-cyberdefense" >CYBER2&nbsp;-&nbsp;Cybersécurité et Cyberdéfense</a></li><li class=""><a href="/catalogue/2024-2025/diplome/65/ECRSI-expert-cybersecurite-des-reseaux-et-des-systemes-d-information" >ECRSI&nbsp;-&nbsp;Expert cybersécurité des réseaux et des systèmes d'information</a></li><li class=""><a href="/catalogue/2024-2025/diplome/1996/IA-ia-intelligence-artificielle" >IA&nbsp;-&nbsp;IA : Intelligence Artificielle</a></li><li class=""><a href="/catalogue/2024-2025/diplome/1846/SMOB-smart-mobility-transformation-numerique-des-systemes-de-mobilite" >SMOB&nbsp;-&nbsp;Smart Mobility - Transformation Numérique des Systèmes de Mobilité</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2024-2025/type/Programme+d%2527%25C3%25A9change" >Programme d'échange</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2024-2025/diplome/1/PEI-echange-international-non-diplomant" >PEI&nbsp;-&nbsp;Echange international non diplomant</a></li></ul></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2023-2024" >Catalogue 2023 - 2024</a><ul  class="dropdown-menu"><li class="dropdown-submenu"><a href="/catalogue/2023-2024/type/Certificat+d%2527Etudes+Sp%25C3%25A9cialis%25C3%25A9es" >Certificat d'Etudes Spécialisées</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2023-2024/diplome/2179/CESCDRS-ces-cybersecurite-des-donnees-reseaux-et-systemes" >CESCDRS&nbsp;-&nbsp;CES Cybersécurité des données, réseaux et systèmes</a></li><li class=""><a href="/catalogue/2023-2024/diplome/2276/CESCDRS-INTRA-ces-cybersecurite-des-donnees-reseaux-et-systemes-intra" >CESCDRS-INTRA&nbsp;-&nbsp;CES Cybersécurité des données, réseaux et systèmes-INTRA</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2023-2024/type/Ing%25C3%25A9nieur" >Ingénieur</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2023-2024/diplome/4/ING-diplome-d-ingenieur" >ING&nbsp;-&nbsp;Diplôme d'ingénieur</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2023-2024/type/Master" >Master</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2023-2024/diplome/2083/DATA-AI-data-artificial-intelligence" >DATA AI&nbsp;-&nbsp;Data & Artificial Intelligence</a></li><li class=""><a href="/catalogue/2023-2024/diplome/2064/DESIGN-master-recherche-en-design" >DESIGN&nbsp;-&nbsp;Master recherche en Design</a></li><li class=""><a href="/catalogue/2023-2024/diplome/1327/ICS-integration-circuits-systems" >ICS&nbsp;-&nbsp;Integration Circuits Systems</a></li><li class=""><a href="/catalogue/2023-2024/diplome/26/IGD-interaction-graphic-design" >IGD&nbsp;-&nbsp;Interaction, Graphic & Design</a></li><li class=""><a href="/catalogue/2023-2024/diplome/42/IREN-industries-de-reseau-et-economie-numerique-iren" >IREN&nbsp;-&nbsp;Industries de réseau et economie numérique (IREN)</a></li><li class=""><a href="/catalogue/2023-2024/diplome/2065/MICAS-information-processing-machine-learning-communications-and-security" >MICAS&nbsp;-&nbsp;Information processing: machine learning, communications and security</a></li><li class=""><a href="/catalogue/2023-2024/diplome/38/MVA-mathematiques-vision-apprentissage" >MVA&nbsp;-&nbsp;Mathématiques, Vision, Apprentissage</a></li><li class=""><a href="/catalogue/2023-2024/diplome/1857/SETI-systemes-embarques-et-traitement-de-l-information" >SETI&nbsp;-&nbsp;Systèmes embarqués et traitement de l'information</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2023-2024/type/Master+T%25C3%25A9l%25C3%25A9com+SudParis" >Master Télécom SudParis</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2023-2024/diplome/2067/CSN-informatique-pour-les-reseaux" >CSN&nbsp;-&nbsp;Informatique pour les Réseaux</a></li><li class=""><a href="/catalogue/2023-2024/diplome/2072/CYBER-M1-cybersecurity-m1" >Cyber M1&nbsp;-&nbsp;Cybersecurity M1</a></li><li class=""><a href="/catalogue/2023-2024/diplome/2073/CYBER-M2-cybersecurity-m2" >Cyber M2&nbsp;-&nbsp;Cybersecurity M2</a></li><li class=""><a href="/catalogue/2023-2024/diplome/2291/EECIP-electrical-engineering-for-communication-information-processing" >EECIP&nbsp;-&nbsp;Electrical Engineering for Communication Information Processing</a></li><li class=""><a href="/catalogue/2023-2024/diplome/40/MN-multimedia-networking-m2" >MN&nbsp;-&nbsp;Multimedia Networking M2</a></li><li class=""><a href="/catalogue/2023-2024/diplome/2076/PDS-M1-systemes-distribues-et-paralleles-m1" >PDS M1&nbsp;-&nbsp;Systèmes distribués et parallèles M1</a></li><li class=""><a href="/catalogue/2023-2024/diplome/2077/PDS-M2-systemes-distribues-et-paralleles-m2" >PDS M2&nbsp;-&nbsp;Systèmes distribués et parallèles M2</a></li><li class=""><a href="/catalogue/2023-2024/diplome/2069/TRIED-M2-traitement-de-l-information-exploitation-des-donnees-master-2" >TRIED M2&nbsp;-&nbsp;Traitement de l'Information & Exploitation des Données Master 2</a></li><li class=""><a href="/catalogue/2023-2024/diplome/2070/VAR-virtual-augmented-reality-m2" >VAR&nbsp;-&nbsp;Virtual & Augmented Reality M2</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2023-2024/type/Mast%25C3%25A8re+sp%25C3%25A9cialis%25C3%25A9" >Mastère spécialisé</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2023-2024/diplome/61/ADE-architecte-digital-d-entreprise" >ADE&nbsp;-&nbsp;Architecte Digital d'Entreprise</a></li><li class=""><a href="/catalogue/2023-2024/diplome/60/ARC-architecte-reseaux-et-cybersecurite" >ARC&nbsp;-&nbsp;Architecte Réseaux et Cybersécurité</a></li><li class=""><a href="/catalogue/2023-2024/diplome/62/BGD-big-data-gestion-et-analyse-des-donnees-massives" >BGD&nbsp;-&nbsp;Big Data : gestion et analyse des données massives</a></li><li class=""><a href="/catalogue/2023-2024/diplome/65/CARC-conception-architecture-de-reseaux-et-cybersecurite" >CARC&nbsp;-&nbsp;Conception, Architecture de Réseaux et Cybersécurité</a></li><li class=""><a href="/catalogue/2023-2024/diplome/64/CPD-concepteur-de-projet-digital" >CPD&nbsp;-&nbsp;Concepteur de Projet Digital</a></li><li class=""><a href="/catalogue/2023-2024/diplome/78/CYBER2-cybersecurite-et-cyberdefense" >CYBER2&nbsp;-&nbsp;Cybersécurité et Cyberdéfense</a></li><li class=""><a href="/catalogue/2023-2024/diplome/1996/IA-ia-intelligence-artificielle" >IA&nbsp;-&nbsp;IA : Intelligence Artificielle</a></li><li class=""><a href="/catalogue/2023-2024/diplome/72/MSIR-management-des-systemes-d-information-en-reseaux" >MSIR&nbsp;-&nbsp;Management des systèmes d'information en réseaux</a></li><li class=""><a href="/catalogue/2023-2024/diplome/1846/SMOB-smart-mobility-transformation-numerique-des-systemes-de-mobilite" >SMOB&nbsp;-&nbsp;Smart Mobility - Transformation Numérique des Systèmes de Mobilité</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2023-2024/type/Programme+d%2527%25C3%25A9change" >Programme d'échange</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2023-2024/diplome/1/PEI-echange-international-non-diplomant" >PEI&nbsp;-&nbsp;Echange international non diplomant</a></li></ul></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2022-2023" >Catalogue 2022 - 2023</a><ul  class="dropdown-menu"><li class="dropdown-submenu"><a href="/catalogue/2022-2023/type/Ing%25C3%25A9nieur" >Ingénieur</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2022-2023/diplome/4/ING-diplome-d-ingenieur" >ING&nbsp;-&nbsp;Diplôme d'ingénieur</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2022-2023/type/Master" >Master</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2022-2023/diplome/2083/DATA-AI-data-artificial-intelligence" >DATA AI&nbsp;-&nbsp;Data & Artificial Intelligence</a></li><li class=""><a href="/catalogue/2022-2023/diplome/2064/DESIGN-master-recherche-en-design" >DESIGN&nbsp;-&nbsp;Master recherche en Design</a></li><li class=""><a href="/catalogue/2022-2023/diplome/1327/ICS-integration-circuits-systems" >ICS&nbsp;-&nbsp;Integration Circuits Systems</a></li><li class=""><a href="/catalogue/2022-2023/diplome/26/IGD-interaction-graphic-design" >IGD&nbsp;-&nbsp;Interaction, Graphic & Design</a></li><li class=""><a href="/catalogue/2022-2023/diplome/42/IREN-industries-de-reseau-et-economie-numerique-iren" >IREN&nbsp;-&nbsp;Industries de réseau et economie numérique (IREN)</a></li><li class=""><a href="/catalogue/2022-2023/diplome/2065/MICAS-information-processing-machine-learning-communications-and-security" >MICAS&nbsp;-&nbsp;Information processing: machine learning, communications and security</a></li><li class=""><a href="/catalogue/2022-2023/diplome/38/MVA-mathematiques-vision-apprentissage" >MVA&nbsp;-&nbsp;Mathématiques, Vision, Apprentissage</a></li><li class=""><a href="/catalogue/2022-2023/diplome/1857/SETI-systemes-embarques-et-traitement-de-l-information" >SETI&nbsp;-&nbsp;Systèmes embarqués et traitement de l'information</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2022-2023/type/Master+T%25C3%25A9l%25C3%25A9com+SudParis" >Master Télécom SudParis</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2022-2023/diplome/2073/CYBER-M2-cybersecurity-m2" >Cyber M2&nbsp;-&nbsp;Cybersecurity M2</a></li><li class=""><a href="/catalogue/2022-2023/diplome/40/MN-multimedia-networking-m2" >MN&nbsp;-&nbsp;Multimedia Networking M2</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2022-2023/type/Mast%25C3%25A8re+sp%25C3%25A9cialis%25C3%25A9" >Mastère spécialisé</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2022-2023/diplome/61/ADE-architecte-digital-d-entreprise" >ADE&nbsp;-&nbsp;Architecte Digital d'Entreprise</a></li><li class=""><a href="/catalogue/2022-2023/diplome/60/ARC-architecte-reseaux-et-cybersecurite" >ARC&nbsp;-&nbsp;Architecte Réseaux et Cybersécurité</a></li><li class=""><a href="/catalogue/2022-2023/diplome/62/BGD-big-data-gestion-et-analyse-des-donnees-massives" >BGD&nbsp;-&nbsp;Big Data : gestion et analyse des données massives</a></li><li class=""><a href="/catalogue/2022-2023/diplome/65/CARC-conception-et-architecture-de-reseaux-et-cybersecurite" >CARC&nbsp;-&nbsp;Conception et Architecture de Réseaux et Cybersécurité</a></li><li class=""><a href="/catalogue/2022-2023/diplome/64/CPD-concepteur-de-projet-digital" >CPD&nbsp;-&nbsp;Concepteur de Projet Digital</a></li><li class=""><a href="/catalogue/2022-2023/diplome/78/CYBER2-cybersecurite-et-cyberdefense" >CYBER2&nbsp;-&nbsp;Cybersécurité et Cyberdéfense</a></li><li class=""><a href="/catalogue/2022-2023/diplome/1996/IA-ia-intelligence-artificielle" >IA&nbsp;-&nbsp;IA : Intelligence Artificielle</a></li><li class=""><a href="/catalogue/2022-2023/diplome/72/MSIR-management-des-systemes-d-information-en-reseaux" >MSIR&nbsp;-&nbsp;Management des systèmes d'information en réseaux</a></li><li class=""><a href="/catalogue/2022-2023/diplome/1846/SMOB-smart-mobility-transformation-numerique-des-systemes-de-mobilite" >SMOB&nbsp;-&nbsp;Smart Mobility - Transformation Numérique des Systèmes de Mobilité</a></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2022-2023/type/Programme+d%2527%25C3%25A9change" >Programme d'échange</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2022-2023/diplome/1/PEI-echange-international-non-diplomant" >PEI&nbsp;-&nbsp;Echange international non diplomant</a></li></ul></li></ul></li><li class="dropdown-submenu"><a href="/catalogue/2021-2022" >Catalogue 2021 - 2022</a><ul  class="dropdown-menu"><li class="dropdown-submenu"><a href="/catalogue/2021-2022/type/Master" >Master</a><ul  class="dropdown-menu"><li class=""><a href="/catalogue/2021-2022/diplome/2064/DESIGN-master-recherche-en-design" >DESIGN&nbsp;-&nbsp;Master recherche en Design</a></li></ul></li></ul></li></ul></li>                                    </ul>
+                                </div>
+                            </div> <!-- navbar-collapse -->
+
+                        </div> <!-- row -->
+                    </div> <!-- container-fluid -->
+                </nav> <!--/.nav-collapse -->
+            </div>
+            <!-- Version SynapseS  -->
+            <div id="app-version-label">v2.11.0 (5705)</div>
+            <div id="breadcrumbs">
+                <ul>
+            <li class="item root-item">
+            <span>Accueil</span>
+        </li>
+    </ul>
+            </div>
+        </div>
+
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                                        <div id="content-wrapper" class="col-md-12">
+                        <div id="flash-messages" class="flash-messages" class="row">
+</div>
+<script type="text/javascript">
+    setTimeout(function() {
+        $('.flash-messages').find('ul').fadeOut(3000, function() {
+            $('.flash-messages').find('ul').remove();
+        });
+    }, 9000);
+</script>                        <link href="&#x2F;assets&#x2F;vendor&#x2F;fontawesome&#x2F;css&#x2F;fontawesome.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;vendor&#x2F;bootstrap&#x2F;css&#x2F;bootstrap.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;app_base.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_calendrier_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_i18n_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_navigation_menu_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_push-area_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;vendor&#x2F;bootstraptree&#x2F;bootstrap-tree.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_annuaire_modal_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;bootstrap_3_3_5_catalogue_diplome_css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;vendor&#x2F;select2&#x2F;dist&#x2F;css&#x2F;select2.min.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;assets&#x2F;vendor&#x2F;datatables&#x2F;media&#x2F;css&#x2F;dataTables.bootstrap.min.css" media="screen" rel="stylesheet" type="text&#x2F;css"><script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;vendor&#x2F;select2&#x2F;dist&#x2F;js&#x2F;select2.min.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;vendor&#x2F;datatables&#x2F;media&#x2F;js&#x2F;jquery.dataTables.min.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;vendor&#x2F;datatables&#x2F;media&#x2F;js&#x2F;dataTables.bootstrap.min.js"></script><script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;bootstrap_3_3_5_i18n_js.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;bootstrap_3_3_5_push_area_js.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;vendor_bootstraptree_js.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;bootstrap_3_3_5_annuaire_modal_js.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;bootstrap_3_3_5_catalogue_fiche_element_formation_js.js"></script><header>
+    <h1>
+        <a href="/catalogue/2024-2025">
+            <i class="fa fa-level-up btn"></i>
+        </a>
+        <span class="type-objet-fiche">Master</span>&nbsp;-&nbsp;<span class="titre">Master M1 - Interaction, Graphic & Design</span>    </h1>
+
+    <h2 class="subtitle"></h2>
+</header>
+<script type = 'text/javascript'>
+    $(function() {
+        var nbItems = $('#breadcrumbs ul li').length;
+        var firstItem, secondItem;
+        if (nbItems == 1) {
+            firstItem = '<li class="item level-1"><span><a href="/catalogue"><span>'+$('.navbar-nav [href="/catalogue"]').text()+'</span></a></li>';
+            secondItem = '<li class="item level-2"><span>'+ $('h1 .type-objet-fiche').html() +'</span></li>';
+            var currentItem = '<li class="item current-item"><span>'+ $('h1 .code').text() + ' ' + $('h1 .titre').text() +'</span></li>';
+            $('#breadcrumbs ul').html(firstItem + secondItem + currentItem);
+        }
+            });
+</script>
+<main id="main-content-fiche-diplome">
+    <section class="first-paragraph">
+<h2 class="titre_paragraphe">Objectif</h2>
+
+<p>&nbsp;</p>
+<p>Pour toute information concernant ce Master, vous pouvez consulter :</p>
+<p><a href="https://www.ip-paris.fr/master-interaction-graphics-design/" target="_blank" rel="noopener">https://www.ip-paris.fr/master-interaction-graphics-design/&nbsp;</a></p>
+<p><a tabindex="-1" href="https://perso.telecom-paristech.fr/elc/igd/" target="_blank" rel="noopener noreferrer" aria-label="perso.telecom-paristech.fr/elc/igd">perso.telecom-paristech.fr/elc/igd</a></p></section>
+<ul role="tablist" class="nav nav-tabs">
+    
+        <li role="presentation" class="active">
+		<a aria-expanded="true"
+		aria-controls="contenu" data-toggle="tab" role="tab"
+		id="contenu-tab" href="#contenu">Contenu</a>
+	</li>
+    
+        <li role="presentation" class="">
+		<a aria-expanded="false"
+		aria-controls="admission" data-toggle="tab" role="tab"
+		id="admission-tab" href="#admission">Admission</a>
+	</li>
+    
+        <li role="presentation" class="">
+		<a aria-expanded="false"
+		aria-controls="finalites" data-toggle="tab" role="tab"
+		id="finalites-tab" href="#finalites">Finalités</a>
+	</li>
+    </ul>
+
+<div class="tab-content" id="tab-content">
+            <div aria-labelledby="contenu-tab" id="contenu" class="tab-pane fade active in" role="tabpanel">
+                </div>
+                <div aria-labelledby="admission-tab" id="admission" class="tab-pane fade in" role="tabpanel">
+                </div>
+                <div aria-labelledby="finalites-tab" id="finalites" class="tab-pane fade in" role="tabpanel">
+        <h3 class="tab-paragraph-title">compétences acquises</h3><p>Pour toute information concernant ce Master, vous pouvez consulter :</p>
+<p><a href="https://www.ip-paris.fr/master-interaction-graphics-design/" target="_blank" rel="noopener">https://www.ip-paris.fr/master-interaction-graphics-design/&nbsp;</a></p>
+<p><a tabindex="-1" href="https://perso.telecom-paristech.fr/elc/igd/" target="_blank" rel="noopener noreferrer" aria-label="perso.telecom-paristech.fr/elc/igd">perso.telecom-paristech.fr/elc/igd</a></p><h3 class="tab-paragraph-title">débouchés</h3><p>This program leads to application fields such as interaction design, computer-aided design, augmented and virtual reality, video games, special effects, visualization, and mobile and web computing. The program will allow students to apply for positions in the industry, especially in research and development labs, and also prepare students for research. Students interested in doing a PhD will benefit from the vast scientific environment within the Institut Polytechnique de Paris and world-renowned research labs in France (INRIA, CNRS, CEA, etc.).</p>        </div>
+        </div>
+<section class="bloc">
+  <h2 class="title-bloc-parcours">
+    Parcours</h2><div class="tree well">
+    <ul role="tree" class="tree-indent">
+        <li class="parent_li" role="treeitem"><i class="fa fa-caret-square-o-right"></i> <span class="code-parcours label label-parcours" title="M1IGDM1">M1IGDM1</span> <a href="/catalogue/2024-2025/parcours/5218/M1IGDM1-master-1-interaction-graphic-design?from=D2489">Master 1 - Interaction, Graphic & Design</a><ul class="tree-indent" role="group"><li role="treeitem"><i class="fa fa-caret-square-o-right"></i>&nbsp;<span class="code-parcours label label-parcours" title="Choix de Cours INTERACTION M1">Choix de Cours INTERACTION M1</span> &nbsp;Choix de cours dans le bloc Interaction M1<ul class="list-codes-ues tree-indent" role="group"><li role="treeitem"><span class="ue label label-ue">CSC_5ID07_PS</span> <a href="/catalogue/2024-2025/ue/2626/CSC-5ID07-PS-evaluation-of-interactive-systems-d4inh04?from=D2489">Evaluation of Interactive Systems ( D4INH04)</a></li><li role="treeitem"><span class="ue label label-ue">CSC_5ID13_PS</span> <a href="/catalogue/2024-2025/ue/2628/CSC-5ID13-PS-groupware-and-collaborative-work-d4inh26?from=D2489">Groupware and Collaborative Work (D4INH26)</a></li><li role="treeitem"><span class="ue label label-ue">CSC_4IG05_TP</span> <a href="/catalogue/2024-2025/ue/2158/CSC-4IG05-TP-interaction-homme-machine-partie-1?from=D2489">Interaction homme-machine (partie 1)</a></li><li role="treeitem"><span class="ue label label-ue">CSC_4IG06_TP</span> <a href="/catalogue/2024-2025/ue/2227/CSC-4IG06-TP-interaction-homme-machine-partie-2?from=D2489">Interaction homme-machine (partie 2)</a></li><li role="treeitem"><span class="ue label label-ue">CSC_4IG07_TP</span> <a href="/catalogue/2024-2025/ue/2160/CSC-4IG07-TP-visualisation?from=D2489">Visualisation</a></li><li role="treeitem"><span class="ue label label-ue">TSP-CSC5061</span> <a href="/catalogue/2024-2025/ue/15375/TSP-CSC5061-multiplayer-online-games-development?from=D2489">Multiplayer Online Games Development</a></li><li role="treeitem"><span class="ue label label-ue">CSC_5ID10_TP</span> <a href="/catalogue/2024-2025/ue/2627/CSC-5ID10-TP-gestural-and-mobile-interaction-d4inh22?from=D2489">Gestural and Mobile Interaction (D4INH22)</a></li><li role="treeitem"><span class="ue label label-ue">CSC_5ID02_PS</span> <a href="/catalogue/2024-2025/ue/15344/CSC-5ID02-PS-fundamentals-of-hci-1?from=D2489">Fundamentals of HCI 1</a></li><li role="treeitem"><span class="ue label label-ue">CSC_5ID03_PS</span> <a href="/catalogue/2024-2025/ue/15345/CSC-5ID03-PS-fundamentals-of-hci-2?from=D2489">Fundamentals of HCI 2</a></li><li role="treeitem"><span class="ue label label-ue">CSC_5ID08_TP</span> <a href="/catalogue/2024-2025/ue/2625/CSC-5ID08-TP-advanced-programming-of-interactive-systems-d4inh09?from=D2489">Advanced Programming of Interactive Systems (D4INH09)</a></li><li role="treeitem"><span class="ue label label-ue">CSC_4IG02_TP</span> <a href="/catalogue/2024-2025/ue/2154/CSC-4IG02-TP-interaction-application-development-desktop-mobile-and-web?from=D2489">Interaction Application Development: Desktop, Mobile, and Web</a></li><li role="treeitem"><span class="ue label label-ue">CSC_52085_EP</span> <a href="/catalogue/2024-2025/ue/25009/CSC-52085-EP-l-ia-en-temps-reel-dans-les-jeux-video-actions-decisives-collaboratives?from=D2489">L'IA en temps réel dans les jeux vidéo :  actions décisives & collaboratives</a></li></ul></li><li role="treeitem"><i class="fa fa-caret-square-o-right"></i>&nbsp;<span class="code-parcours label label-parcours" title="Choix de cours DESIGN M1">Choix de cours DESIGN M1</span> &nbsp;Choix de cours Design M1<ul class="list-codes-ues tree-indent" role="group"><li role="treeitem"><span class="ue label label-ue">HSS_0EL41_TP</span> <a href="/catalogue/2024-2025/ue/13604/HSS-0EL41-TP-making-physical-representation-of-data?from=D2489">Making Physical Representation of Data</a></li><li role="treeitem"><span class="ue label label-ue">HSS_0EL42_TP</span> <a href="/catalogue/2024-2025/ue/2605/HSS-0EL42-TP-quant-ux-quantitative-analysis-of-user-experience-data?from=D2489">Quant UX - Quantitative analysis of User Experience Data</a></li><li role="treeitem"><span class="ue label label-ue">MOB_0AT41_TP</span> <a href="/catalogue/2024-2025/ue/12356/MOB-0AT41-TP-user-experience-design-sprint-telecom-paris-palaiseau?from=D2489">User Experience Design sprint (Télécom Paris - Palaiseau)</a></li><li role="treeitem"><span class="ue label label-ue">HSS_5DE13_TP</span> <a href="/catalogue/2024-2025/ue/15253/HSS-5DE13-TP-workshop-research-design-cognition?from=D2489">Workshop Research Design + Cognition</a></li><li role="treeitem"><span class="ue label label-ue">HSS_5DE14_TP</span> <a href="/catalogue/2024-2025/ue/15254/HSS-5DE14-TP-workshop-research-design-informatics?from=D2489">Workshop Research Design + Informatics</a></li><li role="treeitem"><span class="ue label label-ue">HSS_5DE15_TP</span> <a href="/catalogue/2024-2025/ue/15255/HSS-5DE15-TP-research-seminar-design?from=D2489">Research Seminar Design</a></li><li role="treeitem"><span class="ue label label-ue">IME_5IN01_TP</span> <a href="/catalogue/2024-2025/ue/11134/IME-5IN01-TP-design-user-experience?from=D2489">Design User Experience</a></li><li role="treeitem"><span class="ue label label-ue">IME_5IN02_TP</span> <a href="/catalogue/2024-2025/ue/11135/IME-5IN02-TP-data-visualisation?from=D2489">Data Visualisation</a></li></ul></li><li role="treeitem"><i class="fa fa-caret-square-o-right"></i>&nbsp;<span class="code-parcours label label-parcours" title="Choix de cours MIXED REALITY">Choix de cours MIXED REALITY</span> &nbsp;Choix de cours dans le block Mixed Reality M1<ul class="list-codes-ues tree-indent" role="group"><li role="treeitem"><span class="ue label label-ue">CSC_5ID05_PS</span> <a href="/catalogue/2024-2025/ue/15343/CSC-5ID05-PS-fundamentals-of-extended-reality?from=D2489">Fundamentals of Extended Reality</a></li><li role="treeitem"><span class="ue label label-ue">CSC_5ID06_PS</span> <a href="/catalogue/2024-2025/ue/19594/CSC-5ID06-PS-advanced-immersive-interactions?from=D2489">Advanced Immersive Interactions</a></li><li role="treeitem"><span class="ue label label-ue">CSC_5ID12_PS</span> <a href="/catalogue/2024-2025/ue/2630/CSC-5ID12-PS-virtual-humans-d4inh25?from=D2489">Virtual Humans (D4INH25)</a></li><li role="treeitem"><span class="ue label label-ue">CSC_4ID14_PS</span> <a href="/catalogue/2024-2025/ue/2629/CSC-4ID14-PS-mixed-reality-and-tangible-interaction-d4inh29?from=D2489">Mixed Reality and Tangible Interaction (D4INH29)</a></li><li role="treeitem"><span class="ue label label-ue">CSC_5IG01_TP</span> <a href="/catalogue/2024-2025/ue/15124/CSC-5IG01-TP-human-computer-interaction-for-mixed-reality?from=D2489">Human-Computer Interaction for Mixed Reality</a></li></ul></li><li role="treeitem"><i class="fa fa-caret-square-o-right"></i>&nbsp;<span class="code-parcours label label-parcours" title="Choix de cours GRAPHICS">Choix de cours GRAPHICS</span> &nbsp;Choix de cours dans le block Graphics M1<ul class="list-codes-ues tree-indent" role="group"><li role="treeitem"><span class="ue label label-ue">CSC_4IG03_TP</span> <a href="/catalogue/2024-2025/ue/2156/CSC-4IG03-TP-fundamentals-of-computer-graphics?from=D2489">Fundamentals of Computer Graphics</a></li><li role="treeitem"><span class="ue label label-ue">CSC_4IG01_TP</span> <a href="/catalogue/2024-2025/ue/2225/CSC-4IG01-TP-interactive-3d-application-development?from=D2489">Interactive 3D Application Development</a></li><li role="treeitem"><span class="ue label label-ue">CSC_5IM23_SU</span> <a href="/catalogue/2024-2025/ue/1998/CSC-5IM23-SU-ig3da-informatique-graphique-3d-avance?from=D2489">IG3DA Informatique graphique 3D avancé</a></li><li role="treeitem"><span class="ue label label-ue">CSC_51085_EP</span> <a href="/catalogue/2024-2025/ue/25010/CSC-51085-EP-animation-par-ordinateur?from=D2489">Animation par ordinateur</a></li><li role="treeitem"><span class="ue label label-ue">CSC_52062_EP</span> <a href="/catalogue/2024-2025/ue/25011/CSC-52062-EP-geometrie-algorithmique-de-la-theorie-aux-applications?from=D2489">Géométrie algorithmique : de la théorie aux applications</a></li><li role="treeitem"><span class="ue label label-ue">CSC_51073_EP</span> <a href="/catalogue/2024-2025/ue/25013/CSC-51073-EP-analyse-d-image-et-vision-par-ordinateur?from=D2489">Analyse d'Image et Vision par Ordinateur</a></li><li role="treeitem"><span class="ue label label-ue">CSC_51074_EP</span> <a href="/catalogue/2024-2025/ue/25014/CSC-51074-EP-representations-numeriques-et-analyse-de-formes?from=D2489">Représentations Numériques et Analyse de Formes</a></li><li role="treeitem"><span class="ue label label-ue">CSC_52084_EP</span> <a href="/catalogue/2024-2025/ue/25015/CSC-52084-EP-image-synthesis?from=D2489">Image Synthesis</a></li><li role="treeitem"><span class="ue label label-ue">CSC_53433_EP</span> <a href="/catalogue/2024-2025/ue/25016/CSC-53433-EP-smart-models-for-3d-creation-animation?from=D2489">Smart models for 3D creation & animation</a></li></ul></li><li role="treeitem"><i class="fa fa-caret-square-o-right"></i>&nbsp;<span class="code-parcours label label-parcours" title="Choix MULTIMODAL/ROBOTICS">Choix MULTIMODAL/ROBOTICS</span> &nbsp;Choix de cours dans le block Multimodal/Robotics<ul class="list-codes-ues tree-indent" role="group"><li role="treeitem"><span class="ue label label-ue">APM_5AI05_TA</span> <a href="/catalogue/2024-2025/ue/12265/APM-5AI05-TA-apprentissage-pour-la-robotique-rob311?from=D2489">Apprentissage pour la robotique (ROB311)</a></li><li role="treeitem"><span class="ue label label-ue">IA705</span> <a href="/catalogue/2024-2025/ue/15261/IA705-apprentissage-pour-la-robotique?from=D2489">Apprentissage pour la robotique</a></li><li role="treeitem"><span class="ue label label-ue">CSC_51054_EP</span> <a href="/catalogue/2024-2025/ue/24990/CSC-51054-EP-machine-and-deep-learning?from=D2489">Machine and Deep learning</a></li><li role="treeitem"><span class="ue label label-ue">CSC_52081_EP</span> <a href="/catalogue/2024-2025/ue/24998/CSC-52081-EP-apprentissage-automatique-avance-et-agents-autonomes?from=D2489">Apprentissage Automatique Avancé et Agents Autonomes</a></li></ul></li><li role="treeitem"><i class="fa fa-caret-square-o-right"></i>&nbsp;<span class="code-parcours label label-parcours" title="Choix de cours PROGRAMMING">Choix de cours PROGRAMMING</span> &nbsp;Choix de cours dans le block Programming<ul class="list-codes-ues tree-indent" role="group"><li role="treeitem"><span class="ue label label-ue">CSC_0EL11_TP</span> <a href="/catalogue/2024-2025/ue/2125/CSC-0EL11-TP-paradigmes-de-programmation-theorie-et-pratique?from=D2489">Paradigmes de programmation, théorie et pratique</a></li><li role="treeitem"><span class="ue label label-ue">CSC_0EL10_TP</span> <a href="/catalogue/2024-2025/ue/2133/CSC-0EL10-TP-web-development-developpement-web?from=D2489">Web Development/Développement WEB</a></li><li role="treeitem"><span class="ue label label-ue">MN912</span> <a href="/catalogue/2024-2025/ue/2583/MN912-transport-des-flux-multimedias-principes-protocoles-et-techniques-avancees?from=D2489">Transport des flux multimédias : principes, protocoles et techniques avancées</a></li></ul></li><li role="treeitem"><i class="fa fa-caret-square-o-right"></i>&nbsp;<span class="code-parcours label label-parcours" title="Choix de cours Project M1">Choix de cours Project M1</span> &nbsp;Choix de cours dans le block Project M1<ul class="list-codes-ues tree-indent" role="group"><li role="treeitem"><span class="ue label label-ue">CSC_4IG08_TP</span> <a href="/catalogue/2024-2025/ue/2161/CSC-4IG08-TP-seminaire-de-projet?from=D2489">Séminaire de projet</a></li><li role="treeitem"><span class="ue label label-ue">PRJ_4ID22_TP</span> <a href="/catalogue/2024-2025/ue/15229/PRJ-4ID22-TP-projet-a?from=D2489">Projet a</a></li><li role="treeitem"><span class="ue label label-ue">PRJ_4ID23_TP</span> <a href="/catalogue/2024-2025/ue/15230/PRJ-4ID23-TP-projet-b?from=D2489">Projet b</a></li><li role="treeitem"><span class="ue label label-ue">PRJ_4ID24_TP</span> <a href="/catalogue/2024-2025/ue/17346/PRJ-4ID24-TP-projet-10-credits?from=D2489">Projet 10 crédits</a></li></ul></li><li role="treeitem">&nbsp;<span class="code-parcours label label-parcours" title="Stages PhD Track M1">Stages PhD Track M1</span> &nbsp;Stages PhD Track M1</li><li role="treeitem"><i class="fa fa-caret-square-o-right"></i>&nbsp;<span class="code-parcours label label-parcours" title="Crédits libres">Crédits libres</span> &nbsp;10 crédits libres à choisir en M1<ul class="list-codes-ues tree-indent" role="group"><li role="treeitem"><span class="ue label label-ue">APM_5AI04_TP</span> <a href="/catalogue/2024-2025/ue/12263/APM-5AI04-TP-modeles-probabilistes-et-apprentissage-automatique?from=D2489">Modèles probabilistes et apprentissage automatique</a></li><li role="treeitem"><span class="ue label label-ue">CSC_4SD01_TP</span> <a href="/catalogue/2024-2025/ue/2130/CSC-4SD01-TP-exploration-de-donnees-data-mining?from=D2489">Exploration de données /Data Mining</a></li><li role="treeitem"><span class="ue label label-ue">HSS_4DE02_TP</span> <a href="/catalogue/2024-2025/ue/15251/HSS-4DE02-TP-coding-for-designers?from=D2489">Coding for designers</a></li><li role="treeitem"><span class="ue label label-ue">CSC_5ID18_PS</span> <a href="/catalogue/2024-2025/ue/15376/CSC-5ID18-PS-advanced-programming-of-interactive-systems?from=D2489">Advanced Programming of Interactive Systems</a></li><li role="treeitem"><span class="ue label label-ue">CSC_5ID17_PS</span> <a href="/catalogue/2024-2025/ue/15378/CSC-5ID17-PS-evaluations-of-interactive-systems?from=D2489">Evaluations of Interactive Systems</a></li><li role="treeitem"><span class="ue label label-ue">CSC_5ID20_PS</span> <a href="/catalogue/2024-2025/ue/15379/CSC-5ID20-PS-groupware-and-collaborative-interactive?from=D2489">Groupware and Collaborative Interactive</a></li><li role="treeitem"><span class="ue label label-ue">CSC_5ID19_PS</span> <a href="/catalogue/2024-2025/ue/15380/CSC-5ID19-PS-mixed-reality-and-tangible-interaction?from=D2489">Mixed Reality and Tangible Interaction</a></li><li role="treeitem"><span class="ue label label-ue">CSC_5ID21_PS</span> <a href="/catalogue/2024-2025/ue/15381/CSC-5ID21-PS-virtual-humans-and-social-interactions?from=D2489">Virtual Humans and Social Interactions</a></li><li role="treeitem"><span class="ue label label-ue">PDV_5DA05_TP</span> <a href="/catalogue/2024-2025/ue/2595/PDV-5DA05-TP-softskills-seminar?from=D2489">Softskills seminar</a></li><li role="treeitem"><span class="ue label label-ue">CSC_5ID16_PS</span> <a href="/catalogue/2024-2025/ue/15245/CSC-5ID16-PS-serious-game?from=D2489">Serious game</a></li><li role="treeitem"><span class="ue label label-ue">HSS_5DA06_TP</span> <a href="/catalogue/2024-2025/ue/15134/HSS-5DA06-TP-ai-ethics?from=D2489">AI Ethics</a></li><li role="treeitem"><span class="ue label label-ue">CSC_5DA07_TP</span> <a href="/catalogue/2024-2025/ue/15224/CSC-5DA07-TP-collective-intelligence?from=D2489">Collective Intelligence</a></li><li role="treeitem"><span class="ue label label-ue">LFR_9N041_TP</span> <a href="/catalogue/2024-2025/ue/13692/LFR-9N041-TP-fr-mutualise?from=D2489">FR-MUTUALISE</a></li><li role="treeitem"><span class="ue label label-ue">CSC5101</span> <a href="/catalogue/2024-2025/ue/19698/CSC5101-advanced-programming-of-multi-core-architectectures?from=D2489">Advanced programming of multi-core architectectures</a></li><li role="treeitem"><span class="ue label label-ue">TSP-CSC5004</span> <a href="/catalogue/2024-2025/ue/17282/TSP-CSC5004-cloud-infrastructures?from=D2489">Cloud Infrastructures</a></li><li role="treeitem"><span class="ue label label-ue">CSC4508</span> <a href="/catalogue/2024-2025/ue/19742/CSC4508-systeme-operateur?from=D2489">Système opérateur</a></li><li role="treeitem"><span class="ue label label-ue">APM_5DA13_TP</span> <a href="/catalogue/2024-2025/ue/22212/APM-5DA13-TP-representation-learning-for-computer-vision-and-medical-imaging?from=D2489">Representation Learning for Computer Vision and Medical Imaging</a></li><li role="treeitem"><span class="ue label label-ue">CSC_4SE02_TP</span> <a href="/catalogue/2024-2025/ue/2065/CSC-4SE02-TP-rust?from=D2489">Rust</a></li><li role="treeitem"><span class="ue label label-ue">INT_4IP31_TP</span> <a href="/catalogue/2024-2025/ue/22369/INT-4IP31-TP-stage-libre-master-1-ip-paris?from=D2489">Stage libre Master 1 IP Paris</a></li><li role="treeitem"><span class="ue label label-ue">CSC_54442_EP</span> <a href="/catalogue/2024-2025/ue/25035/CSC-54442-EP-socio-emotional-embodied-conversational-agents?from=D2489">Socio-emotional Embodied Conversational Agents</a></li><li role="treeitem"><span class="ue label label-ue">PHY_52180_EP</span> <a href="/catalogue/2024-2025/ue/25045/PHY-52180-EP-information-quantique-intrication-controle-et-plateformes-pour-les-technologies-quantiques?from=D2489">Information quantique : intrication, contrôle et plateformes pour les technologies quantiques</a></li></ul></li></ul></li>    </ul>
+</div>
+  </section>
+</main><div class="sidebar" id="sidebar-fiche-diplome">
+    <div id='icon'>
+<!--        <a href="#" title="--><!--">-->
+<!--            <i class="fa btn fa-share-square-o"></i>-->
+<!--        </a>-->
+            </div>
+    <aside class="encadre" >
+<!-- ajout d'un ID CSS pour distinguer l'encadré Programmation de la fiche UE -->
+<h1 classe="titre-encadre">partenaires</h1>
+            
+            <h2>Responsable du diplôme&nbsp;:</h2>
+                                <p class="ecoles-partenaires">
+                        <!-- Logo de l'école -->
+                                                <a href="https://www.ip-paris.fr/" target="_blank" class="ecole-partenaire-site-web">Institut Polytechnique de Paris</a>                    </p>
+                                <p class="responsables-partenariat">
+                
+                        <div class="responsable">
+                            James EAGAN                        </div>
+
+                    
+                        <div class="responsable">
+                            Amal Dev Parakkat                        </div>
+
+                                    </p>
+                        
+            <h2>Etablissement référent &nbsp;:</h2>
+                                <p class="ecoles-partenaires">
+                        <!-- Logo de l'école -->
+                                                Télécom Paris                    </p>
+                                <p class="responsables-partenariat">
+                
+                        <div class="responsable">
+                            James EAGAN                        </div>
+
+                    
+                        <div class="responsable">
+                            Amal Dev Parakkat                        </div>
+
+                                    </p>
+            
+        <div class="label-partenaire">
+            <p>
+                <!-- Affichage du logo du partenariat -->
+                                <span></span>
+            </p>
+        </div>
+
+        
+</aside>
+<aside class="encadre" >
+<!-- ajout d'un ID CSS pour distinguer l'encadré Programmation de la fiche UE -->
+<h1 classe="titre-encadre">contacts</h1>
+        <p><a href="https://www.ip-paris.fr/master-interaction-graphics-design/" target="_blank">https://www.ip-paris.fr/master-interaction-graphics-design/</a></p>
+        <p></p>
+        
+</aside>
+<aside class="encadre" >
+<!-- ajout d'un ID CSS pour distinguer l'encadré Programmation de la fiche UE -->
+<h1 classe="titre-encadre">informations pratiques</h1>
+            <h2>Durée&nbsp;:</h2>
+                            <p>2 semestres</p>
+                        <h2>Crédits ECTS&nbsp;:</h2>
+                            <p></p>
+                        <h2>Calendrier général&nbsp;:</h2>
+                            <p></p>
+                        <h2>Langues d'enseignement&nbsp;:</h2>
+            <p>Anglais</p>            <h2>Lieu de la formation&nbsp;:</h2>
+                            <p></p>
+                        <h2>Nombre de places offertes&nbsp;:</h2>
+                            <p></p>
+                        <h2>Coût&nbsp;:</h2>
+                            <p></p>
+            
+</aside>
+</div>
+<section class="bloc">
+  <h2 class="title-bloc-ue">
+    Unités d'enseignement</h2>
+<div class="table-responsive" id="tableau-responsive">
+        <button class="btn table-filter-toggle">
+            <i class="fa fa-filter fa-lg"></i>
+            Filtres        </button>
+    <table class="table table-striped table-ues" id="tableau-unitesenseignementfiche">
+        <thead>
+        <tr>
+            <th>UE</th>
+            <th>Type d'enseignement</th>
+            <th>Domaines</th>
+            <th>Catégorie d'UE</th>
+                    <th>Credit Ects</th> 
+                    <th>Volume horaire</th>
+            <th>Responsables</th>
+                    <th>Periode de programmation</th>
+                    <th>Site pédagogique</th>
+        </tr>
+        </thead>
+        <tbody>         
+        <tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">APM_5AI04_TP</span> <a href="/catalogue/2024-2025/ue/12263/APM-5AI04-TP-modeles-probabilistes-et-apprentissage-automatique?from=D2489" title="Modèles probabilistes et apprentissage automatique"> Mod&egrave;les probabilistes et apprentissage automatique</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines"></td>
+        <td class="categories">UE d'option interne.</td>
+            <td class="ects"></td>
+            <td class="heures">24</td>
+        <td class="responsables">Wojciech PIECZYNSKI</td>
+            <td class="periodeProgrammation">S1-S2</td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">APM_5AI05_TA</span> <a href="/catalogue/2024-2025/ue/12265/APM-5AI05-TA-apprentissage-pour-la-robotique-rob311?from=D2489" title="Apprentissage pour la robotique (ROB311)"> Apprentissage pour la robotique (ROB311)</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines"></td>
+        <td class="categories">UE d'option interne.</td>
+            <td class="ects"></td>
+            <td class="heures">24</td>
+        <td class="responsables">Sao-Mai NGUYEN</td>
+            <td class="periodeProgrammation">S1-S2</td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">APM_5DA13_TP</span> <a href="/catalogue/2024-2025/ue/22212/APM-5DA13-TP-representation-learning-for-computer-vision-and-medical-imaging?from=D2489" title="Representation Learning for Computer Vision and Medical Imaging"> Representation Learning for Computer Vision and Medical I...</a></td>
+        <td class="type_enseignement">Enseignement de Master</td>
+        <td class="domaines"></td>
+        <td class="categories"></td>
+            <td class="ects"></td>
+            <td class="heures">21</td>
+        <td class="responsables">Pietro GORI,<br />Louis JACHIET,<br />Loïc LE FOLGOC</td>
+            <td class="periodeProgrammation">S1-S2</td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">CSC4508</span> <a href="/catalogue/2024-2025/ue/19742/CSC4508-systeme-operateur?from=D2489" title="Système opérateur"> Syst&egrave;me op&eacute;rateur</a></td>
+        <td class="type_enseignement">Enseignement de Master</td>
+        <td class="domaines"></td>
+        <td class="categories"></td>
+            <td class="ects"></td>
+            <td class="heures">45</td>
+        <td class="responsables"></td>
+            <td class="periodeProgrammation"></td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">CSC5101</span> <a href="/catalogue/2024-2025/ue/19698/CSC5101-advanced-programming-of-multi-core-architectectures?from=D2489" title="Advanced programming of multi-core architectectures"> Advanced programming of multi-core architectectures</a></td>
+        <td class="type_enseignement">Enseignement de Master</td>
+        <td class="domaines"></td>
+        <td class="categories"></td>
+            <td class="ects"></td>
+            <td class="heures">45</td>
+        <td class="responsables"></td>
+            <td class="periodeProgrammation"></td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">CSC_0EL10_TP</span> <a href="/catalogue/2024-2025/ue/2133/CSC-0EL10-TP-web-development-developpement-web?from=D2489" title="Web Development/Développement WEB"> Web Development/D&eacute;veloppement WEB</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines">Informatique</td>
+        <td class="categories">UE partagée du créneau D.</td>
+            <td class="ects"></td>
+            <td class="heures">24</td>
+        <td class="responsables">Théo ZIMMERMANN</td>
+            <td class="periodeProgrammation">S1-P2,<br />S2-P3</td>
+            <td class="link">
+                            <a href="https://perso.telecom-paristech.fr/dufourd/cours/inf203/" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">CSC_0EL11_TP</span> <a href="/catalogue/2024-2025/ue/2125/CSC-0EL11-TP-paradigmes-de-programmation-theorie-et-pratique?from=D2489" title="Paradigmes de programmation, théorie et pratique"> Paradigmes de programmation, th&eacute;orie et pratique</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines">Informatique</td>
+        <td class="categories">UE partagée du créneau D.</td>
+            <td class="ects"></td>
+            <td class="heures">24</td>
+        <td class="responsables">Eric LECOLINET</td>
+            <td class="periodeProgrammation">S1-P1,<br />S1-P2,<br />S2-P3</td>
+            <td class="link">
+                            <a href="http://www.telecom-paristech.fr/~elc/inf224" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">CSC_4ID14_PS</span> <a href="/catalogue/2024-2025/ue/2629/CSC-4ID14-PS-mixed-reality-and-tangible-interaction-d4inh29?from=D2489" title="Mixed Reality and Tangible Interaction (D4INH29)"> Mixed Reality and Tangible Interaction (D4INH29)</a></td>
+        <td class="type_enseignement">Enseignement de Master</td>
+        <td class="domaines">Informatique</td>
+        <td class="categories">Enseignement de Master.</td>
+            <td class="ects"></td>
+            <td class="heures">21</td>
+        <td class="responsables">James EAGAN,<br />Eric LECOLINET</td>
+            <td class="periodeProgrammation"></td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">CSC_4IG01_TP</span> <a href="/catalogue/2024-2025/ue/2225/CSC-4IG01-TP-interactive-3d-application-development?from=D2489" title="Interactive 3D Application Development"> Interactive 3D Application Development</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines">Informatique, Image-Données-Signal</td>
+        <td class="categories">UE du créneau A.</td>
+            <td class="ects"></td>
+            <td class="heures">24</td>
+        <td class="responsables">Kiwon UM</td>
+            <td class="periodeProgrammation">S1-P1</td>
+            <td class="link">
+                            <a href="https://perso.telecom-paristech.fr/kum/lecture/current/igr200/" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">CSC_4IG02_TP</span> <a href="/catalogue/2024-2025/ue/2154/CSC-4IG02-TP-interaction-application-development-desktop-mobile-and-web?from=D2489" title="Interaction Application Development: Desktop, Mobile, and Web"> Interaction Application Development: Desktop, Mobile, and...</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines">Informatique, Image-Données-Signal</td>
+        <td class="categories">UE du créneau A.</td>
+            <td class="ects"></td>
+            <td class="heures">24</td>
+        <td class="responsables">Eric LECOLINET</td>
+            <td class="periodeProgrammation">S1-P1</td>
+            <td class="link">
+                            <a href="https://perso.telecom-paristech.fr/elc/igr201/" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">CSC_4IG03_TP</span> <a href="/catalogue/2024-2025/ue/2156/CSC-4IG03-TP-fundamentals-of-computer-graphics?from=D2489" title="Fundamentals of Computer Graphics"> Fundamentals of Computer Graphics</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines">Image-Données-Signal</td>
+        <td class="categories">UE du créneau A.</td>
+            <td class="ects">5</td>
+            <td class="heures">48</td>
+        <td class="responsables">Amal Dev Parakkat,<br />Kiwon UM</td>
+            <td class="periodeProgrammation">S1-P2</td>
+            <td class="link">
+                            <a href="https://perso.telecom-paristech.fr/parakkat/" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">CSC_4IG05_TP</span> <a href="/catalogue/2024-2025/ue/2158/CSC-4IG05-TP-interaction-homme-machine-partie-1?from=D2489" title="Interaction homme-machine (partie 1)"> Interaction homme-machine (partie 1)</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines">Informatique, Image-Données-Signal</td>
+        <td class="categories">UE du créneau A.</td>
+            <td class="ects"></td>
+            <td class="heures">24</td>
+        <td class="responsables">Eric LECOLINET</td>
+            <td class="periodeProgrammation">S2-P3</td>
+            <td class="link">
+                            <a href="http://www.telecom-paristech.fr/~elc/igr203" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">CSC_4IG06_TP</span> <a href="/catalogue/2024-2025/ue/2227/CSC-4IG06-TP-interaction-homme-machine-partie-2?from=D2489" title="Interaction homme-machine (partie 2)"> Interaction homme-machine (partie 2)</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines">Informatique, Image-Données-Signal</td>
+        <td class="categories">UE du créneau A.</td>
+            <td class="ects"></td>
+            <td class="heures">24</td>
+        <td class="responsables">Eric LECOLINET</td>
+            <td class="periodeProgrammation">S2-P3</td>
+            <td class="link">
+                            <a href="http://www.telecom-paristech.fr/~elc/igr203" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">CSC_4IG07_TP</span> <a href="/catalogue/2024-2025/ue/2160/CSC-4IG07-TP-visualisation?from=D2489" title="Visualisation"> Visualisation</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines">Informatique, Image-Données-Signal</td>
+        <td class="categories">UE du créneau A.</td>
+            <td class="ects"></td>
+            <td class="heures">24</td>
+        <td class="responsables">James EAGAN</td>
+            <td class="periodeProgrammation">S2-P4</td>
+            <td class="link">
+                            <a href="https://perso.telecom-paristech.fr/eagan/class/igr204" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">CSC_4IG08_TP</span> <a href="/catalogue/2024-2025/ue/2161/CSC-4IG08-TP-seminaire-de-projet?from=D2489" title="Séminaire de projet"> S&eacute;minaire de projet</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines">Image-Données-Signal</td>
+        <td class="categories">UE du créneau A.</td>
+            <td class="ects"></td>
+            <td class="heures">24</td>
+        <td class="responsables">Amal Dev Parakkat,<br />Kiwon UM</td>
+            <td class="periodeProgrammation">S2-P4</td>
+            <td class="link">
+                            <a href="https://perso.telecom-paristech.fr/parakkat/IGR205.html" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">CSC_4SD01_TP</span> <a href="/catalogue/2024-2025/ue/2130/CSC-4SD01-TP-exploration-de-donnees-data-mining?from=D2489" title="Exploration de données /Data Mining"> Exploration de donn&eacute;es /Data Mining</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines">Informatique</td>
+        <td class="categories">UE du créneau C.</td>
+            <td class="ects">2.5</td>
+            <td class="heures">24</td>
+        <td class="responsables">Mauro SOZIO</td>
+            <td class="periodeProgrammation">S1-P1</td>
+            <td class="link">
+                            <a href="https://sites.google.com/site/maurosozio/data-mining19" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">CSC_4SE02_TP</span> <a href="/catalogue/2024-2025/ue/2065/CSC-4SE02-TP-rust?from=D2489" title="Rust"> Rust</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines">Informatique</td>
+        <td class="categories">UE du créneau B.</td>
+            <td class="ects"></td>
+            <td class="heures">24</td>
+        <td class="responsables">Samuel TARDIEU</td>
+            <td class="periodeProgrammation">S2-P3</td>
+            <td class="link">
+                            <a href="https://ecampus.paris-saclay.fr/course/view.php?id=9562" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">CSC_5DA07_TP</span> <a href="/catalogue/2024-2025/ue/15224/CSC-5DA07-TP-collective-intelligence?from=D2489" title="Collective Intelligence"> Collective Intelligence</a></td>
+        <td class="type_enseignement">Enseignement de Master</td>
+        <td class="domaines"></td>
+        <td class="categories">Enseignement de Master.</td>
+            <td class="ects"></td>
+            <td class="heures">24</td>
+        <td class="responsables">Ada DIACONESCU,<br />Louis JACHIET</td>
+            <td class="periodeProgrammation">S1</td>
+            <td class="link">
+                            <a href="https://ecampus.paris-saclay.fr/course/view.php?id=31529" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">CSC_5ID02_PS</span> <a href="/catalogue/2024-2025/ue/15344/CSC-5ID02-PS-fundamentals-of-hci-1?from=D2489" title="Fundamentals of HCI 1"> Fundamentals of HCI 1</a></td>
+        <td class="type_enseignement">Enseignement de Master</td>
+        <td class="domaines"></td>
+        <td class="categories">Enseignement de Master.</td>
+            <td class="ects"></td>
+            <td class="heures"></td>
+        <td class="responsables">James EAGAN,<br />Eric LECOLINET</td>
+            <td class="periodeProgrammation"></td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">CSC_5ID03_PS</span> <a href="/catalogue/2024-2025/ue/15345/CSC-5ID03-PS-fundamentals-of-hci-2?from=D2489" title="Fundamentals of HCI 2"> Fundamentals of HCI 2</a></td>
+        <td class="type_enseignement">Enseignement de Master</td>
+        <td class="domaines"></td>
+        <td class="categories">Enseignement de Master.</td>
+            <td class="ects"></td>
+            <td class="heures"></td>
+        <td class="responsables">James EAGAN,<br />Eric LECOLINET</td>
+            <td class="periodeProgrammation"></td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">CSC_5ID05_PS</span> <a href="/catalogue/2024-2025/ue/15343/CSC-5ID05-PS-fundamentals-of-extended-reality?from=D2489" title="Fundamentals of Extended Reality"> Fundamentals of Extended Reality</a></td>
+        <td class="type_enseignement">Enseignement de Master</td>
+        <td class="domaines"></td>
+        <td class="categories">Enseignement de Master.</td>
+            <td class="ects"></td>
+            <td class="heures"></td>
+        <td class="responsables">James EAGAN,<br />Eric LECOLINET</td>
+            <td class="periodeProgrammation"></td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">CSC_5ID06_PS</span> <a href="/catalogue/2024-2025/ue/19594/CSC-5ID06-PS-advanced-immersive-interactions?from=D2489" title="Advanced Immersive Interactions"> Advanced Immersive Interactions</a></td>
+        <td class="type_enseignement">Enseignement de Master</td>
+        <td class="domaines"></td>
+        <td class="categories"></td>
+            <td class="ects"></td>
+            <td class="heures"></td>
+        <td class="responsables">James EAGAN</td>
+            <td class="periodeProgrammation"></td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">CSC_5ID07_PS</span> <a href="/catalogue/2024-2025/ue/2626/CSC-5ID07-PS-evaluation-of-interactive-systems-d4inh04?from=D2489" title="Evaluation of Interactive Systems ( D4INH04)"> Evaluation of Interactive Systems ( D4INH04)</a></td>
+        <td class="type_enseignement">Enseignement de Master</td>
+        <td class="domaines">Informatique</td>
+        <td class="categories">Enseignement de Master.</td>
+            <td class="ects"></td>
+            <td class="heures">21</td>
+        <td class="responsables">James EAGAN,<br />Eric LECOLINET</td>
+            <td class="periodeProgrammation"></td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">CSC_5ID08_TP</span> <a href="/catalogue/2024-2025/ue/2625/CSC-5ID08-TP-advanced-programming-of-interactive-systems-d4inh09?from=D2489" title="Advanced Programming of Interactive Systems (D4INH09)"> Advanced Programming of Interactive Systems (D4INH09)</a></td>
+        <td class="type_enseignement">Enseignement de Master</td>
+        <td class="domaines">Informatique</td>
+        <td class="categories">Enseignement de Master.</td>
+            <td class="ects"></td>
+            <td class="heures">42</td>
+        <td class="responsables">Daniel PIRES DE SA MEDEIROS</td>
+            <td class="periodeProgrammation">S1</td>
+            <td class="link">
+                            <a href="http://perso.telecom-paristech.fr/~eagan/class/advUI/" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">CSC_5ID10_TP</span> <a href="/catalogue/2024-2025/ue/2627/CSC-5ID10-TP-gestural-and-mobile-interaction-d4inh22?from=D2489" title="Gestural and Mobile Interaction (D4INH22)"> Gestural and Mobile Interaction (D4INH22)</a></td>
+        <td class="type_enseignement">Enseignement de Master</td>
+        <td class="domaines">Informatique</td>
+        <td class="categories">Enseignement de Master.</td>
+            <td class="ects"></td>
+            <td class="heures">21</td>
+        <td class="responsables">James EAGAN</td>
+            <td class="periodeProgrammation"></td>
+            <td class="link">
+                            <a href="http://www.telecom-paristech.fr/~elc/gestmob/" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">CSC_5ID12_PS</span> <a href="/catalogue/2024-2025/ue/2630/CSC-5ID12-PS-virtual-humans-d4inh25?from=D2489" title="Virtual Humans (D4INH25)"> Virtual Humans (D4INH25)</a></td>
+        <td class="type_enseignement">Enseignement de Master</td>
+        <td class="domaines">Informatique</td>
+        <td class="categories">Enseignement de Master.</td>
+            <td class="ects"></td>
+            <td class="heures">21</td>
+        <td class="responsables">James EAGAN,<br />Eric LECOLINET</td>
+            <td class="periodeProgrammation"></td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">CSC_5ID13_PS</span> <a href="/catalogue/2024-2025/ue/2628/CSC-5ID13-PS-groupware-and-collaborative-work-d4inh26?from=D2489" title="Groupware and Collaborative Work (D4INH26)"> Groupware and Collaborative Work (D4INH26)</a></td>
+        <td class="type_enseignement">Enseignement de Master</td>
+        <td class="domaines">Informatique</td>
+        <td class="categories">Enseignement de Master.</td>
+            <td class="ects"></td>
+            <td class="heures">21</td>
+        <td class="responsables">James EAGAN,<br />Eric LECOLINET</td>
+            <td class="periodeProgrammation"></td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">CSC_5ID16_PS</span> <a href="/catalogue/2024-2025/ue/15245/CSC-5ID16-PS-serious-game?from=D2489" title="Serious game"> Serious game</a></td>
+        <td class="type_enseignement">Enseignement de Master</td>
+        <td class="domaines"></td>
+        <td class="categories">Enseignement de Master.</td>
+            <td class="ects"></td>
+            <td class="heures"></td>
+        <td class="responsables"></td>
+            <td class="periodeProgrammation"></td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">CSC_5ID17_PS</span> <a href="/catalogue/2024-2025/ue/15378/CSC-5ID17-PS-evaluations-of-interactive-systems?from=D2489" title="Evaluations of Interactive Systems"> Evaluations of Interactive Systems</a></td>
+        <td class="type_enseignement">Enseignement de Master</td>
+        <td class="domaines"></td>
+        <td class="categories">Enseignement de Master.</td>
+            <td class="ects"></td>
+            <td class="heures"></td>
+        <td class="responsables"></td>
+            <td class="periodeProgrammation"></td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">CSC_5ID18_PS</span> <a href="/catalogue/2024-2025/ue/15376/CSC-5ID18-PS-advanced-programming-of-interactive-systems?from=D2489" title="Advanced Programming of Interactive Systems"> Advanced Programming of Interactive Systems</a></td>
+        <td class="type_enseignement">Enseignement de Master</td>
+        <td class="domaines"></td>
+        <td class="categories">Enseignement de Master.</td>
+            <td class="ects"></td>
+            <td class="heures"></td>
+        <td class="responsables"></td>
+            <td class="periodeProgrammation"></td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">CSC_5ID19_PS</span> <a href="/catalogue/2024-2025/ue/15380/CSC-5ID19-PS-mixed-reality-and-tangible-interaction?from=D2489" title="Mixed Reality and Tangible Interaction"> Mixed Reality and Tangible Interaction</a></td>
+        <td class="type_enseignement">Enseignement de Master</td>
+        <td class="domaines"></td>
+        <td class="categories">Enseignement de Master.</td>
+            <td class="ects"></td>
+            <td class="heures"></td>
+        <td class="responsables"></td>
+            <td class="periodeProgrammation"></td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">CSC_5ID20_PS</span> <a href="/catalogue/2024-2025/ue/15379/CSC-5ID20-PS-groupware-and-collaborative-interactive?from=D2489" title="Groupware and Collaborative Interactive"> Groupware and Collaborative Interactive</a></td>
+        <td class="type_enseignement">Enseignement de Master</td>
+        <td class="domaines"></td>
+        <td class="categories">Enseignement de Master.</td>
+            <td class="ects"></td>
+            <td class="heures"></td>
+        <td class="responsables"></td>
+            <td class="periodeProgrammation"></td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">CSC_5ID21_PS</span> <a href="/catalogue/2024-2025/ue/15381/CSC-5ID21-PS-virtual-humans-and-social-interactions?from=D2489" title="Virtual Humans and Social Interactions"> Virtual Humans and Social Interactions</a></td>
+        <td class="type_enseignement">Enseignement de Master</td>
+        <td class="domaines"></td>
+        <td class="categories">Enseignement de Master.</td>
+            <td class="ects"></td>
+            <td class="heures"></td>
+        <td class="responsables"></td>
+            <td class="periodeProgrammation"></td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">CSC_5IG01_TP</span> <a href="/catalogue/2024-2025/ue/15124/CSC-5IG01-TP-human-computer-interaction-for-mixed-reality?from=D2489" title="Human-Computer Interaction for Mixed Reality"> Human-Computer Interaction for Mixed Reality</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines">Informatique, Image-Données-Signal</td>
+        <td class="categories">Enseignement de Master.</td>
+            <td class="ects"></td>
+            <td class="heures">24</td>
+        <td class="responsables">Daniel PIRES DE SA MEDEIROS</td>
+            <td class="periodeProgrammation">S1</td>
+            <td class="link">
+                            <a href="https://ecampus.paris-saclay.fr/course/view.php?id=39916" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">CSC_5IM23_SU</span> <a href="/catalogue/2024-2025/ue/1998/CSC-5IM23-SU-ig3da-informatique-graphique-3d-avance?from=D2489" title="IG3DA Informatique graphique 3D avancé"> IG3DA Informatique graphique 3D avanc&eacute;</a></td>
+        <td class="type_enseignement">Enseignement de Master</td>
+        <td class="domaines">Image-Données-Signal</td>
+        <td class="categories"></td>
+            <td class="ects"></td>
+            <td class="heures">60</td>
+        <td class="responsables">Kiwon UM</td>
+            <td class="periodeProgrammation">S1</td>
+            <td class="link">
+                            <a href="https://perso.telecom-paristech.fr/kum/lecture/current/ima904/" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">CSC_51054_EP</span> <a href="/catalogue/2024-2025/ue/24990/CSC-51054-EP-machine-and-deep-learning?from=D2489" title="Machine and Deep learning"> Machine and Deep learning</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines"></td>
+        <td class="categories"></td>
+            <td class="ects"></td>
+            <td class="heures">36</td>
+        <td class="responsables"></td>
+            <td class="periodeProgrammation">X-AN3-P1</td>
+            <td class="link">
+                            <a href="https://moodle.polytechnique.fr/enrol/index.php?id=14237" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">CSC_51073_EP</span> <a href="/catalogue/2024-2025/ue/25013/CSC-51073-EP-analyse-d-image-et-vision-par-ordinateur?from=D2489" title="Analyse d'Image et Vision par Ordinateur"> Analyse d'Image et Vision par Ordinateur</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines"></td>
+        <td class="categories"></td>
+            <td class="ects">5</td>
+            <td class="heures">36</td>
+        <td class="responsables"></td>
+            <td class="periodeProgrammation">X-AN3-P1</td>
+            <td class="link">
+                            <a href="https://moodle.polytechnique.fr/course/view.php?name=INF573-2023" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">CSC_51074_EP</span> <a href="/catalogue/2024-2025/ue/25014/CSC-51074-EP-representations-numeriques-et-analyse-de-formes?from=D2489" title="Représentations Numériques et Analyse de Formes"> Repr&eacute;sentations Num&eacute;riques et Analyse de Formes</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines"></td>
+        <td class="categories"></td>
+            <td class="ects">5</td>
+            <td class="heures">36</td>
+        <td class="responsables"></td>
+            <td class="periodeProgrammation">X-AN3-P1</td>
+            <td class="link">
+                            <a href="https://moodle.polytechnique.fr/course/view.php?name=INF574-2023" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">CSC_51085_EP</span> <a href="/catalogue/2024-2025/ue/25010/CSC-51085-EP-animation-par-ordinateur?from=D2489" title="Animation par ordinateur"> Animation par ordinateur</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines"></td>
+        <td class="categories"></td>
+            <td class="ects">5</td>
+            <td class="heures"></td>
+        <td class="responsables"></td>
+            <td class="periodeProgrammation">X-AN3-P1</td>
+            <td class="link">
+                            <a href="https://moodle.polytechnique.fr/course/view.php?name=INF585-2023" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">CSC_52062_EP</span> <a href="/catalogue/2024-2025/ue/25011/CSC-52062-EP-geometrie-algorithmique-de-la-theorie-aux-applications?from=D2489" title="Géométrie algorithmique : de la théorie aux applications"> G&eacute;om&eacute;trie algorithmique : de la th&eacute;orie aux applications</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines"></td>
+        <td class="categories"></td>
+            <td class="ects">5</td>
+            <td class="heures">36</td>
+        <td class="responsables"></td>
+            <td class="periodeProgrammation">X-AN3-P2</td>
+            <td class="link">
+                            <a href="https://moodle.polytechnique.fr/course/view.php?name=INF562-2023" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">CSC_52081_EP</span> <a href="/catalogue/2024-2025/ue/24998/CSC-52081-EP-apprentissage-automatique-avance-et-agents-autonomes?from=D2489" title="Apprentissage Automatique Avancé et Agents Autonomes"> Apprentissage Automatique Avanc&eacute; et Agents Autonomes</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines"></td>
+        <td class="categories"></td>
+            <td class="ects"></td>
+            <td class="heures">36</td>
+        <td class="responsables"></td>
+            <td class="periodeProgrammation">X-AN3-P2</td>
+            <td class="link">
+                            <a href="https://moodle.polytechnique.fr/course/view.php?name=INF581-2023" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">CSC_52084_EP</span> <a href="/catalogue/2024-2025/ue/25015/CSC-52084-EP-image-synthesis?from=D2489" title="Image Synthesis"> Image Synthesis</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines"></td>
+        <td class="categories"></td>
+            <td class="ects">5</td>
+            <td class="heures"></td>
+        <td class="responsables"></td>
+            <td class="periodeProgrammation">X-AN3-P2</td>
+            <td class="link">
+                            <a href="https://moodle.polytechnique.fr/course/view.php?name=INF584-2023" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">CSC_52085_EP</span> <a href="/catalogue/2024-2025/ue/25009/CSC-52085-EP-l-ia-en-temps-reel-dans-les-jeux-video-actions-decisives-collaboratives?from=D2489" title="L'IA en temps réel dans les jeux vidéo :  actions décisives & collaboratives"> L'IA en temps r&eacute;el dans les jeux vid&eacute;o :  actions d&eacute;cisiv...</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines"></td>
+        <td class="categories"></td>
+            <td class="ects">5</td>
+            <td class="heures"></td>
+        <td class="responsables"></td>
+            <td class="periodeProgrammation">X-AN3-P2</td>
+            <td class="link">
+                            <a href="https://moodle.polytechnique.fr/course/view.php?name=INF584A-2023" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">CSC_53433_EP</span> <a href="/catalogue/2024-2025/ue/25016/CSC-53433-EP-smart-models-for-3d-creation-animation?from=D2489" title="Smart models for 3D creation & animation"> Smart models for 3D creation &amp; animation</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines"></td>
+        <td class="categories"></td>
+            <td class="ects">2.5</td>
+            <td class="heures">24</td>
+        <td class="responsables"></td>
+            <td class="periodeProgrammation">X-AN3-P1</td>
+            <td class="link">
+                            <a href="https://moodle.polytechnique.fr/course/view.php?name=INF633-2023" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">CSC_54442_EP</span> <a href="/catalogue/2024-2025/ue/25035/CSC-54442-EP-socio-emotional-embodied-conversational-agents?from=D2489" title="Socio-emotional Embodied Conversational Agents"> Socio-emotional Embodied Conversational Agents</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines"></td>
+        <td class="categories"></td>
+            <td class="ects"></td>
+            <td class="heures"></td>
+        <td class="responsables"></td>
+            <td class="periodeProgrammation">X-AN3-P2</td>
+            <td class="link">
+                            <a href="https://moodle.polytechnique.fr/course/view.php?name=INF642-2019" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">HSS_0EL41_TP</span> <a href="/catalogue/2024-2025/ue/13604/HSS-0EL41-TP-making-physical-representation-of-data?from=D2489" title="Making Physical Representation of Data"> Making Physical Representation of Data</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines">Sciences économiques et sociales</td>
+        <td class="categories">UE partagée du créneau D, SES-B (Infocom, Design, Socio).</td>
+            <td class="ects"></td>
+            <td class="heures">24</td>
+        <td class="responsables">Samuel HURON</td>
+            <td class="periodeProgrammation">S1-P1</td>
+            <td class="link">
+                            <a href="https://ecampus.paris-saclay.fr/course/view.php?id=36400" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">HSS_0EL42_TP</span> <a href="/catalogue/2024-2025/ue/2605/HSS-0EL42-TP-quant-ux-quantitative-analysis-of-user-experience-data?from=D2489" title="Quant UX - Quantitative analysis of User Experience Data"> Quant UX - Quantitative analysis of User Experience Data</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines">Sciences économiques et sociales</td>
+        <td class="categories">UE partagée du créneau D, SES-B (Infocom, Design, Socio).</td>
+            <td class="ects"></td>
+            <td class="heures">24</td>
+        <td class="responsables">Panayotis MAVROS,<br />Stéphane SAFIN</td>
+            <td class="periodeProgrammation">S1-P2</td>
+            <td class="link">
+                            <a href="https://ecampus.paris-saclay.fr/course/view.php?id=8348" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">HSS_4DE02_TP</span> <a href="/catalogue/2024-2025/ue/15251/HSS-4DE02-TP-coding-for-designers?from=D2489" title="Coding for designers"> Coding for designers</a></td>
+        <td class="type_enseignement">Enseignement de Master</td>
+        <td class="domaines"></td>
+        <td class="categories">Enseignement de Master.</td>
+            <td class="ects">2</td>
+            <td class="heures"></td>
+        <td class="responsables">Samuel HURON,<br />Stéphane SAFIN</td>
+            <td class="periodeProgrammation">S1</td>
+            <td class="link">
+                            <a href="https://ecampus.paris-saclay.fr/course/view.php?id=33131" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">HSS_5DA06_TP</span> <a href="/catalogue/2024-2025/ue/15134/HSS-5DA06-TP-ai-ethics?from=D2489" title="AI Ethics"> AI Ethics</a></td>
+        <td class="type_enseignement">Enseignement de Master</td>
+        <td class="domaines"></td>
+        <td class="categories">Enseignement de Master.</td>
+            <td class="ects">2.5</td>
+            <td class="heures">24</td>
+        <td class="responsables">Goran FREHSE,<br />Louis JACHIET,<br />Winston MAXWELL</td>
+            <td class="periodeProgrammation">S1</td>
+            <td class="link">
+                            <a href="https://ecampus.paris-saclay.fr/course/view.php?id=31528" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">HSS_5DE13_TP</span> <a href="/catalogue/2024-2025/ue/15253/HSS-5DE13-TP-workshop-research-design-cognition?from=D2489" title="Workshop Research Design + Cognition"> Workshop Research Design + Cognition</a></td>
+        <td class="type_enseignement">Enseignement de Master</td>
+        <td class="domaines"></td>
+        <td class="categories">Enseignement de Master.</td>
+            <td class="ects"></td>
+            <td class="heures"></td>
+        <td class="responsables">Stéphane SAFIN</td>
+            <td class="periodeProgrammation"></td>
+            <td class="link">
+                            <a href="https://ecampus.paris-saclay.fr/course/view.php?id=33133" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">HSS_5DE14_TP</span> <a href="/catalogue/2024-2025/ue/15254/HSS-5DE14-TP-workshop-research-design-informatics?from=D2489" title="Workshop Research Design + Informatics"> Workshop Research Design + Informatics</a></td>
+        <td class="type_enseignement">Enseignement de Master</td>
+        <td class="domaines"></td>
+        <td class="categories">Enseignement de Master.</td>
+            <td class="ects"></td>
+            <td class="heures"></td>
+        <td class="responsables">Samuel HURON</td>
+            <td class="periodeProgrammation"></td>
+            <td class="link">
+                            <a href="https://ecampus.paris-saclay.fr/course/view.php?id=33134" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">HSS_5DE15_TP</span> <a href="/catalogue/2024-2025/ue/15255/HSS-5DE15-TP-research-seminar-design?from=D2489" title="Research Seminar Design"> Research Seminar Design</a></td>
+        <td class="type_enseignement">Enseignement de Master</td>
+        <td class="domaines"></td>
+        <td class="categories">Enseignement de Master.</td>
+            <td class="ects"></td>
+            <td class="heures"></td>
+        <td class="responsables">Samuel HURON,<br />Stéphane SAFIN</td>
+            <td class="periodeProgrammation"></td>
+            <td class="link">
+                            <a href="https://ecampus.paris-saclay.fr/course/view.php?id=33135" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">IA705</span> <a href="/catalogue/2024-2025/ue/15261/IA705-apprentissage-pour-la-robotique?from=D2489" title="Apprentissage pour la robotique"> Apprentissage pour la robotique</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines"></td>
+        <td class="categories">Enseignement de Mastère Spécialisé.</td>
+            <td class="ects"></td>
+            <td class="heures">24</td>
+        <td class="responsables">Sao-Mai NGUYEN</td>
+            <td class="periodeProgrammation">S2-P3</td>
+            <td class="link">
+                            <a href="https://ecampus.paris-saclay.fr/course/view.php?id=43373" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">IME_5IN01_TP</span> <a href="/catalogue/2024-2025/ue/11134/IME-5IN01-TP-design-user-experience?from=D2489" title="Design User Experience"> Design User Experience</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines">Sciences économiques et sociales</td>
+        <td class="categories">UE d'option interne.</td>
+            <td class="ects"></td>
+            <td class="heures">24</td>
+        <td class="responsables">Valérie FERNANDEZ,<br />Samuel HURON,<br />Panayotis MAVROS,<br />Stéphane SAFIN</td>
+            <td class="periodeProgrammation">S1-S2</td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">IME_5IN02_TP</span> <a href="/catalogue/2024-2025/ue/11135/IME-5IN02-TP-data-visualisation?from=D2489" title="Data Visualisation"> Data Visualisation</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines">Sciences économiques et sociales, Informatique</td>
+        <td class="categories">UE d'option interne.</td>
+            <td class="ects"></td>
+            <td class="heures">15</td>
+        <td class="responsables">Valérie FERNANDEZ,<br />Samuel HURON</td>
+            <td class="periodeProgrammation"></td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">INT_4IP31_TP</span> <a href="/catalogue/2024-2025/ue/22369/INT-4IP31-TP-stage-libre-master-1-ip-paris?from=D2489" title="Stage libre Master 1 IP Paris"> Stage libre Master 1 IP Paris</a></td>
+        <td class="type_enseignement">Stages et exploration professionnelle</td>
+        <td class="domaines"></td>
+        <td class="categories"></td>
+            <td class="ects"></td>
+            <td class="heures">1</td>
+        <td class="responsables">Marie Hélène PIOVANO</td>
+            <td class="periodeProgrammation"></td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">LFR_9N041_TP</span> <a href="/catalogue/2024-2025/ue/13692/LFR-9N041-TP-fr-mutualise?from=D2489" title="FR-MUTUALISE"> FR-MUTUALISE</a></td>
+        <td class="type_enseignement">Langues et Culture</td>
+        <td class="domaines">Langues et Cultures, Français Langue Etrangère et/ou Seconde</td>
+        <td class="categories">LC Cours thématiques, LC Cours spécifiques, LC Cours généraux.</td>
+            <td class="ects"></td>
+            <td class="heures"></td>
+        <td class="responsables">Isabelle LALLEMAND</td>
+            <td class="periodeProgrammation">S1,<br />S2</td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">MN912</span> <a href="/catalogue/2024-2025/ue/2583/MN912-transport-des-flux-multimedias-principes-protocoles-et-techniques-avancees?from=D2489" title="Transport des flux multimédias : principes, protocoles et techniques avancées"> Transport des flux multim&eacute;dias : principes, protocoles et...</a></td>
+        <td class="type_enseignement">Enseignement de Master</td>
+        <td class="domaines">Image-Données-Signal, Réseaux</td>
+        <td class="categories">Enseignement de Master.</td>
+            <td class="ects"></td>
+            <td class="heures">25</td>
+        <td class="responsables">Jean LE FEUVRE</td>
+            <td class="periodeProgrammation">S1-S2</td>
+            <td class="link">
+                            <a href="https://ecampus.paris-saclay.fr/enrol/index.php?id=21202" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">MOB_0AT41_TP</span> <a href="/catalogue/2024-2025/ue/12356/MOB-0AT41-TP-user-experience-design-sprint-telecom-paris-palaiseau?from=D2489" title="User Experience Design sprint (Télécom Paris - Palaiseau)"> User Experience Design sprint (T&eacute;l&eacute;com Paris - Palaiseau)</a></td>
+        <td class="type_enseignement">Enseignement ATHENS</td>
+        <td class="domaines">Sciences économiques et sociales</td>
+        <td class="categories">Athens Télécom Paris.</td>
+            <td class="ects"></td>
+            <td class="heures"></td>
+        <td class="responsables">Samuel HURON</td>
+            <td class="periodeProgrammation">ATH-S1</td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">PDV_5DA05_TP</span> <a href="/catalogue/2024-2025/ue/2595/PDV-5DA05-TP-softskills-seminar?from=D2489" title="Softskills seminar"> Softskills seminar</a></td>
+        <td class="type_enseignement">Enseignement de Master</td>
+        <td class="domaines"></td>
+        <td class="categories">Enseignement de Master.</td>
+            <td class="ects"></td>
+            <td class="heures">24</td>
+        <td class="responsables">Louis JACHIET,<br />Fabian SUCHANEK</td>
+            <td class="periodeProgrammation">S1</td>
+            <td class="link">
+                            <a href="https://suchanek.name/work/teaching/softskills-2023/index.html" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">PHY_52180_EP</span> <a href="/catalogue/2024-2025/ue/25045/PHY-52180-EP-information-quantique-intrication-controle-et-plateformes-pour-les-technologies-quantiques?from=D2489" title="Information quantique : intrication, contrôle et plateformes pour les technologies quantiques"> Information quantique : intrication, contr&ocirc;le et platefor...</a></td>
+        <td class="type_enseignement">Enseignement scientifique & technique</td>
+        <td class="domaines"></td>
+        <td class="categories"></td>
+            <td class="ects"></td>
+            <td class="heures">40.5</td>
+        <td class="responsables"></td>
+            <td class="periodeProgrammation">X-AN3-P2</td>
+            <td class="link">
+                            <a href="https://moodle.polytechnique.fr/course/view.php?name=PHY580-2023" target="_blank">
+                    <i class="fa btn fa-external-link"></i>
+                </a>
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">PRJ_4ID22_TP</span> <a href="/catalogue/2024-2025/ue/15229/PRJ-4ID22-TP-projet-a?from=D2489" title="Projet a"> Projet a</a></td>
+        <td class="type_enseignement">Enseignement de Master</td>
+        <td class="domaines"></td>
+        <td class="categories">Enseignement de Master.</td>
+            <td class="ects"></td>
+            <td class="heures"></td>
+        <td class="responsables">James EAGAN,<br />Amal Dev Parakkat</td>
+            <td class="periodeProgrammation"></td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">PRJ_4ID23_TP</span> <a href="/catalogue/2024-2025/ue/15230/PRJ-4ID23-TP-projet-b?from=D2489" title="Projet b"> Projet b</a></td>
+        <td class="type_enseignement">Enseignement de Master</td>
+        <td class="domaines"></td>
+        <td class="categories">Enseignement de Master.</td>
+            <td class="ects"></td>
+            <td class="heures"></td>
+        <td class="responsables">James EAGAN,<br />Amal Dev Parakkat</td>
+            <td class="periodeProgrammation"></td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">PRJ_4ID24_TP</span> <a href="/catalogue/2024-2025/ue/17346/PRJ-4ID24-TP-projet-10-credits?from=D2489" title="Projet 10 crédits"> Projet 10 cr&eacute;dits</a></td>
+        <td class="type_enseignement">Enseignement de Master</td>
+        <td class="domaines"></td>
+        <td class="categories"></td>
+            <td class="ects"></td>
+            <td class="heures"></td>
+        <td class="responsables">James EAGAN,<br />Amal Dev Parakkat</td>
+            <td class="periodeProgrammation"></td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue odd">
+        <td class="libelle"><span class="label label-ue">TSP-CSC5004</span> <a href="/catalogue/2024-2025/ue/17282/TSP-CSC5004-cloud-infrastructures?from=D2489" title="Cloud Infrastructures"> Cloud Infrastructures</a></td>
+        <td class="type_enseignement">Enseignement de Master</td>
+        <td class="domaines"></td>
+        <td class="categories"></td>
+            <td class="ects"></td>
+            <td class="heures"></td>
+        <td class="responsables"></td>
+            <td class="periodeProgrammation"></td>
+            <td class="link">
+                    </td>
+</tr>
+<tr class="ue even">
+        <td class="libelle"><span class="label label-ue">TSP-CSC5061</span> <a href="/catalogue/2024-2025/ue/15375/TSP-CSC5061-multiplayer-online-games-development?from=D2489" title="Multiplayer Online Games Development"> Multiplayer Online Games Development</a></td>
+        <td class="type_enseignement">Enseignement de Master</td>
+        <td class="domaines"></td>
+        <td class="categories">Enseignement de Master.</td>
+            <td class="ects"></td>
+            <td class="heures"></td>
+        <td class="responsables">Michel SIMATIC</td>
+            <td class="periodeProgrammation"></td>
+            <td class="link">
+                    </td>
+</tr>
+        </tbody>
+    <script type="text/javascript">
+    $(function () {
+        window.Application.Datatables = window.Application.Datatables || {}
+        window.Application.Datatables['tableau-unitesenseignementfiche'] = $("#tableau-unitesenseignementfiche").DataTable({"language":{"emptyTable":"Aucun r\u00e9sultat"},"order":[[0,"asc"]],"ordering":true,"paging":true,"searching":true,"info":false,"columsDefs":[{"targets":"no-sort","orderable":false}]});
+    });
+</script><style>
+    .no-sort::after { display: none!important; }
+    .no-sort { pointer-events: none!important; cursor: default!important; }
+</style>        <script type="text/javascript">
+
+            $(function () {
+                var filterableHeaders = ["Type d'enseignement","Domaines","Cat\u00e9gorie d'UE","Periode de programmation"];
+                var table = window.Application.Datatables['tableau-unitesenseignementfiche'];
+                var filters = new Application.DatatableFilters(table, filterableHeaders);
+
+                window.Application.FilterableDatatables = window.Application.FilterableDatatables || {}
+                window.Application.FilterableDatatables['tableau-unitesenseignementfiche'] = filters;
+
+                filters.init();
+
+            });
+        </script>    <script>  
+        ($(function() {
+            var filters = window.Application.FilterableDatatables['tableau-unitesenseignementfiche'];
+
+            $('.table-filter-toggle').on('click', filters.toggle);
+        }))
+    </script>
+    </table>
+</div>
+  </section>
+<!-- Modal -->
+<div class="container">
+    <div class="modal annuaire-modal-aware" data-backdrop="true" id="annuaire-modal" tabindex="-1" role="dialog" aria-labelledby="Détails de la personne sélectionnée">
+        <div class="modal-dialog  modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close-modal" data-dismiss="modal" aria-label="Close">
+                        <i class="fa fa-times"></i>
+                    </button>
+                    <h3 class="modal-title"></h3>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="photo-column annuaire-modal-photo">
+                                <img data-default-src="/assets/bootstrap/3.3.5/images/annuaire/unknown.gif" src="" alt="" class="img-responsive" />
+                            </div>
+                            <div class="data-column">
+                                <div class="detail-line">
+                                    <div class="row">
+                                        <div class="list-group-item-heading">E-mail</div>
+                                        <div class="list-group-item-text" data-field="emailetb"></div>
+                                    </div>
+                                </div>
+
+                                <div class="detail-line">
+                                    <div class="row">
+
+                                        <div class="list-group-item-heading">Catégorie</div>
+                                        <div class="list-group-item-text" data-field="idcategory"
+                                             data-secundary-field='libelle'></div>
+                                    </div>
+
+                                </div>
+                                <div class="detail-line">
+                                    <div class="row">
+
+                                        <div class="list-group-item-heading">Site(s)</div>
+                                        <div class="list-group-item-text" data-field="idlocalisation"
+                                             data-secundary-field='intitule'></div>
+                                    </div>
+
+                                </div>
+                                <div class="detail-line">
+                                    <div class="row">
+
+                                        <div class="list-group-item-heading">Téléphone</div>
+                                        <div class="list-group-item-text" data-field="telephone1"></div>
+                                    </div>
+
+                                </div>
+                                <div class="detail-line">
+                                    <div class="row">
+
+                                        <div class="list-group-item-heading">Téléphone</div>
+                                        <div class="list-group-item-text" data-field="idlocalisation"
+                                             data-secundary-field='telephone'></div>
+                                    </div>
+
+                                </div>
+                                <div class="detail-line">
+                                    <div class="row">
+
+                                        <div class="list-group-item-heading">Entité de rattachement :</div>
+                                        <div class="list-group-item-text" data-field="idpersentite"
+                                             data-secundary-field='nom'></div>
+                                    </div>
+
+                                </div>
+                                <div class="detail-line">
+                                    <div class="row">
+
+                                        <div class="list-group-item-heading">Libelle diplôme :</div>
+                                        <div class="list-group-item-text" data-field="diplome"
+                                             data-secundary-field='libelle'></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="list-group-item-secundary-heading">Niveau :</div>
+                                        <div class="list-group-item-text" data-field="diplome"
+                                             data-secundary-field='niveau'></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="list-group-item-secundary-heading">Site :</div>
+                                        <div class="list-group-item-text" data-field="diplome"
+                                             data-secundary-field='site'></div>
+                                    </div>
+
+                                </div>
+                                <div class="detail-line">
+                                    <div class="row">
+
+                                        <div class="list-group-item-heading">Fonction :</div>
+                                        <div class="list-group-item-text" data-field="fonctions"
+                                             data-secundary-field='entite'></div>
+                                    </div>
+
+                                </div>
+                                <div class="detail-line">
+                                    <div class="row">
+
+                                        <div class="list-group-item-heading">Programme d'échange :</div>
+                                        <div class="list-group-item-text" data-field="progechange"
+                                             data-secundary-field='libelle'></div>
+                                    </div>
+
+                                </div>
+                                <div class="detail-line">
+                                    <div class="row">
+                                        <div class="list-group-item-heading">Régime d'inscription :</div>
+                                        <div class="list-group-item-text"
+                                             data-field="regimeinscription" data-secundary-field='libelle'></div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="preloader-container" id="preloader">
+	<img alt="Veuillez patienter"
+		src="/assets/bootstrap/3.3.5/images/preloader.png" />
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--/.container-fluid -->
+                <div id="footer">
+            <div class="row">
+                <div class="col-md-11">
+                    <div class="row">
+    <div class="col-md-4 col-sm-12">
+        <div class="row">
+            <div class="col-md-12">
+<h1>Plan du site</h1><ul><li>Accueil</li><li>Les formations</li></ul>            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+    <ul><li><a href="#" onclick="Application.Modal.showModalAjax('modal-footer-contenu', 'Mentions légales', '/contenu/MENT_LEG', true)">Mentions légales</a></li>            </div>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-12">
+    </div>
+    <div class="col-md-4 col-sm-12">
+    </div>
+</div>
+                    <div class="modal" id="modal-footer-contenu" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg modal-full-width" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="row">
+                    <div class="col-md-11">
+                        <h4 class="modal-title" id="modal-title"></h4>
+                    </div>
+                    <div class="col-md-1 pull-right">
+                        <button type="button" class="close-modal" data-dismiss="modal" aria-label="Close">
+                            <i class="fa fa-times"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-body"></div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+                </div>
+            </div>
+        </div>
+        
+        <script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;bootstrap_3_3_5_i18n_js.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;bootstrap_3_3_5_push_area_js.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;vendor_bootstraptree_js.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;bootstrap_3_3_5_annuaire_modal_js.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;assets&#x2F;bootstrap_3_3_5_catalogue_fiche_element_formation_js.js"></script>        <div class="device-xs visible-xs"></div>
+        <div class="device-sm visible-sm"></div>
+        <div class="device-md visible-md"></div>
+        <div class="device-lg visible-lg"></div>
+
+    </body>
+</html>
