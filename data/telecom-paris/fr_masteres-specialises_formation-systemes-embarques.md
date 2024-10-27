@@ -1,0 +1,24 @@
+# Title: Mastère Spécialisé® Systèmes Embarqués : ingénierie cyber-physique des objets connectés – Télécom Paris
+
+## [Accueil](https://www.telecom-paris.fr "https://www.telecom-paris.fr") > [fr](https://www.telecom-paris.fr/fr "fr") > [Mastère Spécialisé](https://www.telecom-paris.fr/fr/masteres-specialises "Mastère Spécialisé") > [Systèmes Embarqués : ingénierie cyber-physique des objets connectés](https://www.telecom-paris.fr/fr/masteres-specialises/formation-systemes-embarques)
+
+[](https://www.telecom-paris.fr/fr/accueil)
+
+# Mastère Spécialisé® Systèmes Embarqués : ingénierie cyber-physique des
+objets connectés
+
+Cette spécialité de MS n’est pas proposée cette année.
+
+Retrouvez ici toutes nos spécialités :
+
+  * [ms Toutes les formations de Mastère Spécialisé®[Contact](https://www.telecom-paris.fr/fr/masteres-specialises/contact-ms "Contact")[Candidater](https://admissions-ms.telecom-paris.fr/ "Candidater")](https://www.telecom-paris.fr/fr/masteres-specialises/formations "Mastère Spécialisé® Toutes les formations de Mastère Spécialisé®")
+  * [msInscrit au RNCP Temps partielArchitecte Digital d’EntrepriseDevenez le maître d’œuvre de la transformation digitale.[Contact](https://www.telecom-paris.fr/fr/masteres-specialises/contact-ms "Contact")[Candidater](https://admissions-ms.telecom-paris.fr/ "Candidater")](https://www.telecom-paris.fr/fr/masteres-specialises/formation-architecte-digital-entreprise "Mastère Spécialisé® Architecte Digital d’Entreprise")
+  * [msInscrit au RNCP Temps partielArchitecte Réseaux et CybersécuritéRépondez aux enjeux de sécurité des organisations au cœur des systèmes.[Contact](https://www.telecom-paris.fr/fr/masteres-specialises/contact-ms "Contact")[Candidater](https://admissions-ms.telecom-paris.fr/ "Candidater")](https://www.telecom-paris.fr/fr/masteres-specialises/formation-architecte-reseaux-cybersecurite "Mastère Spécialisé® Architecte Réseaux et Cybersécurité")
+  * [ms Big Data : gestion et analyse des données massivesIntégrez le secteur le plus stratégique de la "data-driven economy".[Contact](https://www.telecom-paris.fr/fr/masteres-specialises/contact-ms "Contact")[Candidater](https://admissions-ms.telecom-paris.fr/ "Candidater")](https://www.telecom-paris.fr/fr/masteres-specialises/formation-big-data "Mastère Spécialisé® Big Data : gestion et analyse des données massives")
+  * [ms Expert cybersécurité des réseaux et des systèmes d’informationIntégrez nativement un haut niveau de sécurité aux réseaux de l'entreprise[Contact](https://www.telecom-paris.fr/fr/masteres-specialises/contact-ms "Contact")[Candidater](https://admissions-ms.telecom-paris.fr/ "Candidater")](https://www.telecom-paris.fr/fr/masteres-specialises/formation-expert-cybersecurite-reseaux-systemes-information "Mastère Spécialisé® Expert cybersécurité des réseaux et des systèmes d’information")
+  * [ms Cybersécurité et CyberdéfenseDevenez un expert de haut niveau en sécurité des systèmes d’information[Contact](https://www.telecom-paris.fr/fr/masteres-specialises/contact-ms "Contact")[Candidater](https://admissions-ms.telecom-paris.fr/ "Candidater")](https://www.telecom-paris.fr/fr/masteres-specialises/formation-cybersecurite-cyberdefense "Mastère Spécialisé® Cybersécurité et Cyberdéfense")
+  * [msInscrit au RNCP Intelligence artificielleAnticipez les défis industriels et sociétaux actuels.[Contact](https://www.telecom-paris.fr/fr/masteres-specialises/contact-ms "Contact")[Candidater](https://admissions-ms.telecom-paris.fr/ "Candidater")](https://www.telecom-paris.fr/fr/masteres-specialises/formation-intelligence-artificielle "Mastère Spécialisé® Intelligence artificielle")
+  * [msInscrit au RNCP Temps partielManager des systèmes d’informationDéveloppez une vision tactique et stratégique des SI.[Contact](https://www.telecom-paris.fr/fr/masteres-specialises/contact-ms "Contact")[Candidater](https://admissions-ms.telecom-paris.fr/ "Candidater")](https://www.telecom-paris.fr/fr/masteres-specialises/formation-manager-systemes-information "Mastère Spécialisé® Manager des systèmes d’information")
+  * [msTemps partiel Régulation de l’économie numériqueMaîtrisez les règles de l’économie numérique dans les pays en développement[Contact](https://www.telecom-paris.fr/fr/masteres-specialises/contact-ms "Contact")](https://www.telecom-paris.fr/fr/masteres-specialises/formation-regulation-economie-numerique "Mastère Spécialisé® Régulation de l’économie numérique")
+  * [msInscrit au RNCP Temps partielSmart MobilityDevenez l'acteur clef de la transformation numérique des systèmes de transport.[Contact](https://www.telecom-paris.fr/fr/masteres-specialises/contact-ms "Contact")[Candidater](https://admissions-ms.telecom-paris.fr/ "Candidater")](https://www.telecom-paris.fr/fr/masteres-specialises/formation-smart-mobility "Mastère Spécialisé® Smart Mobility")
+
