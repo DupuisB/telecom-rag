@@ -1,4 +1,4 @@
-# Synapse-GPT: The Télécom Paris AI Assistant
+# 🧠 Synapse-GPT: The Télécom Paris AI Assistant
 
 ---
 
